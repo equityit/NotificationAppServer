@@ -47,8 +47,9 @@ public class GreetingController {
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+    //method=RequestMethod.POST)	
     
-    @RequestMapping(value="/login", method=RequestMethod.POST)				
+    @RequestMapping(value="/login", method=RequestMethod.POST)		
     public String login(@RequestParam(value="username", defaultValue="") String username, @RequestParam(value="android_id", defaultValue="") String android_id, @RequestParam(value="key", defaultValue="") String key) throws Exception 
     {
     	try{
@@ -223,8 +224,8 @@ public class GreetingController {
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    @RequestMapping(value="/viewsystemkeys", method=RequestMethod.GET)						
+	// , method=RequestMethod.GET)
+    @RequestMapping(value="/viewsystemkeys", method=RequestMethod.GET)					
     public String viewSystemKeys() 
     {
     	String together = sqlKey + "  " + oaKey;
