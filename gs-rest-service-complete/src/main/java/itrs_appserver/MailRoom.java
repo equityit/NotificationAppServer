@@ -1,5 +1,6 @@
 package itrs_appserver;
 
+import java.net.InetAddress;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
@@ -20,11 +21,14 @@ public class MailRoom {
     private static final String SMTP_AUTH_USER = "HelpdeskAutomation@itrsgroup.com";
     private static final String SMTP_AUTH_PWD  = "9AHNekkeJwUE7XD";
 
-    public static void sendMail(String username) throws Exception{
-       new MailRoom().test(username);
+    public static void sendMail(String username, int random, String android_id) throws Exception{
+       new MailRoom().test(username, random, android_id);
     }
 
-    public void test(String username) throws Exception{
+    public void test(String username, int random, String android_id) throws Exception{
+        InetAddress Inet = InetAddress.getLocalHost();
+        String IP = Inet.getHostAddress();
+
         Properties props = new Properties();
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.host", SMTP_HOST_NAME);
@@ -37,10 +41,12 @@ public class MailRoom {
         Transport transport = mailSession.getTransport();
 
         MimeMessage message = new MimeMessage(mailSession);
-        message.setContent("This is a test from " + username, "text/plain");
-        message.setFrom(new InternetAddress("clee@itrsgroup.com"));
+        message.setSubject("Geneos Notifier Device Verification");
+        message.setContent("Hello " +username+ ", \n Please follow the attached link to verify you device \n\n http://" + IP + 
+        		":8080/verifydev?dev_id=" + android_id + "&verification="+random, "text/plain");
+        message.setFrom(new InternetAddress("helpdeskautomation@itrsgroup.com"));
         message.addRecipient(Message.RecipientType.TO,
-             new InternetAddress("cmorley@itrsgroup.com"));
+             new InternetAddress(username));
 
         transport.connect();
         transport.sendMessage(message,

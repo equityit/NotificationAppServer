@@ -59,9 +59,9 @@ public class DataviewListGenerator {
 	public static ArrayList<String> dataViewsPaths;
 	private static DataSet dataSet;
 
-	public static void main(String[] args) throws JSONException {
+/*	public static void main(String[] args) throws JSONException {
 		collectDataviews();
-	}
+	}*/
 
 	public static ArrayList<String> collectDataviews() throws JSONException {
 		ExecutorService executor = Executors.newFixedThreadPool(50);

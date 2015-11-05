@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Random;
 //import java.util.Date;
 
 public class SQLControl {
@@ -16,6 +17,7 @@ public class SQLControl {
   private static Statement stmt = null;
   private static ResultSet res = null;
   private static ResultSet res1 = null;
+  public static Random random = new Random(System.currentTimeMillis());
 
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
@@ -180,8 +182,9 @@ public static int checkValidDomain(String username) throws SQLException {
 		 
 			try {
 				stmt = conn.createStatement();
-				res = stmt.executeQuery("call sp_Create_New_User_With_Invalid_Device('" + username + "','" + android_id + "','" + key + "')");
-				MailRoom.sendMail(username);
+				int ran = random.nextInt();
+				res = stmt.executeQuery("call sp_Create_New_User_With_Invalid_Device('" + username + "','" + android_id + "','" + key + "', "+ ran + ")");
+				MailRoom.sendMail(username, ran, android_id);
 			} catch (SQLException e) {
 				e.printStackTrace();
 				throw new RuntimeException(e);
@@ -200,8 +203,9 @@ public static int checkValidDomain(String username) throws SQLException {
 	 
 	try {
 		stmt = conn.createStatement();
-		res = stmt.executeQuery("call sp_Create_Invalid_Device('" + username + "','" + android_id + "','" + key + "')");
-		MailRoom.sendMail(username);
+		int ran = random.nextInt();
+		res = stmt.executeQuery("call sp_Create_Invalid_Device('" + username + "','" + android_id + "','" + key + "',"+ ran +")");
+		MailRoom.sendMail(username, ran, android_id);
 	} catch (SQLException e) {
 		e.printStackTrace();
 		throw new RuntimeException(e);
@@ -239,27 +243,42 @@ public static int checkValidDomain(String username) throws SQLException {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-public static void addCustomDataView(String username, String entity, String xpath)
-{
-SQLConnect();
+	public static void addCustomDataView(String username, String entity, String xpath) {
+		SQLConnect();
 
-try {
-stmt = conn.createStatement();
-res = stmt.executeQuery("call sp_Add_Dataview_To_User('" + username + "','" + entity + "','" + xpath + "')");
-//MailRoom.sendMail(username);
-} catch (SQLException e) {
-e.printStackTrace();
-throw new RuntimeException(e);
-}
-finally{
-close();	
-}
+		try {
+			stmt = conn.createStatement();
+			res = stmt
+					.executeQuery("call sp_Add_Dataview_To_User('" + username + "','" + entity + "','" + xpath + "')");
+			// MailRoom.sendMail(username);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			close();
+		}
 
-
-}
+	}
  
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+public static void verifyStoredDevice(String android_id, String verification)
+{
+	SQLConnect();
+	try {
+	int random = Integer.parseInt(verification);
+	stmt = conn.createStatement();
+	res = stmt.executeQuery("call sp_verify_device('" + android_id + "'," + random + ")");
+	//MailRoom.sendMail(username);
+	} catch (SQLException e) {
+	e.printStackTrace();
+	throw new RuntimeException(e);
+	}
+	finally{
+	close();	
+	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -65,14 +65,14 @@ public class GreetingController {
 	    		{
 	    			appUser holder = userObjects.get(username);
 	    			holder.addDevice(android_id, key);
-	    			return "(0||3(+ )^+^"; // Collect data - tells device to scrape the user account on server for watch list	
+	    			return "successfully logged in"; // Collect data - tells device to scrape the user account on server for watch list	
 	    		}
 	    		else
 	    		{
 			    	appUser holder = new appUser(username, android_id, key, userid); // THIS NEEDS UPDATING TO NEW FORMAT!!!!!!!
 			    	userObjects.put(username,holder);
 			    	subscribeUserToStoredDataviews(username);
-			        return "(0||3(+ )^+^";	// Collect data - tells device to scrape the user account on server for watch list	
+			        return "successfully logged in";	// Collect data - tells device to scrape the user account on server for watch list	
 		    	}
 	    	}
 	    	
@@ -102,7 +102,7 @@ public class GreetingController {
 	    	
 	    	
 		} else {
-			return "User already logged in, please ensure you are not logged in at another location";
+			return "successfully logged in";
 		}
     	}
     	catch(RuntimeException e)
@@ -231,6 +231,28 @@ public class GreetingController {
     	String together = sqlKey + "  " + oaKey;
         return together;
     }
+    
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// , method=RequestMethod.GET)
+    @RequestMapping(value="/verifydev", method=RequestMethod.GET)					
+	public String verifyDevice(@RequestParam(value="dev_id", defaultValue="") String android_id, @RequestParam(value="verification", defaultValue="") String verification) 
+	{
+		SQLControl.verifyStoredDevice(android_id, verification);
+		return "EVerification Processed";
+	}
+
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// , method=RequestMethod.GET)
+
+    @RequestMapping(value="/getAllDataview", method=RequestMethod.GET)					
+	public String getAllDataview() throws JSONException 
+	{
+	return DataviewListGenerator.collectDataviews().toString();
+	}
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
