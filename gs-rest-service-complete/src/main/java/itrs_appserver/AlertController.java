@@ -38,9 +38,8 @@ public class AlertController {
 		startSample(path);
 	}*/
 	    
-	public static void startSample(String path, ArrayList<String> registrations) {
+	public static void startSample(String path) {
 	   conn = OpenAccess.connect(GreetingController.getOAkey()); // This is one of the two points that will need adaptation for other use
-	   registrationList = registrations;
 	   System.out.println(GreetingController.monitoringThreadList.get(path).getRegList().getRegList());
 	   runScan(path);
 	}
@@ -56,6 +55,7 @@ public class AlertController {
 	       try {
               Thread.sleep(10000);    // SLEEP FOR 10 SECONDS BEFORE TESTING THE XPATH RESULTS TO PREVENT SPAMMING, CAN BE REDUCED TO REAL TIME IF REQUIRED AND CAN BE HANDLED
 	            } catch (InterruptedException ex) {
+	            	System.out.println("Internal interrupt happens");
 	                Thread.currentThread().interrupt();
 	            }
 	        }
@@ -82,7 +82,7 @@ public class AlertController {
 			});
 
 			try {
-				cdl.await(10, SECONDS);
+				cdl.await(5, SECONDS);
 				c.close();
 			} catch (InterruptedException e) {
 				System.out.println("Status ------- RED");

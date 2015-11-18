@@ -5,38 +5,43 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class appUser {
-	
+
 	private final String username;
-	private Map<String,String> deviceList = new HashMap<String,String>();
+	public Map<String, String> deviceList = new HashMap<String, String>();
 	private ArrayList<CustomDataView> pathList = new ArrayList<CustomDataView>();
 
-	public appUser(String uname, String a_id, String key, int id)
-	{
+	public appUser(String uname, String a_id, String key, int id) {
 		this.username = uname;
-		deviceList.put(a_id,key);
+		deviceList.put(a_id, key);
 	}
-	
-	public void addDevice(String a_id, String key)
-	{
-		deviceList.put(a_id,key);
+
+	public void addDevice(String a_id, String key) {
+		deviceList.put(a_id, key);
 	}
-	
-	public ArrayList<String> getRegistrations()
-	{
+
+	public int removeDevice(String android_id) {
+		if (deviceList.size() == 1) {
+			deviceList.clear();
+			return 1;
+		}
+		deviceList.remove(android_id);
+		System.out.println(deviceList);
+		return 0;
+	}
+
+	public ArrayList<String> getRegistrations() {
 		ArrayList<String> ret = new ArrayList<String>();
 		for (Map.Entry<String, String> entry : deviceList.entrySet()) {
 			ret.add(entry.getValue());
 		}
 		return ret;
 	}
-	
-	public String getDeviceKey(String a_id)
-	{
+
+	public String getDeviceKey(String a_id) {
 		return deviceList.get(a_id);
 	}
 
-	public String getUsername()
-	{
+	public String getUsername() {
 		return username;
 	}
 

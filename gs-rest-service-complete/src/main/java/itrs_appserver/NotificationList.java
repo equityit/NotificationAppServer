@@ -43,6 +43,25 @@ public class NotificationList {
 		return this.monitoringUsers;
 	}
 	
+	public int removeUser(String username)
+	{
+		if(monitoringUsers.size() == 1)
+		{
+			monitoringUsers.clear();
+			return 1;
+		}
+		monitoringUsers.remove(username);
+		this.reg = new regListItem(monitoringUsers);
+/*		if (monitoringUsers.isEmpty())
+			return 1;*/
+		return 0;
+	}
+	
+	public void resetDevices()
+	{
+		this.reg = new regListItem(monitoringUsers);
+	}
+	
 	public void addUserID(String userName)
 	{
 		this.monitoringUsers.add(userName);

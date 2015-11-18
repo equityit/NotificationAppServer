@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 /*
  Call List:
@@ -65,6 +66,7 @@ public class GreetingController {
 	    		{
 	    			appUser holder = userObjects.get(username);
 	    			holder.addDevice(android_id, key);
+	    			refreshDeviceToStoredDataviews(username);
 	    			return "successfully logged in"; // Collect data - tells device to scrape the user account on server for watch list	
 	    		}
 	    		else
@@ -118,13 +120,25 @@ public class GreetingController {
 	{
 		int ret = 0;
 		for (Map.Entry<String, appUser> entry : userObjects.entrySet()) {
-			if ((entry.getValue()).getUsername().equals(username) && !entry.getValue().getDeviceKey(android_id).equals(null)) {
+			if ((entry.getValue()).getUsername().equals(username) && entry.getValue().deviceList.containsKey(android_id)) {
 				return 1;
 			}
 		}
 		return ret;
 	}
     
+    public void refreshDeviceToStoredDataviews(String username)
+    {
+    	ArrayList<String> xpaths = new ArrayList<String>();
+    	xpaths = SQLControl.getUserDataviewList(username);
+    	for(String path : xpaths)
+    	{
+    		System.out.println(path);
+    		restartNotifyList(path);
+    		System.out.println("The path being restarted :" + path);
+    	}
+    	
+    }
     
     public void subscribeUserToStoredDataviews(String username)
     {
@@ -141,51 +155,123 @@ public class GreetingController {
     }
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
-    
-    @RequestMapping(value="/setcustomdv", method=RequestMethod.POST)
-    public String setCustomDV(@RequestParam(value="entity", defaultValue="") String entity, @RequestParam(value="xpath", defaultValue="") String xpath, @RequestParam(value="username", defaultValue="") String userName)
-    {
-    	String ret = "";
-    	
-    	if(!userObjects.containsKey(userName)) // Capture for if the user exists in the system, can't add to a user that does not exist
-    		return "You are not a valid user";
-    	
-    	appUser current = userObjects.get(userName);
-    	
-    	ret = current.ammendCustomDV(entity, xpath);		// Returns either a result as seen in the comparison below, or xpath or previous custom DV in entity that user is subscribed too. Returned xpath used for updating.
-    	
-/*    	if(!ret.equals("Add Successful") && !ret.equals("This dataview is already being monitored by this user")) // If something else is returned it is an xpath, used for updating the pre-existing entity dv for that user.
-    		removeFromNotifyList(xpath, userName, ret);*/
-    	if(ret.equals("Add Successful"))
-    		addToNotifyList(xpath, userName);	
-    	return ret;
-    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public void addToNotifyList(String xpath, String userName) {
-		if(monitoringThreadList.containsKey(xpath))
-		{
-			NotificationList current = monitoringThreadList.get(xpath);
-			current.addUserID(userName);	// If an instance of monitoring for this xpath already exists add the user to the alerting list
-			ArrayList<String> registrations = getRegistrationList(current);
-			current.getFuture().cancel(true);
-			Callable<Long> worker = new MyAnalysis(xpath, registrations);
-			Future<Long> thread = executor.submit(worker);
-			current.setFuture(thread);
-			
+@RequestMapping(value="/setcustomdv", method=RequestMethod.POST)
+public String setCustomDV(@RequestParam(value="entity", defaultValue="") String entity, @RequestParam(value="xpath", defaultValue="") String xpath, @RequestParam(value="username", defaultValue="") String userName)
+{
+String ret = "";
+
+if(!userObjects.containsKey(userName)) // Capture for if the user exists in the system, can't add to a user that does not exist
+return "You are not a valid user";
+
+appUser current = userObjects.get(userName);
+
+ret = current.ammendCustomDV(entity, xpath);		// Returns either a result as seen in the comparison below, or xpath or previous custom DV in entity that user is subscribed too. Returned xpath used for updating.
+
+/*    	if(!ret.equals("Add Successful") && !ret.equals("This dataview is already being monitored by this user")) // If something else is returned it is an xpath, used for updating the pre-existing entity dv for that user.
+removeFromNotifyList(xpath, userName, ret);*/
+if(ret.equals("Add Successful"))
+addToNotifyList(xpath, userName);	
+return ret;
+}
+
+
+public void restartNotifyList(String xpath)
+{
+NotificationList current = monitoringThreadList.get(xpath);
+current.getFuture().cancel(true);
+current.resetDevices();
+Callable<Long> worker = new MyAnalysis(xpath);
+Future<Long> thread = executor.submit(worker);
+current.setFuture(thread);
+}
+
+public void addToNotifyList(String xpath, String userName) {
+if(monitoringThreadList.containsKey(xpath))
+{
+NotificationList current = monitoringThreadList.get(xpath);
+current.addUserID(userName);	// If an instance of monitoring for this xpath already exists add the user to the alerting list
+//ArrayList<String> registrations = getRegistrationList(current);
+current.getFuture().cancel(true);
+Callable<Long> worker = new MyAnalysis(xpath);
+Future<Long> thread = executor.submit(worker);
+current.setFuture(thread);
+
+}
+
+else
+{
+System.out.println("This is the thread xpath : "+ xpath );
+//ArrayList<String> registrations = getNewRegistrationList(userName);
+Callable<Long> worker = new MyAnalysis(xpath);
+Future<Long> thread = executor.submit(worker);
+monitoringThreadList.put(xpath, new NotificationList(xpath, thread, userName));	// If an instance of monitoring for this state does not already exist, create one and add user to the alerting list
+
+}
+}
+
+
+/*	public ArrayList<String> getNewRegistrationList(String username)
+{
+ArrayList<String> ret = new ArrayList<String>();
+ArrayList<String> regs = userObjects.get(username).getRegistrations();
+for(String reg : regs)
+{
+ret.add(reg);
+}
+return ret;
+}
+
+public ArrayList<String> getRegistrationList(NotificationList now)
+{
+ArrayList<String> ret = new ArrayList<String>();
+ArrayList<String> stock = now.getUsers();
+for (String username : stock)
+{
+ArrayList<String> regs = userObjects.get(username).getRegistrations();
+for(String reg : regs)
+{
+ret.add(reg);
+}
+}
+return ret;
+}*/
+    
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	public String logout(@RequestParam(value = "username", defaultValue = "") String username,
+			@RequestParam(value = "android_id", defaultValue = "") String android_id) throws Exception 
+	{
+		int deviceCheck = userObjects.get(username).removeDevice(android_id);
+		System.out.println("The status of the device check is :" + deviceCheck);
+		if (deviceCheck == 1) {
+			System.out.println("User removed");
+			removeUserFromDataviews(username);
+			userObjects.remove(username);
+		} else {
+			System.out.println("Device removed");
+			refreshDeviceToStoredDataviews(username);
 		}
-		
-		else
-		{
-			System.out.println("This is the thread xpath : "+ xpath );
-			ArrayList<String> registrations = getNewRegistrationList(userName);
-			Callable<Long> worker = new MyAnalysis(xpath, registrations);
-			Future<Long> thread = executor.submit(worker);
-			monitoringThreadList.put(xpath, new NotificationList(xpath, thread, userName));	// If an instance of monitoring for this state does not already exist, create one and add user to the alerting list
-			
-		}
+
+		return "This device has been successfully logged out";
 	}
 
+	public void removeUserFromDataviews(String username) 
+	{
+		ArrayList<String> xpaths = new ArrayList<String>();
+		xpaths = SQLControl.getUserDataviewList(username);
+		for (String path : xpaths) {
+			System.out.println(path);
+			removeUserFromNotifyList(username, path);
+			System.out.println("The path being restarted :" + path);
+		}
+
+	}
+	
 	private void removeFromNotifyList(String xpath, String userName, String ret) {
 		int status = monitoringThreadList.get(ret).removeUserID(userName);		// the user is already subscribed to that entity, remove subscription to the previous xpath of that entity
 		if(status == 1)		// status value will be 1 if the monitoring is no longer subscribed to any users, as such it is stopped and the object deleted
@@ -195,32 +281,26 @@ public class GreetingController {
 			destroy = null;												// By setting the object to null it is marked as consumable and collected during garbage collection
 		}
 	}
-	
-	public ArrayList<String> getNewRegistrationList(String username)
+
+	public void removeUserFromNotifyList(String username, String xpath) 
 	{
-		ArrayList<String> ret = new ArrayList<String>();
-		ArrayList<String> regs = userObjects.get(username).getRegistrations();
-		for(String reg : regs)
+		NotificationList current = monitoringThreadList.get(xpath);
+		current.getFuture().cancel(true);
+		int number = current.removeUser(username);
+		System.out.println("This is the returned number : " + number);
+		if (number == 1 )
 		{
-			ret.add(reg);
+			current = null;
 		}
-		return ret;
-	}
-	
-	public ArrayList<String> getRegistrationList(NotificationList now)
-	{
-		ArrayList<String> ret = new ArrayList<String>();
-		ArrayList<String> stock = now.getUsers();
-		for (String username : stock)
-		{
-			ArrayList<String> regs = userObjects.get(username).getRegistrations();
-				for(String reg : regs)
-				{
-					ret.add(reg);
-				}
+		else if (number == 0) {
+			System.out.println("It shouldn't get in here");
+			Callable<Long> worker = new MyAnalysis(xpath);
+			Future<Long> thread = executor.submit(worker);
+			current.setFuture(thread);
 		}
-		return ret;
-	}
+	}*/
+    
+
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -256,7 +336,7 @@ public class GreetingController {
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    
    /* @RequestMapping(value="/threadtest", method=RequestMethod.POST)						
     public void threadtest()
     {
@@ -274,12 +354,12 @@ public class GreetingController {
     {
     	
     	private String xpath;
-    	private ArrayList<String> registrationList = new ArrayList<String>();
+    	//private ArrayList<String> registrationList = new ArrayList<String>();
     	
-    	public MyAnalysis(String path, ArrayList<String> registration)
+    	public MyAnalysis(String path)
     	{
     		this.xpath = path;
-    		this.registrationList = registration; 
+    		//this.registrationList = registration; 
     	}
     	
         @Override
@@ -287,7 +367,7 @@ public class GreetingController {
         {
         	System.out.println("THIS IS WITHIN THE THREAD PATH: " + xpath);
         	Long x = (long) 1;
-            AlertController.startSample(xpath, registrationList);
+            AlertController.startSample(xpath);
 			return x;
         }
 
