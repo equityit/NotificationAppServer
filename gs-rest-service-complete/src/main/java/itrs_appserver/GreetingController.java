@@ -242,7 +242,7 @@ return ret;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/*	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	@RequestMapping(value = "/logout", method = RequestMethod.POST)
 	public String logout(@RequestParam(value = "username", defaultValue = "") String username,
 			@RequestParam(value = "android_id", defaultValue = "") String android_id) throws Exception 
 	{
@@ -298,7 +298,7 @@ return ret;
 			Future<Long> thread = executor.submit(worker);
 			current.setFuture(thread);
 		}
-	}*/
+	}
     
 
     
@@ -363,7 +363,7 @@ return ret;
     	}
     	
         @Override
-        public Long call()
+        public Long call() throws InterruptedException
         {
         	System.out.println("THIS IS WITHIN THE THREAD PATH: " + xpath);
         	Long x = (long) 1;

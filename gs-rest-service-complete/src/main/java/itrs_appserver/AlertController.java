@@ -38,7 +38,7 @@ public class AlertController {
 		startSample(path);
 	}*/
 	    
-	public static void startSample(String path) {
+	public static void startSample(String path) throws InterruptedException {
 	   conn = OpenAccess.connect(GreetingController.getOAkey()); // This is one of the two points that will need adaptation for other use
 	   System.out.println(GreetingController.monitoringThreadList.get(path).getRegList().getRegList());
 	   runScan(path);
@@ -49,14 +49,15 @@ public class AlertController {
 		return registrationList;
 	}
 
-	private static void runScan(String xpath) {
+	private static void runScan(String xpath) throws InterruptedException {
 	   while (1 == 1) {
 	       run(xpath); // CALL TESTING OF COLLECTED XPATHS WHICH IS INFINITE
 	       try {
               Thread.sleep(10000);    // SLEEP FOR 10 SECONDS BEFORE TESTING THE XPATH RESULTS TO PREVENT SPAMMING, CAN BE REDUCED TO REAL TIME IF REQUIRED AND CAN BE HANDLED
 	            } catch (InterruptedException ex) {
 	            	System.out.println("Internal interrupt happens");
-	                Thread.currentThread().interrupt();
+	                Thread.currentThread().sleep(1000);
+	                return;
 	            }
 	        }
 	}
