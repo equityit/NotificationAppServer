@@ -157,6 +157,64 @@ public class GreetingController {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	public String logout(@RequestParam(value = "username", defaultValue = "") String username,
+			@RequestParam(value = "android_id", defaultValue = "") String android_id) throws Exception {
+		int deviceCheck = userObjects.get(username).removeDevice(android_id);
+		System.out.println("The status of the device check is :" + deviceCheck);
+		if (deviceCheck == 1) {
+			System.out.println("User removed");
+			removeUserFromDataviews(username);
+			userObjects.remove(username);
+		} else {
+			System.out.println("Device removed");
+			refreshDeviceToStoredDataviews(username);
+		}
+
+		return "This device has been successfully logged out";
+	}
+
+	public void removeUserFromDataviews(String username) {
+		ArrayList<String> xpaths = new ArrayList<String>();
+		xpaths = SQLControl.getUserDataviewList(username);
+		for (String path : xpaths) {
+			System.out.println(path);
+			removeUserFromNotifyList(username, path);
+			System.out.println("The path being restarted :" + path + "   For User :" + username);
+		}
+
+	}
+
+	public void removeUserFromNotifyList(String username, String xpath) {
+		NotificationList current = monitoringThreadList.get(xpath);
+		current.getFuture().cancel(true);
+		int number = current.removeUser(username);
+		System.out.println("This is the returned number : " + number);
+		if (number == 1) {
+			current = null;
+		} else if (number == 0) {
+			System.out.println("It shouldn't get in here");
+			Callable<Long> worker = new MyAnalysis(xpath);
+			Future<Long> thread = executor.submit(worker);
+			current.setFuture(thread);
+		}
+	}
+
+/*	private void removeFromNotifyList(String xpath, String userName, String ret) {
+int status = monitoringThreadList.get(ret).removeUserID(userName);		// the user is already subscribed to that entity, remove subscription to the previous xpath of that entity
+if(status == 1)		// status value will be 1 if the monitoring is no longer subscribed to any users, as such it is stopped and the object deleted
+{
+monitoringThreadList.get(ret).closeMonitorthread(xpath);	// Terminates the monitoring thread, confirmed by submitted xpath match
+NotificationList destroy = monitoringThreadList.get(ret);	
+destroy = null;												// By setting the object to null it is marked as consumable and collected during garbage collection
+}
+}
+*/
+
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 @RequestMapping(value="/setcustomdv", method=RequestMethod.POST)
 public String setCustomDV(@RequestParam(value="entity", defaultValue="") String entity, @RequestParam(value="xpath", defaultValue="") String xpath, @RequestParam(value="username", defaultValue="") String userName)
 {
@@ -238,67 +296,6 @@ ret.add(reg);
 return ret;
 }*/
     
-    
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-	@RequestMapping(value = "/logout", method = RequestMethod.POST)
-	public String logout(@RequestParam(value = "username", defaultValue = "") String username,
-			@RequestParam(value = "android_id", defaultValue = "") String android_id) throws Exception 
-	{
-		int deviceCheck = userObjects.get(username).removeDevice(android_id);
-		System.out.println("The status of the device check is :" + deviceCheck);
-		if (deviceCheck == 1) {
-			System.out.println("User removed");
-			removeUserFromDataviews(username);
-			userObjects.remove(username);
-		} else {
-			System.out.println("Device removed");
-			refreshDeviceToStoredDataviews(username);
-		}
-
-		return "This device has been successfully logged out";
-	}
-
-	public void removeUserFromDataviews(String username) 
-	{
-		ArrayList<String> xpaths = new ArrayList<String>();
-		xpaths = SQLControl.getUserDataviewList(username);
-		for (String path : xpaths) {
-			System.out.println(path);
-			removeUserFromNotifyList(username, path);
-			System.out.println("The path being restarted :" + path);
-		}
-
-	}
-	
-	private void removeFromNotifyList(String xpath, String userName, String ret) {
-		int status = monitoringThreadList.get(ret).removeUserID(userName);		// the user is already subscribed to that entity, remove subscription to the previous xpath of that entity
-		if(status == 1)		// status value will be 1 if the monitoring is no longer subscribed to any users, as such it is stopped and the object deleted
-		{
-			monitoringThreadList.get(ret).closeMonitorthread(xpath);	// Terminates the monitoring thread, confirmed by submitted xpath match
-			NotificationList destroy = monitoringThreadList.get(ret);	
-			destroy = null;												// By setting the object to null it is marked as consumable and collected during garbage collection
-		}
-	}
-
-	public void removeUserFromNotifyList(String username, String xpath) 
-	{
-		NotificationList current = monitoringThreadList.get(xpath);
-		current.getFuture().cancel(true);
-		int number = current.removeUser(username);
-		System.out.println("This is the returned number : " + number);
-		if (number == 1 )
-		{
-			current = null;
-		}
-		else if (number == 0) {
-			System.out.println("It shouldn't get in here");
-			Callable<Long> worker = new MyAnalysis(xpath);
-			Future<Long> thread = executor.submit(worker);
-			current.setFuture(thread);
-		}
-	}
     
 
     

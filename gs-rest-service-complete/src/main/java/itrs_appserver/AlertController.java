@@ -56,7 +56,6 @@ public class AlertController {
               Thread.sleep(10000);    // SLEEP FOR 10 SECONDS BEFORE TESTING THE XPATH RESULTS TO PREVENT SPAMMING, CAN BE REDUCED TO REAL TIME IF REQUIRED AND CAN BE HANDLED
 	            } catch (InterruptedException ex) {
 	            	System.out.println("Internal interrupt happens");
-	                Thread.currentThread().sleep(1000);
 	                return;
 	            }
 	        }
