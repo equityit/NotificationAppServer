@@ -17,9 +17,9 @@ import java.util.Properties;
 
 public class MailRoom {
 
-    private static final String SMTP_HOST_NAME = "smtp.hostedservice2.net";
-    private static final String SMTP_AUTH_USER = "HelpdeskAutomation@itrsgroup.com";
-    private static final String SMTP_AUTH_PWD  = "9AHNekkeJwUE7XD";
+    private static String SMTP_HOST_NAME; 
+    private static String SMTP_AUTH_USER; 
+    private static String SMTP_AUTH_PWD;
 
     public static void sendMail(String username, int random, String android_id) throws Exception{
        new MailRoom().test(username, random, android_id);
@@ -60,6 +60,13 @@ public class MailRoom {
            String password = SMTP_AUTH_PWD;
            return new PasswordAuthentication(username, password);
         }
+    }
+    
+    public static void setDetails(String H, String U, String P)
+    {
+    	SMTP_HOST_NAME = H;
+    	SMTP_AUTH_USER = U;
+    	SMTP_AUTH_PWD = P;
     }
 }
 /*
