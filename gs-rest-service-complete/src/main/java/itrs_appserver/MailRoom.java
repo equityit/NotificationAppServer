@@ -1,17 +1,10 @@
 package itrs_appserver;
 
 import java.net.InetAddress;
-import java.util.*;
-import javax.mail.*;
-import javax.mail.internet.*;
-import javax.activation.*;
-
-
 import javax.mail.*;
 import javax.mail.internet.*;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
-
 import java.util.Properties;
 
 

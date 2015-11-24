@@ -1,9 +1,6 @@
 package itrs_appserver;
 
 import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 import com.itrsgroup.openaccess.Callback;
 import com.itrsgroup.openaccess.Closable;
 import com.itrsgroup.openaccess.Connection;
@@ -15,9 +12,6 @@ import com.itrsgroup.openaccess.dataset.DataSet;
 import com.itrsgroup.openaccess.dataset.DataSetItem;
 import com.itrsgroup.openaccess.dataset.DataSetQuery;
 import com.itrsgroup.openaccess.dataset.DataSetTracker;
-import com.itrsgroup.openaccess.xpath.XPath;
-import com.itrsgroup.openaccess.xpath.XPathStep;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -29,22 +23,10 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import static java.util.concurrent.TimeUnit.SECONDS;
-import javax.print.attribute.standard.Severity;
-import org.apache.http.HttpHeaders;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
-import org.json.JSONObject;
 import org.json.JSONStringer;
 /*
  Purpose:    Search a particular dataview for any cell with snooze and if found issue an alert to the app with xpath, if alert already sent do nothing. Alteration to pushed data for better format.

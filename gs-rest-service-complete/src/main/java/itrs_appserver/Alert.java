@@ -1,16 +1,9 @@
 package itrs_appserver;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 
-import org.apache.logging.log4j.core.net.Severity;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONStringer;
-import org.json.JSONWriter;
 import org.json.simple.JSONObject;
-
-import scala.collection.Map;
 
 
 public class Alert {

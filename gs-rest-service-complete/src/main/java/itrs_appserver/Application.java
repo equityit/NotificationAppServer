@@ -4,17 +4,23 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @SpringBootApplication
 public class Application {
 	
 	public static ArrayList<String> settings = new ArrayList<String>();
+	private final static Logger LOGGER = Logger.getLogger(Application.class.getName());
 	
 	public static void main(String[] args)
 	{
+		LOGGER.setLevel(Level.INFO);
+		ConsoleHandler con = null;
+		LOGGER.addHandler(con);
 		start();
 	}
 	
@@ -25,6 +31,7 @@ public class Application {
 			scnr = new Scanner(file);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
+			LOGGER.log(Level.INFO, e.toString());
 			e.printStackTrace();
 			System.out.println("System Settings file not found - Server Terminating");
 			System.exit(0);
@@ -40,7 +47,7 @@ public class Application {
     		System.exit(0);
     	}
     	configureSettings(settings);
-    	
+    	LOGGER.log(Level.INFO, "COnfiguration successful");
         SpringApplication.run(Application.class);
     }
     
