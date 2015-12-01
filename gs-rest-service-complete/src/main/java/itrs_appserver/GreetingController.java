@@ -1,5 +1,18 @@
 package itrs_appserver;
 
+/*
+ * Create by:	cmorley 10/09/2015
+ * Description:	This is the main controller for the server and defines the commands that can be issued by cURL and the values and 
+ * 				request types they must include in order to be accepted. Some key values for the server are stored here for 
+ * 				convenience. Below is a list of the available commands that can be issued to the server with a description of their
+ * 				operation. This class also, currently, contains the point of creation for the monitoring threads which are then 
+ * 				controller and executed in the AlertController class. This Class also contains the list of logged in users which
+ * 				is referenced for multiple device login's and whenever a change is made in relation to an account in order to verify
+ * 				the user is who they say and are authorised to make those changes. The Class also contains a list of the currently
+ * 				active threads within an object map which stores the critical data for those threads in order to control them 
+ * 				externally.
+*/
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
