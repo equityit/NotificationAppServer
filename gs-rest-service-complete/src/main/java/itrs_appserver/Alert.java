@@ -63,7 +63,6 @@ public class Alert {
 		internal.put("severity", severity);
 		testingObj.put("data", internal);
 		return testingObj.toString();
-		
 	}
 	
 	/*public static String createJSON() throws JSONException{

@@ -22,8 +22,7 @@ import org.json.JSONObject;
 
 public class DataviewListGenerator {
 
-	public static Connection conn = OpenAccess
-			.connect("geneos.cluster://192.168.220.54:2551?username=admin&password=admin");
+	public static Connection conn;
 	public static ArrayList<String> probesPaths;
 	public static ArrayList<String> entitiesPaths;
 	public static ArrayList<String> samplersPaths;
@@ -35,6 +34,7 @@ public class DataviewListGenerator {
 	}*/
 
 	public static ArrayList<String> collectDataviews() throws JSONException {
+		conn = OpenAccess.connect(GreetingController.getOAkey());
 		ExecutorService executor = Executors.newFixedThreadPool(50);
 
 		probesPaths = new ArrayList<String>();
@@ -109,8 +109,8 @@ public class DataviewListGenerator {
 		}
 	}
 
-	public void setOaValue(String oa) 
+	/*public static void setOaValue(String oa) 
 	{
 		conn = OpenAccess.connect(oa);
-	}
+	}*/
 }
