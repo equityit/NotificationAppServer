@@ -25,7 +25,6 @@
 	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/geneos-openaccess-xpath-2.0.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/mysql-connector-java-5.0.8-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/.m2/repository/org.json.jar"/>
 	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/httpclient-4.5.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/httpclient-cache-4.5.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/httpclient-win-4.5.1.jar"/>
@@ -38,5 +37,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/org.json.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

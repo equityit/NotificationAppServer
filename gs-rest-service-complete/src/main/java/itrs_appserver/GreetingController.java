@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.json.JSONException;
@@ -319,18 +320,29 @@ return ret;
 	public String verifyDevice(@RequestParam(value="dev_id", defaultValue="") String android_id, @RequestParam(value="verification", defaultValue="") String verification) 
 	{
 		SQLControl.verifyStoredDevice(android_id, verification);
-		return "EVerification Processed";
+		return "<h1>Verification Processed</h1>";
 	}
 
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// , method=RequestMethod.GET)
+// , method=RequestMethod.GET)***************** NEEDS TESTING ********************
 
-    @RequestMapping(value="/getAllDataview", method=RequestMethod.GET)					
-	public String getAllDataview() throws JSONException 
+    @RequestMapping(value="/getAllDataview", method=RequestMethod.GET)			// First attempt to thread all DV list requests, needs testing		
+	public String getAllDataview() throws JSONException, InterruptedException, ExecutionException 
 	{
-	return DataviewListGenerator.collectDataviews().toString();
+    	
+    	ExecutorService exec = Executors.newSingleThreadExecutor();
+    	Callable<String> callable = new Callable<String>() {
+    		@Override
+    		public String call() throws JSONException{
+    			return DataviewListGenerator.collectDataviews().toString();
+    		}
+    	};
+    	Future<String> future = exec.submit(callable);
+    	String dv = future.get();
+    	exec.shutdown();
+    	return dv;
 	}
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////

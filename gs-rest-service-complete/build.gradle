@@ -4,6 +4,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE")
+		
     }
 }
 
@@ -27,6 +28,7 @@ targetCompatibility = 1.8
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("junit:junit")
+	compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 task wrapper(type: Wrapper) {

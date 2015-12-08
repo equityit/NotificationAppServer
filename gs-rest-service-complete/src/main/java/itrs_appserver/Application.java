@@ -26,7 +26,7 @@ public class Application {
 	}
 	
     public static void start() {
-    	File file = new File("C:\\Users\\cmorley\\Documents\\settings.txt");
+    	File file = new File(".\\settings.txt");
     	Scanner scnr = null;
     	try {
 			scnr = new Scanner(file);

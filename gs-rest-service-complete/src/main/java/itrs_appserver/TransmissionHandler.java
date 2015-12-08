@@ -21,7 +21,6 @@ public class TransmissionHandler {
 	
     public static void sendPost(Alert sendingAlert) throws JSONException, IOException {
         HttpURLConnection con = postCreation();
-        System.out.println(sendingAlert.getJSON());
         transmitPost(con, sendingAlert.getJSON());
     }
 	
