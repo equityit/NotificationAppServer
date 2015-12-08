@@ -27,7 +27,7 @@ public class DataviewListGenerator {
 	public static ArrayList<String> entitiesPaths;
 	public static ArrayList<String> samplersPaths;
 	public static ArrayList<String> dataViewsPaths;
-	private static DataSet dataSet;
+	//private static DataSet dataSet;
 
 /*	public static void main(String[] args) throws JSONException {
 		collectDataviews();
@@ -35,7 +35,8 @@ public class DataviewListGenerator {
 
 	public static ArrayList<String> collectDataviews() throws JSONException {
 		conn = OpenAccess.connect(GreetingController.getOAkey());
-		ExecutorService executor = Executors.newFixedThreadPool(50);
+		// dataSet = null;
+		// ExecutorService executor = Executors.newFixedThreadPool(50);
 
 		probesPaths = new ArrayList<String>();
 		String basePath = "/geneos/gateway[wild(@name,\"*\")]/directory/probe";
@@ -69,10 +70,15 @@ public class DataviewListGenerator {
 			}
 		}
 
+		/*probesPaths = null;
+		entitiesPaths = null;
+		samplersPaths = null;
+		dataViewsPaths = null;*/
 		System.out.println(dataviewList);
-		System.out.println(XPathBuilder.xpath().entity("Something").get());
+		// System.out.println(XPathBuilder.xpath().entity("Something").get());
 		System.out.println(list);
 		System.out.println(list.toString().length());
+		conn.close();
 		return list;
 
 	}
