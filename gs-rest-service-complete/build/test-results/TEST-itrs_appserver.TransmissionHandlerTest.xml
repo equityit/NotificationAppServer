@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="itrs_appserver.TransmissionHandlerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-12-08T14:34:41" hostname="ITRSLP043" time="0.668">
+<testsuite name="itrs_appserver.TransmissionHandlerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-12-11T11:31:24" hostname="ITRSLP043" time="1.595">
   <properties/>
-  <testcase name="testPostCreation" classname="itrs_appserver.TransmissionHandlerTest" time="0.668"/>
+  <testcase name="testPostCreation" classname="itrs_appserver.TransmissionHandlerTest" time="1.595"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
