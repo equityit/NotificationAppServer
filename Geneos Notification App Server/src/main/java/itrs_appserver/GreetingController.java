@@ -320,7 +320,13 @@ return ret;
 	public String verifyDevice(@RequestParam(value="dev_id", defaultValue="") String android_id, @RequestParam(value="verification", defaultValue="") String verification) 
 	{
 		SQLControl.verifyStoredDevice(android_id, verification);
-		return "<h1>Verification Processed</h1>";
+		return "<!DOCTYPE html><html><body><img src=\".\\logo.png\" alt=\"logo.com\" width=\"100\" height=\"140\"><h1>Verification Processed</h1></body></html>";
+	}
+    
+    @RequestMapping(value="/test")		
+	public String test() 
+	{
+    	return "<!DOCTYPE html><html><head><title>Geneos Notification App Device Registrations success</title></head><body><center><img src=\"https://www.itrsgroup.com/sites/all/themes/bootstrap_sub_theme/logo.png\" alt=\"logo.com\" width=\"100\" height=\"40.5\"><h1>Your device has been successfully registered to your account for the Geneos Notification App.</h1><p>If you experience any problems connecting your device please contact your database administrator to verify the devices associated with your account. You will now be able to log into your Notification server with this device without any further authentication.</p></center></body></html>";
 	}
 
     
