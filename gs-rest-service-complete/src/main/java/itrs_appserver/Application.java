@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.itrsgroup.openaccess.Connection;
+import com.itrsgroup.openaccess.OpenAccess;
+
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -62,5 +66,19 @@ public class Application {
     	String OA = "geneos.cluster://" + settings.get(4) + ":" + settings.get(5) + "?username=" + settings.get(6) + "&password=" + settings.get(6);
     	GreetingController.setKeyData(sqlServer, OA);
     	MailRoom.setDetails(smtpH, smtpU, smtpP);
+    	checkValidity(OA, sqlServer);
+    }
+    
+    public static void checkValidity(String OA, String sqlServer)
+    {
+    	try{
+    		SQLControl.SQLConnect();
+    		SQLControl.close();
+    	}
+    	catch(Exception e)
+    	{
+    		System.out.println("There was an error with the SQL configuration or address, please confirm details. System shutting down.");
+    		System.exit(0);
+    	}
     }
 }

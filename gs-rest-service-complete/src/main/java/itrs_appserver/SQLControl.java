@@ -31,6 +31,7 @@ public class SQLControl {
     catch(Exception e)
     {
         System.out.println(e);
+        throw new RuntimeException();
     }
   }
   
@@ -307,7 +308,7 @@ return resArray;
 }
   
   // You need to close the res
-  private static void close() {
+  public static void close() {
     try {
       if (res != null) {
         res.close();
@@ -331,10 +332,6 @@ return resArray;
   {
 	  address = submittedAddress;
   }
-  
-  
-  
-
   
   
 
