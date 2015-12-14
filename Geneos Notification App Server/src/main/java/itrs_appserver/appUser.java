@@ -65,5 +65,24 @@ public class appUser {
 	}
 	
 	// Need to add function to delete 
+	
+	public void removeDV(String entity, String xpath)
+	{
+		int i = 0;
+		CustomDataView removal = null;
+		for (CustomDataView test : pathList) {
+			if (test.getXpath().equals(xpath)) {		// Cycles through the dataview items to see if there is an entity match, if one is found the object is updated 
+				System.out.println(test);
+				SQLControl.removeCustomDataview(username, entity, xpath);
+				removal = test;
+				i = 1;
+				break;
+			}
+		}
+		if (i == 1)
+			pathList.remove(removal);
+		if (i == 0)
+			System.out.println("There was a serious error as a xpath was specified not linked to the user account which should be impossible");
+	}
 
 }

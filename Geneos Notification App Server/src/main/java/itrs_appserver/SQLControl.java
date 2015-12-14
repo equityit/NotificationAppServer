@@ -282,6 +282,26 @@ public static void verifyStoredDevice(String android_id, String verification)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+public static void removeCustomDataview(String username, String entity, String xpath)
+{
+	SQLConnect();
+
+	try {
+		stmt = conn.createStatement();
+		res = stmt
+				.executeQuery("call sp_remove_dataview_from_user('" + username + "','" + xpath + "')");
+		// MailRoom.sendMail(username);
+	} catch (SQLException e) {
+		e.printStackTrace();
+		throw new RuntimeException(e);
+	} finally {
+		close();
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 public static ArrayList<String> getUserDataviewList(String username)
 {
 SQLConnect();
@@ -336,49 +356,3 @@ return resArray;
   
 
 } 
-
-
-
-
-
-
-
-/*@SuppressWarnings("finally")
-public static int checkUser(String username, String password) {
-		SQLConnect();
-		int result = 0;
-		int userid = 0;
-		System.out.println(username + "    " + password);
-		try {
-
-			stmt = conn.createStatement();
-			res = stmt.executeQuery("select userId from users where username like '" + username + "'");
-
-			if (!res.isBeforeFirst()) {
-				System.out.println("Incorrect username or password");
-			}
-
-			else {
-				while (res.next()) {
-					int value = res.getInt(1);
-					userid = value;
-					System.out.println("RETURNED USER ID : " + userid);
-				}
-				res1 = stmt.executeQuery("select passwordhash from password where userid =" + userid);
-
-				if (!res1.isBeforeFirst()) {
-					System.out.println("Incorrect username or password");
-				} else {
-					result = userid;
-				}
-			}
-
-		} catch (Exception e) {
-			System.out.println(e);
-			throw e;
-		} finally {
-			close();
-			return result;
-		}
-
-	}*/

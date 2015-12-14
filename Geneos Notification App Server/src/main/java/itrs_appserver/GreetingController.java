@@ -1,5 +1,7 @@
 package itrs_appserver;
 
+import java.io.IOException;
+
 /*
  * Create by:	cmorley 10/09/2015
  * Description:	This is the main controller for the server and defines the commands that can be issued by cURL and the values and 
@@ -143,7 +145,7 @@ public class GreetingController {
     	
     }
     
-    public void subscribeUserToStoredDataviews(String username)
+    public void subscribeUserToStoredDataviews(String username) throws IOException
     {
     	ArrayList<String> xpaths = new ArrayList<String>();
     	appUser current = userObjects.get(username);
@@ -203,23 +205,12 @@ public class GreetingController {
 		}
 	}
 
-/*	private void removeFromNotifyList(String xpath, String userName, String ret) {
-int status = monitoringThreadList.get(ret).removeUserID(userName);		// the user is already subscribed to that entity, remove subscription to the previous xpath of that entity
-if(status == 1)		// status value will be 1 if the monitoring is no longer subscribed to any users, as such it is stopped and the object deleted
-{
-monitoringThreadList.get(ret).closeMonitorthread(xpath);	// Terminates the monitoring thread, confirmed by submitted xpath match
-NotificationList destroy = monitoringThreadList.get(ret);	
-destroy = null;												// By setting the object to null it is marked as consumable and collected during garbage collection
-}
-}
-*/
-
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @RequestMapping(value="/setcustomdv", method=RequestMethod.POST)
-public String setCustomDV(@RequestParam(value="entity", defaultValue="") String entity, @RequestParam(value="xpath", defaultValue="") String xpath, @RequestParam(value="username", defaultValue="") String userName)
+public String setCustomDV(@RequestParam(value="entity", defaultValue="") String entity, @RequestParam(value="xpath", defaultValue="") String xpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException
 {
 String ret = "";
 
@@ -248,7 +239,7 @@ Future<Long> thread = executor.submit(worker);
 current.setFuture(thread);
 }
 
-public void addToNotifyList(String xpath, String userName) {
+public void addToNotifyList(String xpath, String userName) throws IOException {
 if(monitoringThreadList.containsKey(xpath))
 {
 NotificationList current = monitoringThreadList.get(xpath);
@@ -270,38 +261,34 @@ Future<Long> thread = executor.submit(worker);
 monitoringThreadList.put(xpath, new NotificationList(xpath, thread, userName));	// If an instance of monitoring for this state does not already exist, create one and add user to the alerting list
 
 }
+TransmissionHandler.additionMessage(userName, xpath);
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
-/*	public ArrayList<String> getNewRegistrationList(String username)
+@RequestMapping(value="/removedv", method=RequestMethod.POST)
+public void removeDataview(@RequestParam(value="entity", defaultValue="") String entity, @RequestParam(value="xpath", defaultValue="") String xpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException
 {
-ArrayList<String> ret = new ArrayList<String>();
-ArrayList<String> regs = userObjects.get(username).getRegistrations();
-for(String reg : regs)
-{
-ret.add(reg);
-}
-return ret;
+	removeUserFromNotifyList(userName, xpath);
+	userObjects.get(userName).removeDV(entity, xpath);
+	TransmissionHandler.removeMessage(userName, xpath);
+	
 }
 
-public ArrayList<String> getRegistrationList(NotificationList now)
-{
-ArrayList<String> ret = new ArrayList<String>();
-ArrayList<String> stock = now.getUsers();
-for (String username : stock)
-{
-ArrayList<String> regs = userObjects.get(username).getRegistrations();
-for(String reg : regs)
-{
-ret.add(reg);
-}
-}
-return ret;
-}*/
-    
-    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    
+@RequestMapping(value="/editdv", method=RequestMethod.POST)
+public void editDV(@RequestParam(value="rentity", defaultValue="") String rentity, @RequestParam(value="aentity", defaultValue="") String aentity, @RequestParam(value="rxpath", defaultValue="") String rxpath, @RequestParam(value="axpath", defaultValue="") String axpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException
+{
+	removeUserFromNotifyList(userName, rxpath);
+	userObjects.get(userName).removeDV(rentity, rxpath);
+	TransmissionHandler.removeMessage(userName, rxpath);
+	setCustomDV(aentity, axpath, userName);
+	
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// , method=RequestMethod.GET)
@@ -320,7 +307,7 @@ return ret;
 	public String verifyDevice(@RequestParam(value="dev_id", defaultValue="") String android_id, @RequestParam(value="verification", defaultValue="") String verification) 
 	{
 		SQLControl.verifyStoredDevice(android_id, verification);
-		return "<!DOCTYPE html><html><body><img src=\".\\logo.png\" alt=\"logo.com\" width=\"100\" height=\"140\"><h1>Verification Processed</h1></body></html>";
+		return "<!DOCTYPE html><html><font face=\"interface,sans-serif\"><head><title>Geneos Notification App Device Registrations success</title></head><body><center><img src=\"https://www.itrsgroup.com/sites/all/themes/bootstrap_sub_theme/logo.png\" alt=\"logo.com\" width=\"100\" height=\"40.5\"><h1>Device subscribed successfully to Geneos Notification Server.</h1><p>Your device has been successfully registered to your account for the Geneos Notification App.</p><p>If you experience any problems connecting your device please contact your database administrator to verify the devices associated with your account. You will now be able to log into your Notification server with this device without any further authentication.</p><small><p>© ITRS 2015, ALL RIGHTS RESERVED - Created by Connor Morley & Daniel Ratnaras </font></center></body></html>";
 	}
     
     @RequestMapping(value="/test")		

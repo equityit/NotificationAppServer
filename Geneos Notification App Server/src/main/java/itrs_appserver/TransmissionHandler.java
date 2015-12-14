@@ -11,7 +11,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.simple.JSONObject;
 
 public class TransmissionHandler {
 	
@@ -22,6 +24,40 @@ public class TransmissionHandler {
     public static void sendPost(Alert sendingAlert) throws JSONException, IOException {
         HttpURLConnection con = postCreation();
         transmitPost(con, sendingAlert.getJSON());
+    }
+    
+    public static void additionMessage(String username, String xpath) throws IOException
+    {
+    	HttpURLConnection con = postCreation();
+    	transmitPost(con, createAJSON(username, xpath));
+    }
+    
+    private static String createAJSON(String username, String xpath)
+    {
+    	JSONObject testingObj = new JSONObject();
+		JSONObject internal = new JSONObject();
+		testingObj.put("registration_ids",  new JSONArray(GreetingController.userObjects.get(username).getRegistrations()));
+		internal.put("alteration", "addition");
+		internal.put("xpath", xpath);
+		testingObj.put("data", internal);
+		return testingObj.toString();
+    }
+    
+    public static void removeMessage(String username, String xpath) throws IOException
+    {
+    	HttpURLConnection con = postCreation();
+    	transmitPost(con, createRJSON(username, xpath));
+    }
+    
+    private static String createRJSON(String username, String xpath)
+    {
+    	JSONObject testingObj = new JSONObject();
+		JSONObject internal = new JSONObject();
+		testingObj.put("registration_ids",  new JSONArray(GreetingController.userObjects.get(username).getRegistrations()));
+		internal.put("alteration", "removal");
+		internal.put("xpath", xpath);
+		testingObj.put("data", internal);
+		return testingObj.toString();
     }
 	
     public static HttpURLConnection postCreation() throws IOException {
