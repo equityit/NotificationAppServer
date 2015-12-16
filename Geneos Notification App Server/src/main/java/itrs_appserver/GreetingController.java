@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 
 /*
@@ -49,6 +50,7 @@ public class GreetingController {
     public static Map<String, appUser> userObjects = new HashMap<String, appUser>();
     public static Map<String,NotificationList> monitoringThreadList = new HashMap<String, NotificationList>();
     private ExecutorService executor = Executors.newFixedThreadPool(200);
+    public static String currentDataviewEntityList;
     
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -325,7 +327,7 @@ public void editDV(@RequestParam(value="rentity", defaultValue="") String rentit
 	public String getAllDataview() throws JSONException, InterruptedException, ExecutionException 
 	{
     	
-    	ExecutorService exec = Executors.newSingleThreadExecutor();
+/*    	ExecutorService exec = Executors.newSingleThreadExecutor();
     	Callable<String> callable = new Callable<String>() {
     		@Override
     		public String call() throws JSONException{
@@ -334,9 +336,49 @@ public void editDV(@RequestParam(value="rentity", defaultValue="") String rentit
     	};
     	Future<String> future = exec.submit(callable);
     	String dv = future.get();
-    	exec.shutdown();
-    	return dv;
+    	exec.shutdown();*/
+    	return currentDataviewEntityList;
 	}
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
+    
+    @RequestMapping(value="/updatedv", method=RequestMethod.GET)
+    public static void updateDV() throws InterruptedException, ExecutionException
+    {
+    	ExecutorService exec = Executors.newSingleThreadExecutor();
+    	Callable<String> callable = new Callable<String>() {
+    		@Override
+    		public String call() throws JSONException, InterruptedException{									
+    			return DataviewListGenerator.collectDataviews().toString();
+    		}
+    	};
+    	Future<String> future = exec.submit(callable);
+    	String dv = future.get();
+    	exec.shutdown();
+    	currentDataviewEntityList = dv;
+    }
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    @RequestMapping(value="/getrow", method=RequestMethod.POST)					
+	public String getRow(@RequestParam(value="xpath", defaultValue="") String xpath) throws InterruptedException, ExecutionException
+	{
+    	String ret = null;
+    	ExecutorService exec = Executors.newSingleThreadExecutor();
+    	Callable<String> callable = new Callable<String>() {
+    		@Override
+    		public String call() throws JSONException{
+    			return RowGenerator.getRow(xpath).toString();
+    		}
+    	};
+    	Future<String> future = exec.submit(callable);
+    	ret = future.get();
+    	exec.shutdown();
+    	return ret;
+	}
+	
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////

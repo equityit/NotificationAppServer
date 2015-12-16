@@ -1,6 +1,8 @@
 package itrs_appserver;
 
 
+import java.time.LocalDateTime;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.simple.JSONObject;
@@ -38,6 +40,7 @@ public class Alert {
 		internal.put("xpath", xpath);
 		internal.put("value", value);
 		internal.put("severity", severity);
+		internal.put("time", LocalDateTime.now());
 		testingObj.put("data", internal);
 		return testingObj.toString();
 	}
