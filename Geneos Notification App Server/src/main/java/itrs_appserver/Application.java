@@ -9,21 +9,34 @@ import java.util.concurrent.ExecutionException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.itrsgroup.openaccess.Connection;
-import com.itrsgroup.openaccess.OpenAccess;
-
-import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+import java.io.IOException;
+
 
 @SpringBootApplication
 public class Application {
 	
 	public static ArrayList<String> settings = new ArrayList<String>();
+	private final static Logger logger = Logger.getLogger(Application.class.getName());
+	private static FileHandler fh = null;
 	//private final static Logger LOGGER = Logger.getLogger(Application.class.getName());
 	
 	public static void main(String[] args) throws InterruptedException, ExecutionException
 	{
+		 try {
+			 fh=new FileHandler("loggerExample.log", false);
+			 } catch (SecurityException | IOException e) {
+			 e.printStackTrace();
+			 }
+		 Logger l = Logger.getLogger("");
+		 fh.setFormatter(new SimpleFormatter());
+		 l.addHandler(fh);
+		 l.setLevel(Level.CONFIG);
+		 logger.log(Level.INFO, "message 1");
+		 
 		//System.out.println("This does start");
 		//LOGGER.setLevel(Level.INFO);
 		//ConsoleHandler con = null;
