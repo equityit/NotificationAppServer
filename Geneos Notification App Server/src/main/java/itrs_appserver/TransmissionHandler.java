@@ -106,7 +106,6 @@ public class TransmissionHandler {
             System.out.println(e);
             System.out.println("url");
         } catch (IOException e) {
-        	e.printStackTrace();
             System.out.println(e);
             System.out.println("io");
         } catch (Exception e) {
