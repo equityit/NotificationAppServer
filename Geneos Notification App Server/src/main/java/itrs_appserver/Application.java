@@ -41,14 +41,17 @@ public class Application {
 		//LOGGER.setLevel(Level.INFO);
 		//ConsoleHandler con = null;
 		//LOGGER.addHandler(con);
-		System.out.print("8888888888888888888888888b.  .d8888b. \n" +
+		System.out.print("\n8888888888888888888888888b.  .d8888b. \n" +
 				"  888      888    888   Y88bd88P  Y88b\n" +
 				"  888      888    888    888Y88b.     \n" +
 				"  888      888    888   d88P \"Y888b.  \n" +
 				"  888      888    8888888P\"     \"Y88b.\n" +
 				"  888      888    888 T88b        \"888\n" +
 				"  888      888    888  T88b Y88b  d88P\n" +
-				"8888888    888    888   T88b \"Y8888P\" \n");
+				"8888888    888    888   T88b \"Y8888P\"  © \n" +
+				"\n" +
+				"<< Version 1.0 >>      << Created by C.Morley & D.Ratnaras 2015 >>\n" +
+				"\n");
 		start();
 	}
 	
