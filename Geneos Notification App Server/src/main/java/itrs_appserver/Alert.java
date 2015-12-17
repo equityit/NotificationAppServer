@@ -40,7 +40,7 @@ public class Alert {
 		internal.put("xpath", xpath);
 		internal.put("value", value);
 		internal.put("severity", severity);
-		internal.put("time", LocalDateTime.now());
+		internal.put("time", LocalDateTime.now().toString());
 		testingObj.put("data", internal);
 		return testingObj.toString();
 	}

@@ -23,10 +23,11 @@ public class TransmissionHandler {
 	
     public static void sendPost(Alert sendingAlert) throws JSONException, IOException {
         HttpURLConnection con = postCreation();
+        System.out.println(sendingAlert.getJSON());
         transmitPost(con, sendingAlert.getJSON());
     }
     
-    public static void additionMessage(String username, String xpath) throws IOException
+  /*  public static void additionMessage(String username, String xpath) throws IOException
     {
     	HttpURLConnection con = postCreation();
     	transmitPost(con, createAJSON(username, xpath));
@@ -58,7 +59,7 @@ public class TransmissionHandler {
 		internal.put("xpath", xpath);
 		testingObj.put("data", internal);
 		return testingObj.toString();
-    }
+    }*/
 	
     public static HttpURLConnection postCreation() throws IOException {
     	URL obj = new URL(gcm);
