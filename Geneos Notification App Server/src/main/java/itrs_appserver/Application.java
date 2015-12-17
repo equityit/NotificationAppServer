@@ -26,8 +26,8 @@ public class Application {
 	
 	public static void main(String[] args) throws InterruptedException, ExecutionException
 	{
-		 try {
-			 fh=new FileHandler("loggerExample.log", false);
+/*		 try {
+			 fh=new FileHandler(".\\loggerExample.log", false);
 			 } catch (SecurityException | IOException e) {
 			 e.printStackTrace();
 			 }
@@ -35,7 +35,7 @@ public class Application {
 		 fh.setFormatter(new SimpleFormatter());
 		 l.addHandler(fh);
 		 l.setLevel(Level.CONFIG);
-		 logger.log(Level.INFO, "message 1");
+		 logger.log(Level.INFO, "message 1");*/
 		 
 		//System.out.println("This does start");
 		//LOGGER.setLevel(Level.INFO);

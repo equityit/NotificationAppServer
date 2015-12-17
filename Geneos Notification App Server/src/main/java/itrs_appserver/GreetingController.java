@@ -263,7 +263,7 @@ Future<Long> thread = executor.submit(worker);
 monitoringThreadList.put(xpath, new NotificationList(xpath, thread, userName));	// If an instance of monitoring for this state does not already exist, create one and add user to the alerting list
 
 }
-TransmissionHandler.additionMessage(userName, xpath);
+// TransmissionHandler.additionMessage(userName, xpath);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -274,7 +274,7 @@ public void removeDataview(@RequestParam(value="entity", defaultValue="") String
 {
 	removeUserFromNotifyList(userName, xpath);
 	userObjects.get(userName).removeDV(entity, xpath);
-	TransmissionHandler.removeMessage(userName, xpath);
+	// TransmissionHandler.removeMessage(userName, xpath);
 	
 }
 
@@ -286,7 +286,7 @@ public void editDV(@RequestParam(value="rentity", defaultValue="") String rentit
 {
 	removeUserFromNotifyList(userName, rxpath);
 	userObjects.get(userName).removeDV(rentity, rxpath);
-	TransmissionHandler.removeMessage(userName, rxpath);
+	// TransmissionHandler.removeMessage(userName, rxpath);
 	setCustomDV(aentity, axpath, userName);
 	
 }
