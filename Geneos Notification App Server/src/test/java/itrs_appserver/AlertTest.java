@@ -7,34 +7,28 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class AlertTest {
-/*	static Alert tester;
+	static Alert tester;
 
 	@BeforeClass
 	public static void setUp() throws JSONException
 	{
-	tester = new Alert("","","");
+	tester = new Alert("something","something","something","something", 1);
 	}
 	
 	@Test
 	public void testAlert() throws JSONException {
-		assertTrue("Return an Alert Object",!(new Alert("","","")).equals(null));
+		assertTrue("Return an Alert Object",!(new Alert("something","something","something","something", 1)).equals(null));
 	}
 
 	@Test
 	public void testUpdateAlert() throws JSONException {
-		tester.updateAlert("something", "OK");
+		tester.updateAlert("something", "OK", "XPath", 1);
 		assertEquals("After update Severity value is different, update has occurred", "OK", tester.getSeverity() );
-	}
-
-	@Test
-	public void testCreateJSON() throws JSONException {
-		
-		assertTrue(!tester.createJSON().equals(null));
 	}
 	
 	@Test(expected = NullPointerException.class)
 	public void testCreateAlert_FailureWithNullValue() throws JSONException {
-		Alert testing = new Alert(null,null,null);
+		Alert testing = new Alert(null,null,null,null);
 	}
-*/
+
 }

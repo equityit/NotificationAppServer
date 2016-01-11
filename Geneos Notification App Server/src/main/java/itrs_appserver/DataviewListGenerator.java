@@ -27,6 +27,7 @@ public class DataviewListGenerator {
 	public static ArrayList<String> entitiesPaths;
 	public static ArrayList<String> samplersPaths;
 	public static ArrayList<String> dataViewsPaths;
+	static LtA logA = new LogObject();
 	//private static DataSet dataSet;
 
 /*	public static void main(String[] args) throws JSONException {
@@ -74,10 +75,11 @@ public class DataviewListGenerator {
 		entitiesPaths = null;
 		samplersPaths = null;
 		dataViewsPaths = null;*/
-		System.out.println(dataviewList);
+		//System.out.println(dataviewList);
 		// System.out.println(XPathBuilder.xpath().entity("Something").get());
-		System.out.println(list);
-		System.out.println(list.toString().length());
+		//System.out.println(list);
+		//System.out.println(list.toString().length());
+		logA.doLog("Thread" , "[DT-INFO]Collected Dataviews : " + list + " \nWith a length of " + list.toString().length(), "Info");
 		conn.close();
 		return list;
 
@@ -92,26 +94,32 @@ public class DataviewListGenerator {
 			@Override
 			public void callback(final DataSetChange change) {
 				DataSet dataSet = dataSetTracker.update(change);
+                if(!dataSet.getItems().isEmpty()){ cdl.countDown(); }
+                for (DataSetItem item : dataSet.getItems()) { a.add(item.getPath()); }	
+   
+				/*DataSet dataSet = dataSetTracker.update(change);
 				for (DataSetItem item : dataSet.getItems()) {
 					a.add(item.getPath());
 				}
-				cdl.countDown();
+				cdl.countDown();*/
 			}
 		},
 
 				new ErrorCallback() {
 					@Override
 					public void error(final Exception exception) {
-						System.err.println("Error retrieving DataSet: " + exception);
+						logA.doLog("Thread" , "[DT-INFO]Error retrieving DataSet: " + exception, "Critical");
+						//System.err.println("Error retrieving DataSet: " + exception);
 					}
 				});
 
 		try {
-			cdl.await(10, SECONDS);
+			cdl.await(1, SECONDS);
 			c.close();
 		} catch (InterruptedException e) {
-			System.out.println("Interrupted while waiting for updates");
-			e.printStackTrace();
+			logA.doLog("Thread" , "[DT-INFO]Error retrieving DataSet: " + e.toString(), "Critical");
+			//System.out.println("Interrupted while waiting for updates");
+			//e.printStackTrace();
 		}
 	}
 

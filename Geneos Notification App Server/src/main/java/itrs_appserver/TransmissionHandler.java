@@ -19,12 +19,21 @@ public class TransmissionHandler {
 	
     public final static String api = "key=AIzaSyB24chqHK6z1MQfs5NmAXUwUyS8e8KN40k";
     public final static String gcm = "https://android.googleapis.com/gcm/send";
+    static LtA logA = new LogObject();
 	
 	
     public static void sendPost(Alert sendingAlert) throws JSONException, IOException {
         HttpURLConnection con = postCreation();
-        System.out.println(sendingAlert.getJSON());
+        logA.doLog("Transmission" , "[Transmission]Output JSON data : " + sendingAlert.getJSON(), "INFO");
+        //System.out.println(sendingAlert.getJSON());
         transmitPost(con, sendingAlert.getJSON());
+    }
+    
+    public static void sendPost(String alert, int test) throws JSONException, IOException {
+        HttpURLConnection con = postCreation();
+        logA.doLog("Transmission" , "[Transmission]Output JSON data : " + alert, "INFO");
+        // System.out.println(alert);
+        transmitPost(con, alert);
     }
     
   /*  public static void additionMessage(String username, String xpath) throws IOException
@@ -76,7 +85,7 @@ public class TransmissionHandler {
         return con;
     }
     
-    private static void transmitPost(HttpURLConnection con, String myString) throws UnsupportedOperationException {
+    private static void transmitPost(HttpURLConnection con, String myString) throws UnsupportedOperationException, IOException {
         try {
         	OutputStream os = con.getOutputStream();
             BufferedWriter writer = new BufferedWriter(
@@ -95,21 +104,27 @@ public class TransmissionHandler {
             }
             rd.close();
             String tester = response.toString();
-            System.out.println("POST RETURN VALUE : " + tester);
+            logA.doLog("Transmission" , "[Transmission]POST Returned data : " + tester, "INFO");
+            //System.out.println("POST RETURN VALUE : " + tester);
             
             if (con.getResponseCode() == HttpURLConnection.HTTP_OK) {
+            	logA.doLog("Transmission" , "[Transmission]Transmission Successful", "INFO");
                 System.out.println("success");
             } else {
                 // Server returned HTTP error code.
             }
         } catch (MalformedURLException e) {
-            System.out.println(e);
-            System.out.println("url");
+        	logA.doLog("Transmission" , "[Transmission]URL error has been encountered, tranmission failed!: " + e.toString(), "Critical");
+           // System.out.println(e);
+           // System.out.println("url");
         } catch (IOException e) {
-            System.out.println(e);
-            System.out.println("io");
+        	logA.doLog("Transmission" , "[Transmission]IO error has been encountered, tranmission failed! : " + e.toString(), "Critical");
+           // System.out.println(e);
+           // System.out.println("io");
+        	throw new IOException();
         } catch (Exception e) {
-            System.out.println(e);
+        	logA.doLog("Transmission" , "[Transmission]Undetermined error has been encountered, tranmission failed! : " + e.toString(), "Critical");
+            //System.out.println(e);
         }
     }
 

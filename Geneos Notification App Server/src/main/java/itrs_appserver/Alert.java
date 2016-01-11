@@ -22,7 +22,7 @@ public class Alert {
 		this.value = val;
 		this.JSON = createJSON(dvPath);
 	}
-
+	
 	public void updateAlert(String val, String sev, String dvPath) throws JSONException {
 		setSeverity(sev);
 		value = val;
@@ -91,6 +91,19 @@ public class Alert {
 		else
 			updateMessage(severity, sev);
 		severity = sev;
+	}
+	
+	public Alert(String path, String val, String sev, String dvPath, int test) throws JSONException {
+		this.xpath = path;
+		setSeverity(sev);
+		this.value = val;
+		this.JSON = (dvPath);
+	}
+	
+	public void updateAlert(String val, String sev, String dvPath, int test) throws JSONException {
+		setSeverity(sev);
+		value = val;
+		JSON = dvPath;
 	}
 
 }

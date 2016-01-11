@@ -9,11 +9,14 @@ import java.util.concurrent.ExecutionException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import scala.reflect.internal.Trees.This;
+
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 
 @SpringBootApplication
@@ -22,10 +25,12 @@ public class Application {
 	public static ArrayList<String> settings = new ArrayList<String>();
 	private final static Logger logger = Logger.getLogger(Application.class.getName());
 	private static FileHandler fh = null;
+	static LtA logA = new LogObject();
 	//private final static Logger LOGGER = Logger.getLogger(Application.class.getName());
 	
 	public static void main(String[] args) throws InterruptedException, ExecutionException
 	{
+		
 /*		 try {
 			 fh=new FileHandler(".\\loggerExample.log", false);
 			 } catch (SecurityException | IOException e) {
@@ -52,6 +57,7 @@ public class Application {
 				"\n" +
 				"<< Version 1.0 >>      << Created by C.Morley & D.Ratnaras 2015 >>\n" +
 				"\n");
+		logA.doLog("Application" , "Server Boot Initiated", "Info");
 		start();
 	}
 	
@@ -65,6 +71,7 @@ public class Application {
 			//LOGGER.log(Level.INFO, e.toString());
 			e.printStackTrace();
 			System.out.println("System Settings file not found - Server Terminating");
+			logA.doLog("Application" , "System Settings file not found - Server Terminating", "Critical");
 			System.exit(0);
 		}
     	while(scnr.hasNext())
@@ -75,10 +82,12 @@ public class Application {
     	if(settings.size() != 8)
     	{
     		System.out.println("System Settings file is incorrect - Not enough details - Server Terminating");
+    		logA.doLog("Application" , "System Settings file is incorrect - Not enough details - Server Terminating", "Critical");
     		System.exit(0);
     	}
     	configureSettings(settings);
     	//LOGGER.log(Level.INFO, "COnfiguration successful");
+    	logA.doLog("Application" , "Server Boot variables passed verification", "Info");
         SpringApplication.run(Application.class);
     }
     
@@ -104,7 +113,8 @@ public class Application {
     	}
     	catch(Exception e)
     	{
-    		System.out.println("There was an error with the SQL configuration or address, please confirm details. System shutting down.");
+    		//System.out.println("There was an error with the SQL configuration or address, please confirm details. System shutting down.");
+    		logA.doLog("Application" , "There was an error with the SQL configuration or address, please confirm details. System shutting down.", "Critical");
     		System.exit(0);
     	}
     }

@@ -16,6 +16,7 @@ public class SQLControl {
   private static ResultSet res = null;
   private static ResultSet res1 = null;
   public static Random random = new Random(System.currentTimeMillis());
+  static LtA logA = new LogObject();
 
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
@@ -30,7 +31,8 @@ public class SQLControl {
     }
     catch(Exception e)
     {
-        System.out.println(e);
+    	logA.doLog("SQL" , "[SQL]Connection information issue either driver or address : " + e.toString(), "Critical");
+        //System.out.println(e);
         throw new RuntimeException();
     }
   }
@@ -43,7 +45,8 @@ public static int checkUser(String username, String android_id) {
 		SQLConnect();
 		int result = 0;
 		int queryOut = 0;
-		System.out.println(username + "    " + android_id);
+		logA.doLog("SQL" , "[SQL]Checking user : " + username + " & " + android_id, "Info");
+		//System.out.println(username + "    " + android_id);
 		try {
 
 			stmt = conn.createStatement();
@@ -62,7 +65,8 @@ public static int checkUser(String username, String android_id) {
 			}
 
 		} catch (Exception e) {
-			System.out.println(e);
+			logA.doLog("SQL" , "[SQL]SQL query issue was encountered causing SQL failure : " + e.toString(), "Critical");
+			// System.out.println(e);
 			throw new RuntimeException(e);
 		} finally {
 			close();
@@ -78,7 +82,8 @@ private static int validDeviceCheck(int result, int queryOut, String android_id)
 	res1 = stmt.executeQuery("select id from devices where userid = " + queryOut + " and active = 1 and android_id = '" + android_id + "'");
 	if (!res1.isBeforeFirst()) 
 	{
-		System.out.println("User has yet to verify this device"); // Username exists but no valid devices
+		logA.doLog("SQL" , "[SQL]Device Check = User has yet to verify device : " + android_id, "Info");
+		// System.out.println("User has yet to verify this device"); // Username exists but no valid devices
 		return 1;
 	} 
 	else 
@@ -95,7 +100,7 @@ private static int extractUserID(int queryOut) throws SQLException {
 	{
 		int value = res.getInt(1);
 		queryOut = value;
-		System.out.println("RETURNED USER ID : " + queryOut);
+		// System.out.println("RETURNED USER ID : " + queryOut);
 	}
 	return queryOut;
 }
@@ -111,12 +116,13 @@ public static int checkValidDomain(String username) throws SQLException {
 	res = stmt.executeQuery("call sp_Confirm_Valid_Domain('" + username +"')"); // Create query that extracts the domain from username and checks it against db white list, if correct then go into creation method
 	if (!res.isBeforeFirst()) 
 	{
-		System.out.println("Invalid domain"); // Username exists but the password is incorrect
+		logA.doLog("SQL" , "[SQL]User has tried to log in with an invalid domain : " + username, "Warning");
+		// System.out.println("Invalid domain"); // Username exists but the password is incorrect
 		ret = 0;
 	} 
 	else
 	{
-		System.out.println("Valid domain");
+		// System.out.println("Valid domain");
 		ret = 1;
 	}
 	close();
@@ -124,6 +130,7 @@ public static int checkValidDomain(String username) throws SQLException {
 	}
 	catch(Exception e)
 	{
+		logA.doLog("SQL" , "[SQL]Undetermined error was encountered causing query failure! : " + e.toString(), "Critical");
 		e.printStackTrace();
 		throw new RuntimeException(e);
 	}
@@ -132,7 +139,7 @@ public static int checkValidDomain(String username) throws SQLException {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  public static void findUser() throws Exception {
+  /*public static void findUser() throws Exception {  // What is this for?
       try{
       // Statements allow to issue SQL queries to the database
       stmt = conn.createStatement();
@@ -152,13 +159,13 @@ public static int checkValidDomain(String username) throws SQLException {
     } finally {
       close();
     }
-  }
+  }*/
   
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   
 
-  private static void writeResultSet(ResultSet res) throws SQLException {
+ /* private static void writeResultSet(ResultSet res) throws SQLException {
     // ResultSet is initially before the first data set
     while (res.next()) {
       // It is possible to get the columns via name
@@ -170,7 +177,7 @@ public static int checkValidDomain(String username) throws SQLException {
       System.out.println("Username: " + username);
       System.out.println("usertype: " + usertype);
     }
-  }
+  }*/
   
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -185,7 +192,8 @@ public static int checkValidDomain(String username) throws SQLException {
 				res = stmt.executeQuery("call sp_Create_New_User_With_Invalid_Device('" + username + "','" + android_id + "','" + key + "', "+ ran + ")");
 				MailRoom.sendMail(username, ran, android_id);
 			} catch (SQLException e) {
-				e.printStackTrace();
+				logA.doLog("SQL" , "[SQL]Query error while creating new user : " + username + " \nError is : " + e.toString(), "Critical");
+				// e.printStackTrace();
 				throw new RuntimeException(e);
 			}
 			finally{
@@ -206,6 +214,7 @@ public static int checkValidDomain(String username) throws SQLException {
 		res = stmt.executeQuery("call sp_Create_Invalid_Device('" + username + "','" + android_id + "','" + key + "',"+ ran +")");
 		MailRoom.sendMail(username, ran, android_id);
 	} catch (SQLException e) {
+		logA.doLog("SQL" , "[SQL]Query error while creating invalid device " + android_id + " for user : " + username + " \nError is : " + e.toString(), "Critical");
 		e.printStackTrace();
 		throw new RuntimeException(e);
 	}
@@ -233,7 +242,8 @@ public static int checkValidDomain(String username) throws SQLException {
 			close();
 			return 1;
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logA.doLog("SQL" , "[SQL]Query error while checkintg status of device : " + android_id + " \nError is : " + e.toString(), "Critical");
+			//e.printStackTrace();
 			throw new RuntimeException(e);
 		}
  }
@@ -251,7 +261,8 @@ public static int checkValidDomain(String username) throws SQLException {
 					.executeQuery("call sp_Add_Dataview_To_User('" + username + "','" + entity + "','" + xpath + "')");
 			// MailRoom.sendMail(username);
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logA.doLog("SQL" , "[SQL]Query error while adding dataview " + xpath + " to user : " + username + " \nError is : " + e.toString(), "Critical");
+			//e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			close();
@@ -271,7 +282,8 @@ public static void verifyStoredDevice(String android_id, String verification)
 	res = stmt.executeQuery("call sp_verify_device('" + android_id + "'," + random + ")");
 	//MailRoom.sendMail(username);
 	} catch (SQLException e) {
-	e.printStackTrace();
+	logA.doLog("SQL" , "[SQL]Error while conducting verification for device : " + android_id + " with verification code : "+ verification + " \nError is : " + e.toString(), "Critical");
+	//e.printStackTrace();
 	throw new RuntimeException(e);
 	}
 	finally{
@@ -292,7 +304,8 @@ public static void removeCustomDataview(String username, String entity, String x
 				.executeQuery("call sp_remove_dataview_from_user('" + username + "','" + xpath + "')");
 		// MailRoom.sendMail(username);
 	} catch (SQLException e) {
-		e.printStackTrace();
+		logA.doLog("SQL" , "[SQL]Error while removing xpath " + xpath + " from user : " + username + " \nError is : " + e.toString(), "Critical");
+		//e.printStackTrace();
 		throw new RuntimeException(e);
 	} finally {
 		close();
@@ -316,7 +329,8 @@ while (res.next())
 	resArray.add(xpath);
 }
 } catch (SQLException e) {
-e.printStackTrace();
+logA.doLog("SQL" , "[SQL]Query error while retrieving dataviews subscribed to user : " + username + " \nError is : " + e.toString(), "Critical");
+//e.printStackTrace();
 throw new RuntimeException(e);
 }
 finally{
@@ -342,6 +356,7 @@ return resArray;
         conn.close();
       }
     } catch (Exception e) {
+    	logA.doLog("SQL" , "[SQL]SQL connection has failed to close! \nError is : " + e.toString(), "Critical");
 
     }
   }

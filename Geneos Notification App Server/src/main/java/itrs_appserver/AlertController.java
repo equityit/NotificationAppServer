@@ -29,35 +29,37 @@ public class AlertController {
 		public static Connection conn;
 	    public static Map<String,Alert> alertList = new HashMap<String,Alert>();
 	    private static DataSet dataSet;
-	    public static ArrayList<String> registrationList = new ArrayList<String>();
+	    static LtA logA = new LogObject();
+	    //public static ArrayList<String> registrationList = new ArrayList<String>();
 	    
 	  
 	public static void startSample(String path) throws InterruptedException {
-	   conn = OpenAccess.connect(GreetingController.getOAkey()); // This is one of the two points that will need adaptation for other use
+	   conn = OpenAccess.connect(GreetingController.getOAkey()); 
 	   System.out.println(GreetingController.monitoringThreadList.get(path).getRegList().getRegList());
 	   runScan(path);
 	}
 	
-	public static ArrayList<String> getRegistrationList()
+	/*public static ArrayList<String> getRegistrationList()
 	{
 		return registrationList;
-	}
+	}*/
 
 	private static void runScan(String xpath) throws InterruptedException {
-	   while (1 == 1) {
-	       run(xpath); // CALL TESTING OF COLLECTED XPATHS WHICH IS INFINITE
-	       try {
-              Thread.sleep(10000);    // SLEEP FOR 10 SECONDS BEFORE TESTING THE XPATH RESULTS TO PREVENT SPAMMING, CAN BE REDUCED TO REAL TIME IF REQUIRED AND CAN BE HANDLED
-	            } catch (InterruptedException ex) {
-	            	System.out.println("Internal interrupt happens");
-	                return;
-	            }
-	        }
+		while (1 == 1) {
+			run(xpath);
+			try {
+				Thread.sleep(10000);
+			} catch (InterruptedException ex) {
+				System.out.println("Internal interrupt happens");
+				logA.doLog("Thread" , "[T-INFO]Thread internal termination confirmation", "Info");
+				return;
+			}
+		}
 	}
 
 	public static void run(String dvPath) {
 		try {
-			System.out.println(dvPath);
+			logA.doLog("Thread" , "Thread xpath exection for path : " + dvPath, "Info");
 			DataSetQuery query = DataSetQuery.create(dvPath + "/rows/row[wild(@name,\"*\")]/cell");
 			final DataSetTracker dataSetTracker = new DataSetTracker();
 			final CountDownLatch cdl = new CountDownLatch(1);
@@ -66,32 +68,36 @@ public class AlertController {
 				@Override
 				public void callback(final DataSetChange change) {
 					dataSet = dataSetTracker.update(change);
-					cdl.countDown();
+					if(!dataSet.getItems().isEmpty()){ cdl.countDown(); }   ///// ALTERATION !!!!!!!!!
 				}
 			}, new ErrorCallback() {
 				@Override
 				public void error(final Exception exception) {
-					System.err.println("Error retrieving DataSet: " + exception);
+					logA.doLog("Thread" , "[T-ERROR]Error retrieving DataSet: " + exception, "Critical");
+					cdl.countDown();
+					throw new RuntimeException();
 				}
 			});
 
 			try {
-				cdl.await(5, SECONDS);
+				cdl.await(1, SECONDS);
 				c.close();
 			} catch (InterruptedException e) {
-				System.out.println("Status ------- RED");
 				e.printStackTrace();
+				logA.doLog("Thread" , "[T-ERROR]Thread cycle execution failed", "Critical");
+				logA.doLog("Thread" , e.toString(), "Critical");
 			}
 			threadAnalysis(dvPath);
 		} catch (Exception e) {
-			System.out.println(e);
-			e.printStackTrace();
-			System.out.println("Status ------- RED");
+			logA.doLog("Thread" , "[T-ERROR]Thread cycle execution failed", "Critical");
+			logA.doLog("Thread" , e.toString(), "Critical");
+			throw new RuntimeException();
 		}
 	}
 
 	private static void threadAnalysis(String dvPath) throws JSONException, IOException {
 		System.out.println("//////////////////////////////// \nTHREAD SUCCESSFUL \n");
+		logA.doLog("Thread" , "[T-INFO]Thread Execution successful", "Info");
 		alertChecker(dvPath);
 	}
 

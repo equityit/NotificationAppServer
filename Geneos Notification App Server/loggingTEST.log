@@ -1,0 +1,20 @@
+Jan 06, 2016 1:19:38 PM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 06, 2016 1:19:38 PM itrs_appserver.LogObject doLog
+SEVERE: There was an error with the SQL configuration or address, please confirm details. System shutting down.
+Jan 06, 2016 1:28:04 PM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 06, 2016 1:28:07 PM itrs_appserver.LogObject doLog
+INFO: Server Boot variables passed verification
+Jan 06, 2016 1:29:30 PM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 06, 2016 1:29:39 PM itrs_appserver.LogObject doLog
+INFO: Server Boot variables passed verification
+Jan 11, 2016 9:19:07 AM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 11, 2016 9:19:07 AM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+Jan 11, 2016 9:19:16 AM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Dataview list was successfully updated.
+Jan 11, 2016 9:19:16 AM itrs_appserver.LogObject doLog
+INFO: Server Boot variables passed verification

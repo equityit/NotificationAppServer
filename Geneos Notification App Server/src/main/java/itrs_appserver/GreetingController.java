@@ -51,6 +51,8 @@ public class GreetingController {
     public static Map<String,NotificationList> monitoringThreadList = new HashMap<String, NotificationList>();
     private ExecutorService executor = Executors.newFixedThreadPool(200);
     public static String currentDataviewEntityList;
+    static LtA logA = new LogObject();
+
     
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,6 +62,7 @@ public class GreetingController {
     @RequestMapping(value="/login", method=RequestMethod.POST)		
     public String login(@RequestParam(value="username", defaultValue="") String username, @RequestParam(value="android_id", defaultValue="") String android_id, @RequestParam(value="key", defaultValue="") String key) throws Exception 
     {
+    	logA.doLog("Controller" , "Login attempt with username : " + username , "Info");
     	try{
 		int check = checkLoggedInStatus(username, android_id); //Change this to search for android_id so the same machine cant have two instances???
 		if(check == 0)
@@ -74,6 +77,7 @@ public class GreetingController {
 	    			appUser holder = userObjects.get(username);
 	    			holder.addDevice(android_id, key);
 	    			refreshDeviceToStoredDataviews(username);
+	    			logA.doLog("Controller" , username + " logged in successfully on device " + android_id, "Info");
 	    			return "successfully logged in"; // Collect data - tells device to scrape the user account on server for watch list	
 	    		}
 	    		else
@@ -81,6 +85,7 @@ public class GreetingController {
 			    	appUser holder = new appUser(username, android_id, key, userid); // THIS NEEDS UPDATING TO NEW FORMAT!!!!!!!
 			    	userObjects.put(username,holder);
 			    	subscribeUserToStoredDataviews(username);
+			    	logA.doLog("Controller" , "Initial log on for " + username + " with device " + android_id, "Info");
 			        return "successfully logged in";	// Collect data - tells device to scrape the user account on server for watch list	
 		    	}
 	    	}
@@ -89,9 +94,12 @@ public class GreetingController {
 	    	{		// YOU NEED TO ADD A LIMITER TO CATCH DUPLICATE ATTEMPTS OF THE SAME DEVICE WITHOUT IT BEING AUTHORISED
 	    		
 	    		int deviceCount = SQLControl.checkDeviceExistence(android_id);
-	    		if(deviceCount!=0)
+	    		if(deviceCount!=0){
+	    			logA.doLog("Controller" , username + " has already been sent a verification email for " + android_id, "Info");
 	    			return "This device has already been registered, please check your email for a verification code";
+	    		}
 	    		SQLControl.createInValidDevice(username, android_id, key);
+	    		logA.doLog("Controller" , username + " has been sent a verification email for " + android_id, "Info");
 	    		return "We have sent you a device authorisation email, please enter the code provided to verify this device";
 	    	}
 	    	
@@ -102,10 +110,14 @@ public class GreetingController {
 				if(x != 0) // user name/email has a whitelist domain so they are allowed to be a user
 				{
 					SQLControl.createUser(username, android_id, key);
+					logA.doLog("Controller" , "New user " + username + " has attempted to login, verification email sent and account is in probation.", "Info");
 					return "Since you are a new user you will need to verify your device. We have sent you an email, please enter the code provided to activate your device";
 				}
 				else
+				{
+					logA.doLog("Controller" , "Attempted login made by unauthorised user with username : " + username, "Warning");
 					return "You are not authorised to use this app, please contact your local administrator";
+				}
 	    	}
 	    	
 	    	
@@ -117,6 +129,8 @@ public class GreetingController {
     	catch(RuntimeException e)
     	{
     		e.printStackTrace();
+    		logA.doLog("Controller" , "Login error has occured, please see associated stack trace for more information. Username : " + username + " android_id : " + android_id, "Critical");
+    		logA.doLog("Controller" , e.toString(), "Info");
     		return "An error occured - Please contact your administrator";
     	}
 		
@@ -143,6 +157,7 @@ public class GreetingController {
     		System.out.println(path);
     		restartNotifyList(path);
     		System.out.println("The path being restarted :" + path);
+    		logA.doLog("Controller" , "Thread has been restarted/updated for the xpath : " + path, "Info");
     	}
     	
     }
@@ -168,16 +183,18 @@ public class GreetingController {
 	public String logout(@RequestParam(value = "username", defaultValue = "") String username,
 			@RequestParam(value = "android_id", defaultValue = "") String android_id) throws Exception {
 		int deviceCheck = userObjects.get(username).removeDevice(android_id);
-		System.out.println("The status of the device check is :" + deviceCheck);
+		logA.doLog("Controller" , "The status of the device check for" + username + " is :" + deviceCheck , "Info");
+		//System.out.println("The status of the device check is :" + deviceCheck);
 		if (deviceCheck == 1) {
-			System.out.println("User removed");
+			//System.out.println("User removed");
 			removeUserFromDataviews(username);
 			userObjects.remove(username);
+			logA.doLog("Controller" , username + " has been successfully logged out." , "Info");
 		} else {
-			System.out.println("Device removed");
+			//System.out.println("Device removed");
+			logA.doLog("Controller" , android_id + " from the user " + username + " has been successfully logged out." , "Info");
 			refreshDeviceToStoredDataviews(username);
 		}
-
 		return "This device has been successfully logged out";
 	}
 
@@ -187,7 +204,8 @@ public class GreetingController {
 		for (String path : xpaths) {
 			System.out.println(path);
 			removeUserFromNotifyList(username, path);
-			System.out.println("The path being restarted :" + path + "   For User :" + username);
+			logA.doLog("Controller" , path + "  has been restarted for the user " + username , "Info");
+			//System.out.println("The path being restarted :" + path + "   For User :" + username);
 		}
 
 	}
@@ -198,12 +216,14 @@ public class GreetingController {
 		int number = current.removeUser(username);
 		System.out.println("This is the returned number : " + number);
 		if (number == 1) {
+			logA.doLog("Controller" , "Thread terminated : " + xpath  , "Info");
 			current = null;
 		} else if (number == 0) {
-			System.out.println("It shouldn't get in here");
+			// System.out.println("It shouldn't get in here");
 			Callable<Long> worker = new MyAnalysis(xpath);
 			Future<Long> thread = executor.submit(worker);
 			current.setFuture(thread);
+			logA.doLog("Controller" , "Thread restarted : " + xpath  , "Info");
 		}
 	}
 
@@ -217,8 +237,10 @@ public String setCustomDV(@RequestParam(value="entity", defaultValue="") String 
 String ret = "";
 
 if(!userObjects.containsKey(userName)) // Capture for if the user exists in the system, can't add to a user that does not exist
-return "You are not a valid user";
-
+{
+	logA.doLog("Controller" , "Attempted access by invalid and potentially harmful user utilising username : " + userName , "Critical");
+	return "You are not a valid user";
+}
 appUser current = userObjects.get(userName);
 
 ret = current.ammendCustomDV(entity, xpath);		// Returns either a result as seen in the comparison below, or xpath or previous custom DV in entity that user is subscribed too. Returned xpath used for updating.
@@ -309,15 +331,9 @@ public void editDV(@RequestParam(value="rentity", defaultValue="") String rentit
 	public String verifyDevice(@RequestParam(value="dev_id", defaultValue="") String android_id, @RequestParam(value="verification", defaultValue="") String verification) 
 	{
 		SQLControl.verifyStoredDevice(android_id, verification);
+		logA.doLog("Controller" , "Veritication email sent for devioce : " + android_id, "Info");
 		return "<!DOCTYPE html><html><font face=\"interface,sans-serif\"><head><title>Geneos Notification App Device Registrations success</title></head><body><center><img src=\"https://www.itrsgroup.com/sites/all/themes/bootstrap_sub_theme/logo.png\" alt=\"logo.com\" width=\"100\" height=\"40.5\"><h1>Device subscribed successfully to Geneos Notification Server.</h1><p>Your device has been successfully registered to your account for the Geneos Notification App.</p><p>If you experience any problems connecting your device please contact your database administrator to verify the devices associated with your account. You will now be able to log into your Notification server with this device without any further authentication.</p><small><p>© ITRS 2015, ALL RIGHTS RESERVED - Created by Connor Morley & Daniel Ratnaras </font></center></body></html>";
 	}
-    
-    @RequestMapping(value="/test")		
-	public String test() 
-	{
-    	return "<!DOCTYPE html><html><font face=\"interface,sans-serif\"><head><title>Geneos Notification App Device Registrations success</title></head><body><center><img src=\"https://www.itrsgroup.com/sites/all/themes/bootstrap_sub_theme/logo.png\" alt=\"logo.com\" width=\"100\" height=\"40.5\"><h1>Device subscribed successfully to Geneos Notification Server.</h1><p>Your device has been successfully registered to your account for the Geneos Notification App.</p><p>If you experience any problems connecting your device please contact your database administrator to verify the devices associated with your account. You will now be able to log into your Notification server with this device without any further authentication.</p><small><p>© ITRS 2015, ALL RIGHTS RESERVED - Created by Connor Morley & Daniel Ratnaras </font></center></body></html>";
-	}
-
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -326,17 +342,7 @@ public void editDV(@RequestParam(value="rentity", defaultValue="") String rentit
     @RequestMapping(value="/getAllDataview", method=RequestMethod.GET)			// First attempt to thread all DV list requests, needs testing		
 	public String getAllDataview() throws JSONException, InterruptedException, ExecutionException 
 	{
-    	
-/*    	ExecutorService exec = Executors.newSingleThreadExecutor();
-    	Callable<String> callable = new Callable<String>() {
-    		@Override
-    		public String call() throws JSONException{
-    			return DataviewListGenerator.collectDataviews().toString();
-    		}
-    	};
-    	Future<String> future = exec.submit(callable);
-    	String dv = future.get();
-    	exec.shutdown();*/
+    	logA.doLog("Controller" , "Dataview list requested", "Info");
     	return currentDataviewEntityList;
 	}
     
@@ -346,6 +352,7 @@ public void editDV(@RequestParam(value="rentity", defaultValue="") String rentit
     @RequestMapping(value="/updatedv", method=RequestMethod.GET)
     public static void updateDV() throws InterruptedException, ExecutionException
     {
+    	logA.doLog("Controller" , "[DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating", "Info");
     	ExecutorService exec = Executors.newSingleThreadExecutor();
     	Callable<String> callable = new Callable<String>() {
     		@Override
@@ -357,6 +364,7 @@ public void editDV(@RequestParam(value="rentity", defaultValue="") String rentit
     	String dv = future.get();
     	exec.shutdown();
     	currentDataviewEntityList = dv;
+    	logA.doLog("Controller" , "[DVLIST UPDATE]Dataview list was successfully updated.", "Info");
     }
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -365,6 +373,7 @@ public void editDV(@RequestParam(value="rentity", defaultValue="") String rentit
     @RequestMapping(value="/getrow", method=RequestMethod.POST)					
 	public String getRow(@RequestParam(value="xpath", defaultValue="") String xpath) throws InterruptedException, ExecutionException
 	{
+    	logA.doLog("Controller" , "Row request made for row at xpath : " + xpath, "Info");
     	String ret = null;
     	ExecutorService exec = Executors.newSingleThreadExecutor();
     	Callable<String> callable = new Callable<String>() {
@@ -420,7 +429,7 @@ public void editDV(@RequestParam(value="rentity", defaultValue="") String rentit
         @Override
         public Long call() throws InterruptedException
         {
-        	System.out.println("THIS IS WITHIN THE THREAD PATH: " + xpath);
+        	logA.doLog("Thread" , "[T-INFO]Initialization of thread for xpath : " + xpath, "Info");
         	Long x = (long) 1;
             AlertController.startSample(xpath);
 			return x;
