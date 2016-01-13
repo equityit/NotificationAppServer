@@ -8,14 +8,14 @@ import javax.mail.PasswordAuthentication;
 import java.util.Properties;
 
 
-public class MailRoom {
+public class EmailController {
 
     private static String SMTP_HOST_NAME; 
     private static String SMTP_AUTH_USER; 
     private static String SMTP_AUTH_PWD;
 
     public static void sendMail(String username, int random, String android_id) throws Exception{
-       new MailRoom().test(username, random, android_id);
+       new EmailController().test(username, random, android_id);
     }
 
     public void test(String username, int random, String android_id) throws Exception{

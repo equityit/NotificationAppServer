@@ -5,7 +5,6 @@ import static com.itrsgroup.openaccess.common.Severity.WARNING;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
@@ -24,25 +23,28 @@ import com.itrsgroup.openaccess.dataset.DataSetItem;
 import com.itrsgroup.openaccess.dataset.DataSetQuery;
 import com.itrsgroup.openaccess.dataset.DataSetTracker;
 
-public class AlertController {
-	
-		public static Connection conn;
-	    public static Map<String,Alert> alertList = new HashMap<String,Alert>();
-	    private static DataSet dataSet;
-	    static LtA logA = new LogObject();
-	    //public static ArrayList<String> registrationList = new ArrayList<String>();
-	    
-	  
+public class ThreadInstance {
+	static LtA logA = new LogObject();
+	public static Connection conn;
+	public static Map<String, Alert> alertList = new HashMap<String, Alert>();
+	private static DataSet dataSet;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public static void startSample(String path) throws InterruptedException {
-	   conn = OpenAccess.connect(GreetingController.getOAkey()); 
-	   System.out.println(GreetingController.monitoringThreadList.get(path).getRegList().getRegList());
-	   runScan(path);
+		conn = OpenAccess.connect(GreetingController.getOAkey());
+		System.out.println(ThreadController.monitoringThreadList.get(path).getRegList().getRegList());
+		runScan(path);
 	}
-	
-	/*public static ArrayList<String> getRegistrationList()
-	{
-		return registrationList;
-	}*/
+
+/*public static ArrayList<String> getRegistrationList()
+{
+return registrationList;
+}*/
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	private static void runScan(String xpath) throws InterruptedException {
 		while (1 == 1) {
@@ -51,15 +53,17 @@ public class AlertController {
 				Thread.sleep(10000);
 			} catch (InterruptedException ex) {
 				System.out.println("Internal interrupt happens");
-				logA.doLog("Thread" , "[T-INFO]Thread internal termination confirmation", "Info");
+				logA.doLog("Thread", "[T-INFO]Thread internal termination confirmation", "Info");
 				return;
 			}
 		}
 	}
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public static void run(String dvPath) {
 		try {
-			logA.doLog("Thread" , "Thread xpath exection for path : " + dvPath, "Info");
+			logA.doLog("Thread", "Thread xpath exection for path : " + dvPath, "Info");
 			DataSetQuery query = DataSetQuery.create(dvPath + "/rows/row[wild(@name,\"*\")]/cell");
 			final DataSetTracker dataSetTracker = new DataSetTracker();
 			final CountDownLatch cdl = new CountDownLatch(1);
@@ -68,12 +72,14 @@ public class AlertController {
 				@Override
 				public void callback(final DataSetChange change) {
 					dataSet = dataSetTracker.update(change);
-					if(!dataSet.getItems().isEmpty()){ cdl.countDown(); }   ///// ALTERATION !!!!!!!!!
+					if (!dataSet.getItems().isEmpty()) {
+						cdl.countDown();
+					}   ///// ALTERATION !!!!!!!!!
 				}
 			}, new ErrorCallback() {
 				@Override
 				public void error(final Exception exception) {
-					logA.doLog("Thread" , "[T-ERROR]Error retrieving DataSet: " + exception, "Critical");
+					logA.doLog("Thread", "[T-ERROR]Error retrieving DataSet: " + exception, "Critical");
 					cdl.countDown();
 					throw new RuntimeException();
 				}
@@ -84,22 +90,28 @@ public class AlertController {
 				c.close();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
-				logA.doLog("Thread" , "[T-ERROR]Thread cycle execution failed", "Critical");
-				logA.doLog("Thread" , e.toString(), "Critical");
+				logA.doLog("Thread", "[T-ERROR]Thread cycle execution failed", "Critical");
+				logA.doLog("Thread", e.toString(), "Critical");
 			}
 			threadAnalysis(dvPath);
 		} catch (Exception e) {
-			logA.doLog("Thread" , "[T-ERROR]Thread cycle execution failed", "Critical");
-			logA.doLog("Thread" , e.toString(), "Critical");
+			logA.doLog("Thread", "[T-ERROR]Thread cycle execution failed", "Critical");
+			logA.doLog("Thread", e.toString(), "Critical");
 			throw new RuntimeException();
 		}
 	}
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	private static void threadAnalysis(String dvPath) throws JSONException, IOException {
 		System.out.println("//////////////////////////////// \nTHREAD SUCCESSFUL \n");
-		logA.doLog("Thread" , "[T-INFO]Thread Execution successful", "Info");
+		logA.doLog("Thread", "[T-INFO]Thread Execution successful", "Info");
 		alertChecker(dvPath);
 	}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	private static void alertChecker(String dvPath) throws JSONException, IOException {
 		for (DataSetItem item : dataSet.getItems()) {
@@ -126,9 +138,15 @@ public class AlertController {
 		}
 	}
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	private static boolean isValidAlert(Severity item) {
 		return item == Severity.OK || item == WARNING || item == CRITICAL;
 	}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	private static boolean isNewAlert(Severity item) {
 		return item != Severity.OK && item != Severity.UNDEFINED;

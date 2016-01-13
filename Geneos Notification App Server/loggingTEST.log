@@ -18,3 +18,14 @@ Jan 11, 2016 9:19:16 AM itrs_appserver.LogObject doLog
 INFO: [DVLIST UPDATE]Dataview list was successfully updated.
 Jan 11, 2016 9:19:16 AM itrs_appserver.LogObject doLog
 INFO: Server Boot variables passed verification
+Jan 13, 2016 2:33:50 PM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 13, 2016 2:33:51 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+Jan 13, 2016 2:33:53 PM itrs_appserver.LogObject doLog
+INFO: [DT-INFO]Collected Dataviews : [] 
+With a length of 2
+Jan 13, 2016 2:33:54 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Dataview list was successfully updated.
+Jan 13, 2016 2:33:54 PM itrs_appserver.LogObject doLog
+INFO: Server Boot variables passed verification

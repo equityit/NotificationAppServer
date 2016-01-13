@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class appUser {
+public class User {
 
 	private final String username;
 	public Map<String, String> deviceList = new HashMap<String, String>();
 	private ArrayList<CustomDataView> pathList = new ArrayList<CustomDataView>();
 
-	public appUser(String uname, String a_id, String key, int id) {
+	public User(String uname, String a_id, String key, int id) {
 		this.username = uname;
 		deviceList.put(a_id, key);
 	}
@@ -59,7 +59,7 @@ public class appUser {
 		if (i == 0)
 		{ 											// If no entity with the name is found create a customer dataview for that entity
 			pathList.add(new CustomDataView(Entity, Xpath));	// Add custom data view to user for that specific entity
-			SQLControl.addCustomDataView(username, Entity, Xpath);
+			DatabaseController.addCustomDataView(username, Entity, Xpath);
 		}	
 		return ret;	
 	}
@@ -73,7 +73,7 @@ public class appUser {
 		for (CustomDataView test : pathList) {
 			if (test.getXpath().equals(xpath)) {		// Cycles through the dataview items to see if there is an entity match, if one is found the object is updated 
 				System.out.println(test);
-				SQLControl.removeCustomDataview(username, entity, xpath);
+				DatabaseController.removeCustomDataview(username, entity, xpath);
 				removal = test;
 				i = 1;
 				break;

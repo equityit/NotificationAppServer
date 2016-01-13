@@ -35,7 +35,7 @@ public class Alert {
 			throw new RuntimeException("Value submitted to JSON constrcutor found to be null");
 		JSONObject testingObj = new JSONObject();
 		JSONObject internal = new JSONObject();
-		testingObj.put("registration_ids", new JSONArray(GreetingController.monitoringThreadList.get(dvPath).getRegList().getRegList()));
+		testingObj.put("registration_ids", new JSONArray(ThreadController.monitoringThreadList.get(dvPath).getRegList().getRegList()));
 		internal.put("message", message);
 		internal.put("xpath", xpath);
 		internal.put("value", value);

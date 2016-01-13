@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class SQLControl {
+public class DatabaseController {
 	
   private static String address = null;
   private static Connection conn = null;
@@ -190,7 +190,7 @@ public static int checkValidDomain(String username) throws SQLException {
 				stmt = conn.createStatement();
 				int ran = random.nextInt();
 				res = stmt.executeQuery("call sp_Create_New_User_With_Invalid_Device('" + username + "','" + android_id + "','" + key + "', "+ ran + ")");
-				MailRoom.sendMail(username, ran, android_id);
+				EmailController.sendMail(username, ran, android_id);
 			} catch (SQLException e) {
 				logA.doLog("SQL" , "[SQL]Query error while creating new user : " + username + " \nError is : " + e.toString(), "Critical");
 				// e.printStackTrace();
@@ -212,7 +212,7 @@ public static int checkValidDomain(String username) throws SQLException {
 		stmt = conn.createStatement();
 		int ran = random.nextInt();
 		res = stmt.executeQuery("call sp_Create_Invalid_Device('" + username + "','" + android_id + "','" + key + "',"+ ran +")");
-		MailRoom.sendMail(username, ran, android_id);
+		EmailController.sendMail(username, ran, android_id);
 	} catch (SQLException e) {
 		logA.doLog("SQL" , "[SQL]Query error while creating invalid device " + android_id + " for user : " + username + " \nError is : " + e.toString(), "Critical");
 		e.printStackTrace();

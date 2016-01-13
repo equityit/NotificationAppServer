@@ -21,7 +21,7 @@ public class regListItem {
 		ArrayList<String> ret = new ArrayList<String>();
 		for (String username : users)
 		{
-			ArrayList<String> regs = GreetingController.userObjects.get(username).getRegistrations();
+			ArrayList<String> regs = UserController.userObjects.get(username).getRegistrations();
 				for(String reg : regs)
 				{
 					ret.add(reg);
