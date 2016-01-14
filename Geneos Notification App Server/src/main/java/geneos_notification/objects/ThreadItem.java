@@ -1,19 +1,26 @@
-package itrs_appserver;
+package geneos_notification.objects;
 
 import java.util.ArrayList;
 import java.util.concurrent.Future;
 
-public class ThreadList {
+public class ThreadItem {
 	
 	private  String xpath;
 	private  ArrayList<String> monitoringUsers = new ArrayList<String>(); // Change to map with the user map Id as key storing only registration key
 	private  Future<Long> thread;
 	private	 regListItem reg;
 	
-	public ThreadList(String path, Future<Long> monitor, String userName)
+	public ThreadItem(String path, Future<Long> monitor, String userName)
 	{
 		this.xpath = path;
 		this.thread = monitor;
+		this.monitoringUsers.add(userName);
+		this.reg = new regListItem(monitoringUsers);
+	}
+	
+	public ThreadItem(String path, String userName)
+	{
+		this.xpath = path;
 		this.monitoringUsers.add(userName);
 		this.reg = new regListItem(monitoringUsers);
 	}

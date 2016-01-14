@@ -1,8 +1,10 @@
-package itrs_appserver;
+package geneos_notification.objects;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import geneos_notification.controllers.DatabaseController;
 
 public class User {
 
@@ -10,7 +12,7 @@ public class User {
 	public Map<String, String> deviceList = new HashMap<String, String>();
 	private ArrayList<CustomDataView> pathList = new ArrayList<CustomDataView>();
 
-	public User(String uname, String a_id, String key, int id) {
+	public User(String uname, String a_id, String key) {
 		this.username = uname;
 		deviceList.put(a_id, key);
 	}

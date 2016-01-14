@@ -7,6 +7,8 @@ import java.io.IOException;
 import org.json.JSONException;
 import org.junit.Test;
 
+import geneos_notification.controllers.TransmissionHandler;
+
 public class TransmissionHandlerTest {
 
 	@Test

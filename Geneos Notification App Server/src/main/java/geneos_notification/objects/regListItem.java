@@ -1,6 +1,8 @@
-package itrs_appserver;
+package geneos_notification.objects;
 
 import java.util.ArrayList;
+
+import geneos_notification.controllers.UserController;
 
 public class regListItem {
 	

@@ -6,6 +6,8 @@ import org.json.JSONException;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import geneos_notification.objects.Alert;
+
 public class AlertTest {
 	static Alert tester;
 

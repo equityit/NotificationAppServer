@@ -1,4 +1,4 @@
-package itrs_appserver;
+package geneos_notification.thread_operations;
 
 import static com.itrsgroup.openaccess.common.Severity.CRITICAL;
 import static com.itrsgroup.openaccess.common.Severity.WARNING;
@@ -22,6 +22,13 @@ import com.itrsgroup.openaccess.dataset.DataSetChange;
 import com.itrsgroup.openaccess.dataset.DataSetItem;
 import com.itrsgroup.openaccess.dataset.DataSetQuery;
 import com.itrsgroup.openaccess.dataset.DataSetTracker;
+
+import geneos_notification.controllers.GreetingController;
+import geneos_notification.controllers.ThreadController;
+import geneos_notification.controllers.TransmissionHandler;
+import geneos_notification.loggers.LogObject;
+import geneos_notification.loggers.LtA;
+import geneos_notification.objects.Alert;
 
 public class ThreadInstance {
 	static LtA logA = new LogObject();

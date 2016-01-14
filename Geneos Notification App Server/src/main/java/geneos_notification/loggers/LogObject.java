@@ -1,10 +1,10 @@
-package itrs_appserver;
+package geneos_notification.loggers;
 
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-class LogObject implements LtA {
+public class LogObject implements LtA {
 	@Override
     public void doLog(String sentName, String logInfo, String level) {
 		if(level.equals("Info"))

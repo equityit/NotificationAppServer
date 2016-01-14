@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import com.itrsgroup.openaccess.OpenAccess;
 
-import itrs_appserver.ThreadController.MyAnalysis;
+import geneos_notification.controllers.ThreadController.MyAnalysis;
 
 public class AlertControllerTest {
 	

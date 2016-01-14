@@ -29,3 +29,177 @@ Jan 13, 2016 2:33:54 PM itrs_appserver.LogObject doLog
 INFO: [DVLIST UPDATE]Dataview list was successfully updated.
 Jan 13, 2016 2:33:54 PM itrs_appserver.LogObject doLog
 INFO: Server Boot variables passed verification
+Jan 14, 2016 11:56:43 AM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 14, 2016 11:56:44 AM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+Jan 14, 2016 11:56:46 AM itrs_appserver.LogObject doLog
+INFO: [DT-INFO]Collected Dataviews : [] 
+With a length of 2
+Jan 14, 2016 11:56:46 AM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Dataview list was successfully updated.
+Jan 14, 2016 11:56:46 AM itrs_appserver.LogObject doLog
+SEVERE: [SQL]Query error while retrieving custom dataset 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: PROCEDURE test.sp_get_live_devices does not exist
+Jan 14, 2016 11:56:46 AM itrs_appserver.LogObject doLog
+INFO: Server Boot variables passed verification
+Jan 14, 2016 11:58:21 AM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 14, 2016 11:58:21 AM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+Jan 14, 2016 11:58:23 AM itrs_appserver.LogObject doLog
+INFO: [DT-INFO]Collected Dataviews : [] 
+With a length of 2
+Jan 14, 2016 11:58:23 AM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Dataview list was successfully updated.
+Jan 14, 2016 11:59:06 AM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 14, 2016 11:59:06 AM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+Jan 14, 2016 11:59:09 AM itrs_appserver.LogObject doLog
+INFO: [DT-INFO]Collected Dataviews : [] 
+With a length of 2
+Jan 14, 2016 11:59:09 AM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Dataview list was successfully updated.
+Jan 14, 2016 12:00:22 PM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 14, 2016 12:00:22 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+Jan 14, 2016 12:00:24 PM itrs_appserver.LogObject doLog
+INFO: [DT-INFO]Collected Dataviews : [] 
+With a length of 2
+Jan 14, 2016 12:00:24 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Dataview list was successfully updated.
+Jan 14, 2016 12:01:48 PM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 14, 2016 12:01:49 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+Jan 14, 2016 12:01:51 PM itrs_appserver.LogObject doLog
+INFO: [DT-INFO]Collected Dataviews : [] 
+With a length of 2
+Jan 14, 2016 12:01:51 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Dataview list was successfully updated.
+Jan 14, 2016 12:02:42 PM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 14, 2016 12:02:43 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+Jan 14, 2016 12:02:45 PM itrs_appserver.LogObject doLog
+INFO: [DT-INFO]Collected Dataviews : [] 
+With a length of 2
+Jan 14, 2016 12:02:45 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Dataview list was successfully updated.
+Jan 14, 2016 12:02:45 PM itrs_appserver.LogObject doLog
+INFO: Server Boot variables passed verification
+Jan 14, 2016 12:02:45 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:02:45 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:02:46 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:02:46 PM itrs_appserver.LogObject doLog
+SEVERE: [T-ERROR]Thread cycle execution failed
+Jan 14, 2016 12:02:46 PM itrs_appserver.LogObject doLog
+SEVERE: java.lang.NullPointerException
+Jan 14, 2016 12:04:26 PM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 14, 2016 12:04:27 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+Jan 14, 2016 12:04:29 PM itrs_appserver.LogObject doLog
+INFO: [DT-INFO]Collected Dataviews : [] 
+With a length of 2
+Jan 14, 2016 12:04:29 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Dataview list was successfully updated.
+Jan 14, 2016 12:04:29 PM itrs_appserver.LogObject doLog
+INFO: Server Boot variables passed verification
+Jan 14, 2016 12:04:29 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:04:29 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:04:29 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:04:40 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:04:40 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:04:50 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:04:51 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:06:04 PM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 14, 2016 12:06:05 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+Jan 14, 2016 12:06:13 PM itrs_appserver.LogObject doLog
+INFO: [DT-INFO]Collected Dataviews : [/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Android")]/sampler[(@name="AppTest")][(@type="")]/dataview[(@name="AppTest")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 3")][(@type="")]/dataview[(@name="New Sampler 3")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="SQL gateway")][(@type="")]/dataview[(@name="V1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="Diagnostics")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clusterNodes")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-gateways")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clients")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="New Sampler 1")][(@type="")]/dataview[(@name="test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="THISISATEST")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="Toolkit")][(@type="")]/dataview[(@name="Toolkit")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ICE MYSQL")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TEST ICE")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Instances")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Percentage use")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Trigger sample")][(@type="")]/dataview[(@name="Triggered")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Timestamp sql")][(@type="")]/dataview[(@name="timediff")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="eventlog")][(@type="")]/dataview[(@name="eventlog")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Win Services")][(@type="")]/dataview[(@name="Win Services")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="proc")][(@type="")]/dataview[(@name="proc")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 5")][(@type="")]/dataview[(@name="New Sampler 5")]] 
+With a length of 5418
+Jan 14, 2016 12:06:13 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Dataview list was successfully updated.
+Jan 14, 2016 12:06:13 PM itrs_appserver.LogObject doLog
+INFO: Server Boot variables passed verification
+Jan 14, 2016 12:06:13 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")]
+Jan 14, 2016 12:06:13 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:06:13 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")]
+Jan 14, 2016 12:06:13 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:06:13 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:06:13 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:06:23 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")]
+Jan 14, 2016 12:06:23 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:06:23 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:06:24 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:06:34 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")]
+Jan 14, 2016 12:06:34 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:06:34 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:06:34 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:06:54 PM itrs_appserver.LogObject doLog
+INFO: Server Boot Initiated
+Jan 14, 2016 12:06:55 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+Jan 14, 2016 12:07:03 PM itrs_appserver.LogObject doLog
+INFO: [DT-INFO]Collected Dataviews : [/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Android")]/sampler[(@name="AppTest")][(@type="")]/dataview[(@name="AppTest")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 3")][(@type="")]/dataview[(@name="New Sampler 3")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="SQL gateway")][(@type="")]/dataview[(@name="V1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="Diagnostics")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clusterNodes")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-gateways")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clients")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="New Sampler 1")][(@type="")]/dataview[(@name="test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="THISISATEST")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="Toolkit")][(@type="")]/dataview[(@name="Toolkit")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ICE MYSQL")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TEST ICE")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Instances")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Percentage use")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Trigger sample")][(@type="")]/dataview[(@name="Triggered")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Timestamp sql")][(@type="")]/dataview[(@name="timediff")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="eventlog")][(@type="")]/dataview[(@name="eventlog")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Win Services")][(@type="")]/dataview[(@name="Win Services")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="proc")][(@type="")]/dataview[(@name="proc")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 5")][(@type="")]/dataview[(@name="New Sampler 5")]] 
+With a length of 5418
+Jan 14, 2016 12:07:03 PM itrs_appserver.LogObject doLog
+INFO: [DVLIST UPDATE]Dataview list was successfully updated.
+Jan 14, 2016 12:07:03 PM itrs_appserver.LogObject doLog
+INFO: Server Boot variables passed verification
+Jan 14, 2016 12:07:03 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:07:03 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")]
+Jan 14, 2016 12:07:03 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")]
+Jan 14, 2016 12:07:03 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:07:03 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:07:03 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:07:13 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:07:13 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:07:14 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")]
+Jan 14, 2016 12:07:14 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:07:23 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
+Jan 14, 2016 12:07:23 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Jan 14, 2016 12:07:24 PM itrs_appserver.LogObject doLog
+INFO: Thread xpath exection for path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")]
+Jan 14, 2016 12:07:24 PM itrs_appserver.LogObject doLog
+INFO: [T-INFO]Thread Execution successful

@@ -1,4 +1,4 @@
-package itrs_appserver;
+package geneos_notification.controllers;
 
 import java.net.InetAddress;
 import javax.mail.*;

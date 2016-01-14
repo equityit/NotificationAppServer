@@ -1,14 +1,25 @@
-package itrs_appserver;
+package geneos_notification.startup_and_system_operations;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import geneos_notification.controllers.DatabaseController;
+import geneos_notification.controllers.EmailController;
+import geneos_notification.controllers.GreetingController;
+import geneos_notification.controllers.ThreadController;
+import geneos_notification.controllers.UserController;
+import geneos_notification.loggers.LogObject;
+import geneos_notification.loggers.LtA;
+import geneos_notification.objects.ThreadItem;
+import geneos_notification.objects.User;
 import scala.reflect.internal.Trees.This;
 
 import java.util.logging.FileHandler;
@@ -103,6 +114,46 @@ public class Application {
     	EmailController.setDetails(smtpH, smtpU, smtpP);
     	checkValidity(OA, sqlServer);
     	GreetingController.updateDV();
+    	perpetualReload();
+    }
+    
+    public static void perpetualReload()
+    {
+    	Map<String,HashMap<String, String>> perpetualList = DatabaseController.getLiveDevices();
+    	String xpathQuery = null;
+		for (Map.Entry<String, HashMap<String, String>> entry : perpetualList.entrySet()) 
+		{
+			Map<String, String> devices = entry.getValue();
+			for(Map.Entry<String, String> devEntry : devices.entrySet())
+			{
+				if(!UserController.userObjects.containsKey(entry.getKey()))
+					UserController.userObjects.put(entry.getKey(), new User(entry.getKey(), devEntry.getKey(), devEntry.getValue()));
+				else
+					UserController.userObjects.get(entry.getKey()).addDevice(devEntry.getKey(), devEntry.getValue());			
+			}
+			if(xpathQuery == null)
+				xpathQuery = "'" + entry.getKey() + "'";
+			else
+			{
+				String append = " || '" + entry.getKey()+ "'";
+				xpathQuery += append;
+			}
+		}
+		Map<String,ArrayList<String>> livePaths = DatabaseController.getLivePaths(xpathQuery);
+		for (Map.Entry<String, ArrayList<String>> entry : livePaths.entrySet())
+		{
+				ThreadController.monitoringThreadList.put(entry.getKey(), new ThreadItem(entry.getKey(), entry.getValue().get(0)));
+				if(entry.getValue().size() != 1)
+				{
+					for(int i = 1; !entry.getValue().get(i).equals(null); i++)
+						{
+							ThreadController.monitoringThreadList.get(entry.getKey()).addUserID(entry.getValue().get(i));
+						}
+				}
+				ThreadController.startPerpetualThread(entry.getKey());
+		}
+		
+		
     }
     
     public static void checkValidity(String OA, String sqlServer)

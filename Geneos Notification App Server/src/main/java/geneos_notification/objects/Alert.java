@@ -1,4 +1,4 @@
-package itrs_appserver;
+package geneos_notification.objects;
 
 
 import java.time.LocalDateTime;
@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.simple.JSONObject;
+
+import geneos_notification.controllers.ThreadController;
 
 
 public class Alert {

@@ -1,4 +1,4 @@
-package itrs_appserver;
+package geneos_notification.controllers;
 
 import java.io.IOException;
 
@@ -26,6 +26,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import geneos_notification.loggers.LogObject;
+import geneos_notification.loggers.LtA;
+import geneos_notification.objects.ThreadItem;
+import geneos_notification.startup_and_system_operations.DataviewListGenerator;
+import geneos_notification.thread_operations.RowGenerator;
+
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
@@ -199,7 +206,7 @@ public void editDV(@RequestParam(value="rentity", defaultValue="") String rentit
     	return oaKey;
     }
     
-    public static ThreadList getNotificationList(String xpath)
+    public static ThreadItem getNotificationList(String xpath)
     {
     	return ThreadController.monitoringThreadList.get(xpath);
     }

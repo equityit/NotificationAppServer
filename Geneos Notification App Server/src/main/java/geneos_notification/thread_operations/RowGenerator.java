@@ -1,4 +1,4 @@
-package itrs_appserver;
+package geneos_notification.thread_operations;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
@@ -18,6 +18,8 @@ import com.itrsgroup.openaccess.dataset.DataSetChange;
 import com.itrsgroup.openaccess.dataset.DataSetItem;
 import com.itrsgroup.openaccess.dataset.DataSetQuery;
 import com.itrsgroup.openaccess.dataset.DataSetTracker;
+
+import geneos_notification.controllers.GreetingController;
 
 public class RowGenerator {
 	

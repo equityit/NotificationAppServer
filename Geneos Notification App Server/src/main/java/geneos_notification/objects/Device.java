@@ -1,4 +1,4 @@
-package itrs_appserver;
+package geneos_notification.objects;
 
 public class Device {
 	

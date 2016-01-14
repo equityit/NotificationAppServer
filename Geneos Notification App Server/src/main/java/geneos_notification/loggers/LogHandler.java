@@ -1,4 +1,4 @@
-package itrs_appserver;
+package geneos_notification.loggers;
 
 import java.io.IOException;
 import java.util.Hashtable;

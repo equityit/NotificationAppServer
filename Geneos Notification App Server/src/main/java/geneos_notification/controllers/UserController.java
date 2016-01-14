@@ -1,4 +1,4 @@
-package itrs_appserver;
+package geneos_notification.controllers;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -10,7 +10,11 @@ import java.util.concurrent.Future;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
-import itrs_appserver.ThreadController.MyAnalysis;
+import geneos_notification.controllers.ThreadController.MyAnalysis;
+import geneos_notification.loggers.LogObject;
+import geneos_notification.loggers.LtA;
+import geneos_notification.objects.ThreadItem;
+import geneos_notification.objects.User;
 
 public class UserController {
 	static LtA logA = new LogObject();
@@ -32,14 +36,16 @@ public class UserController {
 		    		{
 		    			User holder = UserController.userObjects.get(username);
 		    			holder.addDevice(android_id, key);
+		    			DatabaseController.loginDevice(android_id);
 		    			refreshDeviceToStoredDataviews(username);
 		    			logA.doLog("Controller" , username + " logged in successfully on device " + android_id, "Info");
 		    			return "successfully logged in"; // Collect data - tells device to scrape the user account on server for watch list	
 		    		}
 		    		else
 		    		{
-				    	User holder = new User(username, android_id, key, userid); // THIS NEEDS UPDATING TO NEW FORMAT!!!!!!!
+				    	User holder = new User(username, android_id, key); // THIS NEEDS UPDATING TO NEW FORMAT!!!!!!!
 				    	UserController.userObjects.put(username,holder);
+				    	DatabaseController.loginDevice(android_id);
 				    	subscribeUserToStoredDataviews(username);
 				    	logA.doLog("Controller" , "Initial log on for " + username + " with device " + android_id, "Info");
 				        return "successfully logged in";	// Collect data - tells device to scrape the user account on server for watch list	
@@ -146,6 +152,7 @@ public class UserController {
 	public static String logout(String username, String android_id)
 	{
 		int deviceCheck = UserController.userObjects.get(username).removeDevice(android_id);
+		DatabaseController.logoutDevice(android_id);
 		logA.doLog("Controller" , "The status of the device check for" + username + " is :" + deviceCheck , "Info");
 		//System.out.println("The status of the device check is :" + deviceCheck);
 		if (deviceCheck == 1) {
@@ -180,7 +187,7 @@ public class UserController {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public static void removeUserFromNotifyList(String username, String xpath) {
-		ThreadList current = ThreadController.monitoringThreadList.get(xpath);
+		ThreadItem current = ThreadController.monitoringThreadList.get(xpath);
 		current.getFuture().cancel(true);
 		int number = current.removeUser(username);
 		System.out.println("This is the returned number : " + number);

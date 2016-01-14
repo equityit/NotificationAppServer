@@ -1,4 +1,4 @@
-package itrs_appserver;
+package geneos_notification.controllers;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,6 +14,10 @@ import java.net.URL;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.simple.JSONObject;
+
+import geneos_notification.loggers.LogObject;
+import geneos_notification.loggers.LtA;
+import geneos_notification.objects.Alert;
 
 public class TransmissionHandler {
 	
