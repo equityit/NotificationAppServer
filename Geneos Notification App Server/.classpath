@@ -17,26 +17,31 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/geneos-openaccess-api-2.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/geneos-openaccess-client.jar"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/geneos-openaccess-cluster-client-2.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/geneos-openaccess-data-2.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/geneos-openaccess-util-2.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/geneos-openaccess-xpath-2.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/json-simple-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/mysql-connector-java-5.0.8-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/httpclient-4.5.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/httpclient-cache-4.5.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/httpclient-win-4.5.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/httpcore-4.4.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/httpmime-4.5.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/javamail-1.4.5/mail.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/cmorley/Desktop/Development/Jars/org.json.jar"/>
+	<classpathentry kind="lib" path="oustideJar/geneos-openaccess-api-2.0.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/geneos-openaccess-api-internal-2.0.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/geneos-openaccess-client.jar"/>
+	<classpathentry kind="lib" path="oustideJar/geneos-openaccess-cluster-client-2.0.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/geneos-openaccess-cluster-common-2.0.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/geneos-openaccess-cluster-diagnostics-2.0.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/geneos-openaccess-cluster-node-model-2.0.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/geneos-openaccess-data-2.0.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/geneos-openaccess-data-internal-2.0.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/geneos-openaccess-runtime-2.0.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/geneos-openaccess-util-2.0.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/geneos-openaccess-xpath-2.0.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/httpclient-4.5.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/httpclient-cache-4.5.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/httpclient-win-4.5.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/httpcore-4.4.3.jar"/>
+	<classpathentry kind="lib" path="oustideJar/httpmime-4.5.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="oustideJar/org.json.jar"/>
+	<classpathentry kind="lib" path="oustideJar/mail.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
