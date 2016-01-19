@@ -90,20 +90,29 @@ public class ThreadController {
 		// TransmissionHandler.additionMessage(userName, xpath);
 	}
 
-	public void removeDataview(String entity, String xpath, String userName) {
-		UserController.removeUserFromNotifyList(userName, xpath);
-		UserController.userObjects.get(userName).removeDV(entity, xpath);
-		// TransmissionHandler.removeMessage(userName, xpath);
-
-	}
-
 	public void editDV(String rentity, String aentity, String rxpath, String axpath, String userName)
 			throws IOException {
-		UserController.removeUserFromNotifyList(userName, rxpath);
+		ThreadController.removeUserFromNotifyList(userName, rxpath);
 		UserController.userObjects.get(userName).removeDV(rentity, rxpath);
 		// TransmissionHandler.removeMessage(userName, rxpath);
 		UserController.setCustomDV(aentity, axpath, userName);
 
+	}
+
+	public static void removeUserFromNotifyList(String username, String xpath) {
+		ThreadItem current = monitoringThreadList.get(xpath);
+		current.getFuture().cancel(true);
+		int number = current.removeUser(username);
+		System.out.println("This is the returned number : " + number);
+		if (number == 1) {
+			UserController.logA.doLog("Controller" , "Thread terminated : " + xpath  , "Info");
+			current = null;
+		} else if (number == 0) {
+			Callable<Long> worker = new MyAnalysis(xpath);
+			Future<Long> thread = executor.submit(worker);
+			current.setFuture(thread);
+			UserController.logA.doLog("Controller" , "Thread restarted : " + xpath  , "Info");
+		}
 	}
 
 	public static void startPerpetualThread(String xpath) {

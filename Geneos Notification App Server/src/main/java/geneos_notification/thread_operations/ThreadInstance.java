@@ -23,7 +23,7 @@ import com.itrsgroup.openaccess.dataset.DataSetItem;
 import com.itrsgroup.openaccess.dataset.DataSetQuery;
 import com.itrsgroup.openaccess.dataset.DataSetTracker;
 
-import geneos_notification.controllers.GreetingController;
+import geneos_notification.controllers.InterfaceController;
 import geneos_notification.controllers.ThreadController;
 import geneos_notification.controllers.TransmissionHandler;
 import geneos_notification.loggers.LogObject;
@@ -31,7 +31,7 @@ import geneos_notification.loggers.LtA;
 import geneos_notification.objects.Alert;
 
 public class ThreadInstance {
-	static LtA logA = new LogObject();
+	public static LtA logA = new LogObject();
 	public static Connection conn;
 	public static Map<String, Alert> alertList = new HashMap<String, Alert>();
 	private static DataSet dataSet;
@@ -40,7 +40,7 @@ public class ThreadInstance {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static void startSample(String path) throws InterruptedException {
-		conn = OpenAccess.connect(GreetingController.getOAkey());
+		conn = OpenAccess.connect(InterfaceController.getOAkey());
 		System.out.println(ThreadController.monitoringThreadList.get(path).getRegList().getRegList());
 		runScan(path);
 	}
@@ -74,6 +74,7 @@ return registrationList;
 			DataSetQuery query = DataSetQuery.create(dvPath + "/rows/row[wild(@name,\"*\")]/cell");
 			final DataSetTracker dataSetTracker = new DataSetTracker();
 			final CountDownLatch cdl = new CountDownLatch(1);
+			dataSet = null;
 
 			Closable c = conn.execute(query, new Callback<DataSetChange>() {
 				@Override
@@ -112,7 +113,7 @@ return registrationList;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	private static void threadAnalysis(String dvPath) throws JSONException, IOException {
-		System.out.println("//////////////////////////////// \nTHREAD SUCCESSFUL \n");
+		//System.out.println("//////////////////////////////// \nTHREAD SUCCESSFUL \n");
 		logA.doLog("Thread", "[T-INFO]Thread Execution successful", "Info");
 		alertChecker(dvPath);
 	}

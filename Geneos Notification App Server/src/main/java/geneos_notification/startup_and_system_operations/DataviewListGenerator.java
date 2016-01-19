@@ -15,7 +15,7 @@ import com.itrsgroup.openaccess.dataset.DataSetQuery;
 import com.itrsgroup.openaccess.dataset.DataSetTracker;
 import com.itrsgroup.openaccess.xpath.XPathBuilder;
 
-import geneos_notification.controllers.GreetingController;
+import geneos_notification.controllers.InterfaceController;
 import geneos_notification.loggers.LogObject;
 import geneos_notification.loggers.LtA;
 
@@ -40,7 +40,7 @@ public class DataviewListGenerator {
 	}*/
 
 	public static ArrayList<String> collectDataviews() throws JSONException {
-		conn = OpenAccess.connect(GreetingController.getOAkey());
+		conn = OpenAccess.connect(InterfaceController.getOAkey());
 		// dataSet = null;
 		// ExecutorService executor = Executors.newFixedThreadPool(50);
 

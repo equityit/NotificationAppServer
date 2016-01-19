@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="itrs_appserver.UserControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-01-19T10:13:34" hostname="ITRSLP043" time="0.305">
+  <properties/>
+  <testcase name="loginUnauthorisedDomainTest" classname="itrs_appserver.UserControllerTest" time="0.305"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Jan 19, 2016 10:13:34 AM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : something
+Jan 19, 2016 10:13:34 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : something & test
+Jan 19, 2016 10:13:34 AM geneos_notification.loggers.LogObject doLog
+WARNING: [SQL]User has tried to log in with an invalid domain : something
+Jan 19, 2016 10:13:34 AM geneos_notification.loggers.LogObject doLog
+WARNING: Attempted login made by unauthorised user with username : something
+]]></system-err>
+</testsuite>

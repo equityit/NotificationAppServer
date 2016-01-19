@@ -46,7 +46,7 @@ import java.util.concurrent.TimeUnit;
  */
 
 @RestController
-public class GreetingController {
+public class InterfaceController {
 
   //  private static final String template = "Hello, %s!";
    // private final AtomicLong counter = new AtomicLong();
@@ -76,6 +76,7 @@ public class GreetingController {
 	public String logout(@RequestParam(value = "username", defaultValue = "") String username,
 			@RequestParam(value = "android_id", defaultValue = "") String android_id) throws Exception {
 		String result = UserController.logout(username, android_id);
+		// TransmissionHandler.additionMessage(userName, xpath);
 		return result;
 	}
 
@@ -83,7 +84,7 @@ public class GreetingController {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @RequestMapping(value="/setcustomdv", method=RequestMethod.POST)
-public String setCustomDV(@RequestParam(value="entity", defaultValue="") String entity, @RequestParam(value="xpath", defaultValue="") String xpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException
+public String setCustomDV(@RequestParam(required = true, value="entity", defaultValue="") String entity, @RequestParam(required = true, value="xpath", defaultValue="") String xpath, @RequestParam(required = true, value="username", defaultValue="") String userName) throws IOException
 {
 	String result = UserController.setCustomDV(entity, xpath, userName);
 	return result;
@@ -96,7 +97,7 @@ public String setCustomDV(@RequestParam(value="entity", defaultValue="") String 
 @RequestMapping(value="/removedv", method=RequestMethod.POST)
 public void removeDataview(@RequestParam(value="entity", defaultValue="") String entity, @RequestParam(value="xpath", defaultValue="") String xpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException
 {
-	UserController.removeUserFromNotifyList(userName, xpath);
+	ThreadController.removeUserFromNotifyList(userName, xpath);
 	UserController.userObjects.get(userName).removeDV(entity, xpath);
 	// TransmissionHandler.removeMessage(userName, xpath);
 	
@@ -108,7 +109,7 @@ public void removeDataview(@RequestParam(value="entity", defaultValue="") String
 @RequestMapping(value="/editdv", method=RequestMethod.POST)
 public void editDV(@RequestParam(value="rentity", defaultValue="") String rentity, @RequestParam(value="aentity", defaultValue="") String aentity, @RequestParam(value="rxpath", defaultValue="") String rxpath, @RequestParam(value="axpath", defaultValue="") String axpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException
 {
-	UserController.removeUserFromNotifyList(userName, rxpath);
+	ThreadController.removeUserFromNotifyList(userName, rxpath);
 	UserController.userObjects.get(userName).removeDV(rentity, rxpath);
 	// TransmissionHandler.removeMessage(userName, rxpath);
 	setCustomDV(aentity, axpath, userName);

@@ -1,8 +1,21 @@
-jdbc:mysql://localhost/test?user=root&password=iPods123
-smtp.hostedservice2.net
-HelpdeskAutomation@itrsgroup.com
-9AHNekkeJwUE7XD
-192.168.220.54
-2551
-admin
-admin
+///////////////////////////////////
+* System Configuration Variables  *
+///////////////////////////////////
+
+Please alter the variables below to match those of your active system:
+
+mySQL Host			=localhost
+mySQL Database Name =test
+mySQL Username 		=root
+mySQL Password		=iPods123
+SMTP Host			=smtp.hostedservice2.net
+SMTP Username		=HelpdeskAutomation@itrsgroup.com
+SMTP Password		=9AHNekkeJwUE7XD
+OpenAccess Host		=192.168.220.54
+OpenAccess Port		=2551
+OpenAccess Username	=admin
+OpenAccess Password	=admin
+
+- Ports for your OpenAccess cluster can be found on the OpenAccess host within the installation directory within the file application.conf. 
+- To find the port used for MySQl either execute the query 'show variables' within the database or run 'netstat start -ab' within an administrative cmd and search the results for mysqld.exe.
+- By default these ports are set on their respective hosts as OpenAccess:2551 and MySQl:3306

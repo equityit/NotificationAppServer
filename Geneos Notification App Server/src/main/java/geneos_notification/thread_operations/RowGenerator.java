@@ -19,7 +19,7 @@ import com.itrsgroup.openaccess.dataset.DataSetItem;
 import com.itrsgroup.openaccess.dataset.DataSetQuery;
 import com.itrsgroup.openaccess.dataset.DataSetTracker;
 
-import geneos_notification.controllers.GreetingController;
+import geneos_notification.controllers.InterfaceController;
 
 public class RowGenerator {
 	
@@ -29,7 +29,7 @@ public class RowGenerator {
 	
 	public static JSONObject getRow(String xpath)
 	{
-		conn = OpenAccess.connect(GreetingController.getOAkey());
+		conn = OpenAccess.connect(InterfaceController.getOAkey());
 		testingObj = new JSONObject();
 		String line = xpath;
 		String path = line.substring(line.indexOf("/geneos"), line.lastIndexOf("/cell[(@column=")) + "/cell[wild(@column,\"*\")]";

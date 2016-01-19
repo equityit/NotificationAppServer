@@ -5,15 +5,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Future;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
 import geneos_notification.controllers.ThreadController.MyAnalysis;
 import geneos_notification.loggers.LogObject;
 import geneos_notification.loggers.LtA;
-import geneos_notification.objects.ThreadItem;
 import geneos_notification.objects.User;
 
 public class UserController {
@@ -28,7 +25,7 @@ public class UserController {
 			if(check == 0)
 			{
 		    	int userid = DatabaseController.checkUser(username, android_id); // Grab userid from sql if the username and password are correct, otherwise return 0
-		    	System.out.println("this executed as login");
+		    	//System.out.println("this executed as login");
 		    	
 		    	if (userid == 2) // user exists and the android_id is to a validated device - Allow access and subscribe device to user monitored data views
 		    	{
@@ -176,9 +173,8 @@ public class UserController {
 		xpaths = DatabaseController.getUserDataviewList(username);
 		for (String path : xpaths) {
 			System.out.println(path);
-			removeUserFromNotifyList(username, path);
+			ThreadController.removeUserFromNotifyList(username, path);
 			logA.doLog("Controller" , path + "  has been restarted for the user " + username , "Info");
-			//System.out.println("The path being restarted :" + path + "   For User :" + username);
 		}
 
 	}
@@ -186,22 +182,7 @@ public class UserController {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public static void removeUserFromNotifyList(String username, String xpath) {
-		ThreadItem current = ThreadController.monitoringThreadList.get(xpath);
-		current.getFuture().cancel(true);
-		int number = current.removeUser(username);
-		System.out.println("This is the returned number : " + number);
-		if (number == 1) {
-			logA.doLog("Controller" , "Thread terminated : " + xpath  , "Info");
-			current = null;
-		} else if (number == 0) {
-			// System.out.println("It shouldn't get in here");
-			Callable<Long> worker = new ThreadController.MyAnalysis(xpath);
-			Future<Long> thread = ThreadController.executor.submit(worker);
-			current.setFuture(thread);
-			logA.doLog("Controller" , "Thread restarted : " + xpath  , "Info");
-		}
-	}
+	
 	
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -219,12 +200,17 @@ public class UserController {
 
 		ret = current.ammendCustomDV(entity, xpath);		// Returns either a result as seen in the comparison below, or xpath or previous custom DV in entity that user is subscribed too. Returned xpath used for updating.
 
-		/*    	if(!ret.equals("Add Successful") && !ret.equals("This dataview is already being monitored by this user")) // If something else is returned it is an xpath, used for updating the pre-existing entity dv for that user.
-		removeFromNotifyList(xpath, userName, ret);*/
 		if(ret.equals("Add Successful"))
 		ThreadController.addToNotifyList(xpath, userName);	
 		return ret;
 		}
+
+	public static void removeDataview(String entity, String xpath, String userName) {
+		ThreadController.removeUserFromNotifyList(userName, xpath);
+		userObjects.get(userName).removeDV(entity, xpath);
+		// TransmissionHandler.removeMessage(userName, xpath);
+	
+	}
 	
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,4 +1,4 @@
-package geneos_notification.startup_and_system_operations;
+package geneos_notification.controllers;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,11 +11,6 @@ import java.util.concurrent.ExecutionException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import geneos_notification.controllers.DatabaseController;
-import geneos_notification.controllers.EmailController;
-import geneos_notification.controllers.GreetingController;
-import geneos_notification.controllers.ThreadController;
-import geneos_notification.controllers.UserController;
 import geneos_notification.loggers.LogObject;
 import geneos_notification.loggers.LtA;
 import geneos_notification.objects.ThreadItem;
@@ -31,10 +26,11 @@ import java.time.LocalDateTime;
 
 
 @SpringBootApplication
-public class Application {
+public class StartController {
 	
-	public static ArrayList<String> settings = new ArrayList<String>();
-	private final static Logger logger = Logger.getLogger(Application.class.getName());
+	//public static ArrayList<String> settings = new ArrayList<String>();
+	public static Map<String, String> setting = new HashMap<String,String>();
+	private final static Logger logger = Logger.getLogger(StartController.class.getName());
 	private static FileHandler fh = null;
 	static LtA logA = new LogObject();
 	//private final static Logger LOGGER = Logger.getLogger(Application.class.getName());
@@ -68,11 +64,11 @@ public class Application {
 				"\n" +
 				"<< Version 1.0 >>      << Created by C.Morley & D.Ratnaras 2015 >>\n" +
 				"\n");
-		logA.doLog("Application" , "Server Boot Initiated", "Info");
+		logA.doLog("Start" , "Server Boot Initiated", "Info");
 		start();
 	}
 	
-    public static void start() throws InterruptedException, ExecutionException {
+   /* public static void start() throws InterruptedException, ExecutionException {
     	File file = new File(".\\settings.txt");
     	Scanner scnr = null;
     	try {
@@ -82,7 +78,7 @@ public class Application {
 			//LOGGER.log(Level.INFO, e.toString());
 			e.printStackTrace();
 			System.out.println("System Settings file not found - Server Terminating");
-			logA.doLog("Application" , "System Settings file not found - Server Terminating", "Critical");
+			logA.doLog("Start" , "System Settings file not found - Server Terminating", "Critical");
 			System.exit(0);
 		}
     	while(scnr.hasNext())
@@ -93,17 +89,83 @@ public class Application {
     	if(settings.size() != 8)
     	{
     		System.out.println("System Settings file is incorrect - Not enough details - Server Terminating");
-    		logA.doLog("Application" , "System Settings file is incorrect - Not enough details - Server Terminating", "Critical");
+    		logA.doLog("Start" , "System Settings file is incorrect - Not enough details - Server Terminating", "Critical");
     		System.exit(0);
     	}
     	configureSettings(settings);
     	//LOGGER.log(Level.INFO, "COnfiguration successful");
-    	logA.doLog("Application" , "Server Boot variables passed verification", "Info");
+    	logA.doLog("Start" , "Server Boot variables passed verification", "Info");
         SpringApplication.run(Application.class);
+    }*/
+    
+    public static void start() throws InterruptedException, ExecutionException {
+    	File file = new File(".\\settings.txt");
+    	Scanner scnr = null;
+    	try {
+			scnr = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			//LOGGER.log(Level.INFO, e.toString());
+			e.printStackTrace();
+			System.out.println("System Settings file not found - Server Terminating");
+			logA.doLog("Start" , "System Settings file not found - Server Terminating", "Critical");
+			System.exit(0);
+		}
+    	while(scnr.hasNextLine())
+    	{
+			String line = scnr.nextLine();
+			if (line.contains("mySQL Host")) {
+				setting.put("mySQLHost", line.substring(line.indexOf("=") + 1));
+			} else if (line.contains("mySQL Database Name")) {
+				setting.put("mySQLDB", line.substring(line.indexOf("=") + 1));
+			} else if (line.contains("mySQL Username")) {
+				setting.put("mySQLUser", line.substring(line.indexOf("=") + 1));
+			} else if (line.contains("mySQL Password")) {
+				setting.put("mySQLPass", line.substring(line.indexOf("=") + 1));
+			} else if (line.contains("SMTP Host")) {
+				setting.put("SMTPHost", line.substring(line.indexOf("=") + 1));
+			} else if (line.contains("SMTP User")) {
+				setting.put("SMTPUser", line.substring(line.indexOf("=") + 1));
+			} else if (line.contains("SMTP Password")) {
+				setting.put("SMTPPass", line.substring(line.indexOf("=") + 1));
+			} else if (line.contains("OpenAccess Host")) {
+				setting.put("OAHost", line.substring(line.indexOf("=") + 1));
+			} else if (line.contains("OpenAccess Port")) {
+				setting.put("OAPort", line.substring(line.indexOf("=") + 1));
+			} else if (line.contains("OpenAccess Username")) {
+				setting.put("OAUser", line.substring(line.indexOf("=") + 1));
+			} else if (line.contains("OpenAccess Password")) {
+				setting.put("OAPass", line.substring(line.indexOf("=") + 1));
+			}
+    	}
+    	if(setting.size() != 11)
+    	{
+    		System.out.println("System Settings file is incorrect - Not enough details - Server Terminating : Size = "+setting.size());
+    		logA.doLog("Start" , "System Settings file is incorrect - Not enough details - Server Terminating", "Critical");
+    		System.exit(0);
+    	}
+    	configureSetting(setting);
+    	//configureSettings(settings);
+    	//LOGGER.log(Level.INFO, "COnfiguration successful");
+    	logA.doLog("Start" , "Server Boot variables passed verification", "Info");
+        SpringApplication.run(StartController.class);
     }
     
+    public static void configureSetting(Map<String, String> setting) throws InterruptedException, ExecutionException
+    {
+    	String sqlServer = "jdbc:mysql://"+setting.get("mySQLHost")+"/"+setting.get("mySQLDB")+"?user="+setting.get("mySQLUser")+"&password="+setting.get("mySQLPass");
+    	String smtpH = setting.get("SMTPHost");
+    	String smtpU = setting.get("SMTPUser");
+    	String smtpP = setting.get("SMTPPass");
+    	String OA = "geneos.cluster://" + setting.get("OAHost") + ":" + setting.get("OAPort") + "?username=" + setting.get("OAUser") + "&password=" + setting.get("OAPass");
+    	InterfaceController.setKeyData(sqlServer, OA);
+    	EmailController.setDetails(smtpH, smtpU, smtpP);
+    	checkValidity(OA, sqlServer);
+    	InterfaceController.updateDV();
+    	perpetualReload();
+    }
     
-    public static void configureSettings(ArrayList<String> settings) throws InterruptedException, ExecutionException
+   /* public static void configureSettings(ArrayList<String> settings) throws InterruptedException, ExecutionException
     {
     	String sqlServer = settings.get(0);
     	String smtpH = settings.get(1);
@@ -115,7 +177,7 @@ public class Application {
     	checkValidity(OA, sqlServer);
     	GreetingController.updateDV();
     	perpetualReload();
-    }
+    }*/
     
     public static void perpetualReload()
     {
@@ -165,7 +227,7 @@ public class Application {
     	catch(Exception e)
     	{
     		//System.out.println("There was an error with the SQL configuration or address, please confirm details. System shutting down.");
-    		logA.doLog("Application" , "There was an error with the SQL configuration or address, please confirm details. System shutting down.", "Critical");
+    		logA.doLog("Start" , "There was an error with the SQL configuration or address, please confirm details. System shutting down.", "Critical");
     		System.exit(0);
     	}
     }

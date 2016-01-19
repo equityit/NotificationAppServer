@@ -10,7 +10,7 @@ public class User {
 
 	private final String username;
 	public Map<String, String> deviceList = new HashMap<String, String>();
-	private ArrayList<CustomDataView> pathList = new ArrayList<CustomDataView>();
+	public ArrayList<CustomDataView> pathList = new ArrayList<CustomDataView>();
 
 	public User(String uname, String a_id, String key) {
 		this.username = uname;

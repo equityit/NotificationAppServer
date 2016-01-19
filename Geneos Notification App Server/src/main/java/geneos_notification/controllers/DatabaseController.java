@@ -89,12 +89,11 @@ private static int validDeviceCheck(int result, int queryOut, String android_id)
 	if (!res1.isBeforeFirst()) 
 	{
 		logA.doLog("SQL" , "[SQL]Device Check = User has yet to verify device : " + android_id, "Info");
-		// System.out.println("User has yet to verify this device"); // Username exists but no valid devices
 		return 1;
 	} 
 	else 
 	{
-		result = 2; // Username is present and they have a a validated device
+		result = 2;
 	}
 	return result;
 }
@@ -107,7 +106,6 @@ private static int extractUserID(int queryOut) throws SQLException {
 	{
 		int value = res.getInt(1);
 		queryOut = value;
-		// System.out.println("RETURNED USER ID : " + queryOut);
 	}
 	return queryOut;
 }
@@ -125,12 +123,10 @@ public static int checkValidDomain(String username) throws SQLException {
 	if (!res.isBeforeFirst()) 
 	{
 		logA.doLog("SQL" , "[SQL]User has tried to log in with an invalid domain : " + username, "Warning");
-		// System.out.println("Invalid domain"); // Username exists but the password is incorrect
 		ret = 0;
 	} 
 	else
 	{
-		// System.out.println("Valid domain");
 		ret = 1;
 	}
 	close();
@@ -158,7 +154,6 @@ public static int checkValidDomain(String username) throws SQLException {
 				EmailController.sendMail(username, ran, android_id);
 			} catch (SQLException e) {
 				logA.doLog("SQL" , "[SQL]Query error while creating new user : " + username + " \nError is : " + e.toString(), "Critical");
-				// e.printStackTrace();
 				throw new RuntimeException(e);
 			}
 			finally{
@@ -208,7 +203,6 @@ public static int checkValidDomain(String username) throws SQLException {
 			return 1;
 		} catch (SQLException e) {
 			logA.doLog("SQL" , "[SQL]Query error while checkintg status of device : " + android_id + " \nError is : " + e.toString(), "Critical");
-			//e.printStackTrace();
 			throw new RuntimeException(e);
 		}
  }
@@ -224,10 +218,8 @@ public static int checkValidDomain(String username) throws SQLException {
 			stmt = conn.createStatement();
 			res = stmt
 					.executeQuery("call sp_Add_Dataview_To_User('" + username + "','" + entity + "','" + xpath + "')");
-			// MailRoom.sendMail(username);
 		} catch (SQLException e) {
 			logA.doLog("SQL" , "[SQL]Query error while adding dataview " + xpath + " to user : " + username + " \nError is : " + e.toString(), "Critical");
-			//e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			close();
@@ -245,10 +237,8 @@ public static void verifyStoredDevice(String android_id, String verification)
 	int random = Integer.parseInt(verification);
 	stmt = conn.createStatement();
 	res = stmt.executeQuery("call sp_verify_device('" + android_id + "'," + random + ")");
-	//MailRoom.sendMail(username);
 	} catch (SQLException e) {
 	logA.doLog("SQL" , "[SQL]Error while conducting verification for device : " + android_id + " with verification code : "+ verification + " \nError is : " + e.toString(), "Critical");
-	//e.printStackTrace();
 	throw new RuntimeException(e);
 	}
 	finally{
@@ -267,10 +257,8 @@ public static void removeCustomDataview(String username, String entity, String x
 		stmt = conn.createStatement();
 		res = stmt
 				.executeQuery("call sp_remove_dataview_from_user('" + username + "','" + xpath + "')");
-		// MailRoom.sendMail(username);
 	} catch (SQLException e) {
 		logA.doLog("SQL" , "[SQL]Error while removing xpath " + xpath + " from user : " + username + " \nError is : " + e.toString(), "Critical");
-		//e.printStackTrace();
 		throw new RuntimeException(e);
 	} finally {
 		close();
@@ -286,7 +274,6 @@ public static void removeCustomDataview(String username, String entity, String x
 		try {
 			stmt = conn.createStatement();
 			res = stmt.executeQuery("call sp_Get_User_Dataviews('" + username + "')");
-			// MailRoom.sendMail(username);
 			while (res.next()) {
 				String xpath = res.getString(1);
 				resArray.add(xpath);
@@ -294,7 +281,6 @@ public static void removeCustomDataview(String username, String entity, String x
 		} catch (SQLException e) {
 			logA.doLog("SQL", "[SQL]Query error while retrieving dataviews subscribed to user : " + username
 					+ " \nError is : " + e.toString(), "Critical");
-			// e.printStackTrace();
 			throw new RuntimeException(e);
 		} finally {
 			close();
@@ -314,10 +300,9 @@ public static void logoutDevice(String android_id)
 		stmt = conn.createStatement();
 		res = stmt
 				.executeQuery("call sp_logoutdevice('" + android_id + "')");
-		// MailRoom.sendMail(username);
+		logA.doLog("SQL" , "[SQL]Device " + android_id + " logged out successfully", "Info");
 	} catch (SQLException e) {
 		logA.doLog("SQL" , "[SQL]Error while logging out " + android_id + " \nError is : " + e.toString(), "Critical");
-		//e.printStackTrace();
 		throw new RuntimeException(e);
 	} finally {
 		close();
@@ -335,10 +320,9 @@ public static void loginDevice(String android_id)
 		stmt = conn.createStatement();
 		res = stmt
 				.executeQuery("call sp_logindevice('" + android_id + "')");
-		// MailRoom.sendMail(username);
+		logA.doLog("SQL" , "[SQL]Device " + android_id + " logged in successfully", "Info");
 	} catch (SQLException e) {
 		logA.doLog("SQL" , "[SQL]Error while logging in device " + android_id + " \nError is : " + e.toString(), "Critical");
-		//e.printStackTrace();
 		throw new RuntimeException(e);
 	} finally {
 		close();
@@ -399,6 +383,25 @@ public static HashMap<String,ArrayList<String>> getLivePaths(String query) {
 	} finally {
 		close();
 		return resMap;
+	}
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+
+public static void execCustom(String query) {
+	SQLConnect();
+	try {
+		stmt = conn.createStatement();
+		stmt.executeUpdate(query);
+		// MailRoom.sendMail(username);
+	} catch (SQLException e) {
+		logA.doLog("SQL", "[SQL]Query error while retrieving custom dataset \nError is : " + e.toString(), "Critical");
+		e.printStackTrace();
+		throw new RuntimeException(e);
+	} finally {
+		close();
 	}
 
 }
