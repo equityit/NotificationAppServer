@@ -112,8 +112,9 @@ public class UserController {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public static void refreshDeviceToStoredDataviews(String username)
+	public static int refreshDeviceToStoredDataviews(String username)
     {
+		int res = 0;
     	ArrayList<String> xpaths = new ArrayList<String>();
     	xpaths = DatabaseController.getUserDataviewList(username);
     	for(String path : xpaths)
@@ -122,7 +123,9 @@ public class UserController {
     		ThreadController.restartNotifyList(path);
     		System.out.println("The path being restarted :" + path);
     		logA.doLog("Controller" , "Thread has been restarted/updated for the xpath : " + path, "Info");
+    		res++;
     	}
+    	return res;
     	
     }
 	

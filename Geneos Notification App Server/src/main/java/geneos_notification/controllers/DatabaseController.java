@@ -378,7 +378,7 @@ public static HashMap<String,ArrayList<String>> getLivePaths(String query) {
 		}
 	} catch (SQLException e) {
 		logA.doLog("SQL", "[SQL]Query error while retrieving custom dataset \nError is : " + e.toString(), "Critical");
-		// e.printStackTrace();
+		 e.printStackTrace();
 		throw new RuntimeException(e);
 	} finally {
 		close();

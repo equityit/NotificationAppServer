@@ -99,57 +99,63 @@ public class StartController {
     }*/
     
     public static void start() throws InterruptedException, ExecutionException {
-    	File file = new File(".\\settings.txt");
-    	Scanner scnr = null;
-    	try {
-			scnr = new Scanner(file);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			//LOGGER.log(Level.INFO, e.toString());
-			e.printStackTrace();
-			System.out.println("System Settings file not found - Server Terminating");
-			logA.doLog("Start" , "System Settings file not found - Server Terminating", "Critical");
-			System.exit(0);
-		}
-    	while(scnr.hasNextLine())
-    	{
-			String line = scnr.nextLine();
-			if (line.contains("mySQL Host")) {
-				setting.put("mySQLHost", line.substring(line.indexOf("=") + 1));
-			} else if (line.contains("mySQL Database Name")) {
-				setting.put("mySQLDB", line.substring(line.indexOf("=") + 1));
-			} else if (line.contains("mySQL Username")) {
-				setting.put("mySQLUser", line.substring(line.indexOf("=") + 1));
-			} else if (line.contains("mySQL Password")) {
-				setting.put("mySQLPass", line.substring(line.indexOf("=") + 1));
-			} else if (line.contains("SMTP Host")) {
-				setting.put("SMTPHost", line.substring(line.indexOf("=") + 1));
-			} else if (line.contains("SMTP User")) {
-				setting.put("SMTPUser", line.substring(line.indexOf("=") + 1));
-			} else if (line.contains("SMTP Password")) {
-				setting.put("SMTPPass", line.substring(line.indexOf("=") + 1));
-			} else if (line.contains("OpenAccess Host")) {
-				setting.put("OAHost", line.substring(line.indexOf("=") + 1));
-			} else if (line.contains("OpenAccess Port")) {
-				setting.put("OAPort", line.substring(line.indexOf("=") + 1));
-			} else if (line.contains("OpenAccess Username")) {
-				setting.put("OAUser", line.substring(line.indexOf("=") + 1));
-			} else if (line.contains("OpenAccess Password")) {
-				setting.put("OAPass", line.substring(line.indexOf("=") + 1));
-			}
-    	}
-    	if(setting.size() != 11)
-    	{
-    		System.out.println("System Settings file is incorrect - Not enough details - Server Terminating : Size = "+setting.size());
-    		logA.doLog("Start" , "System Settings file is incorrect - Not enough details - Server Terminating", "Critical");
-    		System.exit(0);
-    	}
+    	readSettingsFile();
     	configureSetting(setting);
+    	InterfaceController.updateDV();
+    	perpetualReload();
     	//configureSettings(settings);
     	//LOGGER.log(Level.INFO, "COnfiguration successful");
     	logA.doLog("Start" , "Server Boot variables passed verification", "Info");
         SpringApplication.run(StartController.class);
     }
+
+public static void readSettingsFile() {
+	File file = new File(".\\settings.txt");
+	Scanner scnr = null;
+	try {
+		scnr = new Scanner(file);
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		//LOGGER.log(Level.INFO, e.toString());
+		e.printStackTrace();
+		System.out.println("System Settings file not found - Server Terminating");
+		logA.doLog("Start" , "System Settings file not found - Server Terminating", "Critical");
+		System.exit(0);
+	}
+	while(scnr.hasNextLine())
+	{
+		String line = scnr.nextLine();
+		if (line.contains("mySQL Host")) {
+			setting.put("mySQLHost", line.substring(line.indexOf("=") + 1));
+		} else if (line.contains("mySQL Database Name")) {
+			setting.put("mySQLDB", line.substring(line.indexOf("=") + 1));
+		} else if (line.contains("mySQL Username")) {
+			setting.put("mySQLUser", line.substring(line.indexOf("=") + 1));
+		} else if (line.contains("mySQL Password")) {
+			setting.put("mySQLPass", line.substring(line.indexOf("=") + 1));
+		} else if (line.contains("SMTP Host")) {
+			setting.put("SMTPHost", line.substring(line.indexOf("=") + 1));
+		} else if (line.contains("SMTP User")) {
+			setting.put("SMTPUser", line.substring(line.indexOf("=") + 1));
+		} else if (line.contains("SMTP Password")) {
+			setting.put("SMTPPass", line.substring(line.indexOf("=") + 1));
+		} else if (line.contains("OpenAccess Host")) {
+			setting.put("OAHost", line.substring(line.indexOf("=") + 1));
+		} else if (line.contains("OpenAccess Port")) {
+			setting.put("OAPort", line.substring(line.indexOf("=") + 1));
+		} else if (line.contains("OpenAccess Username")) {
+			setting.put("OAUser", line.substring(line.indexOf("=") + 1));
+		} else if (line.contains("OpenAccess Password")) {
+			setting.put("OAPass", line.substring(line.indexOf("=") + 1));
+		}
+	}
+	if(setting.size() != 11)
+	{
+		System.out.println("System Settings file is incorrect - Not enough details - Server Terminating : Size = "+setting.size());
+		logA.doLog("Start" , "System Settings file is incorrect - Not enough details - Server Terminating", "Critical");
+		System.exit(0);
+	}
+}
     
     public static void configureSetting(Map<String, String> setting) throws InterruptedException, ExecutionException
     {
@@ -161,8 +167,6 @@ public class StartController {
     	InterfaceController.setKeyData(sqlServer, OA);
     	EmailController.setDetails(smtpH, smtpU, smtpP);
     	checkValidity(OA, sqlServer);
-    	InterfaceController.updateDV();
-    	perpetualReload();
     }
     
    /* public static void configureSettings(ArrayList<String> settings) throws InterruptedException, ExecutionException
