@@ -53,7 +53,7 @@ end if;
 
 END $$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_Confirm_Valid_Domaisn`(IN checkDomain varchar(100))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_Confirm_Valid_Domain`(IN checkDomain varchar(100))
 BEGIN
 select id from domains where domain like cast(trim(substring(checkDomain from locate('@', checkDomain))) as char(1000) character set utf8);
 END $$
@@ -87,12 +87,12 @@ END $$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_logindevice`(in a_id varchar(200))
 BEGIN
-update devices set logedin = 1 where android_id = a_id;
+update devices set loggedin = 1 where android_id = a_id;
 END $$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_logoutdevice`(in a_id varchar(200))
 BEGIN
-update devices set logedin = 0 where android_id = a_id;
+update devices set loggedin = 0 where android_id = a_id;
 END $$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_remove_dataview_from_user`(in uname varchar(100), in path varchar (500))

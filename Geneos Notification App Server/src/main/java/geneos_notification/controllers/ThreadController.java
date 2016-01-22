@@ -41,23 +41,6 @@ public class ThreadController {
 	public static Map<String, ThreadItem> monitoringThreadList = new HashMap<String, ThreadItem>();
 	public static ExecutorService executor = Executors.newFixedThreadPool(200);
 
-	public static class MyAnalysis implements Callable<Long> {
-
-		private String xpath;
-
-		public MyAnalysis(String path) {
-			this.xpath = path;
-		}
-
-		@Override
-		public Long call() throws InterruptedException {
-			logA.doLog("Thread", "[T-INFO]Initialization of thread for xpath : " + xpath, "Info");
-			Long x = (long) 1;
-			ThreadInstance.startSample(xpath);
-			return x;
-		}
-	}
-
 	public static void restartNotifyList(String xpath) {
 		ThreadItem current = monitoringThreadList.get(xpath);
 		current.getFuture().cancel(true);
@@ -119,6 +102,24 @@ public class ThreadController {
 		Callable<Long> worker = new ThreadController.MyAnalysis(xpath);
 		Future<Long> thread = executor.submit(worker);
 		monitoringThreadList.get(xpath).setFuture(thread);
+	}
+	
+	
+	public static class MyAnalysis implements Callable<Long> {
+
+		private String xpath;
+
+		public MyAnalysis(String path) {
+			this.xpath = path;
+		}
+
+		@Override
+		public Long call() throws InterruptedException {
+			logA.doLog("Thread", "[T-INFO]Initialization of thread for xpath : " + xpath, "Info");
+			Long x = (long) 1;
+			ThreadInstance.startSample(xpath);
+			return x;
+		}
 	}
 
 }
