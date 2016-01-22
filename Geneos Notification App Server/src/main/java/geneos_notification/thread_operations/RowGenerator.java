@@ -25,16 +25,14 @@ public class RowGenerator {
 	
 	public static ArrayList<String> results;
 	public static Connection conn;
-	public static JSONObject testingObj;
 	
 	public static JSONObject getRow(String xpath)
 	{
 		conn = OpenAccess.connect(InterfaceController.getOAkey());
-		testingObj = new JSONObject();
 		String line = xpath;
 		String path = line.substring(line.indexOf("/geneos"), line.lastIndexOf("/cell[(@column=")) + "/cell[wild(@column,\"*\")]";
 		System.out.println(path);
-		getDataSetItems(path);
+		JSONObject testingObj = getDataSetItems(path);
 		conn.close();
 		return testingObj;
 	}
@@ -43,7 +41,8 @@ public class RowGenerator {
 	
 	
 	
-	private static void getDataSetItems(final String path) {
+	private static JSONObject getDataSetItems(final String path) {
+		JSONObject testingObj = new JSONObject();
 		DataSetQuery query = DataSetQuery.create(path);
 		final DataSetTracker dataSetTracker = new DataSetTracker();
 		final CountDownLatch cdl = new CountDownLatch(1);
@@ -52,6 +51,7 @@ public class RowGenerator {
 			@Override
 			public void callback(final DataSetChange change) {
 				DataSet dataSet = dataSetTracker.update(change);
+				if(!dataSet.getItems().isEmpty()){ cdl.countDown(); }
 				for (DataSetItem item : dataSet.getItems()) {
 					System.out.println(item);
 					JSONObject internal = new JSONObject();
@@ -59,13 +59,13 @@ public class RowGenerator {
 					internal.put("severity", item.getSeverity());
 					testingObj.put(item.getName(), internal);
 				}
-				cdl.countDown();
 			}
 		},
 
 				new ErrorCallback() {
 					@Override
 					public void error(final Exception exception) {
+						exception.printStackTrace();
 						System.err.println("Error retrieving DataSet: " + exception);
 					}
 				});
@@ -77,6 +77,7 @@ public class RowGenerator {
 			System.out.println("Interrupted while waiting for updates");
 			e.printStackTrace();
 		}
+		return testingObj;
 	}
 
 }

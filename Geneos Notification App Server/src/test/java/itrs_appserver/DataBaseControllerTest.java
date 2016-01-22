@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.concurrent.ExecutionException;
 
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -60,6 +61,19 @@ public class DataBaseControllerTest {
 		DatabaseController.execCustom("insert into devices(userid, android_id, registration_key, verification_code, active, loggedin) values((select userid from users where username like 'teste1@Default'),'teste1','teste1', 12345, 0, 0)");
 		DatabaseController.execCustom("insert into user_paths(userid, xpath) values ((select userid from users where username like 'teste1@Default'), 'teste1')");
 		assertTrue(!DatabaseController.getLivePaths("'teste1@Default'").get("teste1").isEmpty());
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void sqlConnectFailTest()
+	{
+		DatabaseController.setAddress("nothing");
+		DatabaseController.SQLConnect();
+	}
+	
+	@After
+	public void reset()
+	{
+		DatabaseController.setAddress("jdbc:mysql://localhost/test?user=root&password=iPods123");
 	}
 	
 	@AfterClass
