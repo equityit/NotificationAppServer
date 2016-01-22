@@ -12,15 +12,15 @@ import geneos_notification.controllers.ThreadController;
 
 public class Alert {
 
-	private static String JSON;
-	private static String xpath;
-	private static String message;
-	private static String value;
-	private static String severity;
+	private String JSON;
+	private String xpath;
+	private String message;
+	private String value;
+	private String severity;
 	
 	public Alert(String path, String val, String sev, String dvPath) throws JSONException {
 		this.xpath = path;
-		setSeverity(sev);
+		this.setSeverity(sev);
 		this.value = val;
 		this.JSON = createJSON(dvPath);
 	}
@@ -45,68 +45,56 @@ public class Alert {
 		//internal.put("alteration", null);
 		//internal.put("time", LocalDateTime.now().toString());
 		testingObj.put("data", internal);
+		System.out.println(testingObj.toString());
 		return testingObj.toString();
 	}
 
-	private static void updateMessage(String from, String to) {
+	public  void updateMessage(String to) {
 		message = (severity + " to " + to + " Alert");
 	}
 
-	public static String getJSON() {
+	public  String getJSON() {
 		return JSON;
 	}
 
-	public static void setJSON(String jSON) {
+	public  void setJSON(String jSON) {
 		JSON = jSON;
 	}
 
-	public static String getXpath() {
+	public  String getXpath() {
 		return xpath;
 	}
 
-	public static void setXpath(String path) {
+	public  void setXpath(String path) {
 		xpath = path;
 	}
 
-	public static String getMessage() {
+	public  String getMessage() {
 		return message;
 	}
 
-	public static void setMessage(String mail) {
+	public  void setMessage(String mail) {
 		message = mail;
 	}
 
-	public static String getValue() {
+	public  String getValue() {
 		return value;
 	}
 
-	public static void setValue(String val) {
+	public  void setValue(String val) {
 		value = val;
 	}
 
-	public static String getSeverity() {
+	public  String getSeverity() {
 		return severity;
 	}
 
-	public static void setSeverity(String sev) {
+	public  void setSeverity(String sev) {
 		if (severity == null)
 			message = ("New Alert :" + sev);
 		else
-			updateMessage(severity, sev);
+			updateMessage(sev);
 		severity = sev;
-	}
-	
-	public Alert(String path, String val, String sev, String dvPath, int test) throws JSONException {
-		this.xpath = path;
-		setSeverity(sev);
-		this.value = val;
-		this.JSON = (dvPath);
-	}
-	
-	public void updateAlert(String val, String sev, String dvPath, int test) throws JSONException {
-		setSeverity(sev);
-		value = val;
-		JSON = dvPath;
 	}
 
 }

@@ -63,7 +63,7 @@ public class InterfaceController {
     //method=RequestMethod.POST)	
     
     @RequestMapping(value="/login", method=RequestMethod.POST)		
-    public String login(@RequestParam(value="username", defaultValue="") String username, @RequestParam(value="android_id", defaultValue="") String android_id, @RequestParam(value="key", defaultValue="") String key) throws Exception 
+    public static String login(@RequestParam(value="username", defaultValue="") String username, @RequestParam(value="android_id", defaultValue="") String android_id, @RequestParam(value="key", defaultValue="") String key) throws Exception 
     {
     	String result = UserController.login(username, android_id, key);
     	return result;
@@ -73,7 +73,7 @@ public class InterfaceController {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
-	public String logout(@RequestParam(value = "username", defaultValue = "") String username,
+	public static String logout(@RequestParam(value = "username", defaultValue = "") String username,
 			@RequestParam(value = "android_id", defaultValue = "") String android_id) throws Exception {
 		String result = UserController.logout(username, android_id);
 		// TransmissionHandler.additionMessage(userName, xpath);
@@ -84,9 +84,9 @@ public class InterfaceController {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @RequestMapping(value="/setcustomdv", method=RequestMethod.POST)
-public String setCustomDV(@RequestParam(required = true, value="entity", defaultValue="") String entity, @RequestParam(required = true, value="xpath", defaultValue="") String xpath, @RequestParam(required = true, value="username", defaultValue="") String userName) throws IOException
+public static String setCustomDV(@RequestParam(required = true, value="xpath", defaultValue="") String xpath, @RequestParam(required = true, value="username", defaultValue="") String userName) throws IOException
 {
-	String result = UserController.setCustomDV(entity, xpath, userName);
+	String result = UserController.setCustomDV(xpath, userName);
 	return result;
 }
 
@@ -95,10 +95,10 @@ public String setCustomDV(@RequestParam(required = true, value="entity", default
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 @RequestMapping(value="/removedv", method=RequestMethod.POST)
-public void removeDataview(@RequestParam(value="entity", defaultValue="") String entity, @RequestParam(value="xpath", defaultValue="") String xpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException
+public static void removeDataview(@RequestParam(value="xpath", defaultValue="") String xpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException
 {
 	ThreadController.removeUserFromNotifyList(userName, xpath);
-	UserController.userObjects.get(userName).removeDV(entity, xpath);
+	UserController.userObjects.get(userName).removeDV(xpath);
 	// TransmissionHandler.removeMessage(userName, xpath);
 	
 }
@@ -107,20 +107,16 @@ public void removeDataview(@RequestParam(value="entity", defaultValue="") String
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @RequestMapping(value="/editdv", method=RequestMethod.POST)
-public void editDV(@RequestParam(value="rentity", defaultValue="") String rentity, @RequestParam(value="aentity", defaultValue="") String aentity, @RequestParam(value="rxpath", defaultValue="") String rxpath, @RequestParam(value="axpath", defaultValue="") String axpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException
+public void editDV(@RequestParam(value="aentity", defaultValue="") String aentity, @RequestParam(value="rxpath", defaultValue="") String rxpath, @RequestParam(value="axpath", defaultValue="") String axpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException
 {
-	ThreadController.removeUserFromNotifyList(userName, rxpath);
-	UserController.userObjects.get(userName).removeDV(rentity, rxpath);
-	// TransmissionHandler.removeMessage(userName, rxpath);
-	setCustomDV(aentity, axpath, userName);
-	
+	ThreadController.editDV(rxpath, axpath, userName);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// , method=RequestMethod.GET)
     @RequestMapping(value="/viewsystemkeys", method=RequestMethod.GET)					
-    public String viewSystemKeys() 
+    public static String viewSystemKeys() 
     {
     	String together = sqlKey + "  " + oaKey;
         return together;
@@ -131,7 +127,7 @@ public void editDV(@RequestParam(value="rentity", defaultValue="") String rentit
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // , method=RequestMethod.GET)
     @RequestMapping(value="/verifydev", method=RequestMethod.GET)					
-	public String verifyDevice(@RequestParam(value="dev_id", defaultValue="") String android_id, @RequestParam(value="verification", defaultValue="") String verification) 
+	public static String verifyDevice(@RequestParam(value="dev_id", defaultValue="") String android_id, @RequestParam(value="verification", defaultValue="") String verification) 
 	{
 		DatabaseController.verifyStoredDevice(android_id, verification);
 		logA.doLog("Controller" , "Veritication email sent for devioce : " + android_id, "Info");
@@ -143,7 +139,7 @@ public void editDV(@RequestParam(value="rentity", defaultValue="") String rentit
 // , method=RequestMethod.GET)***************** NEEDS TESTING ********************
 
     @RequestMapping(value="/getAllDataview", method=RequestMethod.GET)			// First attempt to thread all DV list requests, needs testing		
-	public String getAllDataview() throws JSONException, InterruptedException, ExecutionException 
+	public static String getAllDataview() throws JSONException, InterruptedException, ExecutionException 
 	{
     	logA.doLog("Controller" , "Dataview list requested", "Info");
     	return currentDataviewEntityList;

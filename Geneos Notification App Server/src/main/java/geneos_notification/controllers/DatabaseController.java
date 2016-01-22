@@ -211,13 +211,13 @@ public static int checkValidDomain(String username) throws SQLException {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public static void addCustomDataView(String username, String entity, String xpath) {
+	public static void addCustomDataView(String username, String xpath) {
 		SQLConnect();
 
 		try {
 			stmt = conn.createStatement();
 			res = stmt
-					.executeQuery("call sp_Add_Dataview_To_User('" + username + "','" + entity + "','" + xpath + "')");
+					.executeQuery("call sp_Add_Dataview_To_User('" + username + "','" + xpath + "')");
 		} catch (SQLException e) {
 			logA.doLog("SQL" , "[SQL]Query error while adding dataview " + xpath + " to user : " + username + " \nError is : " + e.toString(), "Critical");
 			throw new RuntimeException(e);
@@ -249,7 +249,7 @@ public static void verifyStoredDevice(String android_id, String verification)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-public static void removeCustomDataview(String username, String entity, String xpath)
+public static void removeCustomDataview(String username, String xpath)
 {
 	SQLConnect();
 

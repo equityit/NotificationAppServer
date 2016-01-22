@@ -140,7 +140,7 @@ public class UserController {
     	for(String path : xpaths)
     	{
     		System.out.println(path);
-    		current.ammendCustomDV("DUMMY", path);
+    		current.ammendCustomDV(path);
     		ThreadController.addToNotifyList(path, username);
     	}
     	
@@ -190,7 +190,7 @@ public class UserController {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public static String setCustomDV(String entity, String xpath, String userName) throws IOException
+	public static String setCustomDV(String xpath, String userName) throws IOException
 	{
 		String ret = "";
 
@@ -201,16 +201,16 @@ public class UserController {
 		}
 		User current = UserController.userObjects.get(userName);
 
-		ret = current.ammendCustomDV(entity, xpath);		// Returns either a result as seen in the comparison below, or xpath or previous custom DV in entity that user is subscribed too. Returned xpath used for updating.
+		ret = current.ammendCustomDV(xpath);		// Returns either a result as seen in the comparison below, or xpath or previous custom DV in entity that user is subscribed too. Returned xpath used for updating.
 
 		if(ret.equals("Add Successful"))
 		ThreadController.addToNotifyList(xpath, userName);	
 		return ret;
 		}
 
-	public static void removeDataview(String entity, String xpath, String userName) {
+	public static void removeDataview(String xpath, String userName) {
 		ThreadController.removeUserFromNotifyList(userName, xpath);
-		userObjects.get(userName).removeDV(entity, xpath);
+		userObjects.get(userName).removeDV(xpath);
 		// TransmissionHandler.removeMessage(userName, xpath);
 	
 	}

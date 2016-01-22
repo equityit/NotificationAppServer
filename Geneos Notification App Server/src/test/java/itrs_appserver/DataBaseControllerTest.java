@@ -35,7 +35,7 @@ public class DataBaseControllerTest {
 		DatabaseController.execCustom("insert into users(username, domainID, created_date) values ('testb1@Default', 1, now());");
 		DatabaseController.execCustom("insert into devices(userid, android_id, registration_key, verification_code, active, loggedin) values((select userid from users where username like 'testb1@Default'),'testb1','testb1', 12345, 0, 0)");
 		DatabaseController.execCustom("insert into user_paths(userid, xpath) values ((select userid from users where username like 'testb1@Default'), 'testb1')");
-		DatabaseController.removeCustomDataview("testb1@Default","testb1","testb1");
+		DatabaseController.removeCustomDataview("testb1@Default","testb1");
 		assertTrue(UserController.refreshDeviceToStoredDataviews("testb1@Default") == 0);
 	}
 	

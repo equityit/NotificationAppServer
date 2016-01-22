@@ -47,7 +47,7 @@ public class User {
 		return username;
 	}
 
-	public String ammendCustomDV(String Entity, String Xpath)		// Searches the users custom data views by entity, if same entity is found it is updated, otherwise it is created.
+	public String ammendCustomDV(String Xpath)		// Searches the users custom data views by entity, if same entity is found it is updated, otherwise it is created.
 	{
 		String ret = "Add Successful";		
 		int i = 0;
@@ -60,22 +60,22 @@ public class User {
 		}
 		if (i == 0)
 		{ 											// If no entity with the name is found create a customer dataview for that entity
-			pathList.add(new CustomDataView(Entity, Xpath));	// Add custom data view to user for that specific entity
-			DatabaseController.addCustomDataView(username, Entity, Xpath);
+			pathList.add(new CustomDataView(Xpath));	// Add custom data view to user for that specific entity
+			DatabaseController.addCustomDataView(username, Xpath);
 		}	
 		return ret;	
 	}
 	
 	// Need to add function to delete 
 	
-	public void removeDV(String entity, String xpath)
+	public void removeDV(String xpath)
 	{
 		int i = 0;
 		CustomDataView removal = null;
 		for (CustomDataView test : pathList) {
 			if (test.getXpath().equals(xpath)) {		// Cycles through the dataview items to see if there is an entity match, if one is found the object is updated 
 				System.out.println(test);
-				DatabaseController.removeCustomDataview(username, entity, xpath);
+				DatabaseController.removeCustomDataview(username, xpath);
 				removal = test;
 				i = 1;
 				break;

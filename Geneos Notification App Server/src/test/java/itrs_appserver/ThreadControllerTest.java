@@ -50,8 +50,32 @@ public class ThreadControllerTest {
 		DatabaseController.execCustom("insert into users(username, domainID, created_date) values ('testd3@Default', 1, now());");
 		DatabaseController.execCustom("insert into devices(userid, android_id, registration_key, verification_code, active, loggedin) values((select userid from users where username like 'testd3@Default'),'testd3','testd3', 12345, 1, 1)");
 		UserController.login("testd3@Default", "testd3", "testd3");
-		ThreadController.addToNotifyList("testd3", "testd3@Default");
-		assertTrue(ThreadController.monitoringThreadList.get("testb3").getUsers().contains("testb3@Default") && ThreadController.monitoringThreadList.get("testb3").getUsers().contains("testc3@Default"));
+		UserController.setCustomDV("testd3", "testd3@Default");
+		ThreadController.editDV("testd3", "teste3", "testd3@Default");
+		assertTrue(ThreadController.monitoringThreadList.get("teste3").getUsers().contains("testd3@Default"));
+	}
+	
+	@Test
+	public void removeUserFromNotifylistSingleUserTest() throws Exception {
+		DatabaseController.execCustom("insert into users(username, domainID, created_date) values ('testf3@Default', 1, now());");
+		DatabaseController.execCustom("insert into devices(userid, android_id, registration_key, verification_code, active, loggedin) values((select userid from users where username like 'testf3@Default'),'testf3','testf3', 12345, 1, 1)");
+		UserController.login("testf3@Default", "testf3", "testf3");
+		ThreadController.addToNotifyList("testf3", "testf3@Default");
+		ThreadController.removeUserFromNotifyList("testf3@Default", "testf3");
+		assertTrue(!ThreadController.monitoringThreadList.containsKey("tetf3"));
+	}
+	@Test
+	public void removeUserFromNotifylistTwoUsersTest() throws Exception {
+		DatabaseController.execCustom("insert into users(username, domainID, created_date) values ('testg3@Default', 1, now());");
+		DatabaseController.execCustom("insert into devices(userid, android_id, registration_key, verification_code, active, loggedin) values((select userid from users where username like 'testg3@Default'),'testg3','testg3', 12345, 1, 1)");
+		UserController.login("testg3@Default", "testg3", "testg3");
+		ThreadController.addToNotifyList("testg3", "testg3@Default");
+		DatabaseController.execCustom("insert into users(username, domainID, created_date) values ('testh3@Default', 1, now());");
+		DatabaseController.execCustom("insert into devices(userid, android_id, registration_key, verification_code, active, loggedin) values((select userid from users where username like 'testh3@Default'),'testh3','testh3', 12345, 1, 1)");
+		UserController.login("testh3@Default", "testh3", "testh3");
+		ThreadController.addToNotifyList("testg3", "testh3@Default");
+		ThreadController.removeUserFromNotifyList("testg3@Default", "testg3");
+		assertTrue(ThreadController.monitoringThreadList.get("testg3").getUsers().contains("testh3@Default"));
 	}
 	
 	
@@ -65,6 +89,18 @@ public class ThreadControllerTest {
 		DatabaseController.execCustom("delete from users where username like 'testb3@Default'");
 		DatabaseController.execCustom("delete from devices where userid = (select userid from users where username like 'testc3@Default')");
 		DatabaseController.execCustom("delete from users where username like 'testc3@Default'");
+		DatabaseController.execCustom("delete from devices where userid = (select userid from users where username like 'testd3@Default')");
+		DatabaseController.execCustom("delete from user_paths where userid = (select userid from users where username like 'testd3@Default')");
+		DatabaseController.execCustom("delete from users where username like 'testd3@Default'");
+		DatabaseController.execCustom("delete from devices where userid = (select userid from users where username like 'testf3@Default')");
+		DatabaseController.execCustom("delete from user_paths where userid = (select userid from users where username like 'testf3@Default')");
+		DatabaseController.execCustom("delete from users where username like 'testf3@Default'");
+		DatabaseController.execCustom("delete from devices where userid = (select userid from users where username like 'testg3@Default')");
+		DatabaseController.execCustom("delete from user_paths where userid = (select userid from users where username like 'testg3@Default')");
+		DatabaseController.execCustom("delete from users where username like 'testg3@Default'");
+		DatabaseController.execCustom("delete from devices where userid = (select userid from users where username like 'testh3@Default')");
+		DatabaseController.execCustom("delete from user_paths where userid = (select userid from users where username like 'testh3@Default')");
+		DatabaseController.execCustom("delete from users where username like 'testh3@Default'");
 	}
 
 }

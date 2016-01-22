@@ -72,7 +72,7 @@ public class UserControllerTest {
 	@Test
 	public void checkLoggedInStatusTest() throws Exception {
 		UserController.userObjects.put("something", new User("something", "abc", "abc"));
-		UserController.userObjects.get("something").pathList.add(new CustomDataView("test", "test"));
+		UserController.userObjects.get("something").pathList.add(new CustomDataView("test"));
 		assertTrue(UserController.checkLoggedInStatus("something", "abc") == 1);
 	}
 	
@@ -81,12 +81,12 @@ public class UserControllerTest {
 		DatabaseController.execCustom("insert into users(username, domainID, created_date) values ('teste@Default', 1, now());");
 		DatabaseController.execCustom("insert into devices(userid, android_id, registration_key, verification_code, active, loggedin) values((select userid from users where username like 'teste@Default'),'teste','teste', 12345, 1, 1)");
 		UserController.login("teste@Default", "teste", "teste");
-		assertTrue(UserController.setCustomDV("test", "test", "teste@Default").equals("Add Successful"));
+		assertTrue(UserController.setCustomDV("test", "teste@Default").equals("Add Successful"));
 	}
 	
 	@Test
 	public void setCustomDVTestFailTest() throws Exception {
-		assertTrue(UserController.setCustomDV("test", "test", "testFail@Default").equals("You are not a valid user"));
+		assertTrue(UserController.setCustomDV("test", "testFail@Default").equals("You are not a valid user"));
 	}
 	
 	@Test

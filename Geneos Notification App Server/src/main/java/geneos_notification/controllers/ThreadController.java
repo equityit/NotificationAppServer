@@ -73,12 +73,12 @@ public class ThreadController {
 		// TransmissionHandler.additionMessage(userName, xpath);
 	}
 
-	public void editDV(String rentity, String aentity, String rxpath, String axpath, String userName)
+	public static void editDV(String rxpath, String axpath, String userName)
 			throws IOException {
 		ThreadController.removeUserFromNotifyList(userName, rxpath);
-		UserController.userObjects.get(userName).removeDV(rentity, rxpath);
+		UserController.userObjects.get(userName).removeDV(rxpath);
 		// TransmissionHandler.removeMessage(userName, rxpath);
-		UserController.setCustomDV(aentity, axpath, userName);
+		UserController.setCustomDV(axpath, userName);
 
 	}
 
