@@ -97,6 +97,11 @@ public class UserControllerTest {
 		assertTrue(UserController.logout("testf@Default", "testf").equals("This device has been successfully logged out"));
 	}
 	
+	@Test
+	public void loginFailureCatchTest() throws Exception {
+		assertTrue(UserController.login("fail' or 1 = 1", "fail' or 1 = 1", "fail' or 1 = 1").equals("An error occured - Please contact your administrator"));
+	}
+	
 	
 	
 	@AfterClass

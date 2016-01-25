@@ -84,6 +84,12 @@ public class InterfaceControllerTest {
 		InterfaceController.currentDataviewEntityList = null;
 	}
 	
+	@Test
+	public void getRowTest() throws InterruptedException, ExecutionException
+	{
+		assertTrue(!InterfaceController.getRow("/geneos/gateway[(@name=\"GW_TEST_50144\")]/directory/probe[(@name=\"SYSMON\")]/managedEntity[(@name=\"CPU_Entity\")]/sampler[(@name=\"CPU_sampler\")][(@type=\"\")]/dataview[(@name=\"CPU_sampler\")]/rows/row[(@name=\"cpu_0\")]/cell[(@column=\"percentUtilisation\")]").isEmpty());
+	}
+	
 	@AfterClass
 	public static void cleanUp()
 	{

@@ -46,7 +46,7 @@ public class DatabaseController {
 ///////////////////////////////////////////////////////////////////////////////////
   
 @SuppressWarnings("finally")
-public static int checkUser(String username, String android_id) {
+public static int checkUser(String username, String android_id){
 		SQLConnect();
 		int result = 0;
 		int queryOut = 0;
@@ -71,12 +71,12 @@ public static int checkUser(String username, String android_id) {
 
 		} catch (Exception e) {
 			logA.doLog("SQL" , "[SQL]SQL query issue was encountered causing SQL failure : " + e.toString(), "Critical");
-			// System.out.println(e);
+			//System.out.println(e);
 			throw new RuntimeException(e);
-		} finally {
+		} 
 			close();
 			return result;
-		}
+		
 
 	}
 
@@ -136,6 +136,7 @@ public static int checkValidDomain(String username) throws SQLException {
 	{
 		logA.doLog("SQL" , "[SQL]Undetermined error was encountered causing query failure! : " + e.toString(), "Critical");
 		e.printStackTrace();
+		close();
 		throw new RuntimeException(e);
 	}
 }
@@ -146,7 +147,6 @@ public static int checkValidDomain(String username) throws SQLException {
   public static void createUser(String username, String android_id, String key) throws Exception
   {
 		 SQLConnect();
-		 
 			try {
 				stmt = conn.createStatement();
 				int ran = random.nextInt();
@@ -154,11 +154,10 @@ public static int checkValidDomain(String username) throws SQLException {
 				EmailController.sendMail(username, ran, android_id);
 			} catch (SQLException e) {
 				logA.doLog("SQL" , "[SQL]Query error while creating new user : " + username + " \nError is : " + e.toString(), "Critical");
+				close();
 				throw new RuntimeException(e);
 			}
-			finally{
 				close();	
-			}
   }
   
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -176,11 +175,10 @@ public static int checkValidDomain(String username) throws SQLException {
 	} catch (SQLException e) {
 		logA.doLog("SQL" , "[SQL]Query error while creating invalid device " + android_id + " for user : " + username + " \nError is : " + e.toString(), "Critical");
 		e.printStackTrace();
+		close();
 		throw new RuntimeException(e);
 	}
-	finally{
 		close();	
-	}
 	
 	 
  }
@@ -203,6 +201,7 @@ public static int checkValidDomain(String username) throws SQLException {
 			return 1;
 		} catch (SQLException e) {
 			logA.doLog("SQL" , "[SQL]Query error while checkintg status of device : " + android_id + " \nError is : " + e.toString(), "Critical");
+			close();
 			throw new RuntimeException(e);
 		}
  }
@@ -220,10 +219,11 @@ public static int checkValidDomain(String username) throws SQLException {
 					.executeQuery("call sp_Add_Dataview_To_User('" + username + "','" + xpath + "')");
 		} catch (SQLException e) {
 			logA.doLog("SQL" , "[SQL]Query error while adding dataview " + xpath + " to user : " + username + " \nError is : " + e.toString(), "Critical");
-			throw new RuntimeException(e);
-		} finally {
 			close();
-		}
+			throw new RuntimeException(e);
+		} 
+			close();
+		
 
 	}
  
@@ -239,11 +239,10 @@ public static void verifyStoredDevice(String android_id, String verification)
 	res = stmt.executeQuery("call sp_verify_device('" + android_id + "'," + random + ")");
 	} catch (SQLException e) {
 	logA.doLog("SQL" , "[SQL]Error while conducting verification for device : " + android_id + " with verification code : "+ verification + " \nError is : " + e.toString(), "Critical");
+	close();
 	throw new RuntimeException(e);
 	}
-	finally{
 	close();	
-	}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -259,10 +258,10 @@ public static void removeCustomDataview(String username, String xpath)
 				.executeQuery("call sp_remove_dataview_from_user('" + username + "','" + xpath + "')");
 	} catch (SQLException e) {
 		logA.doLog("SQL" , "[SQL]Error while removing xpath " + xpath + " from user : " + username + " \nError is : " + e.toString(), "Critical");
-		throw new RuntimeException(e);
-	} finally {
 		close();
-	}
+		throw new RuntimeException(e);
+	} 
+		close();
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -281,11 +280,12 @@ public static void removeCustomDataview(String username, String xpath)
 		} catch (SQLException e) {
 			logA.doLog("SQL", "[SQL]Query error while retrieving dataviews subscribed to user : " + username
 					+ " \nError is : " + e.toString(), "Critical");
+			close();
 			throw new RuntimeException(e);
-		} finally {
+		} 
 			close();
 			return resArray;
-		}
+		
 
 	}
 
@@ -303,10 +303,11 @@ public static void logoutDevice(String android_id)
 		logA.doLog("SQL" , "[SQL]Device " + android_id + " logged out successfully", "Info");
 	} catch (SQLException e) {
 		logA.doLog("SQL" , "[SQL]Error while logging out " + android_id + " \nError is : " + e.toString(), "Critical");
-		throw new RuntimeException(e);
-	} finally {
 		close();
-	}
+		throw new RuntimeException(e);
+	} 
+		close();
+	
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -323,10 +324,11 @@ public static void loginDevice(String android_id)
 		logA.doLog("SQL" , "[SQL]Device " + android_id + " logged in successfully", "Info");
 	} catch (SQLException e) {
 		logA.doLog("SQL" , "[SQL]Error while logging in device " + android_id + " \nError is : " + e.toString(), "Critical");
-		throw new RuntimeException(e);
-	} finally {
 		close();
-	}
+		throw new RuntimeException(e);
+	} 
+		close();
+	
 }
   
 ///////////////////////////////////////////////////////////////////////////////////
@@ -350,12 +352,12 @@ public static Map<String, HashMap<String, String>> getLiveDevices() {
 		}
 	} catch (SQLException e) {
 		logA.doLog("SQL", "[SQL]Query error while retrieving custom dataset \nError is : " + e.toString(), "Critical");
-		// e.printStackTrace();
+		close();// e.printStackTrace();
 		throw new RuntimeException(e);
-	} finally {
+	} 
 		close();
 		return resMap;
-	}
+	
 
 }
 
@@ -379,11 +381,12 @@ public static HashMap<String,ArrayList<String>> getLivePaths(String query) {
 	} catch (SQLException e) {
 		logA.doLog("SQL", "[SQL]Query error while retrieving custom dataset \nError is : " + e.toString(), "Critical");
 		 e.printStackTrace();
-		throw new RuntimeException(e);
-	} finally {
+		 close();
+		 throw new RuntimeException(e);
+	} 
 		close();
 		return resMap;
-	}
+
 
 }
 
@@ -399,10 +402,11 @@ public static void execCustom(String query) {
 	} catch (SQLException e) {
 		logA.doLog("SQL", "[SQL]Query error while retrieving custom dataset \nError is : " + e.toString(), "Critical");
 		e.printStackTrace();
-		throw new RuntimeException(e);
-	} finally {
 		close();
-	}
+		throw new RuntimeException(e);
+	} 
+		close();
+	
 
 }
 

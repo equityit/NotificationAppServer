@@ -2,8 +2,11 @@ package itrs_appserver;
 
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -44,6 +47,18 @@ public class startControllerTest {
 		DatabaseController.execCustom("insert into user_paths(userid, xpath) values ((select userid from users where username like 'testa2@Default'), 'testa2')");
 		StartController.perpetualReload();
 		assertTrue(!ThreadController.monitoringThreadList.isEmpty() && !UserController.userObjects.isEmpty());
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void checkValidityFailTest() throws InterruptedException, ExecutionException {
+	InterfaceController.setKeyData("nothing", "nothing");
+    StartController.checkValidity();
+	}
+	
+	@After
+	public void reset()
+	{
+		InterfaceController.setKeyData("jdbc:mysql://localhost/test?user=root&password=iPods123", "geneos.cluster://192.168.220.54:2551?username=admin&password=admin");
 	}
 	
 	@AfterClass

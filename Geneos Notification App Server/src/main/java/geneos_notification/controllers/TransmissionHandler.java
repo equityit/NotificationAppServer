@@ -17,60 +17,25 @@ import geneos_notification.objects.Alert;
 
 public class TransmissionHandler {
 	
-    public final static String api = "key=AIzaSyB24chqHK6z1MQfs5NmAXUwUyS8e8KN40k";
-    public final static String gcm = "https://android.googleapis.com/gcm/send";
+    public static String api = "key=AIzaSyB24chqHK6z1MQfs5NmAXUwUyS8e8KN40k";
+    public static String gcm = "https://android.googleapis.com/gcm/send";
     static LtA logA = new LogObject();
 	
 	
-    public static void sendPost(Alert sendingAlert) throws JSONException, IOException {
-    	logA.doLog("Transmission" , "[Transmission]Output JSON data : " + sendingAlert.getJSON(), "Info");
-        HttpURLConnection con = postCreation();
-        
-        //System.out.println(sendingAlert.getJSON());
-        transmitPost(con, sendingAlert.getJSON());
+	public static int sendPost(Alert sendingAlert) {
+		logA.doLog("Transmission", "[Transmission]Output JSON data : " + sendingAlert.getJSON(), "Info");
+		try {
+			HttpURLConnection con = postCreation();
+			int res = transmitPost(con, sendingAlert.getJSON());
+			return res;
+		} catch (IOException e) {
+			logA.doLog("Transmission",
+					"[Transmission]An error was encountered with system connection parameters. Please ensure a stable and configured network configuration and try again.",
+					"Critical");
+			throw new RuntimeException(e);
+		}
     }
     
-    public static void sendPost(String alert, int test) throws JSONException, IOException {
-    	logA.doLog("Transmission" , "[Transmission]Output JSON data : " + alert, "Info");
-        HttpURLConnection con = postCreation();
-        // System.out.println(alert);
-        transmitPost(con, alert);
-    }
-    
-  /*  public static void additionMessage(String username, String xpath) throws IOException
-    {
-    	HttpURLConnection con = postCreation();
-    	transmitPost(con, createAJSON(username, xpath));
-    }
-    
-    private static String createAJSON(String username, String xpath)
-    {
-    	JSONObject testingObj = new JSONObject();
-		JSONObject internal = new JSONObject();
-		testingObj.put("registration_ids",  new JSONArray(GreetingController.userObjects.get(username).getRegistrations()));
-		internal.put("alteration", "addition");
-		internal.put("xpath", xpath);
-		testingObj.put("data", internal);
-		return testingObj.toString();
-    }
-    
-    public static void removeMessage(String username, String xpath) throws IOException
-    {
-    	HttpURLConnection con = postCreation();
-    	transmitPost(con, createRJSON(username, xpath));
-    }
-    
-    private static String createRJSON(String username, String xpath)
-    {
-    	JSONObject testingObj = new JSONObject();
-		JSONObject internal = new JSONObject();
-		testingObj.put("registration_ids",  new JSONArray(GreetingController.userObjects.get(username).getRegistrations()));
-		internal.put("alteration", "removal");
-		internal.put("xpath", xpath);
-		testingObj.put("data", internal);
-		return testingObj.toString();
-    }*/
-	
     public static HttpURLConnection postCreation() throws IOException {
     	URL obj = new URL(gcm);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -86,7 +51,7 @@ public class TransmissionHandler {
         return con;
     }
     
-    public static int transmitPost(HttpURLConnection con, String myString) throws UnsupportedOperationException, IOException {
+    public static int transmitPost(HttpURLConnection con, String myString) throws UnsupportedOperationException, IOException{
         int result = 1;
     	try {
         	OutputStream os = con.getOutputStream();
@@ -107,36 +72,65 @@ public class TransmissionHandler {
             rd.close();
             String tester = response.toString();
             logA.doLog("Transmission" , "[Transmission]POST Returned data : " + tester, "Info");
-            //System.out.println("POST RETURN VALUE : " + tester);
             
             if (con.getResponseCode() == HttpURLConnection.HTTP_OK) {
             	logA.doLog("Transmission" , "[Transmission]Transmission Successful", "Info");
                 
             } else {
             	result = 0;
-                // Server returned HTTP error code.
             }
-        } catch (MalformedURLException e) {
-        	logA.doLog("Transmission" , "[Transmission]URL error has been encountered, tranmission failed!: " + e.toString(), "Critical");
-        	result = 0;
-        	e.printStackTrace();
-           // System.out.println(e);
-           // System.out.println("url");
         } catch (IOException e) {
         	logA.doLog("Transmission" , "[Transmission]IO error has been encountered, tranmission failed! : " + e.getMessage(), "Critical");
         	result = 0;
         	System.out.println(myString);
         	e.printStackTrace();
-           // System.out.println(e);
-           // System.out.println("io");
-        	throw new IOException();
+        	throw new IOException(e);
         } catch (Exception e) {
         	logA.doLog("Transmission" , "[Transmission]Undetermined error has been encountered, tranmission failed! : " + e.getMessage(), "Critical");
         	result = 0;
         	e.printStackTrace();
-            //System.out.println(e);
+        	throw new RuntimeException(e);
         }
 		return result;
     }
 
 }
+
+
+
+
+
+/*  public static void additionMessage(String username, String xpath) throws IOException
+{
+	HttpURLConnection con = postCreation();
+	transmitPost(con, createAJSON(username, xpath));
+}
+
+private static String createAJSON(String username, String xpath)
+{
+	JSONObject testingObj = new JSONObject();
+	JSONObject internal = new JSONObject();
+	testingObj.put("registration_ids",  new JSONArray(GreetingController.userObjects.get(username).getRegistrations()));
+	internal.put("alteration", "addition");
+	internal.put("xpath", xpath);
+	testingObj.put("data", internal);
+	return testingObj.toString();
+}
+
+public static void removeMessage(String username, String xpath) throws IOException
+{
+	HttpURLConnection con = postCreation();
+	transmitPost(con, createRJSON(username, xpath));
+}
+
+private static String createRJSON(String username, String xpath)
+{
+	JSONObject testingObj = new JSONObject();
+	JSONObject internal = new JSONObject();
+	testingObj.put("registration_ids",  new JSONArray(GreetingController.userObjects.get(username).getRegistrations()));
+	internal.put("alteration", "removal");
+	internal.put("xpath", xpath);
+	testingObj.put("data", internal);
+	return testingObj.toString();
+}*/
+

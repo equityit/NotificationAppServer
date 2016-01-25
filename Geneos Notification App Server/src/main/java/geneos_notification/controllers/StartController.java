@@ -166,7 +166,14 @@ public static void readSettingsFile() {
     	String OA = "geneos.cluster://" + setting.get("OAHost") + ":" + setting.get("OAPort") + "?username=" + setting.get("OAUser") + "&password=" + setting.get("OAPass");
     	InterfaceController.setKeyData(sqlServer, OA);
     	EmailController.setDetails(smtpH, smtpU, smtpP);
-    	checkValidity(OA, sqlServer);
+    	try{
+    	checkValidity();
+    	}
+    	catch(Exception e)
+    	{
+    		logA.doLog("Start" , "Boot configuration error was encountered, please confirm settings and re-try boot. System shutting down.", "Critical");
+    		System.exit(0);
+    	}
     }
     
    /* public static void configureSettings(ArrayList<String> settings) throws InterruptedException, ExecutionException
@@ -222,7 +229,7 @@ public static void readSettingsFile() {
 		
     }
     
-    public static void checkValidity(String OA, String sqlServer)
+    public static void checkValidity()
     {
     	try{
     		DatabaseController.SQLConnect();
@@ -231,8 +238,8 @@ public static void readSettingsFile() {
     	catch(Exception e)
     	{
     		//System.out.println("There was an error with the SQL configuration or address, please confirm details. System shutting down.");
-    		logA.doLog("Start" , "There was an error with the SQL configuration or address, please confirm details. System shutting down.", "Critical");
-    		System.exit(0);
+    		logA.doLog("Start" , "There was an error with the SQL configuration or address, please confirm details.", "Critical");
+    		throw new RuntimeException(e);
     	}
     }
 }

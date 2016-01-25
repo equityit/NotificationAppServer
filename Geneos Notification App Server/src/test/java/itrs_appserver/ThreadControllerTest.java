@@ -78,6 +78,18 @@ public class ThreadControllerTest {
 		assertTrue(ThreadController.monitoringThreadList.get("testg3").getUsers().contains("testh3@Default"));
 	}
 	
+	@Test
+	public void restartNotfyListTest() throws Exception {
+		DatabaseController.execCustom("insert into users(username, domainID, created_date) values ('testi3@Default', 1, now());");
+		DatabaseController.execCustom("insert into devices(userid, android_id, registration_key, verification_code, active, loggedin) values((select userid from users where username like 'testi3@Default'),'testi3','testi3', 12345, 1, 1)");
+		DatabaseController.execCustom("insert into devices(userid, android_id, registration_key, verification_code, active, loggedin) values((select userid from users where username like 'testi3@Default'),'testj3','testj3', 12345, 1, 1)");
+		UserController.login("testi3@Default", "testi3", "testi3");
+		ThreadController.addToNotifyList("testi3", "testi3@Default");
+		UserController.login("testi3@Default", "testj3", "testj3");
+		ThreadController.restartNotifyList("testi3");
+		assertTrue(ThreadController.monitoringThreadList.get("testi3").getRegList().getRegList().contains("testj3"));
+	}
+	
 	
 	
 	@AfterClass
@@ -101,6 +113,9 @@ public class ThreadControllerTest {
 		DatabaseController.execCustom("delete from devices where userid = (select userid from users where username like 'testh3@Default')");
 		DatabaseController.execCustom("delete from user_paths where userid = (select userid from users where username like 'testh3@Default')");
 		DatabaseController.execCustom("delete from users where username like 'testh3@Default'");
+		DatabaseController.execCustom("delete from devices where userid = (select userid from users where username like 'testi3@Default')");
+		DatabaseController.execCustom("delete from user_paths where userid = (select userid from users where username like 'testi3@Default')");
+		DatabaseController.execCustom("delete from users where username like 'testi3@Default'");
 	}
 
 }

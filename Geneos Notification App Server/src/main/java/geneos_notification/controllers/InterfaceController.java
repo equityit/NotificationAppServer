@@ -170,7 +170,7 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     @RequestMapping(value="/getrow", method=RequestMethod.POST)					
-	public String getRow(@RequestParam(value="xpath", defaultValue="") String xpath) throws InterruptedException, ExecutionException
+	public static String getRow(@RequestParam(value="xpath", defaultValue="") String xpath) throws InterruptedException, ExecutionException
 	{
     	logA.doLog("Controller" , "Row request made for row at xpath : " + xpath, "Info");
     	String ret = null;

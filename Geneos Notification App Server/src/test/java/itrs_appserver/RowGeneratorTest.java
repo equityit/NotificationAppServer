@@ -21,10 +21,15 @@ public class RowGeneratorTest {
 		EmailController.setDetails("smtp.hostedservice2.net", "HelpdeskAutomation@itrsgroup.com", "9AHNekkeJwUE7XD");
 	}
 
-/*	@Test
+	@Test
 	public void getDataSetItemsTest() {
 		assertTrue(RowGenerator.getRow("/geneos/gateway[(@name=\"GW_TEST_50144\")]/directory/probe[(@name=\"SYSMON\")]/managedEntity[(@name=\"CPU_Entity\")]/sampler[(@name=\"CPU_sampler\")][(@type=\"\")]/dataview[(@name=\"CPU_sampler\")]/rows/row[(@name=\"cpu_0\")]/cell[(@column=\"percentUtilisation\")]").size() > 1);
-	}*/
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void getDataSetItemsFailTest() {
+		RowGenerator.getRow("fail' or 1 = 1");
+	}
 	
 	@Test(expected = Exception.class)
 	public void getDataSetItemsFailureTest() {

@@ -2,12 +2,15 @@ package itrs_appserver;
 
 import static org.junit.Assert.*;
 
+import java.sql.SQLException;
 import java.util.concurrent.ExecutionException;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import com.mysql.jdbc.exceptions.MySQLSyntaxErrorException;
 
 import geneos_notification.controllers.DatabaseController;
 import geneos_notification.controllers.EmailController;
@@ -68,6 +71,84 @@ public class DataBaseControllerTest {
 	{
 		DatabaseController.setAddress("nothing");
 		DatabaseController.SQLConnect();
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void userCheckFailTest()
+	{
+		DatabaseController.checkUser("fail' or 1 = 1", "fail");
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void checkValidDomainFailTest() throws SQLException
+	{
+		DatabaseController.checkValidDomain("fail' or 1 = 1");
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void createUserFailTest() throws Exception
+	{
+		DatabaseController.createUser("fail' or 1 = 1", "fail' or 1 = 1", "fail' or 1 = 1");
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void createInValidDeviceFailTest() throws Exception
+	{
+		DatabaseController.createInValidDevice("fail' or 1 = 1", "fail' or 1 = 1", "fail' or 1 = 1");
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void checkDeviceExistenceFailTest() throws Exception
+	{
+		DatabaseController.checkDeviceExistence("fail' or 1 = 1");
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void addCustomDataViewFailTest() throws Exception
+	{
+		DatabaseController.addCustomDataView("fail' or 1 = 1","fail' or 1 = 1");
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void verifyStoredDeviceFailTest() throws Exception
+	{
+		DatabaseController.verifyStoredDevice("fail' or 1 = 1","fail' or 1 = 1");
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void removeCustomDataviewFailTest() throws Exception
+	{
+		DatabaseController.removeCustomDataview("fail' or 1 = 1","fail' or 1 = 1");
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void getUserDataviewListFailTest() throws Exception
+	{
+		DatabaseController.getUserDataviewList("fail' or 1 = 1");
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void logoutDeviceFailTest() throws Exception
+	{
+		DatabaseController.logoutDevice("fail' or 1 = 1");
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void loginDeviceFailTest() throws Exception
+	{
+		DatabaseController.loginDevice("fail' or 1 = 1");
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void getLivePathsFailTest() throws Exception
+	{
+		DatabaseController.getLivePaths("fail' or 1 = 1");
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void execCustomFailTest() throws Exception
+	{
+		DatabaseController.execCustom("fail' or 1 = 1");
 	}
 	
 	@After
