@@ -59,7 +59,6 @@ return registrationList;
 			try {
 				Thread.sleep(10000);
 			} catch (InterruptedException ex) {
-				System.out.println("Internal interrupt happens");
 				logA.doLog("Thread", "[T-INFO]Thread internal termination confirmation", "Info");
 				return;
 			}

@@ -62,6 +62,25 @@ public class TransmissionHandlerTest {
 		assertEquals(1,TransmissionHandler.transmitPost(con, output));
 	}
 	
+	@Test(expected = IOException.class)
+	public void testTransmissionFail() throws IOException
+	{
+		JSONObject testingObj = new JSONObject();
+		JSONObject internal = new JSONObject();
+		testingObj.put("fail", "fCPKIL7K5H0:APA91bER9gg86wQYCx1audS_IWFyR5fxB96E7JhKCDavAWy0nimqTri2tLWuxsbbdMHCwzuGsGjhVfra82zl_ASnpNEQF5PKr09KC9GMHmndFj2S6uA_VYOs84q5AQPa-seZJG7PkwYY");
+		internal.put("message", "something");
+		internal.put("xpath", "Something");
+		internal.put("wrong", "Something");
+		internal.put("severity", "something");
+		internal.put("time", LocalDateTime.now().toString());
+		testingObj.put("fail", internal);
+		String output =  testingObj.toString();
+		System.out.println(output);
+		HttpURLConnection con = TransmissionHandler.postCreation();
+		TransmissionHandler.transmitPost(con, output);
+	}
+	
+	
 	@Test
 	public void sendPostTest() throws Exception
 	{

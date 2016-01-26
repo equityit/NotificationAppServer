@@ -86,7 +86,6 @@ public class ThreadController {
 		ThreadItem current = monitoringThreadList.get(xpath);
 		current.getFuture().cancel(true);
 		int number = current.removeUser(username);
-		System.out.println("This is the returned number : " + number);
 		if (number == 1) {
 			UserController.logA.doLog("Controller" , "Thread terminated : " + xpath  , "Info");
 			current = null;

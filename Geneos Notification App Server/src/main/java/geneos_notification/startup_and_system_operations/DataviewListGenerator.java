@@ -1,6 +1,10 @@
 package geneos_notification.startup_and_system_operations;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import com.itrsgroup.openaccess.Callback;
@@ -16,8 +20,10 @@ import com.itrsgroup.openaccess.dataset.DataSetTracker;
 import com.itrsgroup.openaccess.xpath.XPathBuilder;
 
 import geneos_notification.controllers.InterfaceController;
+import geneos_notification.controllers.UserController;
 import geneos_notification.loggers.LogObject;
 import geneos_notification.loggers.LtA;
+import geneos_notification.objects.User;
 
 import java.util.concurrent.CountDownLatch;
 import static java.util.concurrent.TimeUnit.SECONDS;
@@ -86,8 +92,86 @@ public class DataviewListGenerator {
 		//System.out.println(list.toString().length());
 		logA.doLog("Thread" , "[DT-INFO]Collected Dataviews : " + list + " \nWith a length of " + list.toString().length(), "Info");
 		conn.close();
+		//Collections.sort(list, String.CASE_INSENSITIVE_ORDER);
+		list = sortList(list);
+/*		Collections.sort(list, new Comparator<String>() {
+	        @Override
+	        public int compare(String s1, String s2) {
+	        	s1 = getME(s1);
+	        	s2 = getME(s2);
+	            return s1.compareToIgnoreCase(s2);
+	        }
+	    });*/
 		return list;
 
+	}
+	
+	private static ArrayList<String> sortList(ArrayList<String> list) {
+		ArrayList<String> res = new ArrayList<String>();
+		ArrayList<String> meOrder = orderMeList(list);
+		Map<String, ArrayList<String>> organiser = mapAndOrderDataviews(list);
+		for (String me : meOrder) {
+			res.addAll(organiser.get(me));
+		}
+		return res;
+	}
+
+	private static Map<String, ArrayList<String>> mapAndOrderDataviews(ArrayList<String> list) {
+		Map<String, ArrayList<String>> organiser = new HashMap<String, ArrayList<String>>();
+		for (String extract : list) {
+			String filter = getME(extract);
+			if (organiser.containsKey(filter))
+				organiser.get(filter).add(extract);
+			else {
+				ArrayList<String> dvS = new ArrayList<String>();
+				dvS.add(extract);
+				organiser.put(filter, dvS);
+			}
+
+		}
+
+		for (Map.Entry<String, ArrayList<String>> entry : organiser.entrySet()) {
+			Collections.sort(entry.getValue(), new Comparator<String>() {
+				@Override
+				public int compare(String s1, String s2) {
+					s1 = getDV(s1);
+					s2 = getDV(s2);
+					return s1.compareToIgnoreCase(s2);
+				}
+			});
+		}
+		return organiser;
+	}
+
+	private static ArrayList<String> orderMeList(ArrayList<String> list) {
+		ArrayList<String> meOrder = new ArrayList<String>();
+
+		for (String extract : list) {
+			extract = getME(extract);
+			if (!meOrder.contains(extract))
+				meOrder.add(extract);
+		}
+
+		Collections.sort(meOrder, new Comparator<String>() {
+			@Override
+			public int compare(String s1, String s2) {
+				return s1.compareToIgnoreCase(s2);
+			}
+		});
+		return meOrder;
+	}
+
+	private static String getME(String path) {
+		String res = null;
+		String res1 = path.substring(path.lastIndexOf("managedEntity[(@name=\""), path.lastIndexOf("/sampler"));
+		res = res1.substring(22, res1.lastIndexOf("\")"));
+		return res;
+	}
+
+	private static String getDV(String path) {
+		String filter = path.substring(path.lastIndexOf("dataview[(@name=\""));
+		String ret = filter.substring(17, filter.lastIndexOf("\")"));
+		return ret;
 	}
 
 	private static void getDataSetItems(final String path, final ArrayList<String> a, String append) {
