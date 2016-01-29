@@ -116,8 +116,13 @@ public class ThreadController {
 		public Long call() throws InterruptedException {
 			logA.doLog("Thread", "[T-INFO]Initialization of thread for xpath : " + xpath, "Info");
 			Long x = (long) 1;
-			ThreadInstance.startSample(xpath);
+			callThread();
 			return x;
+		}
+
+		private void callThread() throws InterruptedException {
+			ThreadInstance test = new ThreadInstance(xpath);
+			//ThreadInstance.startSample(xpath);
 		}
 	}
 

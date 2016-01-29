@@ -9,7 +9,7 @@ import java.util.logging.SimpleFormatter;
 
 public class LogHandler {
 
-	 private static String LOG_FILE_NAME = "loggingTEST.log";
+	 private static String LOG_FILE_NAME = "NotificationServer.log";
      static Hashtable<String, Logger> loggers = new Hashtable<String, Logger>();
      static FileHandler handler = null;
      

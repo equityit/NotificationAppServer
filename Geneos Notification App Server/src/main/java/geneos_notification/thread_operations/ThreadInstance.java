@@ -32,14 +32,19 @@ import geneos_notification.objects.Alert;
 
 public class ThreadInstance {
 	public static LtA logA = new LogObject();
-	public static Connection conn;
-	public static Map<String, Alert> alertList = new HashMap<String, Alert>();
-	private static DataSet dataSet;
+	public Connection conn;
+	public Map<String, Alert> alertList = new HashMap<String, Alert>();
+	private DataSet dataSet;
+	
+	public ThreadInstance(String xpath) throws InterruptedException
+	{
+		startSample(xpath);
+	}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public static void startSample(String path) throws InterruptedException {
+	public void startSample(String path) throws InterruptedException {
 		conn = OpenAccess.connect(InterfaceController.getOAkey());
 		System.out.println(ThreadController.monitoringThreadList.get(path).getRegList().getRegList());
 		runScan(path);
@@ -53,13 +58,14 @@ return registrationList;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	private static void runScan(String xpath) throws InterruptedException {
+	private void runScan(String xpath) throws InterruptedException {
 		while (1 == 1) {
 			run(xpath);
 			try {
 				Thread.sleep(10000);
 			} catch (InterruptedException ex) {
 				logA.doLog("Thread", "[T-INFO]Thread internal termination confirmation", "Info");
+				conn.close();
 				return;
 			}
 		}
@@ -67,7 +73,7 @@ return registrationList;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public static void run(String dvPath) {
+	public void run(String dvPath) {
 		try {
 			logA.doLog("Thread", "Thread xpath exection for path : " + dvPath, "Info");
 			DataSetQuery query = DataSetQuery.create(dvPath + "/rows/row[wild(@name,\"*\")]/cell");
@@ -111,7 +117,7 @@ return registrationList;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	private static void threadAnalysis(String dvPath) throws JSONException, IOException {
+	private void threadAnalysis(String dvPath) throws JSONException, IOException {
 		//System.out.println("//////////////////////////////// \nTHREAD SUCCESSFUL \n");
 		logA.doLog("Thread", "[T-INFO]Thread Execution successful", "Info");
 		alertChecker(dvPath);
@@ -120,7 +126,7 @@ return registrationList;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	private static void alertChecker(String dvPath) throws JSONException, IOException {
+	private void alertChecker(String dvPath) throws JSONException, IOException {
 		for (DataSetItem item : dataSet.getItems()) {
 			Severity currentSeverity = item.getSeverity();
 			String currentXpath = item.getPath();
