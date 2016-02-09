@@ -38,19 +38,19 @@ public class UserControllerTest {
 	
 	@Test
 	public void loginAuthotrisedDomainFirstTimeTest() throws Exception {
-		assertTrue(UserController.login("test@Default", "test", "test").equals("Since you are a new user you will need to verify your device. We have sent you an email, please enter the code provided to activate your device"));
+		assertTrue(UserController.login("test@Default", "test", "test").equals("Since you are a new user you will need to verify your device. We have sent you an email, please follow the contained URL to verify your device"));
 	}
 	
 	@Test
 	public void loginAuthotrisedDomainSecondTimeWithoutVeriticationTest() throws Exception {
 		UserController.login("testa@Default", "testa", "testa");
-		assertTrue(UserController.login("testa@Default", "testa", "testa").equals("This device has already been registered, please check your email for a verification code"));
+		assertTrue(UserController.login("testa@Default", "testa", "testa").equals("This device has already been registered, please check your email for a verification URL"));
 	}
 	
 	@Test
 	public void loginAuthotrisedDomainSecondTimeWithSecondDeviceTest() throws Exception {
 		UserController.login("testb@Default", "testb", "testb");
-		assertTrue(UserController.login("testb@Default", "testz", "testz").equals("We have sent you a device authorisation email, please enter the code provided to verify this device"));
+		assertTrue(UserController.login("testb@Default", "testz", "testz").equals("We have sent you a device authorisation email, please follow the URL provided to verify this device"));
 	}
 	
 	@Test

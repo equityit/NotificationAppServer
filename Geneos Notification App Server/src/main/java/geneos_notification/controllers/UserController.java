@@ -55,11 +55,11 @@ public class UserController {
 		    		int deviceCount = DatabaseController.checkDeviceExistence(android_id);
 		    		if(deviceCount!=0){
 		    			logA.doLog("Controller" , username + " has already been sent a verification email for " + android_id, "Info");
-		    			return "This device has already been registered, please check your email for a verification code";
+		    			return "This device has already been registered, please check your email for a verification URL";
 		    		}
 		    		DatabaseController.createInValidDevice(username, android_id, key);
 		    		logA.doLog("Controller" , username + " has been sent a verification email for " + android_id, "Info");
-		    		return "We have sent you a device authorisation email, please enter the code provided to verify this device";
+		    		return "We have sent you a device authorisation email, please follow the URL provided to verify this device";
 		    	}
 		    	
 		    	else 	// If user name is not present in the database		
@@ -70,7 +70,7 @@ public class UserController {
 					{
 						DatabaseController.createUser(username, android_id, key);
 						logA.doLog("Controller" , "New user " + username + " has attempted to login, verification email sent and account is in probation.", "Info");
-						return "Since you are a new user you will need to verify your device. We have sent you an email, please enter the code provided to activate your device";
+						return "Since you are a new user you will need to verify your device. We have sent you an email, please follow the contained URL to verify your device";
 					}
 					else
 					{
@@ -140,8 +140,8 @@ public class UserController {
     	for(String path : xpaths)
     	{
     		System.out.println(path);
-    		current.ammendCustomDV(path);
-    		ThreadController.addToNotifyList(path, username);
+    		current.ammendCustomDV(path.trim());
+    		ThreadController.addToNotifyList(path.trim(), username);
     	}
     	
     }

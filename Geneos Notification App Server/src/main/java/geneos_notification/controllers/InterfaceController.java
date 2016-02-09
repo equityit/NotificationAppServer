@@ -96,7 +96,8 @@ public class InterfaceController {
 @RequestMapping(value="/setcustomdv", method=RequestMethod.POST)
 public static String setCustomDV(@RequestParam(required = true, value="xpath", defaultValue="") String xpath, @RequestParam(required = true, value="username", defaultValue="") String userName) throws IOException
 {
-	String result = UserController.setCustomDV(xpath, userName);
+	String path = xpath.trim();
+	String result = UserController.setCustomDV(path, userName);
 	return result;
 }
 
@@ -107,20 +108,21 @@ public static String setCustomDV(@RequestParam(required = true, value="xpath", d
 @RequestMapping(value="/removedv", method=RequestMethod.POST)
 public static void removeDataview(@RequestParam(value="xpath", defaultValue="") String xpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException
 {
-	ThreadController.removeUserFromNotifyList(userName, xpath);
-	UserController.userObjects.get(userName).removeDV(xpath);
+	String path = xpath.trim();
+	System.out.println("Removal xpath is here :" + path);
+	ThreadController.removeUserFromNotifyList(userName, path);
+	UserController.userObjects.get(userName).removeDV(path);
 	// TransmissionHandler.removeMessage(userName, xpath);
-	
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@RequestMapping(value="/editdv", method=RequestMethod.POST)
+/*@RequestMapping(value="/editdv", method=RequestMethod.POST)
 public void editDV(@RequestParam(value="aentity", defaultValue="") String aentity, @RequestParam(value="rxpath", defaultValue="") String rxpath, @RequestParam(value="axpath", defaultValue="") String axpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException
 {
 	ThreadController.editDV(rxpath, axpath, userName);
-}
+}*/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////

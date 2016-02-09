@@ -1,0 +1,10 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_Add_Dataview_To_User`(IN uname varchar(100),IN path varchar(500))
+BEGIN
+
+declare counter int  default (select userid from users where username = uname);
+
+if(counter not in (select userid from user_paths where xpath like path)) then
+		insert into user_paths(userid, xpath) values((select userid from users where username = uname), path); 
+end if;
+
+END

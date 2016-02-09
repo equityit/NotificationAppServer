@@ -35,6 +35,7 @@ public class ThreadInstance {
 	public Connection conn;
 	public Map<String, Alert> alertList = new HashMap<String, Alert>();
 	private DataSet dataSet;
+	private int firstRunSwitch = 1;
 	
 	public ThreadInstance(String xpath) throws InterruptedException
 	{
@@ -58,6 +59,7 @@ return registrationList;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	
 	private void runScan(String xpath) throws InterruptedException {
 		while (1 == 1) {
 			run(xpath);
@@ -70,6 +72,7 @@ return registrationList;
 			}
 		}
 	}
+	
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -103,14 +106,16 @@ return registrationList;
 				c.close();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
-				logA.doLog("Thread", "[T-ERROR]Thread cycle execution failed", "Critical");
+				logA.doLog("Thread", "[T-ERROR]Thread cycle execution failed due to interrupt", "Critical");
 				logA.doLog("Thread", e.toString(), "Critical");
+				e.printStackTrace();
 			}
 			threadAnalysis(dvPath);
 		} catch (Exception e) {
 			logA.doLog("Thread", "[T-ERROR]Thread cycle execution failed", "Critical");
 			logA.doLog("Thread", e.toString(), "Critical");
-			throw new RuntimeException();
+			e.printStackTrace();
+			//throw new RuntimeException();
 		}
 	}
 
@@ -127,6 +132,7 @@ return registrationList;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	private void alertChecker(String dvPath) throws JSONException, IOException {
+		try{
 		for (DataSetItem item : dataSet.getItems()) {
 			Severity currentSeverity = item.getSeverity();
 			String currentXpath = item.getPath();
@@ -143,10 +149,27 @@ return registrationList;
 					TransmissionHandler.sendPost(alertList.get(currentXpath));
 				}
 
-			} else if (isNewAlert(currentSeverity)) {
+			} else if (isNewAlert(currentSeverity) && firstRunSwitch == 0) {
 				alertList.put(item.getPath(),
 						new Alert(item.getPath(), item.getValue(), item.getSeverity().toString(), dvPath));
 				TransmissionHandler.sendPost(alertList.get(item.getPath()));
+			}
+			else if(isNewAlert(currentSeverity))
+			{
+				alertList.put(item.getPath(),
+						new Alert(item.getPath(), item.getValue(), item.getSeverity().toString(), dvPath));
+			}
+		}
+		if(firstRunSwitch == 1)
+			firstRunSwitch = 0;
+		}
+		catch(NullPointerException e)
+		{
+			if(firstRunSwitch == 1){
+			logA.doLog("Thread", "[T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.", "Warning");
+			}
+			else{
+				logA.doLog("Thread", "[T-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue.", "Critical");
 			}
 		}
 	}

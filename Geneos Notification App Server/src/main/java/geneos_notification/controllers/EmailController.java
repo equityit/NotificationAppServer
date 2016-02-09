@@ -35,7 +35,7 @@ public class EmailController {
 
         MimeMessage message = new MimeMessage(mailSession);
         message.setSubject("Geneos Notifier Device Verification");
-        message.setContent("Hello " +username+ ", \n Please follow the attached link to verify you device \n\n http://" + IP + 
+        message.setContent("Hello " +username+ ", \n\n Please follow the attached link to verify you device \n\n http://" + IP + 
         		":8080/verifydev?dev_id=" + android_id + "&verification="+random, "text/plain");
         message.setFrom(new InternetAddress("helpdeskautomation@itrsgroup.com"));
         message.addRecipient(Message.RecipientType.TO,

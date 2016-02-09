@@ -218,10 +218,14 @@ public static void readSettingsFile() {
 				ThreadController.monitoringThreadList.put(entry.getKey(), new ThreadItem(entry.getKey(), entry.getValue().get(0)));
 				if(entry.getValue().size() != 1)
 				{
-					for(int i = 1; !entry.getValue().get(i).equals(null); i++)
+				/*	for(int i = 1; !entry.getValue().get(i).equals(null); i++)
 						{
 							ThreadController.monitoringThreadList.get(entry.getKey()).addUserID(entry.getValue().get(i));
-						}
+						}*/
+						for(int i = 1; i < entry.getValue().size(); i++)
+					{
+						ThreadController.monitoringThreadList.get(entry.getKey()).addUserID(entry.getValue().get(i));
+					}
 				}
 				ThreadController.startPerpetualThread(entry.getKey());
 		}

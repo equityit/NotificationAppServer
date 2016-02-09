@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="itrs_appserver.AlertTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-02-04T10:08:48" hostname="ITRSLP043" time="1.214">
+  <properties/>
+  <testcase name="updateMessageTest" classname="itrs_appserver.AlertTest" time="0.309"/>
+  <testcase name="createJSONTest" classname="itrs_appserver.AlertTest" time="0.853"/>
+  <testcase name="firstMessageTest" classname="itrs_appserver.AlertTest" time="0.052"/>
+  <system-out><![CDATA[This is the thread xpath : testb6
+{"data":{"severity":"Fail","xpath":"testb6","message":"New Alert :Fail","value":"Something"},"registration_ids":["testb6"]}
+Fail to pass Alert
+10:08:49.036 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+This is the thread xpath : testa6
+{"data":{"severity":"Critical","xpath":"testa6","message":"New Alert :Critical","value":"Something"},"registration_ids":["testa6"]}
+{"data":{"severity":"Critical","xpath":"testa6","message":"New Alert :Critical","value":"Something"},"registration_ids":["testa6"]}
+10:08:49.246 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+This is the thread xpath : testc6
+{"data":{"severity":"Fail","xpath":"testc6","message":"New Alert :Fail","value":"Something"},"registration_ids":["testc6"]}
+10:08:49.297 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+]]></system-out>
+  <system-err><![CDATA[Feb 04, 2016 10:08:48 AM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testb6@Default
+Feb 04, 2016 10:08:48 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testb6@Default & testb6
+Feb 04, 2016 10:08:48 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testb6 logged in successfully
+Feb 04, 2016 10:08:48 AM geneos_notification.loggers.LogObject doLog
+INFO: Initial log on for testb6@Default with device testb6
+Feb 04, 2016 10:08:48 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : testb6
+Feb 04, 2016 10:08:48 AM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testa6@Default
+Feb 04, 2016 10:08:48 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testa6@Default & testa6
+Feb 04, 2016 10:08:49 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testa6 logged in successfully
+Feb 04, 2016 10:08:49 AM geneos_notification.loggers.LogObject doLog
+INFO: Initial log on for testa6@Default with device testa6
+Feb 04, 2016 10:08:49 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : testa6
+Feb 04, 2016 10:08:49 AM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testc6@Default
+Feb 04, 2016 10:08:49 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testc6@Default & testc6
+Feb 04, 2016 10:08:49 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testc6 logged in successfully
+Feb 04, 2016 10:08:49 AM geneos_notification.loggers.LogObject doLog
+INFO: Initial log on for testc6@Default with device testc6
+Feb 04, 2016 10:08:49 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : testc6
+]]></system-err>
+</testsuite>

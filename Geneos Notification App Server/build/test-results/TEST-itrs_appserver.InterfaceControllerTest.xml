@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="itrs_appserver.InterfaceControllerTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-02-04T10:08:50" hostname="ITRSLP043" time="29.881">
+  <properties/>
+  <testcase name="getRowTest" classname="itrs_appserver.InterfaceControllerTest" time="0.362"/>
+  <testcase name="setCustomDVTest" classname="itrs_appserver.InterfaceControllerTest" time="0.068"/>
+  <testcase name="loginTest" classname="itrs_appserver.InterfaceControllerTest" time="0.012"/>
+  <testcase name="updateDVTest" classname="itrs_appserver.InterfaceControllerTest" time="14.613"/>
+  <testcase name="removeDVTest" classname="itrs_appserver.InterfaceControllerTest" time="0.045"/>
+  <testcase name="logoutTest" classname="itrs_appserver.InterfaceControllerTest" time="0.043"/>
+  <testcase name="verifyDeviceTest" classname="itrs_appserver.InterfaceControllerTest" time="0.017"/>
+  <testcase name="viewSystemKeysTest" classname="itrs_appserver.InterfaceControllerTest" time="0.0"/>
+  <testcase name="getAllDataviewsTest" classname="itrs_appserver.InterfaceControllerTest" time="14.721"/>
+  <system-out><![CDATA[10:08:50.532 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:100) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+10:08:50.550 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+10:08:50.550 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testb6/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+10:08:50.566 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+10:08:50.571 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
+10:08:50.583 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:21232]
+/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[wild(@column,"*")]
+10:08:50.585 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+10:08:50.624 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+10:08:50.631 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+10:08:50.684 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:100) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+10:08:50.785 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+10:08:50.786 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[wild(@column,"*")],Set(),LIST,),None)
+{
+	severity : UNDEFINED
+	name : cpu_0.type
+	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="type")]
+	type : CELL
+	value : GenuineIntel Intel(R)
+}
+{
+	severity : UNDEFINED
+	name : cpu_0.state
+	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="state")]
+	type : CELL
+	value : on-line
+}
+{
+	severity : UNDEFINED
+	name : cpu_0.clockSpeed
+	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="clockSpeed")]
+	type : CELL
+	value : 2294.80 Mhz
+}
+{
+	severity : OK
+	name : cpu_0.percentUtilisation
+	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentUtilisation")]
+	type : CELL
+	value : 2.06 %
+}
+{
+	severity : UNDEFINED
+	name : cpu_0.percentUserTime
+	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentUserTime")]
+	type : CELL
+	value : 1.42 %
+}
+{
+	severity : UNDEFINED
+	name : cpu_0.percentKernelTime
+	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentKernelTime")]
+	type : CELL
+	value : 0.39 %
+}
+{
+	severity : UNDEFINED
+	name : cpu_0.percentWaitTime
+	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentWaitTime")]
+	type : CELL
+	value : 0.00 %
+}
+{
+	severity : UNDEFINED
+	name : cpu_0.percentIdle
+	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentIdle")]
+	type : CELL
+	value : 97.94 %
+}
+{
+	severity : UNDEFINED
+	name : cpu_0.percentIrq
+	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentIrq")]
+	type : CELL
+	value : 0.00 %
+}
+{
+	severity : UNDEFINED
+	name : cpu_0.percentSoftIrq
+	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentSoftIrq")]
+	type : CELL
+	value : 0.26 %
+}
+10:08:50.844 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Shutting down remote daemon.
+10:08:50.846 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remote daemon shut down; proceeding with flushing remote transports.
+10:08:50.880 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remoting shut down.
+This is the thread xpath : testc5
+10:08:50.992 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+10:08:51.002 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  Remoting - Starting remoting
+10:08:51.007 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+10:08:51.013 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  Remoting - Starting remoting
+10:08:51.014 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-9] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:21256]
+[testc5]
+10:08:51.017 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+10:08:51.026 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:21270]
+10:08:51.027 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+10:08:51.046 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+10:08:51.050 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+10:08:51.059 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+10:08:51.109 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+10:08:51.208 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+10:08:51.208 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[wild(@name,"*")]/directory/probe,Set(),LIST,),None)
+10:08:51.240 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity,Set(),LIST,),None)
+10:08:51.319 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+10:08:51.320 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc5/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+10:08:51.404 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity,Set(),LIST,),None)
+10:08:51.429 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:100) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+10:08:51.551 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="First")]/managedEntity,Set(),LIST,),None)
+10:08:51.747 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="New Virtual probe")]/managedEntity,Set(),LIST,),None)
+10:08:52.748 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Android")]/sampler,Set(),LIST,),None)
+10:08:52.902 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler,Set(),LIST,),None)
+10:08:53.066 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity")]/sampler,Set(),LIST,),None)
+10:08:53.093 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 1")]/sampler,Set(),LIST,),None)
+10:08:53.212 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 10")]/sampler,Set(),LIST,),None)
+10:08:53.407 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 11")]/sampler,Set(),LIST,),None)
+10:08:53.582 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 2")]/sampler,Set(),LIST,),None)
+10:08:53.730 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 3")]/sampler,Set(),LIST,),None)
+10:08:53.841 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 4")]/sampler,Set(),LIST,),None)
+10:08:54.037 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 5")]/sampler,Set(),LIST,),None)
+10:08:54.185 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 6")]/sampler,Set(),LIST,),None)
+10:08:54.293 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 7")]/sampler,Set(),LIST,),None)
+10:08:54.492 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 8")]/sampler,Set(),LIST,),None)
+10:08:54.598 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 9")]/sampler,Set(),LIST,),None)
+10:08:54.786 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler,Set(),LIST,),None)
+10:08:54.908 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler,Set(),LIST,),None)
+10:08:55.039 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="New Managed entity")]/sampler,Set(),LIST,),None)
+10:08:55.241 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="THISISATEST")]/sampler,Set(),LIST,),None)
+10:08:55.351 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler,Set(),LIST,),None)
+10:08:55.491 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler,Set(),LIST,),None)
+10:08:55.641 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler,Set(),LIST,),None)
+10:08:55.798 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="First")]/managedEntity[(@name="CPU Action test")]/sampler,Set(),LIST,),None)
+10:08:55.942 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-21] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Android")]/sampler[(@name="AppTest")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:56.098 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-21] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:56.294 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 3")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:57.296 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:57.449 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="SQL gateway")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:57.602 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-21] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="TEST_LOG LOCAL1")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:57.802 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 2")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:57.910 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 9")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:58.095 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:58.206 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 1")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:58.404 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 10")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:58.518 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 11")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:58.705 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 2")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:58.816 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 3")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:59.007 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 4")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:59.153 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 5")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:59.262 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 6")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:59.461 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 7")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:59.568 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-21] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 8")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:59.763 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 9")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:08:59.870 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:00.045 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FTM Test")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:00.215 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-21] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="FKM")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:00.334 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:00.468 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-21] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="New Sampler 1")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:00.518 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testa6/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+10:09:00.538 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc6/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+10:09:00.618 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-21] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:00.625 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:100) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+10:09:00.647 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-21] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:100) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+10:09:00.695 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testb6/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+10:09:00.809 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:100) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+10:09:00.818 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-21] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:00.929 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="THISISATEST")]/sampler[(@name="FTM Test")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:01.098 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="Toolkit")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:01.269 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ICE MYSQL")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:01.377 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TEST ICE")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:01.433 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc5/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+10:09:01.559 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-24] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:100) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+10:09:01.591 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TestSQL")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:01.734 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-21] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="New Sampler 6")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:01.842 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ME VS APPa")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:02.037 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="CPU")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:03.038 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:03.211 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="FKM")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:03.239 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:03.349 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:03.548 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="TestSQL")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:03.721 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Trigger sample")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:03.829 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Timestamp sql")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:04.013 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="eventlog")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:04.150 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Win Services")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:04.315 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="proc")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:04.510 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 5")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:04.567 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="First")]/managedEntity[(@name="CPU Action test")]/sampler[(@name="CPU")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:05.572 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Shutting down remote daemon.
+10:09:05.572 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remote daemon shut down; proceeding with flushing remote transports.
+10:09:05.580 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-21] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remoting shut down.
+This is the thread xpath : testd5
+Removal xpath is here :testd5
+geneos_notification.objects.CustomDataView@39ba695f
+10:09:05.710 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+10:09:05.715 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
+10:09:05.730 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-13] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:21319]
+10:09:05.733 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+10:09:05.763 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+10:09:05.772 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+10:09:05.917 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+10:09:05.917 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[wild(@name,"*")]/directory/probe,Set(),LIST,),None)
+10:09:05.931 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity,Set(),LIST,),None)
+10:09:06.085 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity,Set(),LIST,),None)
+10:09:06.238 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="First")]/managedEntity,Set(),LIST,),None)
+10:09:06.433 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="New Virtual probe")]/managedEntity,Set(),LIST,),None)
+10:09:07.433 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Android")]/sampler,Set(),LIST,),None)
+10:09:07.587 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler,Set(),LIST,),None)
+10:09:07.737 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity")]/sampler,Set(),LIST,),None)
+10:09:07.889 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 1")]/sampler,Set(),LIST,),None)
+10:09:08.088 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 10")]/sampler,Set(),LIST,),None)
+10:09:08.195 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 11")]/sampler,Set(),LIST,),None)
+10:09:08.390 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 2")]/sampler,Set(),LIST,),None)
+10:09:08.516 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 3")]/sampler,Set(),LIST,),None)
+10:09:08.695 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 4")]/sampler,Set(),LIST,),None)
+10:09:08.805 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 5")]/sampler,Set(),LIST,),None)
+10:09:08.996 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 6")]/sampler,Set(),LIST,),None)
+10:09:09.106 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 7")]/sampler,Set(),LIST,),None)
+10:09:09.296 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 8")]/sampler,Set(),LIST,),None)
+10:09:09.402 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 9")]/sampler,Set(),LIST,),None)
+10:09:09.600 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler,Set(),LIST,),None)
+10:09:09.711 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler,Set(),LIST,),None)
+10:09:09.850 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="New Managed entity")]/sampler,Set(),LIST,),None)
+10:09:10.051 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="THISISATEST")]/sampler,Set(),LIST,),None)
+10:09:10.167 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler,Set(),LIST,),None)
+10:09:10.306 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler,Set(),LIST,),None)
+10:09:10.454 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler,Set(),LIST,),None)
+10:09:10.608 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="First")]/managedEntity[(@name="CPU Action test")]/sampler,Set(),LIST,),None)
+10:09:10.627 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testa6/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+10:09:10.650 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc6/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+10:09:10.760 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:100) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+10:09:10.761 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Android")]/sampler[(@name="AppTest")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:10.773 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:100) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+10:09:10.812 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testb6/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+10:09:10.926 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:100) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+10:09:10.967 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:11.088 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 3")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:11.562 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc5/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+10:09:11.663 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:100) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+10:09:12.089 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:12.116 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="SQL gateway")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:12.316 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="TEST_LOG LOCAL1")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:12.425 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 2")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:12.618 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 9")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:12.724 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:12.918 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 1")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:13.025 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 10")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:13.220 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 11")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:13.381 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 2")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:13.502 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 3")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:13.681 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 4")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:13.817 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 5")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:14.013 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 6")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:14.142 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 7")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:14.262 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 8")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:14.447 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 9")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:14.570 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:14.747 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FTM Test")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:14.858 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="FKM")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:15.049 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:15.150 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="New Sampler 1")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:15.300 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:15.512 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:15.605 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="THISISATEST")]/sampler[(@name="FTM Test")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:15.800 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="Toolkit")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:15.909 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ICE MYSQL")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:16.107 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TEST ICE")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:16.216 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TestSQL")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:16.411 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="New Sampler 6")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:16.525 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ME VS APPa")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:16.710 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="CPU")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:17.710 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-13] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:17.863 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="FKM")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:18.064 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:18.170 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:18.367 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-23] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="TestSQL")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:18.467 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-23] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Trigger sample")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:18.684 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Timestamp sql")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:18.770 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-23] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="eventlog")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:18.971 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Win Services")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:19.079 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="proc")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:19.273 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-24] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 5")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:19.389 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="First")]/managedEntity[(@name="CPU Action test")]/sampler[(@name="CPU")][(@type="")]/dataview,Set(),LIST,),None)
+10:09:20.393 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Shutting down remote daemon.
+10:09:20.394 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remote daemon shut down; proceeding with flushing remote transports.
+10:09:20.403 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remoting shut down.
+]]></system-out>
+  <system-err><![CDATA[Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+INFO: Row request made for row at xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentUtilisation")]
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testc5@Default
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testc5@Default & testc5
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testc5 logged in successfully
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+INFO: Initial log on for testc5@Default with device testc5
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : testc5
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testa5
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testa5 & testa5
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+WARNING: [SQL]User has tried to log in with an invalid domain : testa5
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+WARNING: Attempted login made by unauthorised user with username : testa5
+Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
+INFO: [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+Feb 04, 2016 10:08:51 AM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : testc5
+Feb 04, 2016 10:08:51 AM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
+Feb 04, 2016 10:08:51 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Feb 04, 2016 10:09:00 AM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : testa6
+Feb 04, 2016 10:09:00 AM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : testc6
+Feb 04, 2016 10:09:00 AM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa6
+Feb 04, 2016 10:09:00 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Feb 04, 2016 10:09:00 AM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
+Feb 04, 2016 10:09:00 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Feb 04, 2016 10:09:00 AM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : testb6
+Feb 04, 2016 10:09:00 AM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
+Feb 04, 2016 10:09:00 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Feb 04, 2016 10:09:01 AM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : testc5
+Feb 04, 2016 10:09:01 AM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
+Feb 04, 2016 10:09:01 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: [DT-INFO]Collected Dataviews : [/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Android")]/sampler[(@name="AppTest")][(@type="")]/dataview[(@name="AppTest")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="SQL gateway")][(@type="")]/dataview[(@name="V1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="TEST_LOG LOCAL1")][(@type="")]/dataview[(@name="TEST_LOG LOCAL1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 2")][(@type="")]/dataview[(@name="New Sampler 2")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 9")][(@type="")]/dataview[(@name="New Sampler 9")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 1")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 10")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 11")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 2")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 3")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 4")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 5")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 6")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 7")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 8")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 9")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="Diagnostics")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clusterNodes")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="localhost-2551-clients")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="localhost-2551-gateways")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="localhost-2551-clusterNodes")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-gateways")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clients")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="New Sampler 1")][(@type="")]/dataview[(@name="test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="THISISATEST")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="Toolkit")][(@type="")]/dataview[(@name="Toolkit")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ICE MYSQL")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TEST ICE")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="New Sampler 6")][(@type="")]/dataview[(@name="New Sampler 6")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ME VS APPa")][(@type="")]/dataview[(@name="ME VS APP")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Instances")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Percentage use")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Trigger sample")][(@type="")]/dataview[(@name="Triggered")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Timestamp sql")][(@type="")]/dataview[(@name="timediff")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="eventlog")][(@type="")]/dataview[(@name="eventlog")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Win Services")][(@type="")]/dataview[(@name="Win Services")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="proc")][(@type="")]/dataview[(@name="proc")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 5")][(@type="")]/dataview[(@name="New Sampler 5")]] 
+With a length of 10345
+Feb 04, 2016 10:09:05 AM org.jboss.netty.channel.DefaultChannelPipeline
+WARNING: An exception was thrown by an exception handler.
+java.util.concurrent.RejectedExecutionException: Worker has already been shutdown
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.registerTask(AbstractNioSelector.java:120)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.executeInIoThread(AbstractNioWorker.java:72)
+	at org.jboss.netty.channel.socket.nio.NioWorker.executeInIoThread(NioWorker.java:36)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.executeInIoThread(AbstractNioWorker.java:56)
+	at org.jboss.netty.channel.socket.nio.NioWorker.executeInIoThread(NioWorker.java:36)
+	at org.jboss.netty.channel.socket.nio.AbstractNioChannelSink.execute(AbstractNioChannelSink.java:34)
+	at org.jboss.netty.channel.Channels.fireExceptionCaughtLater(Channels.java:496)
+	at org.jboss.netty.channel.AbstractChannelSink.exceptionCaught(AbstractChannelSink.java:46)
+	at org.jboss.netty.handler.codec.oneone.OneToOneEncoder.handleDownstream(OneToOneEncoder.java:54)
+	at org.jboss.netty.channel.Channels.disconnect(Channels.java:781)
+	at org.jboss.netty.channel.AbstractChannel.disconnect(AbstractChannel.java:211)
+	at akka.remote.transport.netty.NettyTransport$$anonfun$gracefulClose$1.apply(NettyTransport.scala:223)
+	at akka.remote.transport.netty.NettyTransport$$anonfun$gracefulClose$1.apply(NettyTransport.scala:222)
+	at scala.util.Success.foreach(Try.scala:235)
+	at scala.concurrent.Future$$anonfun$foreach$1.apply(Future.scala:204)
+	at scala.concurrent.Future$$anonfun$foreach$1.apply(Future.scala:204)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.processBatch$1(BatchingExecutor.scala:67)
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:82)
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59)
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:58)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:401)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: [DVLIST UPDATE]Dataview list was successfully updated.
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testd5@Default
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testd5@Default & testd5
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testd5 logged in successfully
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: Initial log on for testd5@Default with device testd5
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: Thread terminated : testd5
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testb5@Default
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testb5@Default & testb5
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testb5 logged in successfully
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: Initial log on for testb5@Default with device testb5
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testb5 logged out successfully
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: The status of the device check fortestb5@Default is :1
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: testb5@Default has been successfully logged out.
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: Veritication email sent for devioce : test35
+Feb 04, 2016 10:09:05 AM geneos_notification.loggers.LogObject doLog
+INFO: [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+Feb 04, 2016 10:09:10 AM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : testa6
+Feb 04, 2016 10:09:10 AM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : testc6
+Feb 04, 2016 10:09:10 AM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa6
+Feb 04, 2016 10:09:10 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Feb 04, 2016 10:09:10 AM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
+Feb 04, 2016 10:09:10 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Feb 04, 2016 10:09:10 AM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : testb6
+Feb 04, 2016 10:09:10 AM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
+Feb 04, 2016 10:09:10 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Feb 04, 2016 10:09:11 AM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : testc5
+Feb 04, 2016 10:09:11 AM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
+Feb 04, 2016 10:09:11 AM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Feb 04, 2016 10:09:11 AM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue.
+Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
+INFO: [DT-INFO]Collected Dataviews : [/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Android")]/sampler[(@name="AppTest")][(@type="")]/dataview[(@name="AppTest")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="SQL gateway")][(@type="")]/dataview[(@name="V1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="TEST_LOG LOCAL1")][(@type="")]/dataview[(@name="TEST_LOG LOCAL1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 2")][(@type="")]/dataview[(@name="New Sampler 2")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 9")][(@type="")]/dataview[(@name="New Sampler 9")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 1")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 10")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 11")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 2")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 3")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 4")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 5")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 6")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 7")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 8")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 9")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="Diagnostics")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clusterNodes")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="localhost-2551-clients")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="localhost-2551-gateways")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="localhost-2551-clusterNodes")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-gateways")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clients")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="New Sampler 1")][(@type="")]/dataview[(@name="test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="THISISATEST")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="Toolkit")][(@type="")]/dataview[(@name="Toolkit")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ICE MYSQL")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TEST ICE")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="New Sampler 6")][(@type="")]/dataview[(@name="New Sampler 6")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ME VS APPa")][(@type="")]/dataview[(@name="ME VS APP")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Instances")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Percentage use")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Trigger sample")][(@type="")]/dataview[(@name="Triggered")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Timestamp sql")][(@type="")]/dataview[(@name="timediff")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="eventlog")][(@type="")]/dataview[(@name="eventlog")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Win Services")][(@type="")]/dataview[(@name="Win Services")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="proc")][(@type="")]/dataview[(@name="proc")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 5")][(@type="")]/dataview[(@name="New Sampler 5")]] 
+With a length of 10345
+Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
+INFO: [DVLIST UPDATE]Dataview list was successfully updated.
+Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
+INFO: Dataview list requested
+]]></system-err>
+</testsuite>
