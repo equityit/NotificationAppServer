@@ -27,11 +27,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.itrsgroup.openaccess.commands.CommandExecution;
+
 import geneos_notification.loggers.LogObject;
 import geneos_notification.loggers.LtA;
 import geneos_notification.objects.ThreadItem;
 import geneos_notification.startup_and_system_operations.DataviewListGenerator;
 import geneos_notification.thread_operations.RowGenerator;
+import geneos_notification.thread_operations.OACommander;
+
 
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -197,6 +201,27 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
     	ret = future.get();
     	exec.shutdown();
     	return ret;
+	}
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	@RequestMapping(value = "/sendcommand", method = RequestMethod.POST)
+	public static String sendCommand(@RequestParam(value = "xpath", defaultValue = "") String xpath, @RequestParam(value = "command", defaultValue = "") String command, @RequestParam(value = "username", defaultValue = "") String username)
+			throws InterruptedException, ExecutionException {
+		logA.doLog("Controller", "Command " + command + " has been issued for xpath : " + xpath, "Info");
+		String ret = null;
+		ExecutorService exec = Executors.newSingleThreadExecutor();
+		Callable<String> callable = new Callable<String>() {
+			@Override
+			public String call() throws JSONException {
+				return OACommander.issueCommand(xpath, command, username);
+			}
+		};
+		Future<String> future = exec.submit(callable);
+		ret = future.get();
+		exec.shutdown();
+		return ret;
 	}
 	
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

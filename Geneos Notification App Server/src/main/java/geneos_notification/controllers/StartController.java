@@ -62,7 +62,7 @@ public class StartController {
 				"  888      888    888  T88b Y88b  d88P\n" +
 				"8888888    888    888   T88b \"Y8888P\"  © \n" +
 				"\n" +
-				"<< Version 1.0 >>      << Created by C.Morley & D.Ratnaras 2015 >>\n" +
+				"<< Version 1.1 >>      << Created by C.Morley & D.Ratnaras 2015 >>\n" +
 				"\n");
 		logA.doLog("Start" , "Server Boot Initiated", "Info");
 		start();
