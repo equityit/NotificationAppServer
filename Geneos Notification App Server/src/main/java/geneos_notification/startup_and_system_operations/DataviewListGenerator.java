@@ -38,6 +38,7 @@ public class DataviewListGenerator {
 	public static ArrayList<String> entitiesPaths;
 	public static ArrayList<String> samplersPaths;
 	public static ArrayList<String> dataViewsPaths;
+	public static Map<String, JSONObject> objects;
 	static LtA logA = new LogObject();
 	//private static DataSet dataSet;
 
@@ -47,6 +48,7 @@ public class DataviewListGenerator {
 
 	public static ArrayList<String> collectDataviews() throws JSONException {
 		conn = OpenAccess.connect(InterfaceController.getOAkey());
+		objects = new HashMap<String, JSONObject>();
 		// dataSet = null;
 		// ExecutorService executor = Executors.newFixedThreadPool(50);
 
@@ -82,26 +84,21 @@ public class DataviewListGenerator {
 			}
 		}
 
-		/*probesPaths = null;
-		entitiesPaths = null;
-		samplersPaths = null;
-		dataViewsPaths = null;*/
-		//System.out.println(dataviewList);
-		// System.out.println(XPathBuilder.xpath().entity("Something").get());
-		//System.out.println(list);
-		//System.out.println(list.toString().length());
+
 		logA.doLog("Thread" , "[DT-INFO]Collected Dataviews : " + list + " \nWith a length of " + list.toString().length(), "Info");
 		conn.close();
-		//Collections.sort(list, String.CASE_INSENSITIVE_ORDER);
+
 		list = sortList(list);
-/*		Collections.sort(list, new Comparator<String>() {
-	        @Override
-	        public int compare(String s1, String s2) {
-	        	s1 = getME(s1);
-	        	s2 = getME(s2);
-	            return s1.compareToIgnoreCase(s2);
-	        }
-	    });*/
+		
+		JSONObject sender = new JSONObject();
+
+		for(String dvPath : list)
+		{
+			sender.append(dvPath, objects.get(dvPath));
+		}
+		
+		System.out.println(sender.toString());
+		
 		return list;
 
 	}
@@ -182,9 +179,21 @@ public class DataviewListGenerator {
 		Closable c = conn.execute(query, new Callback<DataSetChange>() {
 			@Override
 			public void callback(final DataSetChange change) {
+				try{
 				DataSet dataSet = dataSetTracker.update(change);
                 if(!dataSet.getItems().isEmpty()){ cdl.countDown(); }
-                for (DataSetItem item : dataSet.getItems()) { a.add(item.getPath()); }	
+                for (DataSetItem item : dataSet.getItems()) { 
+                	a.add(item.getPath());
+                	JSONObject obj = new JSONObject();
+                	obj.put("XPath", item.getPath());
+                	obj.put("Snoozed", item.isSnoozed());
+                	objects.put(item.getPath(), obj);
+                }	
+				}
+				catch(JSONException e)
+				{
+					logA.doLog("Thread" , "[DT-INFO]Error retrieving DataSet and translating to JSON : " + e.toString(), "Critical");
+				}
    
 				/*DataSet dataSet = dataSetTracker.update(change);
 				for (DataSetItem item : dataSet.getItems()) {

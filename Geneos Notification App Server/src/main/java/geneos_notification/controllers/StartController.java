@@ -110,7 +110,13 @@ public class StartController {
     }
 
 public static void readSettingsFile() {
-	File file = new File(".\\settings.txt");
+	//System.out.println(System.getProperty("os.name"));
+	//System.getProperties().list(System.out);
+	File file = null;
+	if(System.getProperty("os.name").contains("Windows"))
+	file = new File(".\\settings.txt");
+	if(System.getProperty("os.name").contains("Linux"))
+	file = new File(".settings.txt");
 	Scanner scnr = null;
 	try {
 		scnr = new Scanner(file);
