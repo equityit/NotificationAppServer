@@ -71,29 +71,32 @@ public class OACommander {
 	                        switch (change.getStatus()) {
 	                            case COMPLETE:
 	                                System.out.println("Command execution complete");
-	                                result = "success";
-	                                cdl.countDown();
+	                                if(origCom.equals("snooze"))
+	                                result = "snoozed";
+	                                if(origCom.equals("unsnooze"))
+	                                	result = "unsnoozed";
+	                                break;
 	                            case FAILURE:
 	                                System.err.println("Command execution failed");
 	                                System.err.println(change.getContent());
-	                                result = "failure";
-	                                cdl.countDown();
+	                                result = "Failure";
+	                                break;
 	                        }
+	                        cdl.countDown();
 	                    }
 
 	                },
+	                
 	                new ErrorCallback() {
 	                    @Override
 	                    public void error(final Exception exception) {
 	                        System.err.println("Unable to execute command: " + exception);
 	                        result = "critical";
-	                        cdl.countDown();
 	                    }
 	                }
 	        );
-
 		try {
-			cdl.await(10, SECONDS);
+			cdl.await(1, SECONDS);
 			c.close();
 		} catch (InterruptedException e) {
 			System.out.println("Interrupted while waiting for updates");

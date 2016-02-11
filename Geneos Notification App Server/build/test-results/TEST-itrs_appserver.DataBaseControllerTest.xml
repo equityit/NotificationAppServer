@@ -1,80 +1,295 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="itrs_appserver.DataBaseControllerTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2016-02-04T10:08:49" hostname="ITRSLP043" time="0.325">
+<testsuite name="itrs_appserver.DataBaseControllerTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2016-02-11T14:12:16" hostname="ITRSLP043" time="0.404">
   <properties/>
-  <testcase name="createInValidDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.019"/>
-  <testcase name="removeCustomDataviewTest" classname="itrs_appserver.DataBaseControllerTest" time="0.038"/>
-  <testcase name="verifyStoredDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.006"/>
-  <testcase name="logoutDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.007"/>
-  <testcase name="getUserDataviewListFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.008"/>
-  <testcase name="checkValidDomainFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.013"/>
-  <testcase name="verifyStoredDeviceTest" classname="itrs_appserver.DataBaseControllerTest" time="0.052"/>
+  <testcase name="createInValidDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.021"/>
+  <testcase name="removeCustomDataviewTest" classname="itrs_appserver.DataBaseControllerTest" time="0.049"/>
+  <testcase name="verifyStoredDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.008"/>
+  <testcase name="logoutDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.009"/>
+  <testcase name="getUserDataviewListFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.009"/>
+  <testcase name="checkValidDomainFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.012"/>
+  <testcase name="verifyStoredDeviceTest" classname="itrs_appserver.DataBaseControllerTest" time="0.079"/>
   <testcase name="sqlConnectFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.001"/>
-  <testcase name="getLivePathsTest" classname="itrs_appserver.DataBaseControllerTest" time="0.033"/>
-  <testcase name="removeCustomDataviewFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.008"/>
-  <testcase name="addCustomDataViewFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.008"/>
-  <testcase name="userCheckFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.008"/>
-  <testcase name="checkDeviceExistenceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.008"/>
-  <testcase name="getUserDataviewListTest" classname="itrs_appserver.DataBaseControllerTest" time="0.031"/>
-  <testcase name="getLivePathsFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.011"/>
-  <testcase name="execCustomFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.023"/>
-  <testcase name="loginDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.007"/>
-  <testcase name="createUserFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.006"/>
-  <testcase name="getLiveDevicesTest" classname="itrs_appserver.DataBaseControllerTest" time="0.025"/>
-  <system-out><![CDATA[10:08:49.358 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
-10:08:49.359 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
-10:08:49.363 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
-10:08:49.631 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:21191]
-10:08:49.633 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:21192]
-10:08:49.636 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:21190]
-[testb6]
-[testc6]
-[testa6]
-10:08:49.733 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-10:08:49.733 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-10:08:49.734 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-10:08:50.005 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-10:08:50.006 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-10:08:50.011 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-10:08:50.082 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-10:08:50.082 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-10:08:50.083 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-10:08:50.353 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-10:08:50.356 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testa6/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
-10:08:50.411 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-10:08:50.412 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc6/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
-10:08:50.511 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:100) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-]]></system-out>
-  <system-err><![CDATA[Feb 04, 2016 10:08:49 AM geneos_notification.loggers.LogObject doLog
-INFO: Thread xpath exection for path : testb6
-Feb 04, 2016 10:08:49 AM geneos_notification.loggers.LogObject doLog
-INFO: Thread xpath exection for path : testc6
-Feb 04, 2016 10:08:49 AM geneos_notification.loggers.LogObject doLog
-INFO: Thread xpath exection for path : testa6
-Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa6
-Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Thread Execution successful
-Feb 04, 2016 10:08:50 AM geneos_notification.loggers.LogObject doLog
-WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+  <testcase name="getLivePathsTest" classname="itrs_appserver.DataBaseControllerTest" time="0.055"/>
+  <testcase name="removeCustomDataviewFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.011"/>
+  <testcase name="addCustomDataViewFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.014"/>
+  <testcase name="userCheckFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.01"/>
+  <testcase name="checkDeviceExistenceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.01"/>
+  <testcase name="getUserDataviewListTest" classname="itrs_appserver.DataBaseControllerTest" time="0.035"/>
+  <testcase name="getLivePathsFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.017"/>
+  <testcase name="execCustomFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.01"/>
+  <testcase name="loginDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.008"/>
+  <testcase name="createUserFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.009"/>
+  <testcase name="getLiveDevicesTest" classname="itrs_appserver.DataBaseControllerTest" time="0.027"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Feb 11, 2016 2:12:16 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]Query error while creating invalid device fail' or 1 = 1 for user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1',-1260963333)' at line 1
+com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1',-1260963333)' at line 1
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1723)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3277)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3206)
+	at com.mysql.jdbc.Statement.executeQuery(Statement.java:1232)
+	at geneos_notification.controllers.DatabaseController.createInValidDevice(DatabaseController.java:173)
+	at itrs_appserver.DataBaseControllerTest.createInValidDeviceFailTest(DataBaseControllerTest.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Feb 11, 2016 2:12:16 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]Error while logging out fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
+Feb 11, 2016 2:12:16 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]Query error while retrieving dataviews subscribed to user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
+Feb 11, 2016 2:12:16 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]Undetermined error was encountered causing query failure! : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
+com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1723)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3277)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3206)
+	at com.mysql.jdbc.Statement.executeQuery(Statement.java:1232)
+	at geneos_notification.controllers.DatabaseController.checkValidDomain(DatabaseController.java:122)
+	at itrs_appserver.DataBaseControllerTest.checkValidDomainFailTest(DataBaseControllerTest.java:85)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testa1@Default
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testa1@Default & testa1
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testa1 logged in successfully
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+INFO: Initial log on for testa1@Default with device testa1
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]Connection information issue either driver or address : java.sql.SQLException: No suitable driver found for nothing
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]Error while removing xpath fail' or 1 = 1 from user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1')' at line 1
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]Query error while adding dataview fail' or 1 = 1 to user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1')' at line 1
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : fail' or 1 = 1 & fail
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]SQL query issue was encountered causing SQL failure : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]Query error while checkintg status of device : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]Query error while retrieving custom dataset 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' or 1 = 1))' at line 1
+com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' or 1 = 1))' at line 1
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1723)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3277)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3206)
+	at com.mysql.jdbc.Statement.executeQuery(Statement.java:1232)
+	at geneos_notification.controllers.DatabaseController.getLivePaths(DatabaseController.java:372)
+	at itrs_appserver.DataBaseControllerTest.getLivePathsFailTest(DataBaseControllerTest.java:145)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]Query error while retrieving custom dataset 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'fail' or 1 = 1' at line 1
+com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'fail' or 1 = 1' at line 1
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1723)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3277)
+	at com.mysql.jdbc.Statement.executeUpdate(Statement.java:1402)
+	at com.mysql.jdbc.Statement.executeUpdate(Statement.java:1317)
+	at geneos_notification.controllers.DatabaseController.execCustom(DatabaseController.java:400)
+	at itrs_appserver.DataBaseControllerTest.execCustomFailTest(DataBaseControllerTest.java:151)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]Error while logging in device fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
+Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]Query error while creating new user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1', 119490069)' at line 1
 ]]></system-err>
 </testsuite>

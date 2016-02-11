@@ -1,36 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="itrs_appserver.startControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-02-04T10:09:20" hostname="ITRSLP043" time="0.048">
+<testsuite name="itrs_appserver.startControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-02-11T14:12:52" hostname="ITRSLP043" time="0.077">
   <properties/>
-  <testcase name="configureSettingsTest" classname="itrs_appserver.startControllerTest" time="0.013"/>
+  <testcase name="configureSettingsTest" classname="itrs_appserver.startControllerTest" time="0.01"/>
   <testcase name="checkValidityFailTest" classname="itrs_appserver.startControllerTest" time="0.001"/>
-  <testcase name="perpetualReloadTest" classname="itrs_appserver.startControllerTest" time="0.033"/>
-  <testcase name="readSettingsFileTest" classname="itrs_appserver.startControllerTest" time="0.001"/>
-  <system-out><![CDATA[10:09:21.020 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-10:09:21.020 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-10:09:21.020 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-10:09:21.021 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-10:09:21.025 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
-10:09:21.028 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
-10:09:21.032 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
-10:09:21.034 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
+  <testcase name="perpetualReloadTest" classname="itrs_appserver.startControllerTest" time="0.064"/>
+  <testcase name="readSettingsFileTest" classname="itrs_appserver.startControllerTest" time="0.002"/>
+  <system-out><![CDATA[14:12:52.628 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+14:12:52.630 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
 ]]></system-out>
-  <system-err><![CDATA[Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
+  <system-err><![CDATA[Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Connection information issue either driver or address : java.sql.SQLException: No suitable driver found for nothing
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
 SEVERE: There was an error with the SQL configuration or address, please confirm details.
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
 INFO: [T-INFO]Initialization of thread for xpath : testa2
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")]
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Android")]/sampler[(@name="AppTest")][(@type="")]/dataview[(@name="AppTest")]
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="Toolkit")][(@type="")]/dataview[(@name="Toolkit")]
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clients")]
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]
 ]]></system-err>
 </testsuite>

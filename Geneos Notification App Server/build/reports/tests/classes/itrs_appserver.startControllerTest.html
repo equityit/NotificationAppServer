@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.048s</div>
+<div class="counter">0.077s</div>
 <p>duration</p>
 </div>
 </td>
@@ -87,17 +87,17 @@
 </tr>
 <tr>
 <td class="success">configureSettingsTest</td>
-<td>0.013s</td>
+<td>0.010s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">perpetualReloadTest</td>
-<td>0.033s</td>
+<td>0.064s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">readSettingsFileTest</td>
-<td>0.001s</td>
+<td>0.002s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -105,38 +105,20 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>10:09:21.020 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-10:09:21.020 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-10:09:21.020 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-10:09:21.021 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-10:09:21.025 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
-10:09:21.028 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
-10:09:21.032 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
-10:09:21.034 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
+<pre>14:12:52.628 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+14:12:52.630 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
 </pre>
 </span>
 </div>
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
+<pre>Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Connection information issue either driver or address : java.sql.SQLException: No suitable driver found for nothing
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
 SEVERE: There was an error with the SQL configuration or address, please confirm details.
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;CPU_Entity&quot;)]/sampler[(@name=&quot;CPU_sampler&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;CPU_sampler&quot;)]
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
 INFO: [T-INFO]Initialization of thread for xpath : testa2
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;FKM&quot;)]/sampler[(@name=&quot;FKM&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;FKM&quot;)]
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;Android&quot;)]/sampler[(@name=&quot;AppTest&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;AppTest&quot;)]
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;TOOLKIT_TEST&quot;)]/sampler[(@name=&quot;Toolkit&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;Toolkit&quot;)]
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;HELLO&quot;)]/sampler[(@name=&quot;Cluster Monitoring Sampler&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;192-168-220-54-2551-clients&quot;)]
-Feb 04, 2016 10:09:20 AM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;Copy of New Managed entity&quot;)]/sampler[(@name=&quot;CPU_sampler&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;CPU_sampler&quot;)]
 </pre>
 </span>
 </div>
@@ -148,7 +130,7 @@ INFO: [T-INFO]Initialization of thread for xpath : /geneos/gateway[(@name=&quot;
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 2.3</a> at 04-Feb-2016 10:09:25</p>
+<a href="http://www.gradle.org">Gradle 2.3</a> at 11-Feb-2016 14:12:57</p>
 </div>
 </div>
 </body>
