@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="itrs_appserver.RowGeneratorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-02-11T14:12:51" hostname="ITRSLP043" time="0.565">
+<testsuite name="itrs_appserver.RowGeneratorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-02-11T15:34:44" hostname="ITRSLP043" time="0.538">
   <properties/>
-  <testcase name="getDataSetItemsFailTest" classname="itrs_appserver.RowGeneratorTest" time="0.035"/>
-  <testcase name="getDataSetItemsFailureTest" classname="itrs_appserver.RowGeneratorTest" time="0.031"/>
-  <testcase name="getDataSetItemsTest" classname="itrs_appserver.RowGeneratorTest" time="0.498"/>
-  <system-out><![CDATA[14:12:51.985 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-14:12:51.988 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
-14:12:52.003 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:21904]
-14:12:52.005 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-14:12:52.018 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-14:12:52.021 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  Remoting - Starting remoting
-14:12:52.035 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:21919]
-14:12:52.037 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-14:12:52.051 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-14:12:52.055 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  Remoting - Starting remoting
-14:12:52.069 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:21934]
-14:12:52.069 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+  <testcase name="getDataSetItemsFailTest" classname="itrs_appserver.RowGeneratorTest" time="0.03"/>
+  <testcase name="getDataSetItemsFailureTest" classname="itrs_appserver.RowGeneratorTest" time="0.046"/>
+  <testcase name="getDataSetItemsTest" classname="itrs_appserver.RowGeneratorTest" time="0.461"/>
+  <system-out><![CDATA[15:34:44.891 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:34:44.895 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  Remoting - Starting remoting
+15:34:44.909 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:30670]
+15:34:44.910 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:34:44.925 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:34:44.930 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
+15:34:44.953 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:34:44.953 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-9] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:30685]
+15:34:44.957 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:34:44.960 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+15:34:44.969 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:34:44.973 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  Remoting - Starting remoting
+15:34:44.989 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-9] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:30700]
 /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[wild(@column,"*")]
-14:12:52.074 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-14:12:52.089 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-14:12:52.107 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-14:12:52.133 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-14:12:52.134 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-14:12:52.151 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-14:12:52.233 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-14:12:52.363 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-14:12:52.467 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-14:12:52.467 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[wild(@column,"*")],Set(),LIST,),None)
+15:34:44.991 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-9] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:34:45.018 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:34:45.030 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:34:45.030 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+15:34:45.053 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+15:34:45.116 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+15:34:45.232 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+15:34:45.329 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+15:34:45.330 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[wild(@column,"*")],Set(),LIST,),None)
 {
 	severity : UNDEFINED
 	name : cpu_0.type
@@ -53,21 +53,21 @@
 	name : cpu_0.percentUtilisation
 	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentUtilisation")]
 	type : CELL
-	value : 0.56 %
+	value : 0.71 %
 }
 {
 	severity : UNDEFINED
 	name : cpu_0.percentUserTime
 	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentUserTime")]
 	type : CELL
-	value : 0.31 %
+	value : 0.41 %
 }
 {
 	severity : UNDEFINED
 	name : cpu_0.percentKernelTime
 	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentKernelTime")]
 	type : CELL
-	value : 0.20 %
+	value : 0.25 %
 }
 {
 	severity : UNDEFINED
@@ -81,7 +81,7 @@
 	name : cpu_0.percentIdle
 	path : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentIdle")]
 	type : CELL
-	value : 99.44 %
+	value : 99.29 %
 }
 {
 	severity : UNDEFINED
@@ -97,9 +97,9 @@
 	type : CELL
 	value : 0.05 %
 }
-14:12:52.520 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Shutting down remote daemon.
-14:12:52.522 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remote daemon shut down; proceeding with flushing remote transports.
-14:12:52.527 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remoting shut down.
+15:34:45.400 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Shutting down remote daemon.
+15:34:45.400 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remote daemon shut down; proceeding with flushing remote transports.
+15:34:45.407 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remoting shut down.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

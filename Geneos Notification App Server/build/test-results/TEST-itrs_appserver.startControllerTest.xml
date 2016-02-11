@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="itrs_appserver.startControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-02-11T14:12:52" hostname="ITRSLP043" time="0.077">
+<testsuite name="itrs_appserver.startControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-02-11T15:34:45" hostname="ITRSLP043" time="0.04">
   <properties/>
   <testcase name="configureSettingsTest" classname="itrs_appserver.startControllerTest" time="0.01"/>
-  <testcase name="checkValidityFailTest" classname="itrs_appserver.startControllerTest" time="0.001"/>
-  <testcase name="perpetualReloadTest" classname="itrs_appserver.startControllerTest" time="0.064"/>
-  <testcase name="readSettingsFileTest" classname="itrs_appserver.startControllerTest" time="0.002"/>
-  <system-out><![CDATA[14:12:52.628 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-14:12:52.630 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
+  <testcase name="checkValidityFailTest" classname="itrs_appserver.startControllerTest" time="0.002"/>
+  <testcase name="perpetualReloadTest" classname="itrs_appserver.startControllerTest" time="0.027"/>
+  <testcase name="readSettingsFileTest" classname="itrs_appserver.startControllerTest" time="0.001"/>
+  <system-out><![CDATA[15:34:45.470 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:34:45.473 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  Remoting - Starting remoting
 ]]></system-out>
-  <system-err><![CDATA[Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+  <system-err><![CDATA[Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Connection information issue either driver or address : java.sql.SQLException: No suitable driver found for nothing
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 SEVERE: There was an error with the SQL configuration or address, please confirm details.
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: [T-INFO]Initialization of thread for xpath : testa2
 ]]></system-err>
 </testsuite>

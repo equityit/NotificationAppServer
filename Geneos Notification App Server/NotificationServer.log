@@ -16005,3 +16005,575 @@ INFO 02-11-2016 15:24:02 || Server Boot Initiated
 INFO 02-11-2016 15:24:03 || [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
 INFO 02-11-2016 15:27:30 || Server Boot Initiated
 INFO 02-11-2016 15:27:31 || [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+INFO 02-11-2016 15:30:55 || Login attempt with username : testb6@Default
+INFO 02-11-2016 15:30:55 || [SQL]Checking user : testb6@Default & testb6
+INFO 02-11-2016 15:30:55 || [SQL]Device testb6 logged in successfully
+INFO 02-11-2016 15:30:55 || Initial log on for testb6@Default with device testb6
+INFO 02-11-2016 15:30:55 || [T-INFO]Initialization of thread for xpath : testb6
+INFO 02-11-2016 15:30:55 || Login attempt with username : testa6@Default
+INFO 02-11-2016 15:30:55 || [SQL]Checking user : testa6@Default & testa6
+INFO 02-11-2016 15:30:55 || [SQL]Device testa6 logged in successfully
+INFO 02-11-2016 15:30:55 || Initial log on for testa6@Default with device testa6
+INFO 02-11-2016 15:30:55 || [T-INFO]Initialization of thread for xpath : testa6
+INFO 02-11-2016 15:30:55 || Login attempt with username : testc6@Default
+INFO 02-11-2016 15:30:55 || [SQL]Checking user : testc6@Default & testc6
+INFO 02-11-2016 15:30:55 || [SQL]Device testc6 logged in successfully
+INFO 02-11-2016 15:30:55 || Initial log on for testc6@Default with device testc6
+INFO 02-11-2016 15:30:55 || [T-INFO]Initialization of thread for xpath : testc6
+SEVERE 02-11-2016 15:30:56 || [SQL]Query error while creating invalid device fail' or 1 = 1 for user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1',-1009183787)' at line 1
+SEVERE 02-11-2016 15:30:56 || [SQL]Error while logging out fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
+SEVERE 02-11-2016 15:30:56 || [SQL]Query error while retrieving dataviews subscribed to user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
+SEVERE 02-11-2016 15:30:56 || [SQL]Undetermined error was encountered causing query failure! : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
+INFO 02-11-2016 15:30:56 || Login attempt with username : testa1@Default
+INFO 02-11-2016 15:30:56 || [SQL]Checking user : testa1@Default & testa1
+INFO 02-11-2016 15:30:56 || [SQL]Device testa1 logged in successfully
+INFO 02-11-2016 15:30:56 || Initial log on for testa1@Default with device testa1
+SEVERE 02-11-2016 15:30:56 || [SQL]Connection information issue either driver or address : java.sql.SQLException: No suitable driver found for nothing
+SEVERE 02-11-2016 15:30:56 || [SQL]Error while removing xpath fail' or 1 = 1 from user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1')' at line 1
+SEVERE 02-11-2016 15:30:56 || [SQL]Query error while adding dataview fail' or 1 = 1 to user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1')' at line 1
+INFO 02-11-2016 15:30:56 || [SQL]Checking user : fail' or 1 = 1 & fail
+SEVERE 02-11-2016 15:30:56 || [SQL]SQL query issue was encountered causing SQL failure : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+SEVERE 02-11-2016 15:30:56 || [SQL]Query error while checkintg status of device : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+SEVERE 02-11-2016 15:30:56 || [SQL]Query error while retrieving custom dataset 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' or 1 = 1))' at line 1
+SEVERE 02-11-2016 15:30:56 || [SQL]Query error while retrieving custom dataset 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'fail' or 1 = 1' at line 1
+SEVERE 02-11-2016 15:30:56 || [SQL]Error while logging in device fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
+SEVERE 02-11-2016 15:30:56 || [SQL]Query error while creating new user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1', 1160295445)' at line 1
+INFO 02-11-2016 15:30:56 || Row request made for row at xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentUtilisation")]
+INFO 02-11-2016 15:30:57 || Thread xpath exection for path : testc6
+INFO 02-11-2016 15:30:57 || Thread xpath exection for path : testb6
+INFO 02-11-2016 15:30:57 || Thread xpath exection for path : testa6
+SEVERE 02-11-2016 15:30:58 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
+INFO 02-11-2016 15:30:58 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:30:58 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+SEVERE 02-11-2016 15:30:58 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa6
+INFO 02-11-2016 15:30:58 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:30:58 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+INFO 02-11-2016 15:30:58 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:30:58 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+INFO 02-11-2016 15:30:58 || Login attempt with username : testc5@Default
+INFO 02-11-2016 15:30:58 || [SQL]Checking user : testc5@Default & testc5
+INFO 02-11-2016 15:30:58 || [SQL]Device testc5 logged in successfully
+INFO 02-11-2016 15:30:58 || Initial log on for testc5@Default with device testc5
+INFO 02-11-2016 15:30:58 || [T-INFO]Initialization of thread for xpath : testc5
+INFO 02-11-2016 15:30:58 || Login attempt with username : testa5
+INFO 02-11-2016 15:30:58 || [SQL]Checking user : testa5 & testa5
+WARNING 02-11-2016 15:30:58 || [SQL]User has tried to log in with an invalid domain : testa5
+WARNING 02-11-2016 15:30:58 || Attempted login made by unauthorised user with username : testa5
+INFO 02-11-2016 15:30:58 || [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+INFO 02-11-2016 15:30:58 || Thread xpath exection for path : testc5
+SEVERE 02-11-2016 15:30:58 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
+INFO 02-11-2016 15:30:58 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:31:08 || Thread xpath exection for path : testb6
+SEVERE 02-11-2016 15:31:08 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
+INFO 02-11-2016 15:31:08 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:31:08 || Thread xpath exection for path : testa6
+SEVERE 02-11-2016 15:31:08 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa6
+INFO 02-11-2016 15:31:08 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:31:08 || Thread xpath exection for path : testc6
+SEVERE 02-11-2016 15:31:08 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
+INFO 02-11-2016 15:31:08 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:31:08 || Thread xpath exection for path : testc5
+SEVERE 02-11-2016 15:31:08 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
+INFO 02-11-2016 15:31:09 || [T-INFO]Thread Execution successful
+SEVERE 02-11-2016 15:31:09 || [T-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue.
+INFO 02-11-2016 15:31:15 || [DT-INFO]Collected Dataviews : [/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Android")]/sampler[(@name="AppTest")][(@type="")]/dataview[(@name="AppTest")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="SQL gateway")][(@type="")]/dataview[(@name="V1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="TEST_LOG LOCAL1")][(@type="")]/dataview[(@name="TEST_LOG LOCAL1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 2")][(@type="")]/dataview[(@name="New Sampler 2")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 9")][(@type="")]/dataview[(@name="New Sampler 9")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 1")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 10")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 11")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 2")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 3")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 4")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 5")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 6")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 7")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 8")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 9")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="Diagnostics")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clusterNodes")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-gateways")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clients")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="New Sampler 1")][(@type="")]/dataview[(@name="test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="THISISATEST")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="Toolkit")][(@type="")]/dataview[(@name="Toolkit")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ICE MYSQL")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TEST ICE")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="New Sampler 6")][(@type="")]/dataview[(@name="New Sampler 6")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ME VS APPa")][(@type="")]/dataview[(@name="ME VS APP")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="zzzzzzzzz")]/sampler[(@name="Toolkit")][(@type="")]/dataview[(@name="Toolkit")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Instances")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Percentage use")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Trigger sample")][(@type="")]/dataview[(@name="Triggered")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Timestamp sql")][(@type="")]/dataview[(@name="timediff")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="eventlog")][(@type="")]/dataview[(@name="eventlog")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Win Services")][(@type="")]/dataview[(@name="Win Services")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="proc")][(@type="")]/dataview[(@name="proc")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 5")][(@type="")]/dataview[(@name="New Sampler 5")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 2")][(@type="")]/dataview[(@name="New Sampler 2")]] 
+With a length of 10087
+INFO 02-11-2016 15:31:15 || [DVLIST UPDATE]Dataview list was successfully updated.
+INFO 02-11-2016 15:31:15 || Login attempt with username : testd5@Default
+INFO 02-11-2016 15:31:15 || [SQL]Checking user : testd5@Default & testd5
+INFO 02-11-2016 15:31:15 || [SQL]Device testd5 logged in successfully
+INFO 02-11-2016 15:31:15 || Initial log on for testd5@Default with device testd5
+INFO 02-11-2016 15:31:15 || Thread terminated : testd5
+INFO 02-11-2016 15:31:15 || Login attempt with username : testb5@Default
+INFO 02-11-2016 15:31:15 || [SQL]Checking user : testb5@Default & testb5
+INFO 02-11-2016 15:31:15 || [SQL]Device testb5 logged in successfully
+INFO 02-11-2016 15:31:15 || Initial log on for testb5@Default with device testb5
+INFO 02-11-2016 15:31:15 || [SQL]Device testb5 logged out successfully
+INFO 02-11-2016 15:31:15 || The status of the device check fortestb5@Default is :1
+INFO 02-11-2016 15:31:15 || testb5@Default has been successfully logged out.
+INFO 02-11-2016 15:31:15 || Veritication email sent for devioce : test35
+INFO 02-11-2016 15:31:15 || [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+INFO 02-11-2016 15:31:18 || Thread xpath exection for path : testb6
+SEVERE 02-11-2016 15:31:18 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
+INFO 02-11-2016 15:31:18 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:31:18 || Thread xpath exection for path : testa6
+SEVERE 02-11-2016 15:31:18 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa6
+INFO 02-11-2016 15:31:18 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:31:18 || Thread xpath exection for path : testc6
+SEVERE 02-11-2016 15:31:18 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
+INFO 02-11-2016 15:31:18 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:31:19 || Thread xpath exection for path : testc5
+SEVERE 02-11-2016 15:31:19 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
+INFO 02-11-2016 15:31:19 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:31:28 || Thread xpath exection for path : testb6
+SEVERE 02-11-2016 15:31:28 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
+INFO 02-11-2016 15:31:28 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:31:28 || Thread xpath exection for path : testa6
+SEVERE 02-11-2016 15:31:28 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa6
+INFO 02-11-2016 15:31:28 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:31:28 || Thread xpath exection for path : testc6
+SEVERE 02-11-2016 15:31:28 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
+INFO 02-11-2016 15:31:28 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:31:29 || Thread xpath exection for path : testc5
+SEVERE 02-11-2016 15:31:29 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
+INFO 02-11-2016 15:31:29 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:31:31 || [DT-INFO]Collected Dataviews : [/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Android")]/sampler[(@name="AppTest")][(@type="")]/dataview[(@name="AppTest")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="SQL gateway")][(@type="")]/dataview[(@name="V1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="TEST_LOG LOCAL1")][(@type="")]/dataview[(@name="TEST_LOG LOCAL1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 2")][(@type="")]/dataview[(@name="New Sampler 2")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 9")][(@type="")]/dataview[(@name="New Sampler 9")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 1")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 10")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 11")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 2")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 3")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 4")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 5")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 6")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 7")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 8")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 9")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="Diagnostics")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clusterNodes")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-gateways")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clients")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="New Sampler 1")][(@type="")]/dataview[(@name="test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="THISISATEST")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="Toolkit")][(@type="")]/dataview[(@name="Toolkit")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ICE MYSQL")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TEST ICE")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="New Sampler 6")][(@type="")]/dataview[(@name="New Sampler 6")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ME VS APPa")][(@type="")]/dataview[(@name="ME VS APP")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="zzzzzzzzz")]/sampler[(@name="Toolkit")][(@type="")]/dataview[(@name="Toolkit")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Instances")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Percentage use")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Trigger sample")][(@type="")]/dataview[(@name="Triggered")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Timestamp sql")][(@type="")]/dataview[(@name="timediff")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="eventlog")][(@type="")]/dataview[(@name="eventlog")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Win Services")][(@type="")]/dataview[(@name="Win Services")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="proc")][(@type="")]/dataview[(@name="proc")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 5")][(@type="")]/dataview[(@name="New Sampler 5")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 2")][(@type="")]/dataview[(@name="New Sampler 2")]] 
+With a length of 10087
+INFO 02-11-2016 15:31:31 || [DVLIST UPDATE]Dataview list was successfully updated.
+INFO 02-11-2016 15:31:31 || Dataview list requested
+SEVERE 02-11-2016 15:31:32 || [SQL]Connection information issue either driver or address : java.sql.SQLException: No suitable driver found for nothing
+SEVERE 02-11-2016 15:31:32 || There was an error with the SQL configuration or address, please confirm details.
+INFO 02-11-2016 15:31:32 || [T-INFO]Initialization of thread for xpath : testa2
+INFO 02-11-2016 15:31:32 || Thread xpath exection for path : testa2
+INFO 02-11-2016 15:31:32 || Login attempt with username : testa3@Default
+INFO 02-11-2016 15:31:32 || [SQL]Checking user : testa3@Default & testa3
+INFO 02-11-2016 15:31:32 || [SQL]Device testa3 logged in successfully
+INFO 02-11-2016 15:31:32 || Initial log on for testa3@Default with device testa3
+INFO 02-11-2016 15:31:32 || [T-INFO]Initialization of thread for xpath : testa3
+INFO 02-11-2016 15:31:32 || Login attempt with username : testb3@Default
+INFO 02-11-2016 15:31:32 || [SQL]Checking user : testb3@Default & testb3
+INFO 02-11-2016 15:31:32 || Thread xpath exection for path : testa3
+INFO 02-11-2016 15:31:32 || [SQL]Device testb3 logged in successfully
+INFO 02-11-2016 15:31:32 || Initial log on for testb3@Default with device testb3
+INFO 02-11-2016 15:31:32 || [T-INFO]Initialization of thread for xpath : testb3
+INFO 02-11-2016 15:31:32 || Login attempt with username : testc3@Default
+INFO 02-11-2016 15:31:32 || [SQL]Checking user : testc3@Default & testc3
+INFO 02-11-2016 15:31:32 || Thread xpath exection for path : testb3
+INFO 02-11-2016 15:31:32 || [SQL]Device testc3 logged in successfully
+INFO 02-11-2016 15:31:32 || Initial log on for testc3@Default with device testc3
+SEVERE 02-11-2016 15:31:32 || [T-ERROR]Thread cycle execution failed due to interrupt
+INFO 02-11-2016 15:31:32 || [T-INFO]Initialization of thread for xpath : testb3
+SEVERE 02-11-2016 15:31:32 || java.lang.InterruptedException
+INFO 02-11-2016 15:31:32 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:31:32 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+INFO 02-11-2016 15:31:32 || Login attempt with username : testf3@Default
+INFO 02-11-2016 15:31:32 || [SQL]Checking user : testf3@Default & testf3
+INFO 02-11-2016 15:31:32 || Thread xpath exection for path : testb3
+INFO 02-11-2016 15:31:32 || [SQL]Device testf3 logged in successfully
+INFO 02-11-2016 15:31:32 || Initial log on for testf3@Default with device testf3
+INFO 02-11-2016 15:31:32 || Thread terminated : testf3
+INFO 02-11-2016 15:31:32 || Login attempt with username : testi3@Default
+INFO 02-11-2016 15:31:32 || [SQL]Checking user : testi3@Default & testi3
+INFO 02-11-2016 15:31:32 || [SQL]Device testi3 logged in successfully
+INFO 02-11-2016 15:31:32 || Initial log on for testi3@Default with device testi3
+INFO 02-11-2016 15:31:32 || Login attempt with username : testi3@Default
+INFO 02-11-2016 15:31:32 || [T-INFO]Initialization of thread for xpath : testi3
+INFO 02-11-2016 15:31:32 || [SQL]Checking user : testi3@Default & testj3
+INFO 02-11-2016 15:31:32 || [SQL]Device testj3 logged in successfully
+INFO 02-11-2016 15:31:32 || testi3@Default logged in successfully on device testj3
+INFO 02-11-2016 15:31:32 || [T-INFO]Initialization of thread for xpath : testi3
+INFO 02-11-2016 15:31:32 || Login attempt with username : testd3@Default
+INFO 02-11-2016 15:31:32 || [SQL]Checking user : testd3@Default & testd3
+INFO 02-11-2016 15:31:32 || [SQL]Device testd3 logged in successfully
+INFO 02-11-2016 15:31:32 || Thread xpath exection for path : testi3
+INFO 02-11-2016 15:31:32 || Initial log on for testd3@Default with device testd3
+INFO 02-11-2016 15:31:32 || Thread terminated : testd3
+INFO 02-11-2016 15:31:32 || [T-INFO]Initialization of thread for xpath : teste3
+INFO 02-11-2016 15:31:32 || Login attempt with username : testg3@Default
+INFO 02-11-2016 15:31:32 || [SQL]Checking user : testg3@Default & testg3
+INFO 02-11-2016 15:31:32 || [SQL]Device testg3 logged in successfully
+INFO 02-11-2016 15:31:32 || Thread xpath exection for path : teste3
+INFO 02-11-2016 15:31:32 || Initial log on for testg3@Default with device testg3
+INFO 02-11-2016 15:31:32 || [T-INFO]Initialization of thread for xpath : testg3
+SEVERE 02-11-2016 15:31:32 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa2
+INFO 02-11-2016 15:31:32 || Login attempt with username : testh3@Default
+INFO 02-11-2016 15:31:32 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:31:32 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+INFO 02-11-2016 15:31:32 || [SQL]Checking user : testh3@Default & testh3
+INFO 02-11-2016 15:31:32 || [SQL]Device testh3 logged in successfully
+INFO 02-11-2016 15:31:32 || Thread xpath exection for path : testg3
+INFO 02-11-2016 15:31:32 || Initial log on for testh3@Default with device testh3
+INFO 02-11-2016 15:31:32 || Thread restarted : testg3
+SEVERE 02-11-2016 15:31:32 || [T-ERROR]Thread cycle execution failed due to interrupt
+SEVERE 02-11-2016 15:31:32 || java.lang.InterruptedException
+INFO 02-11-2016 15:31:32 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:31:32 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+INFO 02-11-2016 15:31:32 || [T-INFO]Initialization of thread for xpath : testg3
+INFO 02-11-2016 15:31:32 || Thread xpath exection for path : testg3
+SEVERE 02-11-2016 15:31:32 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa3
+INFO 02-11-2016 15:31:32 || [T-INFO]Thread Execution successful
+SEVERE 02-11-2016 15:31:33 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb3
+SEVERE 02-11-2016 15:31:33 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb3
+INFO 02-11-2016 15:31:33 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:31:33 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+SEVERE 02-11-2016 15:31:33 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testi3
+INFO 02-11-2016 15:31:33 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:31:33 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+SEVERE 02-11-2016 15:31:33 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: teste3
+INFO 02-11-2016 15:31:33 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:31:33 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+SEVERE 02-11-2016 15:31:33 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testg3
+INFO 02-11-2016 15:31:33 || [T-INFO]Thread Execution successful
+SEVERE 02-11-2016 15:31:33 || [Transmission]IO error has been encountered, tranmission failed! : Server returned HTTP response code: 400 for URL: https://android.googleapis.com/gcm/send
+SEVERE 02-11-2016 15:31:33 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testg3
+INFO 02-11-2016 15:31:33 || [Transmission]POST Returned data : {"multicast_id":8079593454034817939,"success":0,"failure":1,"canonical_ids":0,"results":[{"error":"NotRegistered"}]}
+INFO 02-11-2016 15:31:33 || [Transmission]Transmission Successful
+INFO 02-11-2016 15:31:33 || Login attempt with username : testa10@Default
+INFO 02-11-2016 15:31:33 || [SQL]Checking user : testa10@Default & testa10
+INFO 02-11-2016 15:31:33 || [SQL]Device testa10 logged in successfully
+INFO 02-11-2016 15:31:33 || Initial log on for testa10@Default with device testa10
+INFO 02-11-2016 15:31:33 || [Transmission]Output JSON data : {"data":{"severity":"bad","xpath":"testa10","message":"New Alert :bad","value":"0"},"registration_ids":["testa10"]}
+INFO 02-11-2016 15:31:33 || [T-INFO]Initialization of thread for xpath : testa10
+SEVERE 02-11-2016 15:31:33 || [Transmission]An error was encountered with system connection parameters. Please ensure a stable and configured network configuration and try again.
+INFO 02-11-2016 15:31:33 || Login attempt with username : testa9@Default
+INFO 02-11-2016 15:31:33 || [SQL]Checking user : testa9@Default & testa9
+INFO 02-11-2016 15:31:33 || Thread xpath exection for path : testa10
+INFO 02-11-2016 15:31:33 || [SQL]Device testa9 logged in successfully
+INFO 02-11-2016 15:31:33 || Initial log on for testa9@Default with device testa9
+INFO 02-11-2016 15:31:33 || [Transmission]Output JSON data : {"data":{"severity":"bad","xpath":"testa9","message":"New Alert :bad","value":"0"},"registration_ids":["testa9"]}
+INFO 02-11-2016 15:31:33 || [T-INFO]Initialization of thread for xpath : testa9
+INFO 02-11-2016 15:31:33 || Thread xpath exection for path : testa9
+INFO 02-11-2016 15:31:33 || [Transmission]POST Returned data : {"multicast_id":6644262111889633686,"success":0,"failure":1,"canonical_ids":0,"results":[{"error":"InvalidRegistration"}]}
+INFO 02-11-2016 15:31:33 || [Transmission]Transmission Successful
+INFO 02-11-2016 15:31:33 || Login attempt with username : testb@Default
+INFO 02-11-2016 15:31:33 || [SQL]Checking user : testb@Default & testb
+SEVERE 02-11-2016 15:31:34 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa10
+INFO 02-11-2016 15:31:34 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:31:34 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+SEVERE 02-11-2016 15:31:34 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa9
+INFO 02-11-2016 15:31:34 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:31:34 || New user testb@Default has attempted to login, verification email sent and account is in probation.
+INFO 02-11-2016 15:31:34 || Login attempt with username : testb@Default
+INFO 02-11-2016 15:31:34 || [SQL]Checking user : testb@Default & testz
+INFO 02-11-2016 15:31:34 || [SQL]Device Check = User has yet to verify device : testz
+INFO 02-11-2016 15:31:34 || testb@Default has been sent a verification email for testz
+INFO 02-11-2016 15:31:34 || Login attempt with username : test@Default
+INFO 02-11-2016 15:31:34 || [SQL]Checking user : test@Default & test
+INFO 02-11-2016 15:31:34 || New user test@Default has attempted to login, verification email sent and account is in probation.
+INFO 02-11-2016 15:31:34 || Login attempt with username : fail' or 1 = 1
+INFO 02-11-2016 15:31:34 || [SQL]Checking user : fail' or 1 = 1 & fail' or 1 = 1
+SEVERE 02-11-2016 15:31:34 || [SQL]SQL query issue was encountered causing SQL failure : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+SEVERE 02-11-2016 15:31:34 || Login error has occured, please see associated stack trace for more information. Username : fail' or 1 = 1 android_id : fail' or 1 = 1
+INFO 02-11-2016 15:31:34 || java.lang.RuntimeException: com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+INFO 02-11-2016 15:31:34 || Login attempt with username : testf@Default
+INFO 02-11-2016 15:31:34 || [SQL]Checking user : testf@Default & testf
+INFO 02-11-2016 15:31:34 || [SQL]Device testf logged in successfully
+INFO 02-11-2016 15:31:34 || Initial log on for testf@Default with device testf
+INFO 02-11-2016 15:31:34 || [SQL]Device testf logged out successfully
+INFO 02-11-2016 15:31:34 || The status of the device check fortestf@Default is :1
+INFO 02-11-2016 15:31:34 || testf@Default has been successfully logged out.
+INFO 02-11-2016 15:31:34 || Login attempt with username : teste@Default
+INFO 02-11-2016 15:31:34 || [SQL]Checking user : teste@Default & teste
+INFO 02-11-2016 15:31:34 || [SQL]Device teste logged in successfully
+INFO 02-11-2016 15:31:34 || Initial log on for teste@Default with device teste
+INFO 02-11-2016 15:31:34 || [T-INFO]Initialization of thread for xpath : test
+INFO 02-11-2016 15:31:34 || Login attempt with username : something@wrong
+INFO 02-11-2016 15:31:34 || [SQL]Checking user : something@wrong & test
+WARNING 02-11-2016 15:31:34 || [SQL]User has tried to log in with an invalid domain : something@wrong
+WARNING 02-11-2016 15:31:34 || Attempted login made by unauthorised user with username : something@wrong
+INFO 02-11-2016 15:31:34 || Thread xpath exection for path : test
+INFO 02-11-2016 15:31:34 || Login attempt with username : testc@Default
+INFO 02-11-2016 15:31:34 || [SQL]Checking user : testc@Default & testc
+INFO 02-11-2016 15:31:34 || [SQL]Device testc logged in successfully
+INFO 02-11-2016 15:31:34 || Initial log on for testc@Default with device testc
+SEVERE 02-11-2016 15:31:34 || Attempted access by invalid and potentially harmful user utilising username : testFail@Default
+INFO 02-11-2016 15:31:34 || Login attempt with username : testd@Default
+INFO 02-11-2016 15:31:34 || [SQL]Checking user : testd@Default & testd
+INFO 02-11-2016 15:31:34 || [SQL]Device testd logged in successfully
+INFO 02-11-2016 15:31:34 || Initial log on for testd@Default with device testd
+INFO 02-11-2016 15:31:34 || Login attempt with username : testd@Default
+INFO 02-11-2016 15:31:34 || [SQL]Checking user : testd@Default & testx
+INFO 02-11-2016 15:31:34 || [SQL]Device testx logged in successfully
+INFO 02-11-2016 15:31:34 || testd@Default logged in successfully on device testx
+INFO 02-11-2016 15:31:34 || Login attempt with username : testa@Default
+INFO 02-11-2016 15:31:34 || [SQL]Checking user : testa@Default & testa
+INFO 02-11-2016 15:31:34 || New user testa@Default has attempted to login, verification email sent and account is in probation.
+INFO 02-11-2016 15:31:34 || Login attempt with username : testa@Default
+INFO 02-11-2016 15:31:34 || [SQL]Checking user : testa@Default & testa
+INFO 02-11-2016 15:31:34 || [SQL]Device Check = User has yet to verify device : testa
+INFO 02-11-2016 15:31:34 || testa@Default has already been sent a verification email for testa
+SEVERE 02-11-2016 15:31:34 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: test
+INFO 02-11-2016 15:31:34 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:09 || Login attempt with username : testb6@Default
+INFO 02-11-2016 15:34:09 || [SQL]Checking user : testb6@Default & testb6
+INFO 02-11-2016 15:34:09 || [SQL]Device testb6 logged in successfully
+INFO 02-11-2016 15:34:09 || Initial log on for testb6@Default with device testb6
+INFO 02-11-2016 15:34:09 || [T-INFO]Initialization of thread for xpath : testb6
+INFO 02-11-2016 15:34:09 || Login attempt with username : testa6@Default
+INFO 02-11-2016 15:34:09 || [SQL]Checking user : testa6@Default & testa6
+INFO 02-11-2016 15:34:09 || [SQL]Device testa6 logged in successfully
+INFO 02-11-2016 15:34:09 || Initial log on for testa6@Default with device testa6
+INFO 02-11-2016 15:34:09 || [T-INFO]Initialization of thread for xpath : testa6
+INFO 02-11-2016 15:34:09 || Login attempt with username : testc6@Default
+INFO 02-11-2016 15:34:09 || [SQL]Checking user : testc6@Default & testc6
+INFO 02-11-2016 15:34:09 || [SQL]Device testc6 logged in successfully
+INFO 02-11-2016 15:34:09 || Initial log on for testc6@Default with device testc6
+INFO 02-11-2016 15:34:09 || [T-INFO]Initialization of thread for xpath : testc6
+SEVERE 02-11-2016 15:34:09 || [SQL]Query error while creating invalid device fail' or 1 = 1 for user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1',1626070344)' at line 1
+SEVERE 02-11-2016 15:34:09 || [SQL]Error while logging out fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
+SEVERE 02-11-2016 15:34:09 || [SQL]Query error while retrieving dataviews subscribed to user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
+SEVERE 02-11-2016 15:34:09 || [SQL]Undetermined error was encountered causing query failure! : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
+INFO 02-11-2016 15:34:09 || Login attempt with username : testa1@Default
+INFO 02-11-2016 15:34:09 || [SQL]Checking user : testa1@Default & testa1
+INFO 02-11-2016 15:34:09 || [SQL]Device testa1 logged in successfully
+INFO 02-11-2016 15:34:09 || Initial log on for testa1@Default with device testa1
+SEVERE 02-11-2016 15:34:09 || [SQL]Connection information issue either driver or address : java.sql.SQLException: No suitable driver found for nothing
+SEVERE 02-11-2016 15:34:09 || [SQL]Error while removing xpath fail' or 1 = 1 from user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1')' at line 1
+SEVERE 02-11-2016 15:34:09 || [SQL]Query error while adding dataview fail' or 1 = 1 to user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1')' at line 1
+INFO 02-11-2016 15:34:09 || [SQL]Checking user : fail' or 1 = 1 & fail
+SEVERE 02-11-2016 15:34:09 || [SQL]SQL query issue was encountered causing SQL failure : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+SEVERE 02-11-2016 15:34:09 || [SQL]Query error while checkintg status of device : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+SEVERE 02-11-2016 15:34:09 || [SQL]Query error while retrieving custom dataset 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' or 1 = 1))' at line 1
+SEVERE 02-11-2016 15:34:09 || [SQL]Query error while retrieving custom dataset 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'fail' or 1 = 1' at line 1
+SEVERE 02-11-2016 15:34:09 || [SQL]Error while logging in device fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
+SEVERE 02-11-2016 15:34:09 || [SQL]Query error while creating new user : fail' or 1 = 1 
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1', -1374989289)' at line 1
+INFO 02-11-2016 15:34:09 || Row request made for row at xpath : /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")]/rows/row[(@name="cpu_0")]/cell[(@column="percentUtilisation")]
+INFO 02-11-2016 15:34:10 || Thread xpath exection for path : testa6
+INFO 02-11-2016 15:34:10 || Thread xpath exection for path : testc6
+INFO 02-11-2016 15:34:10 || Thread xpath exection for path : testb6
+SEVERE 02-11-2016 15:34:11 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
+INFO 02-11-2016 15:34:11 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:34:11 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+SEVERE 02-11-2016 15:34:11 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa6
+INFO 02-11-2016 15:34:11 || [T-INFO]Thread Execution successful
+SEVERE 02-11-2016 15:34:11 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
+INFO 02-11-2016 15:34:11 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:34:11 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+INFO 02-11-2016 15:34:11 || Login attempt with username : testc5@Default
+INFO 02-11-2016 15:34:11 || [SQL]Checking user : testc5@Default & testc5
+INFO 02-11-2016 15:34:11 || [SQL]Device testc5 logged in successfully
+INFO 02-11-2016 15:34:11 || Initial log on for testc5@Default with device testc5
+INFO 02-11-2016 15:34:11 || [T-INFO]Initialization of thread for xpath : testc5
+INFO 02-11-2016 15:34:11 || Login attempt with username : testa5
+INFO 02-11-2016 15:34:11 || [SQL]Checking user : testa5 & testa5
+WARNING 02-11-2016 15:34:11 || [SQL]User has tried to log in with an invalid domain : testa5
+WARNING 02-11-2016 15:34:11 || Attempted login made by unauthorised user with username : testa5
+INFO 02-11-2016 15:34:11 || [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+INFO 02-11-2016 15:34:12 || Thread xpath exection for path : testc5
+SEVERE 02-11-2016 15:34:12 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
+INFO 02-11-2016 15:34:12 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:34:12 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+INFO 02-11-2016 15:34:21 || Thread xpath exection for path : testc6
+SEVERE 02-11-2016 15:34:21 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
+INFO 02-11-2016 15:34:21 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:21 || Thread xpath exection for path : testa6
+SEVERE 02-11-2016 15:34:21 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa6
+INFO 02-11-2016 15:34:21 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:21 || Thread xpath exection for path : testb6
+SEVERE 02-11-2016 15:34:22 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
+INFO 02-11-2016 15:34:22 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:22 || Thread xpath exection for path : testc5
+SEVERE 02-11-2016 15:34:22 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
+INFO 02-11-2016 15:34:22 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:28 || [DT-INFO]Collected Dataviews : [/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Android")]/sampler[(@name="AppTest")][(@type="")]/dataview[(@name="AppTest")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="SQL gateway")][(@type="")]/dataview[(@name="V1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="TEST_LOG LOCAL1")][(@type="")]/dataview[(@name="TEST_LOG LOCAL1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 2")][(@type="")]/dataview[(@name="New Sampler 2")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 9")][(@type="")]/dataview[(@name="New Sampler 9")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 1")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 10")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 11")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 2")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 3")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 4")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 5")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 6")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 7")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 8")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 9")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="Diagnostics")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clusterNodes")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-gateways")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clients")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="New Sampler 1")][(@type="")]/dataview[(@name="test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="THISISATEST")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="Toolkit")][(@type="")]/dataview[(@name="Toolkit")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ICE MYSQL")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TEST ICE")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="New Sampler 6")][(@type="")]/dataview[(@name="New Sampler 6")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ME VS APPa")][(@type="")]/dataview[(@name="ME VS APP")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="zzzzzzzzz")]/sampler[(@name="Toolkit")][(@type="")]/dataview[(@name="Toolkit")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Instances")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Percentage use")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Trigger sample")][(@type="")]/dataview[(@name="Triggered")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Timestamp sql")][(@type="")]/dataview[(@name="timediff")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="eventlog")][(@type="")]/dataview[(@name="eventlog")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Win Services")][(@type="")]/dataview[(@name="Win Services")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="proc")][(@type="")]/dataview[(@name="proc")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 5")][(@type="")]/dataview[(@name="New Sampler 5")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 2")][(@type="")]/dataview[(@name="New Sampler 2")]] 
+With a length of 10087
+INFO 02-11-2016 15:34:28 || [DVLIST UPDATE]Dataview list was successfully updated.
+INFO 02-11-2016 15:34:28 || Login attempt with username : testd5@Default
+INFO 02-11-2016 15:34:28 || [SQL]Checking user : testd5@Default & testd5
+INFO 02-11-2016 15:34:28 || [SQL]Device testd5 logged in successfully
+INFO 02-11-2016 15:34:28 || Initial log on for testd5@Default with device testd5
+INFO 02-11-2016 15:34:28 || Thread terminated : testd5
+INFO 02-11-2016 15:34:28 || Login attempt with username : testb5@Default
+INFO 02-11-2016 15:34:28 || [SQL]Checking user : testb5@Default & testb5
+INFO 02-11-2016 15:34:28 || [SQL]Device testb5 logged in successfully
+INFO 02-11-2016 15:34:28 || Initial log on for testb5@Default with device testb5
+INFO 02-11-2016 15:34:28 || [SQL]Device testb5 logged out successfully
+INFO 02-11-2016 15:34:28 || The status of the device check fortestb5@Default is :1
+INFO 02-11-2016 15:34:28 || testb5@Default has been successfully logged out.
+INFO 02-11-2016 15:34:28 || Veritication email sent for devioce : test35
+INFO 02-11-2016 15:34:28 || [DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating
+INFO 02-11-2016 15:34:31 || Thread xpath exection for path : testc6
+SEVERE 02-11-2016 15:34:31 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
+INFO 02-11-2016 15:34:31 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:31 || Thread xpath exection for path : testa6
+SEVERE 02-11-2016 15:34:31 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa6
+INFO 02-11-2016 15:34:31 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:32 || Thread xpath exection for path : testb6
+SEVERE 02-11-2016 15:34:32 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
+INFO 02-11-2016 15:34:32 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:32 || Thread xpath exection for path : testc5
+SEVERE 02-11-2016 15:34:32 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
+INFO 02-11-2016 15:34:32 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:41 || Thread xpath exection for path : testc6
+SEVERE 02-11-2016 15:34:41 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
+INFO 02-11-2016 15:34:41 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:41 || Thread xpath exection for path : testa6
+SEVERE 02-11-2016 15:34:42 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa6
+INFO 02-11-2016 15:34:42 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:42 || Thread xpath exection for path : testb6
+SEVERE 02-11-2016 15:34:42 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
+INFO 02-11-2016 15:34:42 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:42 || Thread xpath exection for path : testc5
+SEVERE 02-11-2016 15:34:42 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
+INFO 02-11-2016 15:34:42 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:44 || [DT-INFO]Collected Dataviews : [/geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Android")]/sampler[(@name="AppTest")][(@type="")]/dataview[(@name="AppTest")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="SQL gateway")][(@type="")]/dataview[(@name="V1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="TEST_LOG LOCAL1")][(@type="")]/dataview[(@name="TEST_LOG LOCAL1")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 2")][(@type="")]/dataview[(@name="New Sampler 2")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="CPU_Entity")]/sampler[(@name="New Sampler 9")][(@type="")]/dataview[(@name="New Sampler 9")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 1")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 10")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 11")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 2")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 3")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 4")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 5")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 6")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 7")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 8")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="Copy of New Managed entity 9")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="FKM")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="Diagnostics")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clusterNodes")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-gateways")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="Cluster Monitoring Sampler")][(@type="")]/dataview[(@name="192-168-220-54-2551-clients")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="New Sampler 1")][(@type="")]/dataview[(@name="test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpu")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="HELLO")]/sampler[(@name="new SQl tester")][(@type="")]/dataview[(@name="cpuAgain")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="New Managed entity")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="THISISATEST")]/sampler[(@name="FTM Test")][(@type="")]/dataview[(@name="FTM Test")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="Toolkit")][(@type="")]/dataview[(@name="Toolkit")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ICE MYSQL")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TEST ICE")][(@type="")]/dataview[(@name="ICE RECENT")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="New Sampler 6")][(@type="")]/dataview[(@name="New Sampler 6")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="TOOLKIT_TEST")]/sampler[(@name="ME VS APPa")][(@type="")]/dataview[(@name="ME VS APP")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="tttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssstttttttttttttttttttttttt")]/sampler[(@name="FKM")][(@type="")]/dataview[(@name="FKM")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="SYSMON")]/managedEntity[(@name="zzzzzzzzz")]/sampler[(@name="Toolkit")][(@type="")]/dataview[(@name="Toolkit")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="CPU_sampler")][(@type="")]/dataview[(@name="CPU_sampler")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Instances")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Toolkit2")][(@type="")]/dataview[(@name="Percentage use")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="TestSQL")][(@type="")]/dataview[(@name="Everything")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Trigger sample")][(@type="")]/dataview[(@name="Triggered")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Timestamp sql")][(@type="")]/dataview[(@name="timediff")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="eventlog")][(@type="")]/dataview[(@name="eventlog")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="Win Services")][(@type="")]/dataview[(@name="Win Services")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="proc")][(@type="")]/dataview[(@name="proc")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 5")][(@type="")]/dataview[(@name="New Sampler 5")], /geneos/gateway[(@name="GW_TEST_50144")]/directory/probe[(@name="WINSYSMON")]/managedEntity[(@name="CPU_ENTITY")]/sampler[(@name="New Sampler 2")][(@type="")]/dataview[(@name="New Sampler 2")]] 
+With a length of 10087
+INFO 02-11-2016 15:34:44 || [DVLIST UPDATE]Dataview list was successfully updated.
+INFO 02-11-2016 15:34:44 || Dataview list requested
+SEVERE 02-11-2016 15:34:45 || [SQL]Connection information issue either driver or address : java.sql.SQLException: No suitable driver found for nothing
+SEVERE 02-11-2016 15:34:45 || There was an error with the SQL configuration or address, please confirm details.
+INFO 02-11-2016 15:34:45 || [T-INFO]Initialization of thread for xpath : testa2
+INFO 02-11-2016 15:34:45 || Thread xpath exection for path : testa2
+INFO 02-11-2016 15:34:45 || Login attempt with username : testa3@Default
+INFO 02-11-2016 15:34:45 || [SQL]Checking user : testa3@Default & testa3
+INFO 02-11-2016 15:34:45 || [SQL]Device testa3 logged in successfully
+INFO 02-11-2016 15:34:45 || Initial log on for testa3@Default with device testa3
+INFO 02-11-2016 15:34:45 || [T-INFO]Initialization of thread for xpath : testa3
+INFO 02-11-2016 15:34:45 || Login attempt with username : testb3@Default
+INFO 02-11-2016 15:34:45 || [SQL]Checking user : testb3@Default & testb3
+INFO 02-11-2016 15:34:45 || Thread xpath exection for path : testa3
+INFO 02-11-2016 15:34:45 || [SQL]Device testb3 logged in successfully
+INFO 02-11-2016 15:34:45 || Initial log on for testb3@Default with device testb3
+INFO 02-11-2016 15:34:45 || [T-INFO]Initialization of thread for xpath : testb3
+INFO 02-11-2016 15:34:45 || Thread xpath exection for path : testb3
+INFO 02-11-2016 15:34:45 || Login attempt with username : testc3@Default
+INFO 02-11-2016 15:34:45 || [SQL]Checking user : testc3@Default & testc3
+INFO 02-11-2016 15:34:45 || [SQL]Device testc3 logged in successfully
+INFO 02-11-2016 15:34:45 || Initial log on for testc3@Default with device testc3
+SEVERE 02-11-2016 15:34:45 || [T-ERROR]Thread cycle execution failed due to interrupt
+SEVERE 02-11-2016 15:34:45 || java.lang.InterruptedException
+INFO 02-11-2016 15:34:45 || [T-INFO]Initialization of thread for xpath : testb3
+INFO 02-11-2016 15:34:45 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:34:45 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+INFO 02-11-2016 15:34:45 || Login attempt with username : testf3@Default
+INFO 02-11-2016 15:34:45 || [SQL]Checking user : testf3@Default & testf3
+INFO 02-11-2016 15:34:45 || Thread xpath exection for path : testb3
+INFO 02-11-2016 15:34:45 || [SQL]Device testf3 logged in successfully
+INFO 02-11-2016 15:34:45 || Initial log on for testf3@Default with device testf3
+INFO 02-11-2016 15:34:45 || Thread terminated : testf3
+INFO 02-11-2016 15:34:45 || Login attempt with username : testi3@Default
+INFO 02-11-2016 15:34:45 || [SQL]Checking user : testi3@Default & testi3
+INFO 02-11-2016 15:34:45 || [SQL]Device testi3 logged in successfully
+INFO 02-11-2016 15:34:45 || Initial log on for testi3@Default with device testi3
+INFO 02-11-2016 15:34:45 || Login attempt with username : testi3@Default
+INFO 02-11-2016 15:34:45 || [T-INFO]Initialization of thread for xpath : testi3
+INFO 02-11-2016 15:34:45 || [SQL]Checking user : testi3@Default & testj3
+INFO 02-11-2016 15:34:45 || [SQL]Device testj3 logged in successfully
+INFO 02-11-2016 15:34:45 || testi3@Default logged in successfully on device testj3
+INFO 02-11-2016 15:34:45 || [T-INFO]Initialization of thread for xpath : testi3
+INFO 02-11-2016 15:34:45 || Login attempt with username : testd3@Default
+INFO 02-11-2016 15:34:45 || [SQL]Checking user : testd3@Default & testd3
+INFO 02-11-2016 15:34:45 || Thread xpath exection for path : testi3
+INFO 02-11-2016 15:34:45 || [SQL]Device testd3 logged in successfully
+INFO 02-11-2016 15:34:45 || Initial log on for testd3@Default with device testd3
+INFO 02-11-2016 15:34:45 || Thread terminated : testd3
+INFO 02-11-2016 15:34:45 || [T-INFO]Initialization of thread for xpath : teste3
+INFO 02-11-2016 15:34:45 || Login attempt with username : testg3@Default
+INFO 02-11-2016 15:34:45 || [SQL]Checking user : testg3@Default & testg3
+INFO 02-11-2016 15:34:45 || Thread xpath exection for path : teste3
+INFO 02-11-2016 15:34:45 || [SQL]Device testg3 logged in successfully
+SEVERE 02-11-2016 15:34:45 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa2
+INFO 02-11-2016 15:34:45 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:45 || Initial log on for testg3@Default with device testg3
+WARNING 02-11-2016 15:34:45 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+INFO 02-11-2016 15:34:45 || [T-INFO]Initialization of thread for xpath : testg3
+INFO 02-11-2016 15:34:45 || Login attempt with username : testh3@Default
+INFO 02-11-2016 15:34:45 || [SQL]Checking user : testh3@Default & testh3
+INFO 02-11-2016 15:34:45 || [SQL]Device testh3 logged in successfully
+INFO 02-11-2016 15:34:45 || Initial log on for testh3@Default with device testh3
+INFO 02-11-2016 15:34:45 || Thread restarted : testg3
+INFO 02-11-2016 15:34:45 || [T-INFO]Initialization of thread for xpath : testg3
+INFO 02-11-2016 15:34:45 || Thread xpath exection for path : testg3
+SEVERE 02-11-2016 15:34:46 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb3
+SEVERE 02-11-2016 15:34:46 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa3
+INFO 02-11-2016 15:34:46 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:34:46 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+SEVERE 02-11-2016 15:34:46 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb3
+INFO 02-11-2016 15:34:46 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:34:46 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+SEVERE 02-11-2016 15:34:46 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testi3
+INFO 02-11-2016 15:34:46 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:34:46 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+SEVERE 02-11-2016 15:34:46 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: teste3
+INFO 02-11-2016 15:34:46 || [T-INFO]Thread Execution successful
+SEVERE 02-11-2016 15:34:46 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testg3
+INFO 02-11-2016 15:34:46 || [T-INFO]Thread Execution successful
+SEVERE 02-11-2016 15:34:47 || [Transmission]IO error has been encountered, tranmission failed! : Server returned HTTP response code: 400 for URL: https://android.googleapis.com/gcm/send
+INFO 02-11-2016 15:34:47 || [Transmission]POST Returned data : {"multicast_id":8798042075606522600,"success":0,"failure":1,"canonical_ids":0,"results":[{"error":"NotRegistered"}]}
+INFO 02-11-2016 15:34:47 || [Transmission]Transmission Successful
+INFO 02-11-2016 15:34:47 || Login attempt with username : testa10@Default
+INFO 02-11-2016 15:34:47 || [SQL]Checking user : testa10@Default & testa10
+INFO 02-11-2016 15:34:47 || [SQL]Device testa10 logged in successfully
+INFO 02-11-2016 15:34:47 || Initial log on for testa10@Default with device testa10
+INFO 02-11-2016 15:34:47 || [Transmission]Output JSON data : {"data":{"severity":"bad","xpath":"testa10","message":"New Alert :bad","value":"0"},"registration_ids":["testa10"]}
+INFO 02-11-2016 15:34:47 || [T-INFO]Initialization of thread for xpath : testa10
+SEVERE 02-11-2016 15:34:47 || [Transmission]An error was encountered with system connection parameters. Please ensure a stable and configured network configuration and try again.
+INFO 02-11-2016 15:34:47 || Login attempt with username : testa9@Default
+INFO 02-11-2016 15:34:47 || [SQL]Checking user : testa9@Default & testa9
+INFO 02-11-2016 15:34:47 || [SQL]Device testa9 logged in successfully
+INFO 02-11-2016 15:34:47 || Thread xpath exection for path : testa10
+INFO 02-11-2016 15:34:47 || Initial log on for testa9@Default with device testa9
+INFO 02-11-2016 15:34:47 || [Transmission]Output JSON data : {"data":{"severity":"bad","xpath":"testa9","message":"New Alert :bad","value":"0"},"registration_ids":["testa9"]}
+INFO 02-11-2016 15:34:47 || [T-INFO]Initialization of thread for xpath : testa9
+INFO 02-11-2016 15:34:47 || Thread xpath exection for path : testa9
+INFO 02-11-2016 15:34:47 || [Transmission]POST Returned data : {"multicast_id":6507096180775106616,"success":0,"failure":1,"canonical_ids":0,"results":[{"error":"InvalidRegistration"}]}
+INFO 02-11-2016 15:34:47 || [Transmission]Transmission Successful
+INFO 02-11-2016 15:34:47 || Login attempt with username : testb@Default
+INFO 02-11-2016 15:34:47 || [SQL]Checking user : testb@Default & testb
+SEVERE 02-11-2016 15:34:47 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa10
+INFO 02-11-2016 15:34:47 || [T-INFO]Thread Execution successful
+WARNING 02-11-2016 15:34:47 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+SEVERE 02-11-2016 15:34:47 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa9
+INFO 02-11-2016 15:34:47 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:47 || New user testb@Default has attempted to login, verification email sent and account is in probation.
+INFO 02-11-2016 15:34:47 || Login attempt with username : testb@Default
+INFO 02-11-2016 15:34:47 || [SQL]Checking user : testb@Default & testz
+INFO 02-11-2016 15:34:47 || [SQL]Device Check = User has yet to verify device : testz
+INFO 02-11-2016 15:34:47 || testb@Default has been sent a verification email for testz
+INFO 02-11-2016 15:34:47 || Login attempt with username : test@Default
+INFO 02-11-2016 15:34:47 || [SQL]Checking user : test@Default & test
+INFO 02-11-2016 15:34:48 || New user test@Default has attempted to login, verification email sent and account is in probation.
+INFO 02-11-2016 15:34:48 || Login attempt with username : fail' or 1 = 1
+INFO 02-11-2016 15:34:48 || [SQL]Checking user : fail' or 1 = 1 & fail' or 1 = 1
+SEVERE 02-11-2016 15:34:48 || [SQL]SQL query issue was encountered causing SQL failure : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+SEVERE 02-11-2016 15:34:48 || Login error has occured, please see associated stack trace for more information. Username : fail' or 1 = 1 android_id : fail' or 1 = 1
+INFO 02-11-2016 15:34:48 || java.lang.RuntimeException: com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+INFO 02-11-2016 15:34:48 || Login attempt with username : testf@Default
+INFO 02-11-2016 15:34:48 || [SQL]Checking user : testf@Default & testf
+INFO 02-11-2016 15:34:48 || [SQL]Device testf logged in successfully
+INFO 02-11-2016 15:34:48 || Initial log on for testf@Default with device testf
+INFO 02-11-2016 15:34:48 || [SQL]Device testf logged out successfully
+INFO 02-11-2016 15:34:48 || The status of the device check fortestf@Default is :1
+INFO 02-11-2016 15:34:48 || testf@Default has been successfully logged out.
+INFO 02-11-2016 15:34:48 || Login attempt with username : teste@Default
+INFO 02-11-2016 15:34:48 || [SQL]Checking user : teste@Default & teste
+INFO 02-11-2016 15:34:48 || [SQL]Device teste logged in successfully
+INFO 02-11-2016 15:34:48 || Initial log on for teste@Default with device teste
+INFO 02-11-2016 15:34:48 || [T-INFO]Initialization of thread for xpath : test
+INFO 02-11-2016 15:34:48 || Login attempt with username : something@wrong
+INFO 02-11-2016 15:34:48 || [SQL]Checking user : something@wrong & test
+WARNING 02-11-2016 15:34:48 || [SQL]User has tried to log in with an invalid domain : something@wrong
+WARNING 02-11-2016 15:34:48 || Attempted login made by unauthorised user with username : something@wrong
+INFO 02-11-2016 15:34:48 || Login attempt with username : testc@Default
+INFO 02-11-2016 15:34:48 || Thread xpath exection for path : test
+INFO 02-11-2016 15:34:48 || [SQL]Checking user : testc@Default & testc
+INFO 02-11-2016 15:34:48 || [SQL]Device testc logged in successfully
+INFO 02-11-2016 15:34:48 || Initial log on for testc@Default with device testc
+SEVERE 02-11-2016 15:34:48 || Attempted access by invalid and potentially harmful user utilising username : testFail@Default
+INFO 02-11-2016 15:34:48 || Login attempt with username : testd@Default
+INFO 02-11-2016 15:34:48 || [SQL]Checking user : testd@Default & testd
+INFO 02-11-2016 15:34:48 || [SQL]Device testd logged in successfully
+INFO 02-11-2016 15:34:48 || Initial log on for testd@Default with device testd
+INFO 02-11-2016 15:34:48 || Login attempt with username : testd@Default
+INFO 02-11-2016 15:34:48 || [SQL]Checking user : testd@Default & testx
+INFO 02-11-2016 15:34:48 || [SQL]Device testx logged in successfully
+INFO 02-11-2016 15:34:48 || testd@Default logged in successfully on device testx
+INFO 02-11-2016 15:34:48 || Login attempt with username : testa@Default
+INFO 02-11-2016 15:34:48 || [SQL]Checking user : testa@Default & testa
+SEVERE 02-11-2016 15:34:48 || [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: test
+INFO 02-11-2016 15:34:48 || [T-INFO]Thread Execution successful
+INFO 02-11-2016 15:34:48 || New user testa@Default has attempted to login, verification email sent and account is in probation.
+INFO 02-11-2016 15:34:48 || Login attempt with username : testa@Default
+INFO 02-11-2016 15:34:48 || [SQL]Checking user : testa@Default & testa
+INFO 02-11-2016 15:34:48 || [SQL]Device Check = User has yet to verify device : testa
+INFO 02-11-2016 15:34:48 || testa@Default has already been sent a verification email for testa

@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.394s</div>
+<div class="counter">0.307s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,22 +79,22 @@
 </thead>
 <tr>
 <td class="success">addCustomDataViewFailTest</td>
-<td>0.014s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">checkDeviceExistenceFailTest</td>
 <td>0.010s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">checkDeviceExistenceFailTest</td>
+<td>0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">checkValidDomainFailTest</td>
-<td>0.012s</td>
+<td>0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">createInValidDeviceFailTest</td>
-<td>0.021s</td>
+<td>0.016s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -104,32 +104,32 @@
 </tr>
 <tr>
 <td class="success">execCustomFailTest</td>
-<td>0.010s</td>
+<td>0.011s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getLiveDevicesTest</td>
-<td>0.027s</td>
+<td>0.026s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getLivePathsFailTest</td>
-<td>0.017s</td>
+<td>0.011s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getLivePathsTest</td>
-<td>0.055s</td>
+<td>0.028s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getUserDataviewListFailTest</td>
-<td>0.009s</td>
+<td>0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getUserDataviewListTest</td>
-<td>0.035s</td>
+<td>0.031s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -139,37 +139,37 @@
 </tr>
 <tr>
 <td class="success">logoutDeviceFailTest</td>
-<td>0.009s</td>
+<td>0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">removeCustomDataviewFailTest</td>
-<td>0.011s</td>
+<td>0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">removeCustomDataviewTest</td>
-<td>0.049s</td>
+<td>0.034s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">sqlConnectFailTest</td>
-<td>0.001s</td>
+<td>0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">userCheckFailTest</td>
-<td>0.010s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">verifyStoredDeviceFailTest</td>
 <td>0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">verifyStoredDeviceFailTest</td>
+<td>0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">verifyStoredDeviceTest</td>
-<td>0.079s</td>
+<td>0.068s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -177,10 +177,10 @@
 <div id="tab1" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>Feb 11, 2016 2:12:16 PM geneos_notification.loggers.LogObject doLog
+<pre>Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while creating invalid device fail' or 1 = 1 for user : fail' or 1 = 1 
-Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1',-1260963333)' at line 1
-com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1',-1260963333)' at line 1
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1',1626070344)' at line 1
+com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1',1626070344)' at line 1
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
 	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
@@ -236,13 +236,13 @@ com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your S
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Feb 11, 2016 2:12:16 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Error while logging out fail' or 1 = 1 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
-Feb 11, 2016 2:12:16 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while retrieving dataviews subscribed to user : fail' or 1 = 1 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
-Feb 11, 2016 2:12:16 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Undetermined error was encountered causing query failure! : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
 com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
@@ -300,30 +300,30 @@ com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your S
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 INFO: Login attempt with username : testa1@Default
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testa1@Default &amp; testa1
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testa1 logged in successfully
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 INFO: Initial log on for testa1@Default with device testa1
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Connection information issue either driver or address : java.sql.SQLException: No suitable driver found for nothing
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Error while removing xpath fail' or 1 = 1 from user : fail' or 1 = 1 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1')' at line 1
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while adding dataview fail' or 1 = 1 to user : fail' or 1 = 1 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1')' at line 1
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : fail' or 1 = 1 &amp; fail
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]SQL query issue was encountered causing SQL failure : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while checkintg status of device : fail' or 1 = 1 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while retrieving custom dataset 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' or 1 = 1))' at line 1
 com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' or 1 = 1))' at line 1
@@ -382,7 +382,7 @@ com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your S
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while retrieving custom dataset 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'fail' or 1 = 1' at line 1
 com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'fail' or 1 = 1' at line 1
@@ -441,12 +441,12 @@ com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your S
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Error while logging in device fail' or 1 = 1 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
-Feb 11, 2016 2:12:17 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while creating new user : fail' or 1 = 1 
-Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1', 119490069)' at line 1
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1', -1374989289)' at line 1
 </pre>
 </span>
 </div>
@@ -458,7 +458,7 @@ Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an erro
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 2.3</a> at 11-Feb-2016 14:12:57</p>
+<a href="http://www.gradle.org">Gradle 2.3</a> at 11-Feb-2016 15:34:49</p>
 </div>
 </div>
 </body>

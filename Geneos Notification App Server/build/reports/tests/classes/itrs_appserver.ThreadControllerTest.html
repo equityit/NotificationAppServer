@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.451s</div>
+<div class="counter">0.427s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,32 +82,32 @@
 </thead>
 <tr>
 <td class="success">callWithAddTOExistingThreadTest</td>
-<td>0.131s</td>
+<td>0.125s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">callWithNewThreadTest</td>
-<td>0.033s</td>
+<td>0.034s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">editDVTest</td>
-<td>0.084s</td>
+<td>0.072s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">removeUserFromNotifylistSingleUserTest</td>
-<td>0.048s</td>
+<td>0.043s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">removeUserFromNotifylistTwoUsersTest</td>
-<td>0.093s</td>
+<td>0.096s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">restartNotfyListTest</td>
-<td>0.062s</td>
+<td>0.057s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -115,68 +115,56 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>14:12:52.644 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:21961]
+<pre>15:34:45.486 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:30724]
 [testa2]
-14:12:52.645 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-13] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-14:12:52.666 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:34:45.488 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:34:45.510 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:34:45.516 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
 This is the thread xpath : testa3
-14:12:52.680 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-14:12:52.686 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-14:12:52.689 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
-14:12:52.709 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:21981]
+15:34:45.531 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:34:45.535 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
+15:34:45.549 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:30748]
 [testa3]
-14:12:52.711 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:34:45.551 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
 This is the thread xpath : testb3
-14:12:52.775 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-14:12:52.779 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  Remoting - Starting remoting
-14:12:52.792 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-11] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:22004]
+15:34:45.599 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:34:45.602 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  Remoting - Starting remoting
+15:34:45.604 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:34:45.616 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
 [testb3]
-14:12:52.794 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-10] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-14:12:52.813 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-14:12:52.817 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  Remoting - Starting remoting
-14:12:52.834 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-10] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:22023]
+15:34:45.618 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:30766]
+15:34:45.618 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:34:45.648 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:34:45.656 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:34:45.659 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  Remoting - Starting remoting
+15:34:45.666 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+15:34:45.674 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:30788]
 [testb3, testc3]
-14:12:52.838 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-10] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:34:45.677 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
 This is the thread xpath : testf3
-14:12:52.880 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-14:12:52.880 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:34:45.711 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
 This is the thread xpath : testi3
-14:12:52.897 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-14:12:52.900 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-14:12:52.900 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-11] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-14:12:52.902 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  Remoting - Starting remoting
-14:12:52.932 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-14:12:52.938 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
+15:34:45.727 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+15:34:45.727 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testa2/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
+15:34:45.730 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:34:45.730 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+15:34:45.737 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
+15:34:45.757 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:34:45.762 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  Remoting - Starting remoting
+15:34:45.776 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:30831]
+[testi3, testj3]
+15:34:45.778 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
 This is the thread xpath : testd3
 geneos_notification.objects.CustomDataView@2ffc9722
-14:12:52.977 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-10] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:22069]
-[testi3, testj3]
-14:12:52.978 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-14:12:52.985 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-9] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:34:45.812 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-11] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
 This is the thread xpath : teste3
-14:12:53.015 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-14:12:53.019 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
-14:12:53.026 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-14:12:53.026 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testa2/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
-This is the thread xpath : testg3
-14:12:53.067 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-14:12:53.071 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
-14:12:53.077 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:22097]
+15:34:45.827 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:34:45.830 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-11] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+15:34:45.830 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  Remoting - Starting remoting
+15:34:45.849 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:30854]
 [testd3]
-14:12:53.079 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-14:12:53.101 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-14:12:53.106 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-12] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-14:12:53.109 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
-14:12:53.120 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-14:12:53.137 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:22130]
-[testh3]
-14:12:53.143 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-14:12:53.152 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-13] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-14:12:53.181 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-12] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-14:12:53.182 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-14:12:53.201 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-14:12:53.211 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-12] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-14:12:53.226 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+15:34:45.852 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:34:45.865 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
 java.lang.RuntimeException: null
 	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:100) ~[main/:na]
 	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
@@ -197,45 +185,59 @@ java.lang.RuntimeException: null
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+This is the thread xpath : testg3
+15:34:45.893 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:34:45.899 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  Remoting - Starting remoting
+15:34:45.909 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:34:45.933 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:34:45.940 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
+15:34:45.942 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+[testh3]
+15:34:45.972 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-12] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:30897]
+15:34:45.972 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-11] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:34:46.023 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:34:46.034 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-10] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+15:34:46.044 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+15:34:46.045 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testa3/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
 </pre>
 </span>
 </div>
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+<pre>Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: Thread xpath exection for path : testa2
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: Login attempt with username : testa3@Default
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testa3@Default &amp; testa3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testa3 logged in successfully
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: Initial log on for testa3@Default with device testa3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: [T-INFO]Initialization of thread for xpath : testa3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: Thread xpath exection for path : testa3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: Login attempt with username : testb3@Default
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testb3@Default &amp; testb3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : testa3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testb3 logged in successfully
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: Initial log on for testb3@Default with device testb3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: [T-INFO]Initialization of thread for xpath : testb3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testc3@Default
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testc3@Default &amp; testc3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testc3 logged in successfully
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: Thread xpath exection for path : testb3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testc3@Default
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testc3@Default &amp; testc3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testc3 logged in successfully
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: Initial log on for testc3@Default with device testc3
 java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(AbstractQueuedSynchronizer.java:1039)
@@ -252,9 +254,9 @@ java.lang.InterruptedException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [T-ERROR]Thread cycle execution failed due to interrupt
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 SEVERE: java.lang.InterruptedException
 java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(AbstractQueuedSynchronizer.java:1039)
@@ -271,90 +273,90 @@ java.lang.InterruptedException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Thread Execution successful
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: [T-INFO]Initialization of thread for xpath : testb3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testf3@Default
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testf3@Default &amp; testf3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: Thread xpath exection for path : testb3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testf3 logged in successfully
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testf3@Default with device testf3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: Thread terminated : testf3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testi3@Default
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testi3@Default &amp; testi3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testi3 logged in successfully
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testi3@Default with device testi3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testi3@Default
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testi3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testi3@Default &amp; testj3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testj3 logged in successfully
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: testi3@Default logged in successfully on device testj3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testi3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testd3@Default
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testd3@Default &amp; testd3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testd3 logged in successfully
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testd3@Default with device testd3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: Thread terminated : testd3
-Feb 11, 2016 2:12:52 PM geneos_notification.loggers.LogObject doLog
-INFO: Thread xpath exection for path : testi3
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : teste3
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testg3@Default
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testg3@Default &amp; testg3
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testg3 logged in successfully
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testg3@Default with device testg3
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testg3
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testh3@Default
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testh3@Default &amp; testh3
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testh3 logged in successfully
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: Thread xpath exection for path : teste3
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testh3@Default with device testh3
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: Thread restarted : testg3
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testg3
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-INFO: Thread xpath exection for path : testg3
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa2
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 INFO: [T-INFO]Thread Execution successful
-Feb 11, 2016 2:12:53 PM geneos_notification.loggers.LogObject doLog
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
 WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testf3@Default
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testf3@Default &amp; testf3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : testb3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testf3 logged in successfully
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Initial log on for testf3@Default with device testf3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Thread terminated : testf3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testi3@Default
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testi3@Default &amp; testi3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testi3 logged in successfully
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Initial log on for testi3@Default with device testi3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testi3@Default
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : testi3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testi3@Default &amp; testj3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testj3 logged in successfully
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: testi3@Default logged in successfully on device testj3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : testi3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testd3@Default
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testd3@Default &amp; testd3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : testi3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testd3 logged in successfully
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Initial log on for testd3@Default with device testd3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Thread terminated : testd3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : teste3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testg3@Default
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testg3@Default &amp; testg3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : teste3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testg3 logged in successfully
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa2
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Thread Execution successful
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Initial log on for testg3@Default with device testg3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : testg3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Login attempt with username : testh3@Default
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testh3@Default &amp; testh3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testh3 logged in successfully
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Initial log on for testh3@Default with device testh3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Thread restarted : testg3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: [T-INFO]Initialization of thread for xpath : testg3
+Feb 11, 2016 3:34:45 PM geneos_notification.loggers.LogObject doLog
+INFO: Thread xpath exection for path : testg3
 </pre>
 </span>
 </div>
@@ -366,7 +368,7 @@ WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is ha
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 2.3</a> at 11-Feb-2016 14:12:57</p>
+<a href="http://www.gradle.org">Gradle 2.3</a> at 11-Feb-2016 15:34:49</p>
 </div>
 </div>
 </body>

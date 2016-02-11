@@ -116,7 +116,7 @@ public static void readSettingsFile() {
 	if(System.getProperty("os.name").contains("Windows"))
 	file = new File(".\\settings.txt");
 	if(System.getProperty("os.name").contains("Linux"))
-	file = new File(".settings.txt");
+	file = new File("./settings.txt");
 	Scanner scnr = null;
 	try {
 		scnr = new Scanner(file);
