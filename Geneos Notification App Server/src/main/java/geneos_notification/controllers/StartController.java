@@ -6,8 +6,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
+import org.json.JSONException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -15,6 +20,8 @@ import geneos_notification.loggers.LogObject;
 import geneos_notification.loggers.LtA;
 import geneos_notification.objects.ThreadItem;
 import geneos_notification.objects.User;
+import geneos_notification.startup_and_system_operations.DataviewListGenerator;
+import geneos_notification.thread_operations.DataViewMonitor;
 import scala.reflect.internal.Trees.This;
 
 import java.util.logging.FileHandler;
@@ -103,6 +110,7 @@ public class StartController {
     	configureSetting(setting);
     	InterfaceController.updateDV();
     	perpetualReload();
+    	ThreadController.startDVMonitor();
     	//configureSettings(settings);
     	//LOGGER.log(Level.INFO, "COnfiguration successful");
     	logA.doLog("Start" , "Server Boot variables passed verification", "Info");

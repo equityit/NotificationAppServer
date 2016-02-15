@@ -15,6 +15,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.itrsgroup.openaccess.Callback;
@@ -33,6 +34,7 @@ import geneos_notification.controllers.ThreadController.MyAnalysis;
 import geneos_notification.loggers.LogObject;
 import geneos_notification.loggers.LtA;
 import geneos_notification.objects.ThreadItem;
+import geneos_notification.thread_operations.DataViewMonitor;
 import geneos_notification.thread_operations.ThreadInstance;
 
 public class ThreadController {
@@ -40,6 +42,7 @@ public class ThreadController {
 	static LtA logA = new LogObject();
 	public static Map<String, ThreadItem> monitoringThreadList = new HashMap<String, ThreadItem>();
 	public static ExecutorService executor = Executors.newFixedThreadPool(200);
+	public static Map<String, JSONObject> dataViewMonitoringMap = new HashMap<String, JSONObject>();
 
 	public static void restartNotifyList(String xpath) {
 		ThreadItem current = monitoringThreadList.get(xpath);
@@ -101,6 +104,25 @@ public class ThreadController {
 		Callable<Long> worker = new ThreadController.MyAnalysis(xpath);
 		Future<Long> thread = executor.submit(worker);
 		monitoringThreadList.get(xpath).setFuture(thread);
+	}
+	
+	public static void addToDataViewMontioringMap(String xpath, JSONObject obj)
+	{
+		dataViewMonitoringMap.put(xpath, obj);
+	}
+	
+	public static void startDVMonitor()
+	{
+		ExecutorService exec = Executors.newSingleThreadExecutor();
+    	Callable<String> callable = new Callable<String>() {
+    		@Override
+    		public String call() throws JSONException, InterruptedException{									
+    			DataViewMonitor Dmon = new DataViewMonitor();
+    			Dmon.startSample();
+    			return "success";
+    		}
+    	};
+    	Future<String> future = exec.submit(callable);
 	}
 	
 	

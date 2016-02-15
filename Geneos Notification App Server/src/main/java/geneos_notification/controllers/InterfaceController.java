@@ -22,6 +22,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,7 +58,7 @@ public class InterfaceController {
     //private final AtomicLong keycounter = new AtomicLong();
     private static String sqlKey;
     private static String oaKey;
-    public static String currentDataviewEntityList;
+    public static ArrayList<JSONObject> currentDataviewEntityList;
     static LtA logA = new LogObject();
 
     
@@ -79,7 +80,18 @@ public class InterfaceController {
 	@RequestMapping(value="/getMyDv", method=RequestMethod.POST)		
 	public static String getMyDv(@RequestParam(value="username", defaultValue="") String username) 
 	{
-		String result = DatabaseController.getUserDataviewList(username).toString();
+		// String result = DatabaseController.getUserDataviewList(username).toString();
+		String result = null;
+		ArrayList<JSONObject> objects = new ArrayList<JSONObject>();
+		ArrayList<String> userPaths = DatabaseController.getUserDataviewList(username);
+		for(String path : userPaths)
+		{
+			if(DataviewListGenerator.list.contains(path))
+			{
+				objects.add(currentDataviewEntityList.get(DataviewListGenerator.list.indexOf(path)));
+			}
+		}
+		result = objects.toString();
 		return result;
 	}
      
@@ -158,7 +170,7 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
 	public static String getAllDataview() throws JSONException, InterruptedException, ExecutionException 
 	{
     	logA.doLog("Controller" , "Dataview list requested", "Info");
-    	return currentDataviewEntityList;
+    	return currentDataviewEntityList.toString();
 	}
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -169,14 +181,14 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
     {
     	logA.doLog("Controller" , "[DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating", "Info");
     	ExecutorService exec = Executors.newSingleThreadExecutor();
-    	Callable<String> callable = new Callable<String>() {
+    	Callable<ArrayList<JSONObject>> callable = new Callable<ArrayList<JSONObject>>() {
     		@Override
-    		public String call() throws JSONException, InterruptedException{									
-    			return DataviewListGenerator.collectDataviews().toString();
+    		public ArrayList<JSONObject> call() throws JSONException, InterruptedException{									
+    			return DataviewListGenerator.collectDataviews();
     		}
     	};
-    	Future<String> future = exec.submit(callable);
-    	String dv = future.get();
+    	Future<ArrayList<JSONObject>> future = exec.submit(callable);
+    	ArrayList<JSONObject> dv = future.get();
     	exec.shutdown();
     	currentDataviewEntityList = dv;
     	logA.doLog("Controller" , "[DVLIST UPDATE]Dataview list was successfully updated.", "Info");

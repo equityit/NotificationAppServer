@@ -20,6 +20,7 @@ import com.itrsgroup.openaccess.dataset.DataSetTracker;
 import com.itrsgroup.openaccess.xpath.XPathBuilder;
 
 import geneos_notification.controllers.InterfaceController;
+import geneos_notification.controllers.ThreadController;
 import geneos_notification.controllers.UserController;
 import geneos_notification.loggers.LogObject;
 import geneos_notification.loggers.LtA;
@@ -39,6 +40,7 @@ public class DataviewListGenerator {
 	public static ArrayList<String> samplersPaths;
 	public static ArrayList<String> dataViewsPaths;
 	public static Map<String, JSONObject> objects;
+	public static ArrayList<String> list;
 	static LtA logA = new LogObject();
 	//private static DataSet dataSet;
 
@@ -46,7 +48,7 @@ public class DataviewListGenerator {
 		collectDataviews();
 	}*/
 
-	public static ArrayList<String> collectDataviews() throws JSONException {
+	public static ArrayList<JSONObject> collectDataviews() throws JSONException {
 		conn = OpenAccess.connect(InterfaceController.getOAkey());
 		objects = new HashMap<String, JSONObject>();
 		// dataSet = null;
@@ -71,7 +73,7 @@ public class DataviewListGenerator {
 		JSONObject dataviewList = new JSONObject();
 		dataviewList.put("dataViews", new JSONArray(dataViewsPaths));
 
-		ArrayList<String> list = new ArrayList<String>();
+		list = new ArrayList<String>();
 
 		JSONArray results = new JSONArray();
 
@@ -90,16 +92,22 @@ public class DataviewListGenerator {
 
 		list = sortList(list);
 		
-		JSONObject sender = new JSONObject();
+		//JSONObject sender = new JSONObject();
+		//JSONArray sender = new JSONArray();
+		
+		ArrayList<JSONObject> sender = new ArrayList<JSONObject>();
 
-		for(String dvPath : list)
+		for(int i = 0; i < list.size(); i++)
 		{
-			sender.append(dvPath, objects.get(dvPath));
+			//sender.put(list.get(i), objects.get(list.get(i)));
+			ThreadController.addToDataViewMontioringMap(list.get(i).trim(), objects.get(list.get(i)));
+			sender.add(objects.get(list.get(i)));
 		}
 		
 		System.out.println(sender.toString());
 		
-		return list;
+		return sender;
+		//return list;
 
 	}
 	
@@ -187,6 +195,7 @@ public class DataviewListGenerator {
                 	JSONObject obj = new JSONObject();
                 	obj.put("XPath", item.getPath());
                 	obj.put("Snoozed", item.isSnoozed());
+                	obj.put("Severity", item.getSeverity().toString());
                 	objects.put(item.getPath(), obj);
                 }	
 				}

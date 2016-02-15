@@ -35,6 +35,20 @@ public class TransmissionHandler {
 			throw new RuntimeException(e);
 		}
     }
+	
+	public static void sendDVUpdate(String json)
+	{
+		logA.doLog("Transmission", "[Transmission]Output JSON data : " + json, "Info");
+		try {
+			HttpURLConnection con = postCreation();
+			int res = transmitPost(con, json);
+		} catch (IOException e) {
+			logA.doLog("Transmission",
+					"[Transmission]An error was encountered with system connection parameters. Please ensure a stable and configured network configuration and try again.",
+					"Critical");
+			throw new RuntimeException(e);
+		}
+	}
     
     public static HttpURLConnection postCreation() throws IOException {
     	URL obj = new URL(gcm);

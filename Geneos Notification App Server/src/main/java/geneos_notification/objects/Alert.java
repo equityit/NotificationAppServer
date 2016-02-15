@@ -42,8 +42,8 @@ public class Alert {
 		internal.put("xpath", xpath);
 		internal.put("value", value);
 		internal.put("severity", severity);
-		//internal.put("alteration", null);
-		//internal.put("time", LocalDateTime.now().toString());
+		internal.put("type", "alert");
+		internal.put("time", LocalDateTime.now().toString());
 		testingObj.put("data", internal);
 		System.out.println(testingObj.toString());
 		return testingObj.toString();
