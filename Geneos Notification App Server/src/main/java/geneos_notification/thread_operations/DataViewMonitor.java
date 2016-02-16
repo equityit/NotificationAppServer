@@ -65,7 +65,7 @@ public class DataViewMonitor {
 		while (1 == 1) {
 			run();
 			try {
-				Thread.sleep(10000);
+				Thread.sleep(1000);
 			} catch (InterruptedException ex) {
 				logA.doLog("Thread", "[DVM-INFO]Thread internal termination confirmation", "Info");
 				conn.close();
@@ -145,52 +145,100 @@ public class DataViewMonitor {
 		}
 	}
 	
+	private void sendSevNotificaiton(String xpath, String severityState) throws JSONException{
+		if(ThreadController.monitoringThreadList.containsKey(xpath))
+		{
+		JSONObject testingObj = new JSONObject();
+		JSONObject internal = new JSONObject();
+		testingObj.put("registration_ids", new JSONArray(ThreadController.monitoringThreadList.get(xpath).getRegList().getRegList()));
+		internal.put("Xpath", xpath);
+		internal.put("Severity", severityState);
+		internal.put("type", "dvUpdate");
+		testingObj.put("data", internal);
+		System.out.println(testingObj.toString());
+		TransmissionHandler.sendDVUpdate(testingObj.toString());
+		}
+	}
+	
+	private void sendNotificaiton(String xpath, String snoozeState, String severity) throws JSONException{
+		if(ThreadController.monitoringThreadList.containsKey(xpath))
+		{
+		JSONObject testingObj = new JSONObject();
+		JSONObject internal = new JSONObject();
+		testingObj.put("registration_ids", new JSONArray(ThreadController.monitoringThreadList.get(xpath).getRegList().getRegList()));
+		internal.put("Xpath", xpath);
+		internal.put("snoozed", snoozeState);
+		internal.put("severity", severity);
+		internal.put("type", "dvUpdate");
+		testingObj.put("data", internal);
+		System.out.println(testingObj.toString());
+		TransmissionHandler.sendDVUpdate(testingObj.toString());
+		}
+	}
+	
 	private void alertChecker() throws JSONException, IOException, InterruptedException, ExecutionException {
-		try{
+		try {
 			int change = 0;
 			for (DataSetItem item : dataSet.getItems()) {
-				if(!ThreadController.dataViewMonitoringMap.containsKey(item.getPath().trim()))
-				{
+				int snoozeChangeSwitch = 0;
+				int severityChangeSwitch = 0;
+				String snoozeState = null;
+				String severityChange = null;
+				if (!ThreadController.dataViewMonitoringMap.containsKey(item.getPath().trim())) {
 					change = 1;
 					break;
-				}
-				else
-				{
-					JSONObject obj = ThreadController.dataViewMonitoringMap.get(item.getPath().trim());
-					if(String.valueOf(item.isSnoozed()).equals("true") && String.valueOf(obj.get("Snoozed")).equals("false"))
-					{
-					obj.put("Snoozed", item.isSnoozed());
+				} else {
 					int pos = DataviewListGenerator.list.indexOf(item.getPath());
-					InterfaceController.currentDataviewEntityList.get(pos).put("Snoozed", "true");
-					logA.doLog("Thread", "[DVM-INFO]Snooze state change to snoozed for " + item.getName(), "Info");
-					sendNotificaiton(item.getPath(), "true");
-					}
-					//else if(String.valueOf(item.isSnoozed()).equals("false") && obj.get("Snoozed").equals("true"))
-					else if(String.valueOf(item.isSnoozed()).equals("false") && String.valueOf(obj.get("Snoozed")).equals("true"))
-					{
+					JSONObject obj = ThreadController.dataViewMonitoringMap.get(item.getPath().trim());
+					if (String.valueOf(item.isSnoozed()).equals("true")
+							&& String.valueOf(obj.get("Snoozed")).equals("false")) {
 						obj.put("Snoozed", item.isSnoozed());
-						int pos = DataviewListGenerator.list.indexOf(item.getPath());
+						InterfaceController.currentDataviewEntityList.get(pos).put("Snoozed", "true");
+						logA.doLog("Thread", "[DVM-INFO]Snooze state change to snoozed for " + item.getName(), "Info");
+						snoozeChangeSwitch = 1;
+						snoozeState = "true";
+					} else if (String.valueOf(item.isSnoozed()).equals("false")
+							&& String.valueOf(obj.get("Snoozed")).equals("true")) {
+						obj.put("Snoozed", item.isSnoozed());
 						InterfaceController.currentDataviewEntityList.get(pos).put("Snoozed", "false");
-						logA.doLog("Thread", "[DVM-INFO]Snooze state change to unsnoozed for " + item.getName(), "Info");
-						sendNotificaiton(item.getPath(), "false");
+						logA.doLog("Thread", "[DVM-INFO]Snooze state change to unsnoozed for " + item.getName(),
+								"Info");
+						snoozeChangeSwitch = 2;
+						snoozeState = "false";
+					}
+
+					if (!item.getSeverity().toString().equals(obj.get("Severity"))) {
+						obj.put("Severity", item.getSeverity().toString());
+						InterfaceController.currentDataviewEntityList.get(pos).put("Severity",
+								item.getSeverity().toString());
+						severityChangeSwitch = 1;
+						severityChange = item.getSeverity().toString();
+					}
+
+					if (snoozeChangeSwitch == 2) {
+						sendNotificaiton(item.getPath(), snoozeState, item.getSeverity().toString());
+					} else if (snoozeChangeSwitch == 1) {
+						sendNotificaiton(item.getPath(), snoozeState);
+					} else if (severityChangeSwitch == 1) {
+						sendSevNotificaiton(item.getPath(), item.getSeverity().toString());
 					}
 				}
 			}
-			if( change == 1)
-			{
+			if (change == 1) {
 				InterfaceController.updateDV();
 				Thread.sleep(15000);
 			}
-		if(firstRunSwitch == 1)
-			firstRunSwitch = 0;
-		}
-		catch(NullPointerException e)
-		{
-			if(firstRunSwitch == 1){
-			logA.doLog("Thread", "[DVM-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.", "Warning");
-			}
-			else{
-				logA.doLog("Thread", "[DVM-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue.", "Critical");
+			if (firstRunSwitch == 1)
+				firstRunSwitch = 0;
+		} catch (NullPointerException e) {
+			if (firstRunSwitch == 1) {
+				logA.doLog("Thread",
+						"[DVM-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.",
+						"Warning");
+			} else {
+				logA.doLog("Thread",
+						"[DVM-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue.",
+						"Critical");
 			}
 		}
 	}

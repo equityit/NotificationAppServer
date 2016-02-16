@@ -64,7 +64,7 @@ return registrationList;
 		while (1 == 1) {
 			run(xpath);
 			try {
-				Thread.sleep(10000);
+				Thread.sleep(1000);
 			} catch (InterruptedException ex) {
 				logA.doLog("Thread", "[T-INFO]Thread internal termination confirmation", "Info");
 				conn.close();
