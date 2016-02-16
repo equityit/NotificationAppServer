@@ -42,9 +42,11 @@ public class DataViewMonitor {
 	public Map<String, Alert> alertList = new HashMap<String, Alert>();
 	private DataSet dataSet;
 	private int firstRunSwitch = 1;
+	private int sampleRate;
 	
 	public DataViewMonitor() throws InterruptedException
 	{
+		this.sampleRate = InterfaceController.sampleRate;
 		startSample();
 	}
 
@@ -65,7 +67,7 @@ public class DataViewMonitor {
 		while (1 == 1) {
 			run();
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(sampleRate);
 			} catch (InterruptedException ex) {
 				logA.doLog("Thread", "[DVM-INFO]Thread internal termination confirmation", "Info");
 				conn.close();

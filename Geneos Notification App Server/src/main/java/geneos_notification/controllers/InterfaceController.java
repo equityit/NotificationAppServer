@@ -58,6 +58,7 @@ public class InterfaceController {
     //private final AtomicLong keycounter = new AtomicLong();
     private static String sqlKey;
     private static String oaKey;
+    public static int sampleRate;
     public static ArrayList<JSONObject> currentDataviewEntityList;
     static LtA logA = new LogObject();
 

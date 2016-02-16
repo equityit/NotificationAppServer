@@ -74,36 +74,6 @@ public class StartController {
 		logA.doLog("Start" , "Server Boot Initiated", "Info");
 		start();
 	}
-	
-   /* public static void start() throws InterruptedException, ExecutionException {
-    	File file = new File(".\\settings.txt");
-    	Scanner scnr = null;
-    	try {
-			scnr = new Scanner(file);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			//LOGGER.log(Level.INFO, e.toString());
-			e.printStackTrace();
-			System.out.println("System Settings file not found - Server Terminating");
-			logA.doLog("Start" , "System Settings file not found - Server Terminating", "Critical");
-			System.exit(0);
-		}
-    	while(scnr.hasNext())
-    	{
-    		String line = scnr.nextLine();
-    		settings.add(line);
-    	}
-    	if(settings.size() != 8)
-    	{
-    		System.out.println("System Settings file is incorrect - Not enough details - Server Terminating");
-    		logA.doLog("Start" , "System Settings file is incorrect - Not enough details - Server Terminating", "Critical");
-    		System.exit(0);
-    	}
-    	configureSettings(settings);
-    	//LOGGER.log(Level.INFO, "COnfiguration successful");
-    	logA.doLog("Start" , "Server Boot variables passed verification", "Info");
-        SpringApplication.run(Application.class);
-    }*/
     
     public static void start() throws InterruptedException, ExecutionException {
     	readSettingsFile();
@@ -111,8 +81,6 @@ public class StartController {
     	InterfaceController.updateDV();
     	perpetualReload();
     	ThreadController.startDVMonitor();
-    	//configureSettings(settings);
-    	//LOGGER.log(Level.INFO, "COnfiguration successful");
     	logA.doLog("Start" , "Server Boot variables passed verification", "Info");
         SpringApplication.run(StartController.class);
     }
@@ -161,9 +129,11 @@ public static void readSettingsFile() {
 			setting.put("OAUser", line.substring(line.indexOf("=") + 1));
 		} else if (line.contains("OpenAccess Password")) {
 			setting.put("OAPass", line.substring(line.indexOf("=") + 1));
+		} else if (line.contains("Sampling Rate (ms)")) {
+			setting.put("SampleRate", line.substring(line.indexOf("=") + 1));
 		}
 	}
-	if(setting.size() != 11)
+	if(setting.size() != 12)
 	{
 		System.out.println("System Settings file is incorrect - Not enough details - Server Terminating : Size = "+setting.size());
 		logA.doLog("Start" , "System Settings file is incorrect - Not enough details - Server Terminating", "Critical");
@@ -179,6 +149,7 @@ public static void readSettingsFile() {
     	String smtpP = setting.get("SMTPPass");
     	String OA = "geneos.cluster://" + setting.get("OAHost") + ":" + setting.get("OAPort") + "?username=" + setting.get("OAUser") + "&password=" + setting.get("OAPass");
     	InterfaceController.setKeyData(sqlServer, OA);
+    	InterfaceController.sampleRate = Integer.parseInt(setting.get("SampleRate"));
     	EmailController.setDetails(smtpH, smtpU, smtpP);
     	try{
     	checkValidity();
@@ -189,20 +160,6 @@ public static void readSettingsFile() {
     		System.exit(0);
     	}
     }
-    
-   /* public static void configureSettings(ArrayList<String> settings) throws InterruptedException, ExecutionException
-    {
-    	String sqlServer = settings.get(0);
-    	String smtpH = settings.get(1);
-    	String smtpU = settings.get(2);
-    	String smtpP = settings.get(3);
-    	String OA = "geneos.cluster://" + settings.get(4) + ":" + settings.get(5) + "?username=" + settings.get(6) + "&password=" + settings.get(6);
-    	GreetingController.setKeyData(sqlServer, OA);
-    	EmailController.setDetails(smtpH, smtpU, smtpP);
-    	checkValidity(OA, sqlServer);
-    	GreetingController.updateDV();
-    	perpetualReload();
-    }*/
     
     public static void perpetualReload()
     {

@@ -15,6 +15,7 @@ OpenAccess Host		=192.168.220.54
 OpenAccess Port		=2551
 OpenAccess Username	=admin
 OpenAccess Password	=admin
+Sampling Rate (ms)	=10000
 
 - Ports for your OpenAccess cluster can be found on the OpenAccess host within the installation directory within the file application.conf. 
 - To find the port used for MySQl either execute the query 'show variables' within the database or run 'netstat start -ab' within an administrative cmd and search the results for mysqld.exe.

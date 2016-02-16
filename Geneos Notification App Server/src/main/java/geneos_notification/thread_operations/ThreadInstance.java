@@ -36,9 +36,11 @@ public class ThreadInstance {
 	public Map<String, Alert> alertList = new HashMap<String, Alert>();
 	private DataSet dataSet;
 	private int firstRunSwitch = 1;
+	private int sampleRate;
 	
 	public ThreadInstance(String xpath) throws InterruptedException
 	{
+		this.sampleRate = InterfaceController.sampleRate;
 		startSample(xpath);
 	}
 
@@ -64,7 +66,7 @@ return registrationList;
 		while (1 == 1) {
 			run(xpath);
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(sampleRate);
 			} catch (InterruptedException ex) {
 				logA.doLog("Thread", "[T-INFO]Thread internal termination confirmation", "Info");
 				conn.close();
