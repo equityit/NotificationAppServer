@@ -217,7 +217,7 @@ public class DataViewMonitor {
 						severityChange = item.getSeverity().toString();
 					}
 
-					if (snoozeChangeSwitch == 2) {
+					if (snoozeChangeSwitch == 2 || snoozeChangeSwitch == 1) {
 						sendNotificaiton(item.getPath(), snoozeState, item.getSeverity().toString());
 					} else if (snoozeChangeSwitch == 1) {
 						sendNotificaiton(item.getPath(), snoozeState);
