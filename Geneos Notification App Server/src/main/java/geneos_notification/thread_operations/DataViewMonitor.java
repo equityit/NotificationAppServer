@@ -43,19 +43,20 @@ public class DataViewMonitor {
 	private DataSet dataSet;
 	private int firstRunSwitch = 1;
 	private int sampleRate;
+	public int counter;
 	
 	public DataViewMonitor() throws InterruptedException
 	{
 		this.sampleRate = InterfaceController.sampleRate;
-		startSample();
+		//startSample();
 	}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public void startSample() throws InterruptedException {
+	public int startSample() throws InterruptedException {
 		conn = OpenAccess.connect(InterfaceController.getOAkey());
-		runScan();
+		return runScan();
 	}
 
 
@@ -63,15 +64,22 @@ public class DataViewMonitor {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	
-	private void runScan() throws InterruptedException {
+	private int runScan() throws InterruptedException {
 		while (1 == 1) {
 			run();
 			try {
+				counter++;
+				if(counter == 60){
+					conn.close();
+					conn = null;
+					dataSet = null;
+					return counter;
+				}
 				Thread.sleep(sampleRate);
 			} catch (InterruptedException ex) {
 				logA.doLog("Thread", "[DVM-INFO]Thread internal termination confirmation", "Info");
 				conn.close();
-				return;
+				return counter;
 			}
 		}
 	}
@@ -131,21 +139,6 @@ public class DataViewMonitor {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-	private void sendNotificaiton(String xpath, String snoozeState) throws JSONException{
-		if(ThreadController.monitoringThreadList.containsKey(xpath))
-		{
-		JSONObject testingObj = new JSONObject();
-		JSONObject internal = new JSONObject();
-		testingObj.put("registration_ids", new JSONArray(ThreadController.monitoringThreadList.get(xpath).getRegList().getRegList()));
-		internal.put("Xpath", xpath);
-		internal.put("snoozed", snoozeState);
-		internal.put("type", "dvUpdate");
-		testingObj.put("data", internal);
-		System.out.println(testingObj.toString());
-		TransmissionHandler.sendDVUpdate(testingObj.toString());
-		}
-	}
 	
 	private void sendSevNotificaiton(String xpath, String severityState) throws JSONException{
 		if(ThreadController.monitoringThreadList.containsKey(xpath))
@@ -219,8 +212,6 @@ public class DataViewMonitor {
 
 					if (snoozeChangeSwitch == 2 || snoozeChangeSwitch == 1) {
 						sendNotificaiton(item.getPath(), snoozeState, item.getSeverity().toString());
-					} else if (snoozeChangeSwitch == 1) {
-						sendNotificaiton(item.getPath(), snoozeState);
 					} else if (severityChangeSwitch == 1) {
 						sendSevNotificaiton(item.getPath(), item.getSeverity().toString());
 					}

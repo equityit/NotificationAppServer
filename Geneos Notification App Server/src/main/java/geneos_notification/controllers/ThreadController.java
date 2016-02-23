@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -34,6 +35,7 @@ import geneos_notification.controllers.ThreadController.MyAnalysis;
 import geneos_notification.loggers.LogObject;
 import geneos_notification.loggers.LtA;
 import geneos_notification.objects.ThreadItem;
+import geneos_notification.startup_and_system_operations.DataviewListGenerator;
 import geneos_notification.thread_operations.DataViewMonitor;
 import geneos_notification.thread_operations.ThreadInstance;
 
@@ -43,6 +45,7 @@ public class ThreadController {
 	public static Map<String, ThreadItem> monitoringThreadList = new HashMap<String, ThreadItem>();
 	public static ExecutorService executor = Executors.newFixedThreadPool(200);
 	public static Map<String, JSONObject> dataViewMonitoringMap = new HashMap<String, JSONObject>();
+	public static Future DVM;
 
 	public static void restartNotifyList(String xpath) {
 		ThreadItem current = monitoringThreadList.get(xpath);
@@ -113,16 +116,49 @@ public class ThreadController {
 	
 	public static void startDVMonitor()
 	{
-		ExecutorService exec = Executors.newSingleThreadExecutor();
-    	Callable<String> callable = new Callable<String>() {
-    		@Override
-    		public String call() throws JSONException, InterruptedException{									
-    			DataViewMonitor Dmon = new DataViewMonitor();
-    			Dmon.startSample();
-    			return "success";
-    		}
-    	};
-    	Future<String> future = exec.submit(callable);
+		Callable<Long> worker = new DvMonitor();
+		Future<Long> thread = executor.submit(worker);
+		DVM = thread;
+	}
+	
+	public static class DvMonitor implements Callable<Long> {
+
+
+		public DvMonitor() {
+		}
+
+		@Override
+		public Long call() throws InterruptedException, ExecutionException {
+			logA.doLog("Thread", "[T-INFO]Initialization of thread for xpath : ", "Info");
+			Long x = (long) 1;
+			Integer dv;
+			do{
+			ExecutorService exec = Executors.newSingleThreadExecutor();
+	    	Callable<Integer> callable = new Callable<Integer>() {
+	    		@Override
+	    		public Integer call() throws JSONException, InterruptedException{									
+	    			return callThread();
+	    		}
+	    	};
+	    	Future<Integer> future = exec.submit(callable);
+	    	dv = future.get();
+	    	exec.shutdown();
+	    	future = null;
+	    	exec = null;
+	    	callable = null;
+			System.gc();
+			}while(dv != 0);
+			return x;
+		}
+		
+		private int callThread() throws InterruptedException {
+			DataViewMonitor dvm = new DataViewMonitor();
+			int res = dvm.startSample();
+			dvm = null;
+			return res;
+			//ThreadInstance.startSample(xpath);
+		}
+
 	}
 	
 	

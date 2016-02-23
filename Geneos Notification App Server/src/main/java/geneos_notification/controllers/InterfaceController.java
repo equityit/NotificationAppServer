@@ -174,6 +174,13 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
     	return currentDataviewEntityList.toString();
 	}
     
+    // TESTING ONLY!!!!
+    @RequestMapping(value="/killdvm", method=RequestMethod.GET)			// First attempt to thread all DV list requests, needs testing		
+	public static void killdvm() throws JSONException, InterruptedException, ExecutionException 
+	{
+    	ThreadController.DVM.cancel(true);
+	}
+    
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
     
