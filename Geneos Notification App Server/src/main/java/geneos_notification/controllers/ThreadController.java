@@ -123,30 +123,44 @@ public class ThreadController {
 	
 	public static class DvMonitor implements Callable<Long> {
 
+		ExecutorService exec;
+		Callable<Integer> callable;
+		Future<Integer> future;
 
 		public DvMonitor() {
 		}
 
 		@Override
-		public Long call() throws InterruptedException, ExecutionException {
+		public Long call() throws ExecutionException, InterruptedException {
 			logA.doLog("Thread", "[T-INFO]Initialization of thread for xpath : ", "Info");
 			Long x = (long) 1;
 			Integer dv;
 			do{
-			ExecutorService exec = Executors.newSingleThreadExecutor();
-	    	Callable<Integer> callable = new Callable<Integer>() {
+			dv = 0;
+			try{
+			exec = Executors.newSingleThreadExecutor();
+	    	callable = new Callable<Integer>() {
 	    		@Override
 	    		public Integer call() throws JSONException, InterruptedException{									
 	    			return callThread();
 	    		}
 	    	};
-	    	Future<Integer> future = exec.submit(callable);
+	    	future = exec.submit(callable);
 	    	dv = future.get();
 	    	exec.shutdown();
 	    	future = null;
 	    	exec = null;
 	    	callable = null;
 			System.gc();
+			} catch(InterruptedException ex)
+			{
+				future.cancel(true);
+		    	//dv = future.get();
+				exec.shutdownNow();
+				future = null;
+		    	exec = null;
+		    	callable = null;
+			}
 			}while(dv != 0);
 			return x;
 		}
@@ -165,21 +179,53 @@ public class ThreadController {
 	public static class MyAnalysis implements Callable<Long> {
 
 		private String xpath;
+		ExecutorService exec;
+		Callable<Integer> callable;
+		Future<Integer> future;
 
 		public MyAnalysis(String path) {
 			this.xpath = path;
 		}
 
 		@Override
-		public Long call() throws InterruptedException {
+		public Long call() throws InterruptedException, ExecutionException {
 			logA.doLog("Thread", "[T-INFO]Initialization of thread for xpath : " + xpath, "Info");
 			Long x = (long) 1;
-			callThread();
+			Integer dv;
+			do{
+			dv = 0;
+			try{
+			exec = Executors.newSingleThreadExecutor();
+	    	callable = new Callable<Integer>() {
+	    		@Override
+	    		public Integer call() throws JSONException, InterruptedException{									
+	    			return callThread();
+	    		}
+	    	};
+	    	future = exec.submit(callable);
+	    	dv = future.get();
+	    	exec.shutdown();
+	    	future = null;
+	    	exec = null;
+	    	callable = null;
+			//System.gc();
+			} catch(InterruptedException ex)
+			{
+				future.cancel(true);
+		    	//dv = future.get();
+				exec.shutdownNow();
+				future = null;
+		    	exec = null;
+		    	callable = null;
+			}
+			}while(dv != 0);
 			return x;
 		}
 
-		private void callThread() throws InterruptedException {
+
+		private Integer callThread() throws InterruptedException {
 			ThreadInstance test = new ThreadInstance(xpath);
+			return test.startSample(xpath);
 			//ThreadInstance.startSample(xpath);
 		}
 	}

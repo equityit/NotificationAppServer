@@ -37,20 +37,21 @@ public class ThreadInstance {
 	private DataSet dataSet;
 	private int firstRunSwitch = 1;
 	private int sampleRate;
+	private int counter = 0;
 	
 	public ThreadInstance(String xpath) throws InterruptedException
 	{
 		this.sampleRate = InterfaceController.sampleRate;
-		startSample(xpath);
+		//startSample(xpath);
 	}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public void startSample(String path) throws InterruptedException {
+	public int startSample(String path) throws InterruptedException {
 		conn = OpenAccess.connect(InterfaceController.getOAkey());
 		System.out.println(ThreadController.monitoringThreadList.get(path).getRegList().getRegList());
-		runScan(path);
+		return runScan(path);
 	}
 
 /*public static ArrayList<String> getRegistrationList()
@@ -62,15 +63,22 @@ return registrationList;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	
-	private void runScan(String xpath) throws InterruptedException {
+	private int runScan(String xpath) throws InterruptedException {
 		while (1 == 1) {
-			run(xpath);
 			try {
+				run(xpath);
+				counter++;
+				if(counter == 60){
+					conn.close();
+					conn = null;
+					dataSet = null;
+					return counter;
+				}
 				Thread.sleep(sampleRate);
 			} catch (InterruptedException ex) {
 				logA.doLog("Thread", "[T-INFO]Thread internal termination confirmation", "Info");
 				conn.close();
-				return;
+				return 1;
 			}
 		}
 	}
@@ -78,9 +86,9 @@ return registrationList;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public void run(String dvPath) {
+	public void run(String dvPath) throws InterruptedException {
 		try {
-			logA.doLog("Thread", "Thread xpath exection for path : " + dvPath, "Info");
+			//logA.doLog("Thread", "Thread xpath exection for path : " + dvPath, "Info");
 			DataSetQuery query = DataSetQuery.create(dvPath + "/rows/row[wild(@name,\"*\")]/cell");
 			final DataSetTracker dataSetTracker = new DataSetTracker();
 			final CountDownLatch cdl = new CountDownLatch(1);
@@ -113,7 +121,10 @@ return registrationList;
 				e.printStackTrace();
 			}
 			threadAnalysis(dvPath);
-		} catch (Exception e) {
+		} catch (InterruptedException ex)
+		{
+			throw new InterruptedException();
+		}catch (Exception e) {
 			logA.doLog("Thread", "[T-ERROR]Thread cycle execution failed", "Critical");
 			logA.doLog("Thread", e.toString(), "Critical");
 			e.printStackTrace();
@@ -124,16 +135,16 @@ return registrationList;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	private void threadAnalysis(String dvPath) throws JSONException, IOException {
+	private void threadAnalysis(String dvPath) throws JSONException, IOException, InterruptedException {
 		//System.out.println("//////////////////////////////// \nTHREAD SUCCESSFUL \n");
-		logA.doLog("Thread", "[T-INFO]Thread Execution successful", "Info");
+		//logA.doLog("Thread", "[T-INFO]Thread Execution successful", "Info");
 		alertChecker(dvPath);
 	}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	private void alertChecker(String dvPath) throws JSONException, IOException {
+	private void alertChecker(String dvPath) throws JSONException, IOException, InterruptedException {
 		try{
 		for (DataSetItem item : dataSet.getItems()) {
 			Severity currentSeverity = item.getSeverity();
@@ -168,10 +179,13 @@ return registrationList;
 		catch(NullPointerException e)
 		{
 			if(firstRunSwitch == 1){
-			logA.doLog("Thread", "[T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.", "Warning");
+			logA.doLog("Thread", "[T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected. Staggering in progress.", "Warning");
+			Thread.sleep(1000 + (dvPath.length() * 10));
 			}
 			else{
-				logA.doLog("Thread", "[T-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue.", "Critical");
+				logA.doLog("Thread", "[T-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue. Stagger in progress.", "Critical");
+				Thread.sleep(dvPath.length() * 10);
+				run(dvPath);
 			}
 		}
 	}

@@ -79,7 +79,7 @@ public class DataViewMonitor {
 			} catch (InterruptedException ex) {
 				logA.doLog("Thread", "[DVM-INFO]Thread internal termination confirmation", "Info");
 				conn.close();
-				return counter;
+				return 0;
 			}
 		}
 	}
@@ -89,7 +89,7 @@ public class DataViewMonitor {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public void run() {
 		try {
-			logA.doLog("Thread", "Thread xpath exection for path dataview monitoring!", "Info");
+			//logA.doLog("Thread", "Thread xpath exection for path dataview monitoring!", "Info");
 			DataSetQuery query = DataSetQuery.create("/geneos/gateway/directory/probe/managedEntity/sampler/dataview");
 			final DataSetTracker dataSetTracker = new DataSetTracker();
 			final CountDownLatch cdl = new CountDownLatch(1);
@@ -226,12 +226,15 @@ public class DataViewMonitor {
 		} catch (NullPointerException e) {
 			if (firstRunSwitch == 1) {
 				logA.doLog("Thread",
-						"[DVM-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected.",
+						"[DVM-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected. Staggering in progress.",
 						"Warning");
+				Thread.sleep(1000 + 4300);
 			} else {
 				logA.doLog("Thread",
-						"[DVM-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue.",
+						"[DVM-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue. Restarting sample",
 						"Critical");
+				Thread.sleep(500);
+				run();
 			}
 		}
 	}
