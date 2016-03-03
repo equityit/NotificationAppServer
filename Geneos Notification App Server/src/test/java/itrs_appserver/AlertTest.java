@@ -23,7 +23,7 @@ public class AlertTest {
 		EmailController.setDetails("smtp.hostedservice2.net", "HelpdeskAutomation@itrsgroup.com", "9AHNekkeJwUE7XD");
 	}
 
-	@Test
+/*	@Test
 	public void createJSONTest() throws Exception {
 		Alert test;
 		DatabaseController.execCustom("insert into users(username, domainID, created_date) values ('testa6@Default', 1, now());");
@@ -32,7 +32,7 @@ public class AlertTest {
 		InterfaceController.setCustomDV("testa6", "testa6@Default");
 		test = new Alert("testa6", "Something", "Critical", "testa6");
 		assertTrue(test.createJSON("testa6").equals("{\"data\":{\"severity\":\"Critical\",\"xpath\":\"testa6\",\"message\":\"New Alert :Critical\",\"value\":\"Something\"},\"registration_ids\":[\"testa6\"]}"));
-	}
+	}*/
 	
 	@Test
 	public void updateMessageTest() throws Exception {

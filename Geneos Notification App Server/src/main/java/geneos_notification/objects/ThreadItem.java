@@ -55,6 +55,7 @@ public class ThreadItem {
 		if(monitoringUsers.size() == 1)
 		{
 			monitoringUsers.clear();
+			this.reg = new regListItem(monitoringUsers);
 			return 1;
 		}
 		monitoringUsers.remove(username);

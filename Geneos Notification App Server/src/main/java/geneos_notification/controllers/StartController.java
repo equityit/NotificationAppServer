@@ -44,22 +44,6 @@ public class StartController {
 	
 	public static void main(String[] args) throws InterruptedException, ExecutionException
 	{
-		
-/*		 try {
-			 fh=new FileHandler(".\\loggerExample.log", false);
-			 } catch (SecurityException | IOException e) {
-			 e.printStackTrace();
-			 }
-		 Logger l = Logger.getLogger("");
-		 fh.setFormatter(new SimpleFormatter());
-		 l.addHandler(fh);
-		 l.setLevel(Level.CONFIG);
-		 logger.log(Level.INFO, "message 1");*/
-		 
-		//System.out.println("This does start");
-		//LOGGER.setLevel(Level.INFO);
-		//ConsoleHandler con = null;
-		//LOGGER.addHandler(con);
 		System.out.print("\n8888888888888888888888888b.  .d8888b. \n" +
 				"  888      888    888   Y88bd88P  Y88b\n" +
 				"  888      888    888    888Y88b.     \n" +
@@ -69,7 +53,7 @@ public class StartController {
 				"  888      888    888  T88b Y88b  d88P\n" +
 				"8888888    888    888   T88b \"Y8888P\"  © \n" +
 				"\n" +
-				"<< Version 1.2 >>      << Created by C.Morley & D.Ratnaras 2015/2016 >>\n" +
+				"<< Version 1.3 >>      << Created by C.Morley & D.Ratnaras 2015/2016 >>\n" +
 				"\n");
 		logA.doLog("Start" , "Server Boot Initiated", "Info");
 		start();

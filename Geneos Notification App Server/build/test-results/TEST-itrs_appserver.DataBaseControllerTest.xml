@@ -1,30 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="itrs_appserver.DataBaseControllerTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2016-02-11T15:34:09" hostname="ITRSLP043" time="0.312">
+<testsuite name="itrs_appserver.DataBaseControllerTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2016-03-01T15:26:42" hostname="ITRSLP043" time="1.455">
   <properties/>
-  <testcase name="createInValidDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.016"/>
-  <testcase name="removeCustomDataviewTest" classname="itrs_appserver.DataBaseControllerTest" time="0.034"/>
-  <testcase name="verifyStoredDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.005"/>
-  <testcase name="logoutDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.006"/>
-  <testcase name="getUserDataviewListFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.008"/>
+  <testcase name="createInValidDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.015"/>
+  <testcase name="removeCustomDataviewTest" classname="itrs_appserver.DataBaseControllerTest" time="0.265"/>
+  <testcase name="verifyStoredDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.006"/>
+  <testcase name="logoutDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.008"/>
+  <testcase name="getUserDataviewListFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.007"/>
   <testcase name="checkValidDomainFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.009"/>
-  <testcase name="verifyStoredDeviceTest" classname="itrs_appserver.DataBaseControllerTest" time="0.068"/>
-  <testcase name="sqlConnectFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.002"/>
+  <testcase name="verifyStoredDeviceTest" classname="itrs_appserver.DataBaseControllerTest" time="0.892"/>
+  <testcase name="sqlConnectFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.001"/>
   <testcase name="getLivePathsTest" classname="itrs_appserver.DataBaseControllerTest" time="0.028"/>
-  <testcase name="removeCustomDataviewFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.009"/>
-  <testcase name="addCustomDataViewFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.01"/>
-  <testcase name="userCheckFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.008"/>
-  <testcase name="checkDeviceExistenceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.008"/>
-  <testcase name="getUserDataviewListTest" classname="itrs_appserver.DataBaseControllerTest" time="0.031"/>
-  <testcase name="getLivePathsFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.011"/>
-  <testcase name="execCustomFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.011"/>
-  <testcase name="loginDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.008"/>
-  <testcase name="createUserFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.009"/>
-  <testcase name="getLiveDevicesTest" classname="itrs_appserver.DataBaseControllerTest" time="0.026"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+  <testcase name="removeCustomDataviewFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.008"/>
+  <testcase name="addCustomDataViewFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.007"/>
+  <testcase name="userCheckFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.005"/>
+  <testcase name="checkDeviceExistenceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.005"/>
+  <testcase name="getUserDataviewListTest" classname="itrs_appserver.DataBaseControllerTest" time="0.023"/>
+  <testcase name="getLivePathsFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.009"/>
+  <testcase name="execCustomFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.009"/>
+  <testcase name="loginDeviceFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.007"/>
+  <testcase name="createUserFailTest" classname="itrs_appserver.DataBaseControllerTest" time="0.006"/>
+  <testcase name="getLiveDevicesTest" classname="itrs_appserver.DataBaseControllerTest" time="0.14"/>
+  <system-out><![CDATA[15:26:42.386 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:26:42.596 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
+15:26:42.596 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
+15:26:42.756 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:4621]
+15:26:42.756 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:4622]
+[testc6]
+[testb6]
+15:26:42.796 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:26:42.796 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:26:43.250 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-12] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:26:43.250 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-13] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:26:43.320 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+15:26:43.320 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+15:26:43.574 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-13] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+15:26:43.576 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-13] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testb6/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+15:26:43.616 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+15:26:43.617 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc6/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+15:26:43.684 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+15:26:43.690 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-13] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+]]></system-out>
+  <system-err><![CDATA[Mar 01, 2016 3:26:42 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while creating invalid device fail' or 1 = 1 for user : fail' or 1 = 1 
-Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1',1626070344)' at line 1
-com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1',1626070344)' at line 1
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1',-1510066522)' at line 1
+com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1',-1510066522)' at line 1
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
 	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
@@ -80,13 +137,18 @@ com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your S
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+SLF4J: The following loggers will not work because they were created
+SLF4J: during the default configuration phase of the underlying logging system.
+SLF4J: See also http://www.slf4j.org/codes.html#substituteLogger
+SLF4J: akka.event.slf4j.Slf4jLogger
+SLF4J: com.itrsgroup.activemodel.core.data.jackson.JacksonCodec
+Mar 01, 2016 3:26:42 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Error while logging out fail' or 1 = 1 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:42 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while retrieving dataviews subscribed to user : fail' or 1 = 1 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:42 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Undetermined error was encountered causing query failure! : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
 com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
@@ -144,30 +206,32 @@ com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your S
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 INFO: Login attempt with username : testa1@Default
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testa1@Default & testa1
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testa1 logged in successfully
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testa1 key has been updated
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 INFO: Initial log on for testa1@Default with device testa1
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Connection information issue either driver or address : java.sql.SQLException: No suitable driver found for nothing
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Error while removing xpath fail' or 1 = 1 from user : fail' or 1 = 1 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1')' at line 1
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while adding dataview fail' or 1 = 1 to user : fail' or 1 = 1 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1')' at line 1
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : fail' or 1 = 1 & fail
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]SQL query issue was encountered causing SQL failure : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while checkintg status of device : fail' or 1 = 1 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while retrieving custom dataset 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' or 1 = 1))' at line 1
 com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' or 1 = 1))' at line 1
@@ -178,7 +242,7 @@ com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your S
 	at com.mysql.jdbc.Connection.execSQL(Connection.java:3277)
 	at com.mysql.jdbc.Connection.execSQL(Connection.java:3206)
 	at com.mysql.jdbc.Statement.executeQuery(Statement.java:1232)
-	at geneos_notification.controllers.DatabaseController.getLivePaths(DatabaseController.java:372)
+	at geneos_notification.controllers.DatabaseController.getLivePaths(DatabaseController.java:393)
 	at itrs_appserver.DataBaseControllerTest.getLivePathsFailTest(DataBaseControllerTest.java:145)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -226,7 +290,7 @@ com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your S
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while retrieving custom dataset 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'fail' or 1 = 1' at line 1
 com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'fail' or 1 = 1' at line 1
@@ -237,7 +301,7 @@ com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your S
 	at com.mysql.jdbc.Connection.execSQL(Connection.java:3277)
 	at com.mysql.jdbc.Statement.executeUpdate(Statement.java:1402)
 	at com.mysql.jdbc.Statement.executeUpdate(Statement.java:1317)
-	at geneos_notification.controllers.DatabaseController.execCustom(DatabaseController.java:400)
+	at geneos_notification.controllers.DatabaseController.execCustom(DatabaseController.java:421)
 	at itrs_appserver.DataBaseControllerTest.execCustomFailTest(DataBaseControllerTest.java:151)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -285,11 +349,19 @@ com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your S
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Error while logging in device fail' or 1 = 1 
 Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '')' at line 1
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [SQL]Query error while creating new user : fail' or 1 = 1 
-Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1', -1374989289)' at line 1
+Error is : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','fail' or 1 = 1','fail' or 1 = 1', -1540418756)' at line 1
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
+WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected. Staggering in progress.
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
+Mar 01, 2016 3:26:43 PM geneos_notification.loggers.LogObject doLog
+WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected. Staggering in progress.
 ]]></system-err>
 </testsuite>

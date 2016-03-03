@@ -65,8 +65,8 @@ return registrationList;
 	
 	private int runScan(String xpath) throws InterruptedException {
 		while (1 == 1) {
-			try {
-				run(xpath);
+			run(xpath);
+			try {	
 				counter++;
 				if(counter == 60){
 					conn.close();

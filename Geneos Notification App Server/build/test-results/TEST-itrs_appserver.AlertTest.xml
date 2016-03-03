@@ -1,47 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="itrs_appserver.AlertTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-02-11T15:34:08" hostname="ITRSLP043" time="0.528">
+<testsuite name="itrs_appserver.AlertTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-03-01T15:26:40" hostname="ITRSLP043" time="1.377">
   <properties/>
-  <testcase name="updateMessageTest" classname="itrs_appserver.AlertTest" time="0.431"/>
-  <testcase name="createJSONTest" classname="itrs_appserver.AlertTest" time="0.051"/>
-  <testcase name="firstMessageTest" classname="itrs_appserver.AlertTest" time="0.044"/>
+  <testcase name="updateMessageTest" classname="itrs_appserver.AlertTest" time="1.041"/>
+  <testcase name="firstMessageTest" classname="itrs_appserver.AlertTest" time="0.336"/>
   <system-out><![CDATA[This is the thread xpath : testb6
-{"data":{"severity":"Fail","xpath":"testb6","message":"New Alert :Fail","value":"Something"},"registration_ids":["testb6"]}
+{"data":{"severity":"Fail","xpath":"testb6","time":"2016-03-01T15:26:41.685","message":"New Alert :Fail","type":"alert","value":"Something"},"registration_ids":["testb6"]}
 Fail to pass Alert
-This is the thread xpath : testa6
-{"data":{"severity":"Critical","xpath":"testa6","message":"New Alert :Critical","value":"Something"},"registration_ids":["testa6"]}
-{"data":{"severity":"Critical","xpath":"testa6","message":"New Alert :Critical","value":"Something"},"registration_ids":["testa6"]}
 This is the thread xpath : testc6
-{"data":{"severity":"Fail","xpath":"testc6","message":"New Alert :Fail","value":"Something"},"registration_ids":["testc6"]}
+{"data":{"severity":"Fail","xpath":"testc6","time":"2016-03-01T15:26:42.031","message":"New Alert :Fail","type":"alert","value":"Something"},"registration_ids":["testc6"]}
 ]]></system-out>
-  <system-err><![CDATA[Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+  <system-err><![CDATA[Mar 01, 2016 3:26:40 PM geneos_notification.loggers.LogObject doLog
 INFO: Login attempt with username : testb6@Default
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:40 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testb6@Default & testb6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testb6 logged in successfully
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testb6 key has been updated
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
 INFO: Initial log on for testb6@Default with device testb6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
 INFO: [T-INFO]Initialization of thread for xpath : testb6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testa6@Default
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testa6@Default & testa6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testa6 logged in successfully
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testa6@Default with device testa6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testa6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
 INFO: Login attempt with username : testc6@Default
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testc6@Default & testc6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testc6 logged in successfully
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:42 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testc6 key has been updated
+Mar 01, 2016 3:26:42 PM geneos_notification.loggers.LogObject doLog
 INFO: Initial log on for testc6@Default with device testc6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:42 PM geneos_notification.loggers.LogObject doLog
 INFO: [T-INFO]Initialization of thread for xpath : testc6
 ]]></system-err>
 </testsuite>

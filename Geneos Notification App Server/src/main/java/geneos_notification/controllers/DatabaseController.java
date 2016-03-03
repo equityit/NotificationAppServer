@@ -330,6 +330,27 @@ public static void loginDevice(String android_id)
 		close();
 	
 }
+
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+
+public static void updateDeviceKey(String android_id, String key)
+{
+SQLConnect();
+
+try {
+stmt = conn.createStatement();
+res = stmt
+.executeQuery("call sp_update_Key('" + android_id + "' , '" + key + "')");
+logA.doLog("SQL" , "[SQL]Device " + android_id + " key has been updated", "Info");
+} catch (SQLException e) {
+logA.doLog("SQL" , "[SQL]Error while changing key of device " + android_id + " \nError is : " + e.toString(), "Critical");
+close();
+throw new RuntimeException(e);
+} 
+close();
+
+}
   
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////

@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">3</div>
+<div class="counter">2</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.526s</div>
+<div class="counter">1.377s</div>
 <p>duration</p>
 </div>
 </td>
@@ -81,18 +81,13 @@
 </tr>
 </thead>
 <tr>
-<td class="success">createJSONTest</td>
-<td>0.051s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
 <td class="success">firstMessageTest</td>
-<td>0.044s</td>
+<td>0.336s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">updateMessageTest</td>
-<td>0.431s</td>
+<td>1.041s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -101,48 +96,39 @@
 <h2>Standard output</h2>
 <span class="code">
 <pre>This is the thread xpath : testb6
-{&quot;data&quot;:{&quot;severity&quot;:&quot;Fail&quot;,&quot;xpath&quot;:&quot;testb6&quot;,&quot;message&quot;:&quot;New Alert :Fail&quot;,&quot;value&quot;:&quot;Something&quot;},&quot;registration_ids&quot;:[&quot;testb6&quot;]}
+{&quot;data&quot;:{&quot;severity&quot;:&quot;Fail&quot;,&quot;xpath&quot;:&quot;testb6&quot;,&quot;time&quot;:&quot;2016-03-01T15:26:41.685&quot;,&quot;message&quot;:&quot;New Alert :Fail&quot;,&quot;type&quot;:&quot;alert&quot;,&quot;value&quot;:&quot;Something&quot;},&quot;registration_ids&quot;:[&quot;testb6&quot;]}
 Fail to pass Alert
-This is the thread xpath : testa6
-{&quot;data&quot;:{&quot;severity&quot;:&quot;Critical&quot;,&quot;xpath&quot;:&quot;testa6&quot;,&quot;message&quot;:&quot;New Alert :Critical&quot;,&quot;value&quot;:&quot;Something&quot;},&quot;registration_ids&quot;:[&quot;testa6&quot;]}
-{&quot;data&quot;:{&quot;severity&quot;:&quot;Critical&quot;,&quot;xpath&quot;:&quot;testa6&quot;,&quot;message&quot;:&quot;New Alert :Critical&quot;,&quot;value&quot;:&quot;Something&quot;},&quot;registration_ids&quot;:[&quot;testa6&quot;]}
 This is the thread xpath : testc6
-{&quot;data&quot;:{&quot;severity&quot;:&quot;Fail&quot;,&quot;xpath&quot;:&quot;testc6&quot;,&quot;message&quot;:&quot;New Alert :Fail&quot;,&quot;value&quot;:&quot;Something&quot;},&quot;registration_ids&quot;:[&quot;testc6&quot;]}
+{&quot;data&quot;:{&quot;severity&quot;:&quot;Fail&quot;,&quot;xpath&quot;:&quot;testc6&quot;,&quot;time&quot;:&quot;2016-03-01T15:26:42.031&quot;,&quot;message&quot;:&quot;New Alert :Fail&quot;,&quot;type&quot;:&quot;alert&quot;,&quot;value&quot;:&quot;Something&quot;},&quot;registration_ids&quot;:[&quot;testc6&quot;]}
 </pre>
 </span>
 </div>
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+<pre>Mar 01, 2016 3:26:40 PM geneos_notification.loggers.LogObject doLog
 INFO: Login attempt with username : testb6@Default
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:40 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testb6@Default &amp; testb6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testb6 logged in successfully
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testb6 key has been updated
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
 INFO: Initial log on for testb6@Default with device testb6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
 INFO: [T-INFO]Initialization of thread for xpath : testb6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testa6@Default
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testa6@Default &amp; testa6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testa6 logged in successfully
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testa6@Default with device testa6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testa6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
 INFO: Login attempt with username : testc6@Default
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testc6@Default &amp; testc6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:41 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testc6 logged in successfully
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:42 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device testc6 key has been updated
+Mar 01, 2016 3:26:42 PM geneos_notification.loggers.LogObject doLog
 INFO: Initial log on for testc6@Default with device testc6
-Feb 11, 2016 3:34:09 PM geneos_notification.loggers.LogObject doLog
+Mar 01, 2016 3:26:42 PM geneos_notification.loggers.LogObject doLog
 INFO: [T-INFO]Initialization of thread for xpath : testc6
 </pre>
 </span>
@@ -155,7 +141,7 @@ INFO: [T-INFO]Initialization of thread for xpath : testc6
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 2.3</a> at 11-Feb-2016 15:34:49</p>
+<a href="http://www.gradle.org">Gradle 2.3</a> at 01-Mar-2016 15:27:22</p>
 </div>
 </div>
 </body>

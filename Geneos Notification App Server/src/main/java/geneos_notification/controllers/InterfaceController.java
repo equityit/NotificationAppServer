@@ -175,11 +175,11 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
 	}
     
     // TESTING ONLY!!!!
-    @RequestMapping(value="/killdvm", method=RequestMethod.GET)			// First attempt to thread all DV list requests, needs testing		
+/*    @RequestMapping(value="/killdvm", method=RequestMethod.GET)			// First attempt to thread all DV list requests, needs testing		
 	public static void killdvm() throws JSONException, InterruptedException, ExecutionException 
 	{
     	ThreadController.DVM.cancel(true);
-	}
+	}*/
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////   

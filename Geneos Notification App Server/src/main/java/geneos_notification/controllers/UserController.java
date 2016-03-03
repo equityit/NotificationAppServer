@@ -34,6 +34,7 @@ public class UserController {
 		    			User holder = UserController.userObjects.get(username);
 		    			holder.addDevice(android_id, key);
 		    			DatabaseController.loginDevice(android_id);
+		    			DatabaseController.updateDeviceKey(android_id, key);
 		    			refreshDeviceToStoredDataviews(username);
 		    			logA.doLog("Controller" , username + " logged in successfully on device " + android_id, "Info");
 		    			return "successfully logged in"; // Collect data - tells device to scrape the user account on server for watch list	
@@ -43,6 +44,7 @@ public class UserController {
 				    	User holder = new User(username, android_id, key); // THIS NEEDS UPDATING TO NEW FORMAT!!!!!!!
 				    	UserController.userObjects.put(username,holder);
 				    	DatabaseController.loginDevice(android_id);
+				    	DatabaseController.updateDeviceKey(android_id, key);
 				    	subscribeUserToStoredDataviews(username);
 				    	logA.doLog("Controller" , "Initial log on for " + username + " with device " + android_id, "Info");
 				        return "successfully logged in";	// Collect data - tells device to scrape the user account on server for watch list	
@@ -82,6 +84,13 @@ public class UserController {
 		    	
 		    	
 			} else {
+				if(!userObjects.get(username).getDeviceKey(android_id).equals(key))
+				{
+					DatabaseController.updateDeviceKey(android_id, key);
+					userObjects.get(username).removeDevice(android_id);
+					userObjects.get(username).addDevice(android_id, key);
+					refreshDeviceToStoredDataviews(username);
+				}
 				return "successfully logged in";
 			}
 	    	}
