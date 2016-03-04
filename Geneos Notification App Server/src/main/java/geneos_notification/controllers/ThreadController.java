@@ -95,6 +95,7 @@ public class ThreadController {
 		if (number == 1) {
 			UserController.logA.doLog("Controller" , "Thread terminated : " + xpath  , "Info");
 			current = null;
+			monitoringThreadList.remove(xpath);
 		} else if (number == 0) {
 			Callable<Long> worker = new MyAnalysis(xpath);
 			Future<Long> thread = executor.submit(worker);
