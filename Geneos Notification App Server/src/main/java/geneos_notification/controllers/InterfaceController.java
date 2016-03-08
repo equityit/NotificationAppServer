@@ -111,10 +111,11 @@ public class InterfaceController {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @RequestMapping(value="/setcustomdv", method=RequestMethod.POST)
-public static String setCustomDV(@RequestParam(required = true, value="xpath", defaultValue="") String xpath, @RequestParam(required = true, value="username", defaultValue="") String userName) throws IOException
+public static String setCustomDV(@RequestParam(required = true, value="xpath", defaultValue="") String xpath, @RequestParam(required = true, value="username", defaultValue="") String userName) throws IOException, JSONException
 {
 	String path = xpath.trim();
 	String result = UserController.setCustomDV(path, userName);
+	TransmissionHandler.sendUpdateNotificaiton(path, userName, "dvAdd");
 	return result;
 }
 
@@ -123,10 +124,11 @@ public static String setCustomDV(@RequestParam(required = true, value="xpath", d
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 @RequestMapping(value="/removedv", method=RequestMethod.POST)
-public static void removeDataview(@RequestParam(value="xpath", defaultValue="") String xpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException
+public static void removeDataview(@RequestParam(value="xpath", defaultValue="") String xpath, @RequestParam(value="username", defaultValue="") String userName) throws IOException, JSONException
 {
 	String path = xpath.trim();
 	System.out.println("Removal xpath is here :" + path);
+	TransmissionHandler.sendUpdateNotificaiton(path, userName, "dvRem");
 	ThreadController.removeUserFromNotifyList(userName, path);
 	UserController.userObjects.get(userName).removeDV(path);
 	// TransmissionHandler.removeMessage(userName, xpath);

@@ -18,6 +18,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import geneos_notification.loggers.LogObject;
 import geneos_notification.loggers.LtA;
+import geneos_notification.objects.CustomDataView;
 import geneos_notification.objects.ThreadItem;
 import geneos_notification.objects.User;
 import geneos_notification.startup_and_system_operations.DataviewListGenerator;
@@ -171,6 +172,7 @@ public static void readSettingsFile() {
 		for (Map.Entry<String, ArrayList<String>> entry : livePaths.entrySet())
 		{
 				ThreadController.monitoringThreadList.put(entry.getKey(), new ThreadItem(entry.getKey(), entry.getValue().get(0)));
+				UserController.userObjects.get(entry.getValue().get(0)).pathList.add(new CustomDataView(entry.getKey()));
 				if(entry.getValue().size() != 1)
 				{
 				/*	for(int i = 1; !entry.getValue().get(i).equals(null); i++)
@@ -180,6 +182,7 @@ public static void readSettingsFile() {
 						for(int i = 1; i < entry.getValue().size(); i++)
 					{
 						ThreadController.monitoringThreadList.get(entry.getKey()).addUserID(entry.getValue().get(i));
+						UserController.userObjects.get(entry.getValue().get(i)).pathList.add(new CustomDataView(entry.getKey()));
 					}
 				}
 				ThreadController.startPerpetualThread(entry.getKey());

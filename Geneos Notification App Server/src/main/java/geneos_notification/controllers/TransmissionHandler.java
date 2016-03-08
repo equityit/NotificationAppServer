@@ -10,7 +10,11 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
+
 import geneos_notification.loggers.LogObject;
 import geneos_notification.loggers.LtA;
 import geneos_notification.objects.Alert;
@@ -107,6 +111,22 @@ public class TransmissionHandler {
         }
 		return result;
     }
+    
+	public static void sendUpdateNotificaiton(String xpath, String username, String action) throws JSONException{
+		if(ThreadController.monitoringThreadList.containsKey(xpath))
+		{
+		JSONObject testingObj = new JSONObject();
+		JSONObject internal = new JSONObject();
+		testingObj.put("registration_ids", new JSONArray(UserController.userObjects.get(username).getRegistrations()));
+		internal.put("Xpath", xpath);
+		internal.put("type", action);
+		internal.put("severity", ThreadController.dataViewMonitoringMap.get(xpath).get("Severity"));
+		internal.put("snoozed", ThreadController.dataViewMonitoringMap.get(xpath).get("Snoozed"));
+		testingObj.put("data", internal);
+		System.out.println(testingObj.toString());
+		sendDVUpdate(testingObj.toString());
+		}
+	}
 
 }
 
