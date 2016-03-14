@@ -65,8 +65,8 @@ return registrationList;
 	
 	private int runScan(String xpath) throws InterruptedException {
 		while (1 == 1) {
-			run(xpath);
 			try {	
+				run(xpath);
 				counter++;
 				if(counter == 60){
 					conn.close();
@@ -128,7 +128,7 @@ return registrationList;
 			logA.doLog("Thread", "[T-ERROR]Thread cycle execution failed", "Critical");
 			logA.doLog("Thread", e.toString(), "Critical");
 			e.printStackTrace();
-			//throw new RuntimeException();
+			throw new InterruptedException();
 		}
 	}
 
