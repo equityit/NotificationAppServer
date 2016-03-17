@@ -18,6 +18,7 @@ public class LogHandler {
      static Hashtable<String, Logger> loggers = new Hashtable<String, Logger>();
      static FileHandler handler = null;
      public static int limit;
+     private static Level lvl;
      
      public static Logger getLogger(String loggerName) throws IOException {
          if ( loggers.get(loggerName) != null )
@@ -42,10 +43,20 @@ public class LogHandler {
          }
 
          Logger logger = Logger.getLogger(loggerName);
-         logger.setLevel(Level.ALL);
+         logger.setLevel(lvl);
          logger.addHandler(handler);
          loggers.put(loggerName, logger);
          return logger;
+     }
+     
+     public static void setLevel(String level)
+     {
+    	 if(level.equals("crtitical"))
+    		 lvl = Level.SEVERE;
+    	 if(level.equals("warning"))
+    		 lvl = Level.WARNING;
+    	if(level.equals("all"))
+    		lvl = Level.ALL;
      }
 	
 }

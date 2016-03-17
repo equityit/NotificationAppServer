@@ -81,7 +81,6 @@ public class StartController {
 				"\n" +
 				"<< Version 1.3 >>      << Created by C.Morley & D.Ratnaras 2015/2016 >>\n" +
 				"\n");
-		logA.doLog("Start" , "Server Boot Initiated", "Info");
 		start();
 	}
     
@@ -140,6 +139,8 @@ public static void readSettingsFile() {
 			setting.put("SampleRate", line.substring(line.indexOf("=") + 1));
 		} else if (line.contains("Maximum Log Size")) {
 			setting.put("MaxLog", line.substring(line.indexOf("=") + 1));
+		} else if (line.contains("Log Level")) {
+			setting.put("LogLevel", line.substring(line.indexOf("=") + 1));
 		} 
 	}
 	File fileA = null;
@@ -164,7 +165,7 @@ public static void readSettingsFile() {
 			setting.put("port", lineA.substring(lineA.indexOf("=") + 1));
 		} 
 	}
-	if(setting.size() != 15)
+	if(setting.size() != 16)
 	{
 		logA.doLog("Start" , "[Start]System Settings file is incorrect - Not enough details - Server Terminating", "Critical");
 		System.exit(0);
@@ -184,6 +185,7 @@ public static void readSettingsFile() {
     	InterfaceController.sampleRate = Integer.parseInt(setting.get("SampleRate"));
     	EmailController.setDetails(smtpH, smtpU, smtpP, ip, port);
     	LogHandler.limit = Integer.parseInt(setting.get("MaxLog"));
+    	LogHandler.setLevel(setting.get("LogLevel"));
     	try{
     	checkValidity();
     	}
