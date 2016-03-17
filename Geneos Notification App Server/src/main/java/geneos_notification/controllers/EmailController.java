@@ -3,6 +3,10 @@ package geneos_notification.controllers;
 import java.net.InetAddress;
 import javax.mail.*;
 import javax.mail.internet.*;
+
+import geneos_notification.loggers.LogObject;
+import geneos_notification.loggers.LtA;
+
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 import java.util.Properties;
@@ -13,15 +17,16 @@ public class EmailController {
     private static String SMTP_HOST_NAME; 
     private static String SMTP_AUTH_USER; 
     private static String SMTP_AUTH_PWD;
+    private static String IP;
+    private static String PORT;
+    static LtA logA = new LogObject();
 
     public static void sendMail(String username, int random, String android_id) throws Exception{
-       new EmailController().test(username, random, android_id);
+       new EmailController().send(username, random, android_id);
     }
 
-    public void test(String username, int random, String android_id) throws Exception{
-        InetAddress Inet = InetAddress.getLocalHost();
-        String IP = Inet.getHostAddress();
-
+    public void send(String username, int random, String android_id){
+    	try{
         Properties props = new Properties();
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.host", SMTP_HOST_NAME);
@@ -35,8 +40,8 @@ public class EmailController {
 
         MimeMessage message = new MimeMessage(mailSession);
         message.setSubject("Geneos Notifier Device Verification");
-        message.setContent("Hello " +username+ ", \n\n Please follow the attached link to verify you device \n\n http://" + IP + 
-        		":8080/verifydev?dev_id=" + android_id + "&verification="+random, "text/plain");
+        message.setContent("Hello " +username+ ", \n\n Please follow the attached link to verify you device \n\n https://" + IP + 
+        		":" + PORT + "/verifydev?dev_id=" + android_id + "&verification="+random, "text/plain");
         message.setFrom(new InternetAddress("helpdeskautomation@itrsgroup.com"));
         message.addRecipient(Message.RecipientType.TO,
              new InternetAddress(username));
@@ -45,6 +50,10 @@ public class EmailController {
         transport.sendMessage(message,
             message.getRecipients(Message.RecipientType.TO));
         transport.close();
+    	}
+    	catch(Exception e){
+    		logA.doLog("Email" , "[Email]Error in creation/transmission of Email to user : " + username + " \nError is : " + e.toString(), "Critical");
+    	}
     }
 
     private class SMTPAuthenticator extends javax.mail.Authenticator {
@@ -55,10 +64,12 @@ public class EmailController {
         }
     }
     
-    public static void setDetails(String H, String U, String P)
+    public static void setDetails(String H, String U, String P, String address, String prt)
     {
     	SMTP_HOST_NAME = H;
     	SMTP_AUTH_USER = U;
     	SMTP_AUTH_PWD = P;
+    	IP = address;
+    	PORT = prt;
     }
 }

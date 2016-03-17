@@ -12,10 +12,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+import org.apache.catalina.connector.Connector;
 import org.json.JSONException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
+import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.util.SocketUtils;
 
+import geneos_notification.loggers.LogHandler;
 import geneos_notification.loggers.LogObject;
 import geneos_notification.loggers.LtA;
 import geneos_notification.objects.CustomDataView;
@@ -35,6 +41,25 @@ import java.time.LocalDateTime;
 
 @SpringBootApplication
 public class StartController {
+	
+/*	@Bean
+	public Integer port() {
+		return SocketUtils.findAvailableTcpPort();
+	}
+	
+	@Bean
+	public EmbeddedServletContainerFactory servletContainer() {
+		TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory();
+		tomcat.addAdditionalTomcatConnectors(createStandardConnector());
+		return tomcat;
+	}
+	
+	private Connector createStandardConnector() {
+		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
+		connector.setPort(8080);
+		connector.setScheme("http");
+		return connector;
+	}*/
 	
 	//public static ArrayList<String> settings = new ArrayList<String>();
 	public static Map<String, String> setting = new HashMap<String,String>();
@@ -63,10 +88,10 @@ public class StartController {
     public static void start() throws InterruptedException, ExecutionException {
     	readSettingsFile();
     	configureSetting(setting);
-    	InterfaceController.updateDV();
+    	InterfaceController.updateDV(); // Redundant?
     	perpetualReload();
     	ThreadController.startDVMonitor();
-    	logA.doLog("Start" , "Server Boot variables passed verification", "Info");
+    	logA.doLog("Start" , "[Start]Server Boot variables passed verification", "Info");
         SpringApplication.run(StartController.class);
     }
 
@@ -82,11 +107,8 @@ public static void readSettingsFile() {
 	try {
 		scnr = new Scanner(file);
 	} catch (FileNotFoundException e) {
-		// TODO Auto-generated catch block
-		//LOGGER.log(Level.INFO, e.toString());
 		e.printStackTrace();
-		System.out.println("System Settings file not found - Server Terminating");
-		logA.doLog("Start" , "System Settings file not found - Server Terminating", "Critical");
+		logA.doLog("Start" , "[Start]System Settings file not found - Server Terminating", "Critical");
 		System.exit(0);
 	}
 	while(scnr.hasNextLine())
@@ -116,12 +138,35 @@ public static void readSettingsFile() {
 			setting.put("OAPass", line.substring(line.indexOf("=") + 1));
 		} else if (line.contains("Sampling Rate (ms)")) {
 			setting.put("SampleRate", line.substring(line.indexOf("=") + 1));
-		}
+		} else if (line.contains("Maximum Log Size")) {
+			setting.put("MaxLog", line.substring(line.indexOf("=") + 1));
+		} 
 	}
-	if(setting.size() != 12)
+	File fileA = null;
+	if(System.getProperty("os.name").contains("Windows"))
+	fileA = new File(".\\application.properties");
+	if(System.getProperty("os.name").contains("Linux"))
+	fileA = new File("./application.properties");
+	Scanner scnrA = null;
+	try {
+		scnrA = new Scanner(fileA);
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+		logA.doLog("Start" , "[Start]System Settings file not found - Server Terminating", "Critical");
+		System.exit(0);
+	}
+	while(scnrA.hasNextLine())
 	{
-		System.out.println("System Settings file is incorrect - Not enough details - Server Terminating : Size = "+setting.size());
-		logA.doLog("Start" , "System Settings file is incorrect - Not enough details - Server Terminating", "Critical");
+		String lineA = scnrA.nextLine();
+		if (lineA.contains("server.address")) {
+			setting.put("ip", lineA.substring(lineA.indexOf("=") + 1));
+		} else if (lineA.contains("server.port")) {
+			setting.put("port", lineA.substring(lineA.indexOf("=") + 1));
+		} 
+	}
+	if(setting.size() != 15)
+	{
+		logA.doLog("Start" , "[Start]System Settings file is incorrect - Not enough details - Server Terminating", "Critical");
 		System.exit(0);
 	}
 }
@@ -132,16 +177,19 @@ public static void readSettingsFile() {
     	String smtpH = setting.get("SMTPHost");
     	String smtpU = setting.get("SMTPUser");
     	String smtpP = setting.get("SMTPPass");
+    	String ip = setting.get("ip");
+    	String port = setting.get("port");
     	String OA = "geneos.cluster://" + setting.get("OAHost") + ":" + setting.get("OAPort") + "?username=" + setting.get("OAUser") + "&password=" + setting.get("OAPass");
     	InterfaceController.setKeyData(sqlServer, OA);
     	InterfaceController.sampleRate = Integer.parseInt(setting.get("SampleRate"));
-    	EmailController.setDetails(smtpH, smtpU, smtpP);
+    	EmailController.setDetails(smtpH, smtpU, smtpP, ip, port);
+    	LogHandler.limit = Integer.parseInt(setting.get("MaxLog"));
     	try{
     	checkValidity();
     	}
     	catch(Exception e)
     	{
-    		logA.doLog("Start" , "Boot configuration error was encountered, please confirm settings and re-try boot. System shutting down.", "Critical");
+    		logA.doLog("Start" , "[Start]Boot configuration error was encountered, please confirm settings and re-try boot. System shutting down.", "Critical");
     		System.exit(0);
     	}
     }
@@ -200,7 +248,7 @@ public static void readSettingsFile() {
     	catch(Exception e)
     	{
     		//System.out.println("There was an error with the SQL configuration or address, please confirm details. System shutting down.");
-    		logA.doLog("Start" , "There was an error with the SQL configuration or address, please confirm details.", "Critical");
+    		logA.doLog("Start" , "[Start]There was an error with the SQL configuration or address, please confirm details.", "Critical");
     		throw new RuntimeException(e);
     	}
     }

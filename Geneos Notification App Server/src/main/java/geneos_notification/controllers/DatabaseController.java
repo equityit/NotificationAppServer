@@ -36,7 +36,7 @@ public class DatabaseController {
     }
     catch(Exception e)
     {
-    	logA.doLog("SQL" , "[SQL]Connection information issue either driver or address : " + e.toString(), "Critical");
+    	logA.doLog("SQL" , "[SQL]Connection information issue, either driver or address : " + e.toString(), "Critical");
         //System.out.println(e);
         throw new RuntimeException();
     }
@@ -70,7 +70,7 @@ public static int checkUser(String username, String android_id){
 			}
 
 		} catch (Exception e) {
-			logA.doLog("SQL" , "[SQL]SQL query issue was encountered causing SQL failure : " + e.toString(), "Critical");
+			logA.doLog("SQL" , "[SQL]SQL query issue was encountered causing SQL failure, Usercheck failure: " + e.toString(), "Critical");
 			//System.out.println(e);
 			throw new RuntimeException(e);
 		} 
@@ -88,7 +88,7 @@ private static int validDeviceCheck(int result, int queryOut, String android_id)
 	res1 = stmt.executeQuery("select id from devices where userid = " + queryOut + " and active = 1 and android_id = '" + android_id + "'");
 	if (!res1.isBeforeFirst()) 
 	{
-		logA.doLog("SQL" , "[SQL]Device Check = User has yet to verify device : " + android_id, "Info");
+		logA.doLog("SQL" , "[SQL]Device Check, User has yet to verify device : " + android_id, "Info");
 		return 1;
 	} 
 	else 
@@ -134,7 +134,7 @@ public static int checkValidDomain(String username) throws SQLException {
 	}
 	catch(Exception e)
 	{
-		logA.doLog("SQL" , "[SQL]Undetermined error was encountered causing query failure! : " + e.toString(), "Critical");
+		logA.doLog("SQL" , "[SQL]Undetermined error was encountered causing query failure, DomainCheck : " + e.toString(), "Critical");
 		e.printStackTrace();
 		close();
 		throw new RuntimeException(e);
@@ -200,7 +200,7 @@ public static int checkValidDomain(String username) throws SQLException {
 			close();
 			return 1;
 		} catch (SQLException e) {
-			logA.doLog("SQL" , "[SQL]Query error while checkintg status of device : " + android_id + " \nError is : " + e.toString(), "Critical");
+			logA.doLog("SQL" , "[SQL]Query error while checking status of device : " + android_id + " \nError is : " + e.toString(), "Critical");
 			close();
 			throw new RuntimeException(e);
 		}
@@ -372,7 +372,7 @@ public static Map<String, HashMap<String, String>> getLiveDevices() {
 					resMap.get(user).put(devID, key);
 		}
 	} catch (SQLException e) {
-		logA.doLog("SQL", "[SQL]Query error while retrieving custom dataset \nError is : " + e.toString(), "Critical");
+		logA.doLog("SQL", "[SQL]Query error while retrieving Live Devices on reboot \nError is : " + e.toString(), "Critical");
 		close();// e.printStackTrace();
 		throw new RuntimeException(e);
 	} 
@@ -400,7 +400,7 @@ public static HashMap<String,ArrayList<String>> getLivePaths(String query) {
 				resMap.get(xpath).add(user);
 		}
 	} catch (SQLException e) {
-		logA.doLog("SQL", "[SQL]Query error while retrieving custom dataset \nError is : " + e.toString(), "Critical");
+		logA.doLog("SQL", "[SQL]Query error while retrieving Live Paths on reboot \nError is : " + e.toString(), "Critical");
 		 e.printStackTrace();
 		 close();
 		 throw new RuntimeException(e);

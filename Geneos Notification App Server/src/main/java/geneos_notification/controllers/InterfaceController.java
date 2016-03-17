@@ -161,7 +161,6 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
 	public static String verifyDevice(@RequestParam(value="dev_id", defaultValue="") String android_id, @RequestParam(value="verification", defaultValue="") String verification) 
 	{
 		DatabaseController.verifyStoredDevice(android_id, verification);
-		logA.doLog("Controller" , "Veritication email sent for devioce : " + android_id, "Info");
 		return "<!DOCTYPE html><html><font face=\"interface,sans-serif\"><head><title>Geneos Notification App Device Registrations success</title></head><body><center><img src=\"https://www.itrsgroup.com/sites/all/themes/bootstrap_sub_theme/logo.png\" alt=\"logo.com\" width=\"100\" height=\"40.5\"><h1>Device subscribed successfully to Geneos Notification Server.</h1><p>Your device has been successfully registered to your account for the Geneos Notification App.</p><p>If you experience any problems connecting your device please contact your database administrator to verify the devices associated with your account. You will now be able to log into your Notification server with this device without any further authentication.</p><small><p>© ITRS 2015, ALL RIGHTS RESERVED - Created by Connor Morley & Daniel Ratnaras </font></center></body></html>";
 	}
     
@@ -186,10 +185,10 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
     
-    @RequestMapping(value="/updatedv", method=RequestMethod.GET)
+    @RequestMapping(value="/updatedv", method=RequestMethod.GET) // Redundant?
     public static void updateDV() throws InterruptedException, ExecutionException
     {
-    	logA.doLog("Controller" , "[DVLIST UPDATE]Gateway setup alteration detected (Hooks), Dataview List is updating", "Info");
+    	logA.doLog("Controller" , "[Controller]Dataview List is updating!", "Info");
     	ExecutorService exec = Executors.newSingleThreadExecutor();
     	Callable<ArrayList<JSONObject>> callable = new Callable<ArrayList<JSONObject>>() {
     		@Override
@@ -201,7 +200,7 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
     	ArrayList<JSONObject> dv = future.get();
     	exec.shutdown();
     	currentDataviewEntityList = dv;
-    	logA.doLog("Controller" , "[DVLIST UPDATE]Dataview list was successfully updated.", "Info");
+    	logA.doLog("Controller" , "[Controller]Dataview list was successfully updated.", "Info");
     }
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -210,7 +209,7 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
     @RequestMapping(value="/getrow", method=RequestMethod.POST)					
 	public static String getRow(@RequestParam(value="xpath", defaultValue="") String xpath) throws InterruptedException, ExecutionException
 	{
-    	logA.doLog("Controller" , "Row request made for row at xpath : " + xpath, "Info");
+    	logA.doLog("Controller" , "[Controller]Row request made for row at xpath : " + xpath, "Info");
     	String ret = null;
     	ExecutorService exec = Executors.newSingleThreadExecutor();
     	Callable<String> callable = new Callable<String>() {
@@ -231,7 +230,7 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
 	@RequestMapping(value = "/sendcommand", method = RequestMethod.POST)
 	public static String sendCommand(@RequestParam(value = "xpath", defaultValue = "") String xpath, @RequestParam(value = "command", defaultValue = "") String command, @RequestParam(value = "username", defaultValue = "") String username)
 			throws InterruptedException, ExecutionException {
-		logA.doLog("Controller", "Command " + command + " has been issued for xpath : " + xpath, "Info");
+		logA.doLog("Controller", "[Controller]Command " + command + " has been issued for xpath : " + xpath, "Info");
 		String ret = null;
 		ExecutorService exec = Executors.newSingleThreadExecutor();
 		Callable<String> callable = new Callable<String>() {

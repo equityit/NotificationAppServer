@@ -44,6 +44,7 @@ public class DataViewMonitor {
 	private int firstRunSwitch = 1;
 	private int sampleRate;
 	public int counter;
+	private int failCounter = 0;
 	
 	public DataViewMonitor() throws InterruptedException
 	{
@@ -233,7 +234,14 @@ public class DataViewMonitor {
 				logA.doLog("Thread",
 						"[DVM-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue. Restarting sample",
 						"Critical");
+				failCounter++;
 				Thread.sleep(500);
+				if(failCounter == 20)
+				{
+				conn.close();
+				conn = OpenAccess.connect(InterfaceController.getOAkey());
+				failCounter = 0;
+				}
 				run();
 			}
 		}

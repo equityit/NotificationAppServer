@@ -38,6 +38,7 @@ public class ThreadInstance {
 	private int firstRunSwitch = 1;
 	private int sampleRate;
 	private int counter = 0;
+	private int failCounter = 0;
 	
 	public ThreadInstance(String xpath) throws InterruptedException
 	{
@@ -184,7 +185,14 @@ return registrationList;
 			}
 			else{
 				logA.doLog("Thread", "[T-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue. Stagger in progress.", "Critical");
+				failCounter++;
 				Thread.sleep(dvPath.length() * 10);
+				if(failCounter == 20)
+				{
+				conn.close();
+				conn = OpenAccess.connect(InterfaceController.getOAkey());
+				failCounter = 0;
+				}
 				run(dvPath);
 			}
 		}

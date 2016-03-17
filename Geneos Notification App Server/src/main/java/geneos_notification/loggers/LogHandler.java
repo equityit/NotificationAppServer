@@ -17,6 +17,7 @@ public class LogHandler {
 	 private static String LOG_FILE_NAME = "NotificationServer.log";
      static Hashtable<String, Logger> loggers = new Hashtable<String, Logger>();
      static FileHandler handler = null;
+     public static int limit;
      
      public static Logger getLogger(String loggerName) throws IOException {
          if ( loggers.get(loggerName) != null )
@@ -24,7 +25,7 @@ public class LogHandler {
 
          if ( handler == null ) {
              boolean append = true;
-             handler = new FileHandler(LOG_FILE_NAME, append);
+             handler = new FileHandler(LOG_FILE_NAME, limit, 3, append);
              handler.setFormatter(new Formatter() {
                  @Override
                  public String format(LogRecord record) {

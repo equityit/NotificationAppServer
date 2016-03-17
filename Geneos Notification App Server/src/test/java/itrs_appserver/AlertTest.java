@@ -20,7 +20,7 @@ public class AlertTest {
 	public static void setup() throws JSONException
 	{
 		InterfaceController.setKeyData("jdbc:mysql://localhost/test?user=root&password=iPods123", "geneos.cluster://192.168.220.54:2551?username=admin&password=admin");
-		EmailController.setDetails("smtp.hostedservice2.net", "HelpdeskAutomation@itrsgroup.com", "9AHNekkeJwUE7XD");
+		EmailController.setDetails("smtp.hostedservice2.net", "HelpdeskAutomation@itrsgroup.com", "9AHNekkeJwUE7XD", "192.168.10.128", "8443");
 	}
 
 /*	@Test
@@ -34,7 +34,7 @@ public class AlertTest {
 		assertTrue(test.createJSON("testa6").equals("{\"data\":{\"severity\":\"Critical\",\"xpath\":\"testa6\",\"message\":\"New Alert :Critical\",\"value\":\"Something\"},\"registration_ids\":[\"testa6\"]}"));
 	}*/
 	
-	@Test
+/*	@Test
 	public void updateMessageTest() throws Exception {
 		Alert testa;
 		DatabaseController.execCustom("insert into users(username, domainID, created_date) values ('testb6@Default', 1, now());");
@@ -45,9 +45,9 @@ public class AlertTest {
 		testa.updateMessage("pass");
 		System.out.println(testa.getMessage());
 		assertTrue(testa.getMessage().equals("Fail to pass Alert"));
-	}
+	}*/
 	
-	@Test
+/*	@Test
 	public void firstMessageTest() throws Exception {
 		Alert testa;
 		DatabaseController.execCustom("insert into users(username, domainID, created_date) values ('testc6@Default', 1, now());");
@@ -56,7 +56,7 @@ public class AlertTest {
 		InterfaceController.setCustomDV("testc6", "testc6@Default");
 		testa = new Alert("testc6", "Something", "Fail", "testc6");
 		assertTrue(testa.getMessage().equals("New Alert :Fail"));
-	}
+	}*/
 	
 	
 	@AfterClass

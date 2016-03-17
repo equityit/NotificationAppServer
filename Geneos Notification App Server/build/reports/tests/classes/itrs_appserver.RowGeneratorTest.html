@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.570s</div>
+<div class="counter">0.596s</div>
 <p>duration</p>
 </div>
 </td>
@@ -66,9 +66,6 @@
 <li>
 <a href="#tab1">Standard output</a>
 </li>
-<li>
-<a href="#tab2">Standard error</a>
-</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Tests</h2>
@@ -82,17 +79,17 @@
 </thead>
 <tr>
 <td class="success">getDataSetItemsFailTest</td>
-<td>0.019s</td>
+<td>0.022s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getDataSetItemsFailureTest</td>
-<td>0.031s</td>
+<td>0.042s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getDataSetItemsTest</td>
-<td>0.520s</td>
+<td>0.532s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -100,203 +97,29 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>15:27:17.269 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:27:17.270 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-24] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testb6/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
-15:27:17.271 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-23] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc6/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
-15:27:17.271 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  Remoting - Starting remoting
-15:27:17.272 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-24] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc5/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
-15:27:17.281 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:4873]
-15:27:17.282 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-15:27:17.299 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:27:17.302 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
-15:27:17.312 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:4888]
-15:27:17.314 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-15:27:17.319 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-15:27:17.325 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-15:27:17.326 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:27:17.329 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
-15:27:17.342 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.207:4903]
+<pre>15:04:38.526 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:04:38.529 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  Remoting - Starting remoting
+15:04:38.538 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:12970]
+15:04:38.539 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:04:38.562 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:04:38.566 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  Remoting - Starting remoting
+15:04:38.580 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:12985]
+15:04:38.580 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:04:38.582 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:04:38.605 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:04:38.608 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
+15:04:38.618 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:13000]
 /geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;CPU_Entity&quot;)]/sampler[(@name=&quot;CPU_sampler&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;CPU_sampler&quot;)]/rows/row[(@name=&quot;cpu_0&quot;)]/cell[wild(@column,&quot;*&quot;)]
-15:27:17.345 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-15:27:17.357 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-15:27:17.386 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-21] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-15:27:17.386 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:27:17.387 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:27:17.388 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:27:17.390 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-23] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc6/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
-15:27:17.391 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testb6/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
-15:27:17.394 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-22] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc5/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
-15:27:17.404 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-15:27:17.414 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-15:27:17.482 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-15:27:17.511 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:27:17.572 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc5/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
-15:27:17.581 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-15:27:17.679 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-15:27:17.679 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;CPU_Entity&quot;)]/sampler[(@name=&quot;CPU_sampler&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;CPU_sampler&quot;)]/rows/row[(@name=&quot;cpu_0&quot;)]/cell[wild(@column,&quot;*&quot;)],Set(),LIST,),None)
-15:27:17.682 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:27:17.683 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc5/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
-15:27:17.770 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-23] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:27:17.771 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testc6/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
-15:27:17.773 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:27:17.774 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testb6/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
-15:27:17.813 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+15:04:38.620 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+15:04:38.621 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+15:04:38.629 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:04:38.650 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+15:04:38.656 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+15:04:38.661 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+15:04:38.746 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+15:04:38.846 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+15:04:38.942 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+15:04:38.943 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(/geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;CPU_Entity&quot;)]/sampler[(@name=&quot;CPU_sampler&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;CPU_sampler&quot;)]/rows/row[(@name=&quot;cpu_0&quot;)]/cell[wild(@column,&quot;*&quot;)],Set(),LIST,),None)
 {
 	severity : OK
 	name : cpu_0.type
@@ -319,40 +142,39 @@ java.lang.RuntimeException: null
 	value : 2294.80 Mhz
 }
 {
-	severity : WARNING
-	path : /geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;CPU_Entity&quot;)]/sampler[(@name=&quot;CPU_sampler&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;CPU_sampler&quot;)]/rows/row[(@name=&quot;cpu_0&quot;)]/cell[(@column=&quot;percentUtilisation&quot;)]
-	databaseLogging : Success
+	severity : OK
 	name : cpu_0.percentUtilisation
+	path : /geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;CPU_Entity&quot;)]/sampler[(@name=&quot;CPU_sampler&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;CPU_sampler&quot;)]/rows/row[(@name=&quot;cpu_0&quot;)]/cell[(@column=&quot;percentUtilisation&quot;)]
 	type : CELL
-	value : 3.98 %
+	value : 0.24 %
 }
 {
 	severity : OK
 	name : cpu_0.percentUserTime
 	path : /geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;CPU_Entity&quot;)]/sampler[(@name=&quot;CPU_sampler&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;CPU_sampler&quot;)]/rows/row[(@name=&quot;cpu_0&quot;)]/cell[(@column=&quot;percentUserTime&quot;)]
 	type : CELL
-	value : 2.27 %
+	value : 0.13 %
 }
 {
 	severity : OK
 	name : cpu_0.percentKernelTime
 	path : /geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;CPU_Entity&quot;)]/sampler[(@name=&quot;CPU_sampler&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;CPU_sampler&quot;)]/rows/row[(@name=&quot;cpu_0&quot;)]/cell[(@column=&quot;percentKernelTime&quot;)]
 	type : CELL
-	value : 0.12 %
+	value : 0.10 %
 }
 {
 	severity : OK
 	name : cpu_0.percentWaitTime
 	path : /geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;CPU_Entity&quot;)]/sampler[(@name=&quot;CPU_sampler&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;CPU_sampler&quot;)]/rows/row[(@name=&quot;cpu_0&quot;)]/cell[(@column=&quot;percentWaitTime&quot;)]
 	type : CELL
-	value : 0.02 %
+	value : 0.00 %
 }
 {
 	severity : CRITICAL
 	name : cpu_0.percentIdle
 	path : /geneos/gateway[(@name=&quot;GW_TEST_50144&quot;)]/directory/probe[(@name=&quot;SYSMON&quot;)]/managedEntity[(@name=&quot;CPU_Entity&quot;)]/sampler[(@name=&quot;CPU_sampler&quot;)][(@type=&quot;&quot;)]/dataview[(@name=&quot;CPU_sampler&quot;)]/rows/row[(@name=&quot;cpu_0&quot;)]/cell[(@column=&quot;percentIdle&quot;)]
 	type : CELL
-	value : 96.02 %
+	value : 98.90 %
 }
 {
 	severity : OK
@@ -368,85 +190,9 @@ java.lang.RuntimeException: null
 	type : CELL
 	value : 0.00 %
 }
-15:27:17.819 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:27:17.820 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Shutting down remote daemon.
-15:27:17.821 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remote daemon shut down; proceeding with flushing remote transports.
-15:27:17.830 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:27:17.832 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-22] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remoting shut down.
-</pre>
-</span>
-</div>
-<div id="tab2" class="tab">
-<h2>Standard error</h2>
-<span class="code">
-<pre>Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
-Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
-Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
-Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
-Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue. Stagger in progress.
-Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
-Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
-Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
-Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc5
-Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue. Stagger in progress.
-Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb6
-Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue. Stagger in progress.
-Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testc6
-Mar 01, 2016 3:27:17 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]OpenAccess has produced no output and has not been resolved. Critical Issue. Stagger in progress.
+15:04:39.100 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Shutting down remote daemon.
+15:04:39.101 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remote daemon shut down; proceeding with flushing remote transports.
+15:04:39.108 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remoting shut down.
 </pre>
 </span>
 </div>
@@ -458,7 +204,7 @@ SEVERE: [T-ERROR]OpenAccess has produced no output and has not been resolved. Cr
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 2.3</a> at 01-Mar-2016 15:27:22</p>
+<a href="http://www.gradle.org">Gradle 2.3</a> at 15-Mar-2016 15:04:42</p>
 </div>
 </div>
 </body>

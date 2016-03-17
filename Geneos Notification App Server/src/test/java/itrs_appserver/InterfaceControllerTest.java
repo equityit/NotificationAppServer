@@ -20,7 +20,7 @@ public class InterfaceControllerTest {
 	public static void cSetup() throws InterruptedException, ExecutionException
 	{
 		InterfaceController.setKeyData("jdbc:mysql://localhost/test?user=root&password=iPods123", "geneos.cluster://192.168.220.54:2551?username=admin&password=admin");
-		EmailController.setDetails("smtp.hostedservice2.net", "HelpdeskAutomation@itrsgroup.com", "9AHNekkeJwUE7XD");
+		EmailController.setDetails("smtp.hostedservice2.net", "HelpdeskAutomation@itrsgroup.com", "9AHNekkeJwUE7XD","192.168.10.128", "8443");
 	}
 
 	@Test
@@ -36,15 +36,15 @@ public class InterfaceControllerTest {
 		assertTrue(InterfaceController.logout("testb5@Default", "testb5").equals("This device has been successfully logged out"));
 	}
 	
-	@Test
+/*	@Test
 	public void setCustomDVTest() throws Exception {
 		DatabaseController.execCustom("insert into users(username, domainID, created_date) values ('testc5@Default', 1, now());");
 		DatabaseController.execCustom("insert into devices(userid, android_id, registration_key, verification_code, active, loggedin) values((select userid from users where username like 'testc5@Default'),'testc5','testc5', 12345, 1, 1)");
 		InterfaceController.login("testc5@Default", "testc5", "testc5");
 		assertTrue(InterfaceController.setCustomDV("testc5", "testc5@Default").equals("Add Successful"));
-	}
+	}*/
 	
-	@Test
+/*	@Test
 	public void removeDVTest() throws Exception {
 		DatabaseController.execCustom("insert into users(username, domainID, created_date) values ('testd5@Default', 1, now());");
 		DatabaseController.execCustom("insert into devices(userid, android_id, registration_key, verification_code, active, loggedin) values((select userid from users where username like 'testd5@Default'),'testd5','testd5', 12345, 1, 1)");
@@ -52,7 +52,7 @@ public class InterfaceControllerTest {
 		InterfaceController.setCustomDV("testd5", "testd5@Default");
 		InterfaceController.removeDataview("testd5", "testd5@Default");
 		assertTrue(!UserController.userObjects.get("testd5@Default").pathList.contains("testd5"));
-	}
+	}*/
 	
 	@Test
 	public void viewSystemKeysTest()

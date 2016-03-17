@@ -60,23 +60,17 @@ public class ThreadController {
 		if (monitoringThreadList.containsKey(xpath)) {
 			ThreadItem current = monitoringThreadList.get(xpath);
 			current.addUserID(userName);
-
 			current.getFuture().cancel(true);
 			Callable<Long> worker = new ThreadController.MyAnalysis(xpath);
 			Future<Long> thread = executor.submit(worker);
 			current.setFuture(thread);
-
 		}
-
 		else {
-			System.out.println("This is the thread xpath : " + xpath);
-
 			Callable<Long> worker = new ThreadController.MyAnalysis(xpath);
 			Future<Long> thread = executor.submit(worker);
 			monitoringThreadList.put(xpath, new ThreadItem(xpath, thread, userName));
 
 		}
-		// TransmissionHandler.additionMessage(userName, xpath);
 	}
 
 	public static void editDV(String rxpath, String axpath, String userName)
@@ -93,14 +87,14 @@ public class ThreadController {
 		current.getFuture().cancel(true);
 		int number = current.removeUser(username);
 		if (number == 1) {
-			UserController.logA.doLog("Controller" , "Thread terminated : " + xpath  , "Info");
+			logA.doLog("ThreadController" , "[T-Controller]Thread terminated : " + xpath  , "Info");
 			current = null;
 			monitoringThreadList.remove(xpath);
 		} else if (number == 0) {
 			Callable<Long> worker = new MyAnalysis(xpath);
 			Future<Long> thread = executor.submit(worker);
 			current.setFuture(thread);
-			UserController.logA.doLog("Controller" , "Thread restarted : " + xpath  , "Info");
+			logA.doLog("ThreadController" , "[T-Controller]Thread restarted : " + xpath  , "Info");
 		}
 	}
 
@@ -133,7 +127,6 @@ public class ThreadController {
 
 		@Override
 		public Long call() throws ExecutionException, InterruptedException {
-			logA.doLog("Thread", "[T-INFO]Initialization of thread for xpath : ", "Info");
 			Long x = (long) 1;
 			Integer dv;
 			do{
@@ -190,7 +183,7 @@ public class ThreadController {
 
 		@Override
 		public Long call() throws InterruptedException, ExecutionException {
-			logA.doLog("Thread", "[T-INFO]Initialization of thread for xpath : " + xpath, "Info");
+			logA.doLog("ThreadController", "[T-Controller]Initialization of thread for xpath : " + xpath, "Info");
 			Long x = (long) 1;
 			Integer dv;
 			do{
