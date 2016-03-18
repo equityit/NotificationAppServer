@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="itrs_appserver.startControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-03-15T15:04:39" hostname="ITRSLP043" time="0.056">
+<testsuite name="itrs_appserver.startControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-03-17T16:45:15" hostname="ITRSLP043" time="0.17">
   <properties/>
-  <testcase name="configureSettingsTest" classname="itrs_appserver.startControllerTest" time="0.011"/>
-  <testcase name="checkValidityFailTest" classname="itrs_appserver.startControllerTest" time="0.002"/>
-  <testcase name="perpetualReloadTest" classname="itrs_appserver.startControllerTest" time="0.04"/>
-  <testcase name="readSettingsFileTest" classname="itrs_appserver.startControllerTest" time="0.001"/>
-  <system-out><![CDATA[15:04:39.191 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:04:39.194 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
+  <testcase name="configureSettingsTest" classname="itrs_appserver.startControllerTest" time="0.037"/>
+  <testcase name="checkValidityFailTest" classname="itrs_appserver.startControllerTest" time="0.001"/>
+  <testcase name="perpetualReloadTest" classname="itrs_appserver.startControllerTest" time="0.13"/>
+  <testcase name="readSettingsFileTest" classname="itrs_appserver.startControllerTest" time="0.002"/>
+  <system-out><![CDATA[16:45:15.580 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+16:45:15.583 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
+16:45:15.594 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:10626]
+[testa2]
+16:45:15.596 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
 ]]></system-out>
-  <system-err><![CDATA[Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [SQL]Connection information issue either driver or address : java.sql.SQLException: No suitable driver found for nothing
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-SEVERE: There was an error with the SQL configuration or address, please confirm details.
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testa2
+  <system-err><![CDATA[Mar 17, 2016 4:45:15 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]Connection information issue, either driver or address : java.sql.SQLException: No suitable driver found for nothing
+Mar 17, 2016 4:45:15 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [Start]There was an error with the SQL configuration or address, please confirm details.
 ]]></system-err>
 </testsuite>

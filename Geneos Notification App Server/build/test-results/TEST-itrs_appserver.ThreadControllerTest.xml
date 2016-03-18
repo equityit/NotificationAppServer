@@ -1,203 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="itrs_appserver.ThreadControllerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-03-15T15:04:39" hostname="ITRSLP043" time="0.54">
+<testsuite name="itrs_appserver.ThreadControllerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-03-17T16:45:15" hostname="ITRSLP043" time="0.62">
   <properties/>
-  <testcase name="callWithNewThreadTest" classname="itrs_appserver.ThreadControllerTest" time="0.048"/>
-  <testcase name="callWithAddTOExistingThreadTest" classname="itrs_appserver.ThreadControllerTest" time="0.117"/>
-  <testcase name="removeUserFromNotifylistSingleUserTest" classname="itrs_appserver.ThreadControllerTest" time="0.064"/>
-  <testcase name="restartNotfyListTest" classname="itrs_appserver.ThreadControllerTest" time="0.081"/>
-  <testcase name="editDVTest" classname="itrs_appserver.ThreadControllerTest" time="0.103"/>
-  <testcase name="removeUserFromNotifylistTwoUsersTest" classname="itrs_appserver.ThreadControllerTest" time="0.123"/>
-  <system-out><![CDATA[15:04:39.206 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:13030]
-[testa2]
-15:04:39.209 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-15:04:39.240 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-This is the thread xpath : testa3
-15:04:39.246 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-15:04:39.264 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:04:39.277 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
-15:04:39.293 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:13057]
+  <testcase name="callWithNewThreadTest" classname="itrs_appserver.ThreadControllerTest" time="0.039"/>
+  <testcase name="callWithAddTOExistingThreadTest" classname="itrs_appserver.ThreadControllerTest" time="0.108"/>
+  <testcase name="removeUserFromNotifylistSingleUserTest" classname="itrs_appserver.ThreadControllerTest" time="0.078"/>
+  <testcase name="restartNotfyListTest" classname="itrs_appserver.ThreadControllerTest" time="0.106"/>
+  <testcase name="editDVTest" classname="itrs_appserver.ThreadControllerTest" time="0.129"/>
+  <testcase name="removeUserFromNotifylistTwoUsersTest" classname="itrs_appserver.ThreadControllerTest" time="0.158"/>
+  <system-out><![CDATA[16:45:15.639 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+16:45:15.643 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+16:45:15.687 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+16:45:15.691 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  Remoting - Starting remoting
+16:45:15.702 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:10650]
 [testa3]
-15:04:39.295 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-This is the thread xpath : testb3
-15:04:39.319 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-15:04:39.326 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-15:04:39.327 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:04:39.331 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
-15:04:39.348 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:13078]
+16:45:15.704 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+16:45:15.739 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+16:45:15.744 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+16:45:15.745 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  Remoting - Starting remoting
+16:45:15.756 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+16:45:15.758 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:10672]
 [testb3]
-15:04:39.350 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-15:04:39.381 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:04:39.384 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.postStop(ClientActor.scala:78) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundPostStop(Actor.scala:475) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundPostStop(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.terminate(ActorCell.scala:369) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:279) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:220) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:04:39.386 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Shutting down remote daemon.
-15:04:39.387 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
-15:04:39.386 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remote daemon shut down; proceeding with flushing remote transports.
-15:04:39.396 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remoting shut down.
-15:04:39.400 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-15:04:39.401 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testa2/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
-15:04:39.414 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:13100]
+16:45:15.760 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+16:45:15.802 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+16:45:15.812 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+16:45:15.838 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+16:45:15.868 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
+16:45:15.875 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+16:45:15.875 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testa2/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+16:45:15.883 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-13] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:10697]
+16:45:15.886 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
 [testb3, testc3]
-15:04:39.417 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-This is the thread xpath : testf3
-15:04:39.438 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-15:04:39.444 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-This is the thread xpath : testi3
-15:04:39.485 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:04:39.489 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
-15:04:39.503 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:13126]
-[testi3]
-15:04:39.507 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-15:04:39.517 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.postStop(ClientActor.scala:78) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundPostStop(Actor.scala:475) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundPostStop(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.terminate(ActorCell.scala:369) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:279) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:220) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:04:39.518 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-15:04:39.521 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testa3/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
-15:04:39.523 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Shutting down remote daemon.
-15:04:39.530 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remote daemon shut down; proceeding with flushing remote transports.
-15:04:39.536 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:04:39.539 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  a.r.RemoteActorRefProvider$RemotingTerminator - Remoting shut down.
-15:04:39.540 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
-15:04:39.556 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:04:39.557 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-10] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:04:39.578 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:13147]
+16:45:15.911 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-11] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+16:45:15.921 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+16:45:15.945 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+16:45:15.952 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
+16:45:15.970 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-11] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:10721]
 [testi3, testj3]
-15:04:39.581 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-12] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-This is the thread xpath : testd3
-geneos_notification.objects.CustomDataView@304832a4
-15:04:39.605 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-12] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-15:04:39.612 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-This is the thread xpath : teste3
-15:04:39.630 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:04:39.635 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
-15:04:39.657 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-14] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:13171]
+16:45:15.972 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-10] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+16:45:15.995 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+16:45:15.999 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
+16:45:16.021 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-10] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:10740]
+[testi3, testj3]
+16:45:16.025 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+16:45:16.028 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+16:45:16.039 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-19] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+16:45:16.045 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+16:45:16.045 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-17] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testa3/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+16:45:16.057 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:111) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+16:45:16.080 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+geneos_notification.objects.CustomDataView@6a62e76b
+16:45:16.097 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+16:45:16.166 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+16:45:16.169 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+java.lang.RuntimeException: null
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:111) ~[main/:na]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
+	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
+	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+16:45:16.170 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
+16:45:16.187 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+16:45:16.187 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testb3/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
+16:45:16.189 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:10765]
 [testd3]
-15:04:39.659 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-11] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-This is the thread xpath : testg3
-15:04:39.672 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-15:04:39.672 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testb3/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
-15:04:39.687 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-15:04:39.693 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-15:04:39.697 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:04:39.708 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
-java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
-	at scala.util.Try$.apply(Try.scala:191) ~[geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.fireError(ClientActor.scala:143) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor$$anonfun$receive$1.applyOrElse(ClientActor.scala:84) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) [geneos-openaccess-client.jar:2.0.1]
-	at com.itrsgroup.actor.ClientActor.aroundReceive(ClientActor.scala:38) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) [geneos-openaccess-client.jar:2.0.1]
-	at akka.actor.ActorCell.invoke(ActorCell.scala:487) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:254) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.run(Mailbox.scala:221) [geneos-openaccess-client.jar:2.0.1]
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:231) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.pollAndExecAll(ForkJoinPool.java:1253) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:04:39.717 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Starting remoting
-15:04:39.728 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:13193]
-[testg3]
-15:04:39.731 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-15:04:39.755 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:04:39.760 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  Remoting - Starting remoting
-15:04:39.768 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-10] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-15:04:39.774 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-10] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-15:04:39.776 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:13212]
+16:45:16.194 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-6] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+16:45:16.219 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+16:45:16.223 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
+16:45:16.235 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+16:45:16.273 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-21] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+16:45:16.277 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+16:45:16.282 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  Remoting - Starting remoting
+16:45:16.298 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-13] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:10805]
 [testh3]
-15:04:39.779 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-15:04:39.805 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-15:04:39.806 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-7] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testi3/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
-15:04:39.809 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
-15:04:39.815 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
-15:04:39.859 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-20] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+16:45:16.299 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+16:45:16.314 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
 java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:111) ~[main/:na]
 	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
 	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
 	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
@@ -216,248 +128,12 @@ java.lang.RuntimeException: null
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
+16:45:16.337 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+16:45:16.345 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-23] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+16:45:16.374 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+16:45:16.375 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testb3/rows/row[wild(@name,"*")]/cell,Set(),LIST,),None)
 ]]></system-out>
-  <system-err><![CDATA[Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testa3@Default
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testa3@Default & testa3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testa3 logged in successfully
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testa3 key has been updated
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testa3@Default with device testa3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testa3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testb3@Default
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testb3@Default & testb3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testb3 logged in successfully
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testb3 key has been updated
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testb3@Default with device testb3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testb3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testc3@Default
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testc3@Default & testc3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testc3 logged in successfully
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testc3 key has been updated
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testc3@Default with device testc3
-java.lang.InterruptedException
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(AbstractQueuedSynchronizer.java:1039)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1328)
-	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:277)
-	at geneos_notification.thread_operations.ThreadInstance.run(ThreadInstance.java:115)
-	at geneos_notification.thread_operations.ThreadInstance.runScan(ThreadInstance.java:69)
-	at geneos_notification.thread_operations.ThreadInstance.startSample(ThreadInstance.java:54)
-	at geneos_notification.controllers.ThreadController$MyAnalysis.callThread(ThreadController.java:229)
-	at geneos_notification.controllers.ThreadController$MyAnalysis.access$100(ThreadController.java:180)
-	at geneos_notification.controllers.ThreadController$MyAnalysis$1.call(ThreadController.java:203)
-	at geneos_notification.controllers.ThreadController$MyAnalysis$1.call(ThreadController.java:200)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Thread cycle execution failed due to interrupt
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-SEVERE: java.lang.InterruptedException
-java.lang.InterruptedException
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(AbstractQueuedSynchronizer.java:1039)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1328)
-	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:277)
-	at geneos_notification.thread_operations.ThreadInstance.run(ThreadInstance.java:115)
-	at geneos_notification.thread_operations.ThreadInstance.runScan(ThreadInstance.java:69)
-	at geneos_notification.thread_operations.ThreadInstance.startSample(ThreadInstance.java:54)
-	at geneos_notification.controllers.ThreadController$MyAnalysis.callThread(ThreadController.java:229)
-	at geneos_notification.controllers.ThreadController$MyAnalysis.access$100(ThreadController.java:180)
-	at geneos_notification.controllers.ThreadController$MyAnalysis$1.call(ThreadController.java:203)
-	at geneos_notification.controllers.ThreadController$MyAnalysis$1.call(ThreadController.java:200)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testb3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected. Staggering in progress.
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Thread internal termination confirmation
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Query has been stopped unexpectedly.
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testf3@Default
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testf3@Default & testf3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testf3 logged in successfully
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testf3 key has been updated
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testf3@Default with device testf3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Thread terminated : testf3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testi3@Default
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testi3@Default & testi3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testi3 logged in successfully
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testi3 key has been updated
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testi3@Default with device testi3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testi3@Default
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testi3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testi3@Default & testj3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testj3 logged in successfully
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testj3 key has been updated
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: testi3@Default logged in successfully on device testj3
-java.lang.InterruptedException
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(AbstractQueuedSynchronizer.java:1039)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1328)
-	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:277)
-	at geneos_notification.thread_operations.ThreadInstance.run(ThreadInstance.java:115)
-	at geneos_notification.thread_operations.ThreadInstance.runScan(ThreadInstance.java:69)
-	at geneos_notification.thread_operations.ThreadInstance.startSample(ThreadInstance.java:54)
-	at geneos_notification.controllers.ThreadController$MyAnalysis.callThread(ThreadController.java:229)
-	at geneos_notification.controllers.ThreadController$MyAnalysis.access$100(ThreadController.java:180)
-	at geneos_notification.controllers.ThreadController$MyAnalysis$1.call(ThreadController.java:203)
-	at geneos_notification.controllers.ThreadController$MyAnalysis$1.call(ThreadController.java:200)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Thread cycle execution failed due to interrupt
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testi3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-SEVERE: java.lang.InterruptedException
-java.lang.InterruptedException
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(AbstractQueuedSynchronizer.java:1039)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1328)
-	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:277)
-	at geneos_notification.thread_operations.ThreadInstance.run(ThreadInstance.java:115)
-	at geneos_notification.thread_operations.ThreadInstance.runScan(ThreadInstance.java:69)
-	at geneos_notification.thread_operations.ThreadInstance.startSample(ThreadInstance.java:54)
-	at geneos_notification.controllers.ThreadController$MyAnalysis.callThread(ThreadController.java:229)
-	at geneos_notification.controllers.ThreadController$MyAnalysis.access$100(ThreadController.java:180)
-	at geneos_notification.controllers.ThreadController$MyAnalysis$1.call(ThreadController.java:203)
-	at geneos_notification.controllers.ThreadController$MyAnalysis$1.call(ThreadController.java:200)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected. Staggering in progress.
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Thread internal termination confirmation
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Query has been stopped unexpectedly.
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testd3@Default
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testd3@Default & testd3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testd3 logged in successfully
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa2
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected. Staggering in progress.
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testd3 key has been updated
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testd3@Default with device testd3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Thread terminated : testd3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : teste3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testg3@Default
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testg3@Default & testg3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testg3 logged in successfully
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testg3 key has been updated
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testg3@Default with device testg3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testg3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testh3@Default
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testh3@Default & testh3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
+  <system-err><![CDATA[Mar 17, 2016 4:45:16 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testb3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected. Staggering in progress.
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testh3 logged in successfully
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device testh3 key has been updated
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testh3@Default with device testh3
-java.lang.InterruptedException
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(AbstractQueuedSynchronizer.java:1039)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1328)
-	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:277)
-	at geneos_notification.thread_operations.ThreadInstance.run(ThreadInstance.java:115)
-	at geneos_notification.thread_operations.ThreadInstance.runScan(ThreadInstance.java:69)
-	at geneos_notification.thread_operations.ThreadInstance.startSample(ThreadInstance.java:54)
-	at geneos_notification.controllers.ThreadController$MyAnalysis.callThread(ThreadController.java:229)
-	at geneos_notification.controllers.ThreadController$MyAnalysis.access$100(ThreadController.java:180)
-	at geneos_notification.controllers.ThreadController$MyAnalysis$1.call(ThreadController.java:203)
-	at geneos_notification.controllers.ThreadController$MyAnalysis$1.call(ThreadController.java:200)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: Thread restarted : testg3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Thread cycle execution failed due to interrupt
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-SEVERE: java.lang.InterruptedException
-java.lang.InterruptedException
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(AbstractQueuedSynchronizer.java:1039)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1328)
-	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:277)
-	at geneos_notification.thread_operations.ThreadInstance.run(ThreadInstance.java:115)
-	at geneos_notification.thread_operations.ThreadInstance.runScan(ThreadInstance.java:69)
-	at geneos_notification.thread_operations.ThreadInstance.startSample(ThreadInstance.java:54)
-	at geneos_notification.controllers.ThreadController$MyAnalysis.callThread(ThreadController.java:229)
-	at geneos_notification.controllers.ThreadController$MyAnalysis.access$100(ThreadController.java:180)
-	at geneos_notification.controllers.ThreadController$MyAnalysis$1.call(ThreadController.java:203)
-	at geneos_notification.controllers.ThreadController$MyAnalysis$1.call(ThreadController.java:200)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected. Staggering in progress.
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : testg3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testi3
-Mar 15, 2016 3:04:39 PM geneos_notification.loggers.LogObject doLog
-WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected. Staggering in progress.
 ]]></system-err>
 </testsuite>

@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.833s</div>
+<div class="counter">1.002s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,32 +82,32 @@
 </thead>
 <tr>
 <td class="success">checkLoggedInStatusTest</td>
-<td>0.001s</td>
+<td>0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">loginAuthotrisedDomainFirstTimeTest</td>
-<td>0.236s</td>
+<td>0.243s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">loginAuthotrisedDomainSecondTimeWithSecondDeviceTest</td>
-<td>0.294s</td>
+<td>0.453s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">loginAuthotrisedDomainSecondTimeWithoutVeriticationTest</td>
-<td>0.090s</td>
+<td>0.074s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">loginAuthotrisedUserWithFirstDeviceTest</td>
-<td>0.046s</td>
+<td>0.048s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">loginAuthotrisedUserWithSecondDeviceTest</td>
-<td>0.060s</td>
+<td>0.058s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -117,12 +117,12 @@
 </tr>
 <tr>
 <td class="success">loginUnauthorisedDomainTest</td>
-<td>0.011s</td>
+<td>0.016s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">logoutTest</td>
-<td>0.047s</td>
+<td>0.060s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -132,7 +132,7 @@
 </tr>
 <tr>
 <td class="success">setCustomDVTestSucceedTest</td>
-<td>0.039s</td>
+<td>0.041s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -140,9 +140,13 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>15:04:41.216 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+<pre>16:45:18.295 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+16:45:18.296 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-16] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testa10/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
+16:45:18.395 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-9] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+16:45:18.395 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-9] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testa9/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
+16:45:18.435 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
 java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:111) ~[main/:na]
 	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
 	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
 	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
@@ -161,11 +165,9 @@ java.lang.RuntimeException: null
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-15:04:41.244 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
-15:04:41.245 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(testa9/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
-15:04:41.375 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-18] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
+16:45:18.438 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-10] ERROR c.itrsgroup.actor.DataSetClientActor - Exception calling error callback
 java.lang.RuntimeException: null
-	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:110) ~[main/:na]
+	at geneos_notification.thread_operations.ThreadInstance$2.error(ThreadInstance.java:111) ~[main/:na]
 	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply$mcV$sp(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
 	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
 	at com.itrsgroup.actor.ClientActor$$anonfun$1.apply(ClientActor.scala:143) ~[geneos-openaccess-client.jar:2.0.1]
@@ -184,53 +186,55 @@ java.lang.RuntimeException: null
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1346) [geneos-openaccess-client.jar:2.0.1]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [geneos-openaccess-client.jar:2.0.1]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [geneos-openaccess-client.jar:2.0.1]
-This is the thread xpath : test
-15:04:41.792 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-15:04:41.796 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
-15:04:41.810 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-2] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:13345]
+16:45:19.068 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+16:45:19.071 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Starting remoting
+16:45:19.082 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-4] INFO  Remoting - Remoting started; listening on addresses :[akka.tcp://OpenAccessApiClient-UnknownDevBuild@192.168.10.128:10921]
 [teste]
-15:04:41.812 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
-15:04:42.042 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-15] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+16:45:19.083 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-9] INFO  c.itrsgroup.actor.MessageDispatcher - Attempting to connect to remote service at [192.168.220.54:2551] 1 time(s)
+16:45:19.108 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-5] INFO  akka.contrib.pattern.ClusterClient - Connected to [akka.tcp://ClusterSystem@192.168.220.54:2551/user/receptionist]
+16:45:19.114 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-9] INFO  c.itrsgroup.actor.MessageDispatcher - Authenticating with remote service [/user/frontEnd] at [192.168.220.54:2551]
+16:45:19.240 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Successfully connected to remote service [akka.tcp://ClusterSystem@192.168.220.54:2551/user/frontEnd]
+16:45:19.240 [OpenAccessApiClient-UnknownDevBuild-akka.actor.default-dispatcher-8] INFO  c.itrsgroup.actor.MessageDispatcher - Forwarding Subscription op to cluster frontend: Subscribe(ModelSub(test/rows/row[wild(@name,&quot;*&quot;)]/cell,Set(),LIST,),None)
 </pre>
 </span>
 </div>
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testb@Default
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+<pre>Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Login attempt with username : testb@Default
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testb@Default &amp; testb
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa10
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
 WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected. Staggering in progress.
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: New user testb@Default has attempted to login, verification email sent and account is in probation.
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testb@Default
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Checking user : testb@Default &amp; testz
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device Check = User has yet to verify device : testz
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
 SEVERE: [T-ERROR]Error retrieving DataSet: java.lang.Exception: Invalid step in path: testa9
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
 WARNING: [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected. Staggering in progress.
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: testb@Default has been sent a verification email for testz
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : test@Default
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]New user testb@Default has attempted to login, verification email sent and account is in probation.
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Login attempt with username : testb@Default
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Checking user : testb@Default &amp; testz
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device Check, User has yet to verify device : testz
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]testb@Default has been sent a verification email for testz
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Login attempt with username : test@Default
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : test@Default &amp; test
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: New user test@Default has attempted to login, verification email sent and account is in probation.
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : fail' or 1 = 1
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]New user test@Default has attempted to login, verification email sent and account is in probation.
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Login attempt with username : fail' or 1 = 1
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : fail' or 1 = 1 &amp; fail' or 1 = 1
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-SEVERE: [SQL]SQL query issue was encountered causing SQL failure : com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [SQL]SQL query issue was encountered causing SQL failure, Usercheck failure: com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
 java.lang.RuntimeException: com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
 	at geneos_notification.controllers.DatabaseController.checkUser(DatabaseController.java:75)
 	at geneos_notification.controllers.UserController.login(UserController.java:27)
@@ -289,92 +293,90 @@ Caused by: com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an erro
 	at com.mysql.jdbc.Statement.executeQuery(Statement.java:1232)
 	at geneos_notification.controllers.DatabaseController.checkUser(DatabaseController.java:58)
 	... 46 more
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-SEVERE: Login error has occured, please see associated stack trace for more information. Username : fail' or 1 = 1 android_id : fail' or 1 = 1
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [U-Controller]Login error has occured, please see associated stack trace for more information. Username : fail' or 1 = 1 android_id : fail' or 1 = 1
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
 INFO: java.lang.RuntimeException: com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testf@Default
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Login attempt with username : testf@Default
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testf@Default &amp; testf
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testf logged in successfully
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:18 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testf key has been updated
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testf@Default with device testf
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Initial log on for testf@Default with device testf
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testf logged out successfully
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: The status of the device check fortestf@Default is :1
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: testf@Default has been successfully logged out.
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : teste@Default
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]The status of the device check fortestf@Default is :1
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]testf@Default has been successfully logged out.
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Login attempt with username : teste@Default
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : teste@Default &amp; teste
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device teste logged in successfully
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device teste key has been updated
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for teste@Default with device teste
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: [T-INFO]Initialization of thread for xpath : test
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : something@wrong
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Initial log on for teste@Default with device teste
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Login attempt with username : something@wrong
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : something@wrong &amp; test
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 WARNING: [SQL]User has tried to log in with an invalid domain : something@wrong
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-WARNING: Attempted login made by unauthorised user with username : something@wrong
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testc@Default
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+WARNING: [U-Controller]Attempted login made by unauthorised user with username : something@wrong
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Login attempt with username : testc@Default
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testc@Default &amp; testc
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testc logged in successfully
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testc key has been updated
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testc@Default with device testc
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-SEVERE: Attempted access by invalid and potentially harmful user utilising username : testFail@Default
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testd@Default
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Initial log on for testc@Default with device testc
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+SEVERE: [U-Controller]Attempted access by invalid and potentially harmful user utilising username : testFail@Default
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Login attempt with username : testd@Default
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testd@Default &amp; testd
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testd logged in successfully
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testd key has been updated
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Initial log on for testd@Default with device testd
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testd@Default
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Initial log on for testd@Default with device testd
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Login attempt with username : testd@Default
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testd@Default &amp; testx
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testx logged in successfully
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Device testx key has been updated
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: testd@Default logged in successfully on device testx
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testa@Default
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]testd@Default logged in successfully on device testx
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Login attempt with username : testa@Default
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testa@Default &amp; testa
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: New user testa@Default has attempted to login, verification email sent and account is in probation.
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: Login attempt with username : testa@Default
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]New user testa@Default has attempted to login, verification email sent and account is in probation.
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]Login attempt with username : testa@Default
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
 INFO: [SQL]Checking user : testa@Default &amp; testa
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: [SQL]Device Check = User has yet to verify device : testa
-Mar 15, 2016 3:04:41 PM geneos_notification.loggers.LogObject doLog
-INFO: testa@Default has already been sent a verification email for testa
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [SQL]Device Check, User has yet to verify device : testa
+Mar 17, 2016 4:45:19 PM geneos_notification.loggers.LogObject doLog
+INFO: [U-Controller]testa@Default has already been sent a verification email for testa
 </pre>
 </span>
 </div>
@@ -386,7 +388,7 @@ INFO: testa@Default has already been sent a verification email for testa
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 2.3</a> at 15-Mar-2016 15:04:42</p>
+<a href="http://www.gradle.org">Gradle 2.3</a> at 17-Mar-2016 16:45:19</p>
 </div>
 </div>
 </body>
