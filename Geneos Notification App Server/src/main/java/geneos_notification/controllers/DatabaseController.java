@@ -51,7 +51,6 @@ public static int checkUser(String username, String android_id){
 		int result = 0;
 		int queryOut = 0;
 		logA.doLog("SQL" , "[SQL]Checking user : " + username + " & " + android_id, "Info");
-		//System.out.println(username + "    " + android_id);
 		try {
 
 			stmt = conn.createStatement();
@@ -71,7 +70,6 @@ public static int checkUser(String username, String android_id){
 
 		} catch (Exception e) {
 			logA.doLog("SQL" , "[SQL]SQL query issue was encountered causing SQL failure, Usercheck failure: " + e.toString(), "Critical");
-			//System.out.println(e);
 			throw new RuntimeException(e);
 		} 
 			close();
@@ -362,7 +360,6 @@ public static Map<String, HashMap<String, String>> getLiveDevices() {
 	try {
 		stmt = conn.createStatement();
 		res = stmt.executeQuery("call sp_get_live_devices()");
-		// MailRoom.sendMail(username);
 		while (res.next()) {
 			String user = res.getString(1);
 			String devID = res.getString(2);
@@ -373,7 +370,7 @@ public static Map<String, HashMap<String, String>> getLiveDevices() {
 		}
 	} catch (SQLException e) {
 		logA.doLog("SQL", "[SQL]Query error while retrieving Live Devices on reboot \nError is : " + e.toString(), "Critical");
-		close();// e.printStackTrace();
+		close();
 		throw new RuntimeException(e);
 	} 
 		close();
@@ -391,7 +388,6 @@ public static HashMap<String,ArrayList<String>> getLivePaths(String query) {
 	try {
 		stmt = conn.createStatement();
 		res = stmt.executeQuery("select distinct x.xpath, u.username from user_paths as x join users as u on x.userid = u.userid where x.userid in (select userid from users where username in ( " + query + "));");
-		// MailRoom.sendMail(username);
 		while (res.next()) {
 			String xpath = res.getString(1);
 			String user = res.getString(2);
@@ -419,7 +415,6 @@ public static void execCustom(String query) {
 	try {
 		stmt = conn.createStatement();
 		stmt.executeUpdate(query);
-		// MailRoom.sendMail(username);
 	} catch (SQLException e) {
 		logA.doLog("SQL", "[SQL]Query error while retrieving custom dataset \nError is : " + e.toString(), "Critical");
 		e.printStackTrace();
@@ -434,7 +429,6 @@ public static void execCustom(String query) {
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
 
-  // You need to close the res
   public static void close() {
     try {
       if (res != null) {

@@ -42,41 +42,26 @@ public class DataviewListGenerator {
 	public static Map<String, JSONObject> objects;
 	public static ArrayList<String> list;
 	static LtA logA = new LogObject();
-	//private static DataSet dataSet;
-
-/*	public static void main(String[] args) throws JSONException {
-		collectDataviews();
-	}*/
 
 	public static ArrayList<JSONObject> collectDataviews() throws JSONException {
 		conn = OpenAccess.connect(InterfaceController.getOAkey());
 		objects = new HashMap<String, JSONObject>();
-		// dataSet = null;
-		// ExecutorService executor = Executors.newFixedThreadPool(50);
-
 		probesPaths = new ArrayList<String>();
 		String basePath = "/geneos/gateway[wild(@name,\"*\")]/directory/probe";
 		getDataSetItems(basePath, probesPaths, "");
-
 		entitiesPaths = new ArrayList<String>();
 		for (String probePath : probesPaths)
 			getDataSetItems(probePath, entitiesPaths, "/managedEntity");
-
 		samplersPaths = new ArrayList<String>();
 		for (String entityPath : entitiesPaths)
 			getDataSetItems(entityPath, samplersPaths, "/sampler");
-
 		dataViewsPaths = new ArrayList<String>();
 		for (String entityPath : samplersPaths)
 			getDataSetItems(entityPath, dataViewsPaths, "/dataview");
-
 		JSONObject dataviewList = new JSONObject();
 		dataviewList.put("dataViews", new JSONArray(dataViewsPaths));
-
 		list = new ArrayList<String>();
-
 		JSONArray results = new JSONArray();
-
 		results = dataviewList.getJSONArray("dataViews");
 
 		if (results != null) {
@@ -85,32 +70,21 @@ public class DataviewListGenerator {
 				list.add(results.get(i).toString());
 			}
 		}
-
-
-		logA.doLog("Thread" , "[DT-INFO]Collected Dataviews : " + list + " \nWith a length of " + list.toString().length(), "Info");
+		logA.doLog("Thread",
+				"[DT-INFO]Collected Dataviews : " + list + " \nWith a length of " + list.toString().length(), "Info");
 		conn.close();
-
 		list = sortList(list);
-		
-		//JSONObject sender = new JSONObject();
-		//JSONArray sender = new JSONArray();
-		
+
 		ArrayList<JSONObject> sender = new ArrayList<JSONObject>();
 
-		for(int i = 0; i < list.size(); i++)
-		{
-			//sender.put(list.get(i), objects.get(list.get(i)));
+		for (int i = 0; i < list.size(); i++) {
 			ThreadController.addToDataViewMontioringMap(list.get(i).trim(), objects.get(list.get(i)));
 			sender.add(objects.get(list.get(i)));
 		}
-		
 		System.out.println(sender.toString());
-		
 		return sender;
-		//return list;
-
 	}
-	
+
 	private static ArrayList<String> sortList(ArrayList<String> list) {
 		ArrayList<String> res = new ArrayList<String>();
 		ArrayList<String> meOrder = orderMeList(list);
@@ -187,36 +161,30 @@ public class DataviewListGenerator {
 		Closable c = conn.execute(query, new Callback<DataSetChange>() {
 			@Override
 			public void callback(final DataSetChange change) {
-				try{
-				DataSet dataSet = dataSetTracker.update(change);
-                if(!dataSet.getItems().isEmpty()){ cdl.countDown(); }
-                for (DataSetItem item : dataSet.getItems()) { 
-                	a.add(item.getPath());
-                	JSONObject obj = new JSONObject();
-                	obj.put("XPath", item.getPath());
-                	obj.put("Snoozed", item.isSnoozed());
-                	obj.put("Severity", item.getSeverity().toString());
-                	objects.put(item.getPath(), obj);
-                }	
+				try {
+					DataSet dataSet = dataSetTracker.update(change);
+					if (!dataSet.getItems().isEmpty()) {
+						cdl.countDown();
+					}
+					for (DataSetItem item : dataSet.getItems()) {
+						a.add(item.getPath());
+						JSONObject obj = new JSONObject();
+						obj.put("XPath", item.getPath());
+						obj.put("Snoozed", item.isSnoozed());
+						obj.put("Severity", item.getSeverity().toString());
+						objects.put(item.getPath(), obj);
+					}
+				} catch (JSONException e) {
+					logA.doLog("Thread", "[DT-INFO]Error retrieving DataSet and translating to JSON : " + e.toString(),
+							"Critical");
 				}
-				catch(JSONException e)
-				{
-					logA.doLog("Thread" , "[DT-INFO]Error retrieving DataSet and translating to JSON : " + e.toString(), "Critical");
-				}
-   
-				/*DataSet dataSet = dataSetTracker.update(change);
-				for (DataSetItem item : dataSet.getItems()) {
-					a.add(item.getPath());
-				}
-				cdl.countDown();*/
 			}
 		},
 
 				new ErrorCallback() {
 					@Override
 					public void error(final Exception exception) {
-						logA.doLog("Thread" , "[DT-INFO]Error retrieving DataSet: " + exception, "Critical");
-						//System.err.println("Error retrieving DataSet: " + exception);
+						logA.doLog("Thread", "[DT-INFO]Error retrieving DataSet: " + exception, "Critical");
 					}
 				});
 
@@ -224,14 +192,7 @@ public class DataviewListGenerator {
 			cdl.await(1, SECONDS);
 			c.close();
 		} catch (InterruptedException e) {
-			logA.doLog("Thread" , "[DT-INFO]Error retrieving DataSet: " + e.toString(), "Critical");
-			//System.out.println("Interrupted while waiting for updates");
-			//e.printStackTrace();
+			logA.doLog("Thread", "[DT-INFO]Error retrieving DataSet: " + e.toString(), "Critical");
 		}
 	}
-
-	/*public static void setOaValue(String oa) 
-	{
-		conn = OpenAccess.connect(oa);
-	}*/
 }

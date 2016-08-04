@@ -42,20 +42,10 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 
-/*
- Call List:
- 	- login(String,String,String)		= Used to log in user via username, password combo and assign registry key to user. Username first check for status (logged in), if negative then login verified via SQL database
- 	- viewsystemkeys() 					= Used to display the two user dependent values of the server, the OA and SQL addresses. 
- 	- threadtestt()						= POC to prove sever can run multiple instances of monitoring severity, used as callable producing Future for individual termination
- 	- setcustomdv(String, String, int)	= Add or update a custom data view for an entity relevant to a particular user
- */
 
 @RestController
 public class InterfaceController {
 
-  //  private static final String template = "Hello, %s!";
-   // private final AtomicLong counter = new AtomicLong();
-    //private final AtomicLong keycounter = new AtomicLong();
     private static String sqlKey;
     private static String oaKey;
     public static int sampleRate;
@@ -65,8 +55,7 @@ public class InterfaceController {
     
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-    //method=RequestMethod.POST)	
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////    	
     
     @RequestMapping(value="/login", method=RequestMethod.POST)		
     public static String login(@RequestParam(value="username", defaultValue="") String username, @RequestParam(value="android_id", defaultValue="") String android_id, @RequestParam(value="key", defaultValue="") String key) throws Exception 
@@ -81,7 +70,6 @@ public class InterfaceController {
 	@RequestMapping(value="/getMyDv", method=RequestMethod.POST)		
 	public static String getMyDv(@RequestParam(value="username", defaultValue="") String username) 
 	{
-		// String result = DatabaseController.getUserDataviewList(username).toString();
 		String result = null;
 		ArrayList<JSONObject> objects = new ArrayList<JSONObject>();
 		ArrayList<String> userPaths = DatabaseController.getUserDataviewList(username);
@@ -103,7 +91,6 @@ public class InterfaceController {
 	public static String logout(@RequestParam(value = "username", defaultValue = "") String username,
 			@RequestParam(value = "android_id", defaultValue = "") String android_id) throws Exception {
 		String result = UserController.logout(username, android_id);
-		// TransmissionHandler.additionMessage(userName, xpath);
 		return result;
 	}
 
@@ -131,7 +118,6 @@ public static void removeDataview(@RequestParam(value="xpath", defaultValue="") 
 	TransmissionHandler.sendUpdateNotificaiton(path, userName, "dvRem");
 	ThreadController.removeUserFromNotifyList(userName, path);
 	UserController.userObjects.get(userName).removeDV(path);
-	// TransmissionHandler.removeMessage(userName, xpath);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -145,7 +131,7 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// , method=RequestMethod.GET)
+
     @RequestMapping(value="/viewsystemkeys", method=RequestMethod.GET)					
     public static String viewSystemKeys() 
     {
@@ -156,7 +142,7 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// , method=RequestMethod.GET)
+    
     @RequestMapping(value="/verifydev", method=RequestMethod.GET)					
 	public static String verifyDevice(@RequestParam(value="dev_id", defaultValue="") String android_id, @RequestParam(value="verification", defaultValue="") String verification) 
 	{
@@ -166,7 +152,6 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// , method=RequestMethod.GET)***************** NEEDS TESTING ********************
 
     @RequestMapping(value="/getAllDataview", method=RequestMethod.GET)			// First attempt to thread all DV list requests, needs testing		
 	public static String getAllDataview() throws JSONException, InterruptedException, ExecutionException 
@@ -174,13 +159,6 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
     	logA.doLog("Controller" , "Dataview list requested", "Info");
     	return currentDataviewEntityList.toString();
 	}
-    
-    // TESTING ONLY!!!!
-/*    @RequestMapping(value="/killdvm", method=RequestMethod.GET)			// First attempt to thread all DV list requests, needs testing		
-	public static void killdvm() throws JSONException, InterruptedException, ExecutionException 
-	{
-    	ThreadController.DVM.cancel(true);
-	}*/
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
@@ -253,7 +231,6 @@ public void editDV(@RequestParam(value="aentity", defaultValue="") String aentit
     	sqlKey = sql;
     	oaKey = oa;
     	DatabaseController.setAddress(sqlKey);
-    	//DataviewListGenerator.setOaValue(oa);
     }
     
     public static String getOAkey()
