@@ -226,3 +226,73 @@ INFO 03-17-2016 16:45:19 || [U-Controller]Login attempt with username : testa@De
 INFO 03-17-2016 16:45:19 || [SQL]Checking user : testa@Default & testa
 INFO 03-17-2016 16:45:19 || [SQL]Device Check, User has yet to verify device : testa
 INFO 03-17-2016 16:45:19 || [U-Controller]testa@Default has already been sent a verification email for testa
+INFO 08-04-2016 10:00:52 || [U-Controller]Login attempt with username : testb@Default
+INFO 08-04-2016 10:00:53 || [SQL]Checking user : testb@Default & testb
+SEVERE 08-04-2016 10:00:53 || [Email]Error in creation/transmission of Email to user : testb@Default 
+Error is : java.lang.NullPointerException
+INFO 08-04-2016 10:00:53 || [U-Controller]New user testb@Default has attempted to login, verification email sent and account is in probation.
+INFO 08-04-2016 10:00:53 || [U-Controller]Login attempt with username : testb@Default
+INFO 08-04-2016 10:00:53 || [SQL]Checking user : testb@Default & testz
+INFO 08-04-2016 10:00:53 || [SQL]Device Check, User has yet to verify device : testz
+SEVERE 08-04-2016 10:00:53 || [Email]Error in creation/transmission of Email to user : testb@Default 
+Error is : java.lang.NullPointerException
+INFO 08-04-2016 10:00:53 || [U-Controller]testb@Default has been sent a verification email for testz
+INFO 08-04-2016 10:00:53 || [U-Controller]Login attempt with username : test@Default
+INFO 08-04-2016 10:00:53 || [SQL]Checking user : test@Default & test
+SEVERE 08-04-2016 10:00:53 || [Email]Error in creation/transmission of Email to user : test@Default 
+Error is : java.lang.NullPointerException
+INFO 08-04-2016 10:00:53 || [U-Controller]New user test@Default has attempted to login, verification email sent and account is in probation.
+INFO 08-04-2016 10:00:53 || [U-Controller]Login attempt with username : fail' or 1 = 1
+INFO 08-04-2016 10:00:53 || [SQL]Checking user : fail' or 1 = 1 & fail' or 1 = 1
+SEVERE 08-04-2016 10:00:53 || [SQL]SQL query issue was encountered causing SQL failure, Usercheck failure: com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+SEVERE 08-04-2016 10:00:53 || [U-Controller]Login error has occured, please see associated stack trace for more information. Username : fail' or 1 = 1 android_id : fail' or 1 = 1
+INFO 08-04-2016 10:00:53 || java.lang.RuntimeException: com.mysql.jdbc.exceptions.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+INFO 08-04-2016 10:00:54 || [U-Controller]Login attempt with username : testf@Default
+INFO 08-04-2016 10:00:54 || [SQL]Checking user : testf@Default & testf
+INFO 08-04-2016 10:00:54 || [SQL]Device testf logged in successfully
+INFO 08-04-2016 10:00:54 || [SQL]Device testf key has been updated
+INFO 08-04-2016 10:00:54 || [U-Controller]Initial log on for testf@Default with device testf
+INFO 08-04-2016 10:00:54 || [SQL]Device testf logged out successfully
+INFO 08-04-2016 10:00:54 || [U-Controller]The status of the device check fortestf@Default is :1
+INFO 08-04-2016 10:00:54 || [U-Controller]testf@Default has been successfully logged out.
+INFO 08-04-2016 10:00:54 || [U-Controller]Login attempt with username : teste@Default
+INFO 08-04-2016 10:00:54 || [SQL]Checking user : teste@Default & teste
+INFO 08-04-2016 10:00:54 || [SQL]Device teste logged in successfully
+INFO 08-04-2016 10:00:54 || [SQL]Device teste key has been updated
+INFO 08-04-2016 10:00:54 || [U-Controller]Initial log on for teste@Default with device teste
+INFO 08-04-2016 10:00:54 || [T-Controller]Initialization of thread for xpath : test
+INFO 08-04-2016 10:00:54 || [U-Controller]Login attempt with username : something@wrong
+INFO 08-04-2016 10:00:54 || [SQL]Checking user : something@wrong & test
+WARNING 08-04-2016 10:00:54 || [SQL]User has tried to log in with an invalid domain : something@wrong
+WARNING 08-04-2016 10:00:54 || [U-Controller]Attempted login made by unauthorised user with username : something@wrong
+INFO 08-04-2016 10:00:54 || [U-Controller]Login attempt with username : testc@Default
+INFO 08-04-2016 10:00:54 || [SQL]Checking user : testc@Default & testc
+INFO 08-04-2016 10:00:54 || [SQL]Device testc logged in successfully
+INFO 08-04-2016 10:00:54 || [SQL]Device testc key has been updated
+INFO 08-04-2016 10:00:54 || [U-Controller]Initial log on for testc@Default with device testc
+SEVERE 08-04-2016 10:00:54 || [U-Controller]Attempted access by invalid and potentially harmful user utilising username : testFail@Default
+INFO 08-04-2016 10:00:54 || [U-Controller]Login attempt with username : testd@Default
+INFO 08-04-2016 10:00:54 || [SQL]Checking user : testd@Default & testd
+INFO 08-04-2016 10:00:54 || [SQL]Device testd logged in successfully
+INFO 08-04-2016 10:00:54 || [SQL]Device testd key has been updated
+INFO 08-04-2016 10:00:54 || [U-Controller]Initial log on for testd@Default with device testd
+INFO 08-04-2016 10:00:54 || [U-Controller]Login attempt with username : testd@Default
+INFO 08-04-2016 10:00:54 || [SQL]Checking user : testd@Default & testx
+INFO 08-04-2016 10:00:54 || [SQL]Device testx logged in successfully
+INFO 08-04-2016 10:00:54 || [SQL]Device testx key has been updated
+INFO 08-04-2016 10:00:55 || [U-Controller]testd@Default logged in successfully on device testx
+INFO 08-04-2016 10:00:55 || [U-Controller]Login attempt with username : testa@Default
+INFO 08-04-2016 10:00:55 || [SQL]Checking user : testa@Default & testa
+SEVERE 08-04-2016 10:00:55 || [Email]Error in creation/transmission of Email to user : testa@Default 
+Error is : java.lang.NullPointerException
+INFO 08-04-2016 10:00:55 || [U-Controller]New user testa@Default has attempted to login, verification email sent and account is in probation.
+INFO 08-04-2016 10:00:55 || [U-Controller]Login attempt with username : testa@Default
+INFO 08-04-2016 10:00:55 || [SQL]Checking user : testa@Default & testa
+INFO 08-04-2016 10:00:55 || [SQL]Device Check, User has yet to verify device : testa
+INFO 08-04-2016 10:00:55 || [U-Controller]testa@Default has already been sent a verification email for testa
+SEVERE 08-04-2016 10:01:04 || [Start]Running Settings file not found - Server Terminating
+SEVERE 08-04-2016 10:01:37 || [Start]System Settings file is incorrect - Not enough details - Server Terminating
+SEVERE 08-04-2016 10:09:12 || [Start]System Settings file is incorrect - Not enough details - Server Terminating
+SEVERE 08-04-2016 10:12:59 || [Start]System Settings file is incorrect - Not enough details - Server Terminating
+SEVERE 08-04-2016 10:15:04 || [Start]System Settings file is incorrect - Not enough details - Server Terminating
+WARNING 08-04-2016 10:20:40 || [T-WARNING]OpenAccess null response due to multiple reloads, this is handled and expected. Staggering in progress.

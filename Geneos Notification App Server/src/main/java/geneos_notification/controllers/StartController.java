@@ -1,10 +1,12 @@
 package geneos_notification.controllers;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Scanner;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -36,6 +38,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.time.LocalDateTime;
 
 
@@ -94,61 +97,77 @@ public class StartController {
         SpringApplication.run(StartController.class);
     }
 
-public static void readSettingsFile() {
+public static void readSettingsFile(){
 	//System.out.println(System.getProperty("os.name"));
 	//System.getProperties().list(System.out);
 	File file = null;
 	if(System.getProperty("os.name").contains("Windows"))
-	file = new File(".\\settings.txt");
+	file = new File(".\\settings.properties");
 	if(System.getProperty("os.name").contains("Linux"))
-	file = new File("./settings.txt");
-	Scanner scnr = null;
-	try {
-		scnr = new Scanner(file);
-	} catch (FileNotFoundException e) {
-		e.printStackTrace();
-		logA.doLog("Start" , "[Start]System Settings file not found - Server Terminating", "Critical");
+	file = new File("./settings.properties");
+	
+	
+	try{
+	InputStream input = new FileInputStream(file);
+	Properties prop = new Properties();
+	prop.load(input);
+	
+		setting.put("mySQLHost", prop.getProperty("mySQL_Host"));
+		setting.put("mySQLDB", prop.getProperty("mySQL_Database_Name"));
+		setting.put("mySQLUser", prop.getProperty("mySQL_Username"));
+		setting.put("mySQLPass", prop.getProperty("mySQL_Password"));
+		setting.put("SMTPHost", prop.getProperty("SMTP_Host"));
+		setting.put("SMTPUser", prop.getProperty("SMTP_Username"));
+		setting.put("SMTPPass", prop.getProperty("SMTP_Password"));
+		setting.put("OAHost", prop.getProperty("OpenAccess_Host"));
+		setting.put("OAPort", prop.getProperty("OpenAccess_Port"));
+		setting.put("OAUser", prop.getProperty("OpenAccess_Username"));
+		setting.put("OAPass", prop.getProperty("OpenAccess_Password"));
+		setting.put("SampleRate", prop.getProperty("Sampling_Rate_(ms)"));
+		setting.put("MaxLog", prop.getProperty("Maximum_Log_Size"));
+		setting.put("LogLevel", prop.getProperty("Log_Level"));
+	} catch(FileNotFoundException fe){
+		fe.printStackTrace();
+		logA.doLog("Start" , "[Start]Running Settings file not found - Server Terminating", "Critical");
+		System.exit(0);
+	} catch(IOException ie){
+		ie.printStackTrace();
+		logA.doLog("Start" , "[Start]Running Settings file could not be accessed correctly - Server Terminating", "Critical");
 		System.exit(0);
 	}
-	while(scnr.hasNextLine())
-	{
-		String line = scnr.nextLine();
-		if (line.contains("mySQL Host")) {
-			setting.put("mySQLHost", line.substring(line.indexOf("=") + 1));
-		} else if (line.contains("mySQL Database Name")) {
-			setting.put("mySQLDB", line.substring(line.indexOf("=") + 1));
-		} else if (line.contains("mySQL Username")) {
-			setting.put("mySQLUser", line.substring(line.indexOf("=") + 1));
-		} else if (line.contains("mySQL Password")) {
-			setting.put("mySQLPass", line.substring(line.indexOf("=") + 1));
-		} else if (line.contains("SMTP Host")) {
-			setting.put("SMTPHost", line.substring(line.indexOf("=") + 1));
-		} else if (line.contains("SMTP User")) {
-			setting.put("SMTPUser", line.substring(line.indexOf("=") + 1));
-		} else if (line.contains("SMTP Password")) {
-			setting.put("SMTPPass", line.substring(line.indexOf("=") + 1));
-		} else if (line.contains("OpenAccess Host")) {
-			setting.put("OAHost", line.substring(line.indexOf("=") + 1));
-		} else if (line.contains("OpenAccess Port")) {
-			setting.put("OAPort", line.substring(line.indexOf("=") + 1));
-		} else if (line.contains("OpenAccess Username")) {
-			setting.put("OAUser", line.substring(line.indexOf("=") + 1));
-		} else if (line.contains("OpenAccess Password")) {
-			setting.put("OAPass", line.substring(line.indexOf("=") + 1));
-		} else if (line.contains("Sampling Rate (ms)")) {
-			setting.put("SampleRate", line.substring(line.indexOf("=") + 1));
-		} else if (line.contains("Maximum Log Size")) {
-			setting.put("MaxLog", line.substring(line.indexOf("=") + 1));
-		} else if (line.contains("Log Level")) {
-			setting.put("LogLevel", line.substring(line.indexOf("=") + 1));
-		} 
-	}
+	
+	
+	
+	
 	File fileA = null;
 	if(System.getProperty("os.name").contains("Windows"))
 	fileA = new File(".\\application.properties");
 	if(System.getProperty("os.name").contains("Linux"))
 	fileA = new File("./application.properties");
-	Scanner scnrA = null;
+	
+	try{
+	InputStream input = new FileInputStream(fileA);
+	Properties prop = new Properties();
+	prop.load(input);
+	
+		setting.put("ip", prop.getProperty("server.address"));
+		setting.put("port", prop.getProperty("server.port"));
+	if(prop.getProperty("server.ssl.key-store") != null)
+		setting.put("secured", "true");
+	else
+		setting.put("secured", "false");
+	} catch(FileNotFoundException fe){
+		fe.printStackTrace();
+		logA.doLog("Start" , "[Start]System Settings file not found - Server Terminating", "Critical");
+		System.exit(0);
+	} catch(IOException ie){
+		ie.printStackTrace();
+		logA.doLog("Start" , "[Start]System Settings file could not be accessed correctly - Server Terminating", "Critical");
+		System.exit(0);
+	}
+	
+	
+/*	Scanner scnrA = null;
 	try {
 		scnrA = new Scanner(fileA);
 	} catch (FileNotFoundException e) {
@@ -164,8 +183,8 @@ public static void readSettingsFile() {
 		} else if (lineA.contains("server.port")) {
 			setting.put("port", lineA.substring(lineA.indexOf("=") + 1));
 		} 
-	}
-	if(setting.size() != 16)
+	}*/
+	if(setting.size() != 17)
 	{
 		logA.doLog("Start" , "[Start]System Settings file is incorrect - Not enough details - Server Terminating", "Critical");
 		System.exit(0);
@@ -181,9 +200,10 @@ public static void readSettingsFile() {
     	String ip = setting.get("ip");
     	String port = setting.get("port");
     	String OA = "geneos.cluster://" + setting.get("OAHost") + ":" + setting.get("OAPort") + "?username=" + setting.get("OAUser") + "&password=" + setting.get("OAPass");
+    	Boolean secured = Boolean.parseBoolean(setting.get("secured"));
     	InterfaceController.setKeyData(sqlServer, OA);
     	InterfaceController.sampleRate = Integer.parseInt(setting.get("SampleRate"));
-    	EmailController.setDetails(smtpH, smtpU, smtpP, ip, port);
+    	EmailController.setDetails(smtpH, smtpU, smtpP, ip, port, secured);
     	LogHandler.limit = Integer.parseInt(setting.get("MaxLog"));
     	LogHandler.setLevel(setting.get("LogLevel"));
     	try{

@@ -20,7 +20,7 @@ public class AlertTest {
 	public static void setup() throws JSONException
 	{
 		InterfaceController.setKeyData("jdbc:mysql://localhost/test?user=root&password=iPods123", "geneos.cluster://192.168.220.54:2551?username=admin&password=admin");
-		EmailController.setDetails("smtp.hostedservice2.net", "HelpdeskAutomation@itrsgroup.com", "9AHNekkeJwUE7XD", "192.168.10.128", "8443");
+		//EmailController.setDetails("smtp.hostedservice2.net", "HelpdeskAutomation@itrsgroup.com", "9AHNekkeJwUE7XD", "192.168.10.128", "8443");
 	}
 
 /*	@Test

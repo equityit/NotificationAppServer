@@ -19,6 +19,7 @@ public class EmailController {
     private static String SMTP_AUTH_PWD;
     private static String IP;
     private static String PORT;
+    private static String HT_PROTOCOL;
     static LtA logA = new LogObject();
 
     public static void sendMail(String username, int random, String android_id) throws Exception{
@@ -40,7 +41,7 @@ public class EmailController {
 
         MimeMessage message = new MimeMessage(mailSession);
         message.setSubject("Geneos Notifier Device Verification");
-        message.setContent("Hello " +username+ ", \n\n Please follow the attached link to verify you device \n\n https://" + IP + 
+        message.setContent("Hello " +username+ ", \n\n Please follow the attached link to verify you device \n\n " + HT_PROTOCOL + "://" + IP + 
         		":" + PORT + "/verifydev?dev_id=" + android_id + "&verification="+random, "text/plain");
         message.setFrom(new InternetAddress("helpdeskautomation@itrsgroup.com"));
         message.addRecipient(Message.RecipientType.TO,
@@ -64,12 +65,15 @@ public class EmailController {
         }
     }
     
-    public static void setDetails(String H, String U, String P, String address, String prt)
+    public static void setDetails(String H, String U, String P, String address, String prt, boolean secured)
     {
     	SMTP_HOST_NAME = H;
     	SMTP_AUTH_USER = U;
     	SMTP_AUTH_PWD = P;
     	IP = address;
     	PORT = prt;
+    	HT_PROTOCOL = "http";
+    	if(secured)
+    		HT_PROTOCOL = "https";
     }
 }
